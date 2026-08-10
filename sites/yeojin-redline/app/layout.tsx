@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "권여진 — REDLINE",
+  title: "시노노메 아카네 — REDLINE",
   description:
-    "세프템 페카타 분노의 죄인, II등급 전기성 근접 전투원 권여진의 기밀 인물 기록.",
+    "칠죄교단 분노의 죄인, II등급 전기성 근접 전투원 시노노메 아카네의 기밀 인물 기록.",
   other: {
     "codex-preview": "development",
   },

@@ -222,8 +222,9 @@ footer {
 
 .hero h1 span {
   display: block;
-  font-size: clamp(4.5rem, 10vw, 8.7rem);
+  font-size: clamp(3.7rem, 6.2vw, 5.4rem);
   font-weight: 720;
+  white-space: nowrap;
 }
 
 .hero h1 strong {
@@ -1364,7 +1365,7 @@ summary:focus-visible {
   }
 
   .hero h1 span {
-    font-size: clamp(4rem, 22vw, 6.5rem);
+    font-size: clamp(2.5rem, 11vw, 4.2rem);
   }
 
   .hero h1 strong {
@@ -1592,7 +1593,7 @@ summary:focus-visible {
   }
 
   .hero h1 span {
-    font-size: 19vw;
+    font-size: 10.5vw;
   }
 
   .classification-row span:last-child {

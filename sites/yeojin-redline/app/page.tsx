@@ -5,13 +5,13 @@ import { useMemo, useState } from "react";
 type AbilityKey = "charge" | "circuit";
 
 const identity = [
-  ["이름", "권여진"],
+  ["이름", "시노노메 아카네 (東雲 茜)"],
   ["죄명", "레드라인 · REDLINE"],
   ["나이", "28세"],
   ["성별", "XX"],
-  ["국적", "대한민국"],
+  ["국적", "일본"],
   ["신장 · 체중", "175cm · 66kg"],
-  ["소속", "세프템 페카타"],
+  ["소속", "칠죄교단"],
   ["부서", "분노의 죄인"],
   ["등급", "II등급"],
 ];
@@ -405,11 +405,11 @@ export default function Home() {
     <main className="site-shell">
       <div className="ambient-grid" aria-hidden="true" />
       <header className="topbar">
-        <a className="brand" href="#top" aria-label="권여진 프로필 맨 위로">
+        <a className="brand" href="#top" aria-label="시노노메 아카네 프로필 맨 위로">
           <span className="brand-mark">VII</span>
           <span>
-            SEPTEM PECCATA
-            <small>CONFIDENTIAL SINNER ARCHIVE</small>
+            칠죄교단
+            <small>SEPTEM PECCATA · CONFIDENTIAL ARCHIVE</small>
           </span>
         </a>
         <nav aria-label="주요 메뉴">
@@ -430,11 +430,11 @@ export default function Home() {
           <div className="classification-row">
             <span>분노의 죄인</span>
             <span>II등급</span>
-            <span>KR–28</span>
+            <span>JP–28</span>
           </div>
           <p className="hero-code">SUBJECT 07 · BIOELECTRIC COMBATANT</p>
           <h1>
-            <span>권여진</span>
+            <span>시노노메 아카네</span>
             <strong>REDLINE</strong>
           </h1>
           <blockquote>
@@ -443,7 +443,7 @@ export default function Home() {
           </blockquote>
           <p className="hero-summary">
             맞부딪친 충격을 자신의 신경에 축전하고, 전장을 붉은 전로로
-            가르는 세프템 페카타의 돌격 전투원. 그녀의 분노는 폭발이
+            가르는 칠죄교단의 돌격 전투원. 그녀의 분노는 폭발이
             아니라 끝내지 못한 싸움을 향한 갈망입니다.
           </p>
           <div className="hero-actions">
@@ -473,7 +473,7 @@ export default function Home() {
       </section>
 
       <div className="status-ribbon" aria-label="핵심 정보">
-        <span><b>소속</b> 세프템 페카타</span>
+        <span><b>소속</b> 칠죄교단</span>
         <span><b>죄목</b> 분노</span>
         <span><b>능력</b> 2개</span>
         <span><b>성물</b> 없음</span>
@@ -549,13 +549,14 @@ export default function Home() {
         <div className="section-wrap wrath-layout">
           <div className="wrath-word" aria-hidden="true">WRATH</div>
           <div className="wrath-copy">
-            <p className="eyebrow">SEPTEM PECCATA · IRA</p>
+            <p className="eyebrow">칠죄교단 · IRA</p>
             <h2>그녀의 분노는<br />끝나지 않은 승부다.</h2>
             <p>
-              권여진이 원하는 것은 파괴 그 자체가 아닙니다. 누구도
-              개입하지 못하는 마지막 순간까지 상대와 힘을 맞부딪치고,
-              자신의 한계를 확인하는 것입니다. WACA의 통제와 철수
-              명령은 그녀에게 인간을 미완성으로 남기는 족쇄였습니다.
+              시노노메 아카네가 원하는 것은 파괴 그 자체가 아닙니다.
+              누구도 개입하지 못하는 마지막 순간까지 상대와 힘을
+              맞부딪치고, 자신의 한계를 확인하는 것입니다. WACA의
+              통제와 철수 명령은 그녀에게 인간을 미완성으로 남기는
+              족쇄였습니다.
             </p>
             <p>
               분노의 죄는 그 갈망을 억누르지 말라고 속삭였습니다.
@@ -635,16 +636,16 @@ export default function Home() {
           </div>
           <div className="record-copy">
             <p>
-              권여진은 과거 지하 고압 설비 긴급복구 기사이자 불법
-              격투장의 단골 선수였습니다. 정해진 규칙 안에서 서로가
-              쓰러질 때까지 맞부딪치는 시간만큼은 세상의 모든 명령과
-              책임에서 벗어날 수 있다고 믿었습니다.
+              시노노메 아카네는 과거 도쿄 지하 고압 설비 긴급복구
+              기사이자 불법 이능 격투장의 단골 선수였습니다. 정해진
+              규칙 안에서 서로가 쓰러질 때까지 맞부딪치는 시간만큼은
+              세상의 모든 명령과 책임에서 벗어날 수 있다고 믿었습니다.
             </p>
             <p>
               어느 날 이능 격투장을 급습한 WACA와 교전하던 도중 시설이
               붕괴했습니다. 상대는 철수했고 그녀에게도 투항 명령이
               내려졌습니다. 승부가 타인의 명령으로 끝나는 순간,
-              여진은 자신이 다치는 것보다 끝을 확인하지 못하는 일을 더
+              아카네는 자신이 다치는 것보다 끝을 확인하지 못하는 일을 더
               두려워한다는 사실을 깨달았습니다.
             </p>
             <blockquote>
@@ -654,7 +655,7 @@ export default function Home() {
               사탄의 속삭임과 함께 영력이 각성했습니다. 그녀는 무너진
               구조물의 충격을 펄스로 바꾸어 진압선을 돌파했고, 현장에
               접근한 분노의 죄인들을 따라 사라졌습니다. 사건은 일반
-              사회에 변전 설비 폭발 사고로 기록되어 있습니다.
+              사회에는 도쿄 도심 변전 설비 폭발 사고로 기록되어 있습니다.
             </p>
           </div>
         </div>
@@ -704,8 +705,11 @@ export default function Home() {
       <footer>
         <div className="footer-seal" aria-hidden="true">IRA</div>
         <div>
-          <strong>SEPTEM PECCATA</strong>
-          <p>분노 계열 죄인 기록 · 무단 열람 및 복제를 금함</p>
+          <strong>칠죄교단</strong>
+          <p>
+            SEPTEM PECCATA · 분노 계열 죄인 기록 · 무단 열람 및 복제를
+            금함
+          </p>
         </div>
         <span>ARCHIVE CLOSED / REDLINE</span>
       </footer>
