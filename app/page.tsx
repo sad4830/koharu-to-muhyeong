@@ -1,6 +1,45 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import Script from "next/script";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+
+type YouTubePlayer = {
+  destroy: () => void;
+  pauseVideo: () => void;
+  playVideo: () => void;
+  seekTo: (seconds: number, allowSeekAhead: boolean) => void;
+  stopVideo: () => void;
+  unMute: () => void;
+};
+
+type YouTubePlayerEvent = {
+  data: number;
+  target: YouTubePlayer;
+};
+
+type YouTubePlayerOptions = {
+  events?: {
+    onAutoplayBlocked?: () => void;
+    onError?: () => void;
+    onReady?: (event: YouTubePlayerEvent) => void;
+    onStateChange?: (event: YouTubePlayerEvent) => void;
+  };
+  height?: number | string;
+  playerVars?: Record<string, number | string>;
+  videoId: string;
+  width?: number | string;
+};
+
+declare global {
+  interface Window {
+    YT?: {
+      Player: new (elementId: string, options: YouTubePlayerOptions) => YouTubePlayer;
+    };
+    onYouTubeIframeAPIReady?: () => void;
+  }
+}
+
+const ROMANCE_VIDEO_ID = "hmGr62NE0hg";
 
 type Chapter = {
   eyebrow: string;
@@ -95,11 +134,70 @@ export default function Home() {
   const [courage, setCourage] = useState(0);
   const [confessed, setConfessed] = useState(false);
   const [tinyNote, setTinyNote] = useState(false);
+  const [musicReady, setMusicReady] = useState(false);
+  const [autoplayBlocked, setAutoplayBlocked] = useState(false);
   const storyRef = useRef<HTMLElement>(null);
   const confessionRef = useRef<HTMLElement>(null);
+  const musicPlayerRef = useRef<YouTubePlayer | null>(null);
+  const musicReadyRef = useRef(false);
+  const pendingMusicStartRef = useRef(false);
 
   const current = chapters[chapter];
-  const progress = opened ? (chapter + 1) / (chapters.length + 1) : 0;
+  const currentStep = confessed ? chapters.length + 1 : chapter + 1;
+  const progress = opened ? currentStep / (chapters.length + 1) : 0;
+
+  const startRomance = useCallback(() => {
+    const player = musicPlayerRef.current;
+
+    if (!player || !musicReadyRef.current) {
+      pendingMusicStartRef.current = true;
+      return;
+    }
+
+    try {
+      player.seekTo(0, true);
+      player.unMute();
+      player.playVideo();
+      pendingMusicStartRef.current = false;
+      setAutoplayBlocked(false);
+    } catch {
+      setAutoplayBlocked(true);
+    }
+  }, []);
+
+  const initializeMusicPlayer = useCallback(() => {
+    if (musicPlayerRef.current || !window.YT?.Player) return;
+
+    musicPlayerRef.current = new window.YT.Player("romance-player", {
+      height: 200,
+      width: 356,
+      videoId: ROMANCE_VIDEO_ID,
+      playerVars: {
+        controls: 1,
+        enablejsapi: 1,
+        origin: window.location.origin,
+        playsinline: 1,
+        rel: 0,
+        start: 0,
+      },
+      events: {
+        onReady: ({ target }) => {
+          musicPlayerRef.current = target;
+          musicReadyRef.current = true;
+          setMusicReady(true);
+
+          if (pendingMusicStartRef.current) {
+            startRomance();
+          }
+        },
+        onStateChange: ({ data }) => {
+          if (data === 1) setAutoplayBlocked(false);
+        },
+        onAutoplayBlocked: () => setAutoplayBlocked(true),
+        onError: () => setAutoplayBlocked(true),
+      },
+    });
+  }, [startRomance]);
 
   useEffect(() => {
     if (!opened) return;
@@ -107,8 +205,20 @@ export default function Home() {
     return () => window.clearTimeout(timer);
   }, [opened]);
 
+  useEffect(() => {
+    window.onYouTubeIframeAPIReady = initializeMusicPlayer;
+    if (window.YT?.Player) initializeMusicPlayer();
+
+    return () => {
+      if (window.onYouTubeIframeAPIReady === initializeMusicPlayer) {
+        window.onYouTubeIframeAPIReady = undefined;
+      }
+    };
+  }, [initializeMusicPlayer]);
+
   const openLetter = () => {
     setOpened(true);
+    startRomance();
   };
 
   const nextChapter = () => {
@@ -131,6 +241,14 @@ export default function Home() {
   };
 
   const restart = () => {
+    try {
+      musicPlayerRef.current?.stopVideo();
+      musicPlayerRef.current?.seekTo(0, true);
+    } catch {
+      // The letter can still be reset while the embedded player is unavailable.
+    }
+    pendingMusicStartRef.current = false;
+    setAutoplayBlocked(false);
     setOpened(false);
     setChapter(0);
     setCourage(0);
@@ -141,6 +259,7 @@ export default function Home() {
 
   return (
     <main className={`site-shell ${opened ? "letter-opened" : ""} ${confessed ? "is-confessed" : ""}`}>
+      <Script src="https://www.youtube.com/iframe_api" strategy="afterInteractive" onReady={initializeMusicPlayer} />
       <Petals active={opened} />
 
       <div className="ambient ambient-mint" aria-hidden="true" />
@@ -172,7 +291,7 @@ export default function Home() {
             <span>한 번 열면…… 제가 숨을 곳은 없어요.</span>
           </p>
           <button className="open-button" type="button" onClick={openLetter} disabled={opened}>
-            <span>그래도 편지 열기</span>
+            <span>편지를 열고 음악 듣기</span>
             <span className="button-arrow" aria-hidden="true">↗</span>
           </button>
           <div className="gate-status">
@@ -193,8 +312,8 @@ export default function Home() {
               <small>FOR MUHYEONG, ONLY</small>
             </span>
           </a>
-          <div className="chapter-count" aria-label={`전체 4장 중 ${chapter + 1}장`}>
-            <span>0{chapter + 1}</span>
+          <div className="chapter-count" aria-label={`전체 4장 중 ${currentStep}장`}>
+            <span>0{currentStep}</span>
             <i />
             <span>04</span>
           </div>
@@ -203,6 +322,28 @@ export default function Home() {
         <div className="progress-track" aria-hidden="true">
           <span style={{ width: `${progress * 100}%` }} />
         </div>
+
+        <aside className="music-deck" aria-label="고백 로그 배경 음악">
+          <div className="music-deck-header">
+            <div>
+              <span>NOW PLAYING · OFFICIAL AUDIO</span>
+              <strong>OCTOBER — Romance</strong>
+            </div>
+            <button type="button" onClick={startRomance} disabled={!musicReady}>
+              처음부터 재생
+            </button>
+          </div>
+          <div className="music-player-shell">
+            <div id="romance-player" />
+          </div>
+          <p className={autoplayBlocked ? "music-notice is-blocked" : "music-notice"} aria-live="polite">
+            {autoplayBlocked
+              ? "브라우저가 재생을 막았습니다. 위의 ‘처음부터 재생’을 눌러주세요."
+              : musicReady
+                ? "편지를 여는 순간부터 마지막 음까지 이어집니다."
+                : "공식 음원을 준비하고 있습니다……"}
+          </p>
+        </aside>
 
         <div className="story-grid" id="letter">
           <aside className="status-panel">
@@ -288,53 +429,56 @@ export default function Home() {
           </div>
         </section>
 
-        <section
-          className={`confession ${confessed ? "is-visible" : ""}`}
-          id="confession"
-          ref={confessionRef}
-          aria-hidden={!confessed}
-          inert={!confessed}
-        >
-          <div className="confession-halo" aria-hidden="true" />
-          <p className="confession-kicker">THE WORDS SHE COULDN&apos;T REHEARSE</p>
-          <div className="final-scene">
-            <span className="tiny-flower" aria-hidden="true">✿</span>
-            <p>
-              끝내 눈을 마주치지는 못한 채, 코하루가 편지를 두 손으로 내밉니다.
+        {confessed ? (
+          <section className="confession is-visible" id="confession" ref={confessionRef}>
+            <div className="confession-halo" aria-hidden="true" />
+            <p className="confession-kicker">THE WORDS SHE COULDN&apos;T REHEARSE</p>
+            <div className="final-scene">
+              <span className="tiny-flower" aria-hidden="true">
+                ✿
+              </span>
+              <p>
+                끝내 눈을 마주치지는 못한 채, 코하루가 편지를 두 손으로 내밉니다.
+                <br />
+                목소리는 금방이라도 울 것처럼 떨리지만 이번만큼은 물러서지 않습니다.
+              </p>
+            </div>
+            <h2>
+              “저, 무형 씨를
               <br />
-              목소리는 금방이라도 울 것처럼 떨리지만 이번만큼은 물러서지 않습니다.
-            </p>
-          </div>
-          <h2>
-            “저, 무형 씨를
-            <br />
-            <em>좋아해요.</em> 아주 많이요.”
-          </h2>
-          <div className="final-words">
-            <p>“겁이 나도…… 이 마음에서는 도망치고 싶지 않아요.”</p>
-            <p>
-              “그러니까, 괜찮으시다면……
-              <strong>제 옆에 있어 주실래요?</strong>”
-            </p>
-            <p className="wait-line">
-              “대답은 급하게 안 하셔도 돼요. 저, 기다리는 건 잘하니까요. 아……
-              사실 잘 못하지만, 그, 그래도 기다릴게요.”
-            </p>
-          </div>
+              <em>좋아해요.</em> 아주 많이요.”
+            </h2>
+            <div className="final-words">
+              <p>“겁이 나도…… 이 마음에서는 도망치고 싶지 않아요.”</p>
+              <p>
+                “그러니까, 괜찮으시다면……
+                <strong>제 옆에 있어 주실래요?</strong>”
+              </p>
+              <p className="wait-line">
+                “대답은 급하게 안 하셔도 돼요. 저, 기다리는 건 잘하니까요. 아…… 사실 잘 못하지만, 그,
+                그래도 기다릴게요.”
+              </p>
+            </div>
 
-          <button className="flower-secret" type="button" onClick={() => setTinyNote((value) => !value)} aria-expanded={tinyNote}>
-            <span aria-hidden="true">✿</span>
-            노란 꽃을 살짝 눌러보기
-          </button>
-          <p className={`tiny-note ${tinyNote ? "is-visible" : ""}`} aria-live="polite">
-            “아, 그리고 푸딩도 사 왔어요. 이건 대답이랑 상관없이 무형 씨 거예요……!”
-          </p>
+            <button
+              className="flower-secret"
+              type="button"
+              onClick={() => setTinyNote((value) => !value)}
+              aria-expanded={tinyNote}
+            >
+              <span aria-hidden="true">✿</span>
+              노란 꽃을 살짝 눌러보기
+            </button>
+            <p className={`tiny-note ${tinyNote ? "is-visible" : ""}`} aria-live="polite">
+              “아, 그리고 푸딩도 사 왔어요. 이건 대답이랑 상관없이 무형 씨 거예요……!”
+            </p>
 
-          <div className="answer-space">
-            <span>TO BE ANSWERED BY MUHYEONG</span>
-            <p>이 다음의 대답은, 오직 무형의 몫입니다.</p>
-          </div>
-        </section>
+            <div className="answer-space">
+              <span>TO BE ANSWERED BY MUHYEONG</span>
+              <p>이 다음의 대답은, 오직 무형의 몫입니다.</p>
+            </div>
+          </section>
+        ) : null}
 
         <footer className="site-footer">
           <p>PRIVATE CONFESSION LOG · AMANO KOHARU → MUHYEONG</p>

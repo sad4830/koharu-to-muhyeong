@@ -429,6 +429,114 @@ a:focus-visible,
   transition: width 0.7s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
+.music-deck {
+  position: fixed;
+  z-index: 45;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  width: min(356px, calc(100vw - 2.5rem));
+  overflow: hidden;
+  border: 1px solid rgba(121, 231, 202, 0.35);
+  background: rgba(17, 21, 20, 0.96);
+  color: var(--paper);
+  box-shadow: 9px 10px 0 rgba(242, 200, 73, 0.82), 0 22px 60px rgba(0, 0, 0, 0.32);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(24px);
+  pointer-events: none;
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease,
+    transform 0.4s ease;
+}
+
+.letter-opened .music-deck {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  pointer-events: auto;
+}
+
+.music-deck-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+  padding: 0.78rem 0.85rem;
+}
+
+.music-deck-header > div {
+  min-width: 0;
+}
+
+.music-deck-header span,
+.music-deck-header strong {
+  display: block;
+}
+
+.music-deck-header span {
+  margin-bottom: 0.2rem;
+  color: var(--mint);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.11em;
+}
+
+.music-deck-header strong {
+  overflow: hidden;
+  font-family: var(--font-serif-ko);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.music-deck-header button {
+  flex: none;
+  border: 1px solid rgba(247, 243, 232, 0.38);
+  background: transparent;
+  padding: 0.48rem 0.6rem;
+  color: var(--paper);
+  font-size: 0.62rem;
+  cursor: pointer;
+}
+
+.music-deck-header button:hover:not(:disabled) {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.music-deck-header button:disabled {
+  cursor: wait;
+  opacity: 0.42;
+}
+
+.music-player-shell {
+  min-height: 200px;
+  overflow: hidden;
+  background: #000;
+}
+
+.music-player-shell iframe {
+  display: block;
+  width: 100%;
+  height: 200px;
+  border: 0;
+}
+
+.music-notice {
+  min-height: 2.15rem;
+  margin: 0;
+  padding: 0.58rem 0.85rem 0.64rem;
+  color: rgba(247, 243, 232, 0.58);
+  font-size: 0.58rem;
+  line-height: 1.45;
+}
+
+.music-notice.is-blocked {
+  color: var(--gold);
+}
+
 .story-grid {
   min-height: calc(100svh - 113px);
   display: grid;
@@ -690,6 +798,7 @@ a:focus-visible,
 .confession.is-visible {
   opacity: 1;
   filter: none;
+  animation: confession-reveal 0.9s ease both;
 }
 
 .confession-halo {
@@ -936,6 +1045,11 @@ a:focus-visible,
   to { transform: rotate(-1deg) scaleX(1); }
 }
 
+@keyframes confession-reveal {
+  from { opacity: 0; filter: grayscale(1); transform: translateY(18px); }
+  to { opacity: 1; filter: none; transform: none; }
+}
+
 @keyframes petal-fall {
   0% { opacity: 0; transform: translate3d(0, -30px, 0) rotate(0deg); }
   8% { opacity: 0.8; }
@@ -1091,6 +1205,15 @@ a:focus-visible,
 
   .wordmark-glyph {
     font-size: 0.68rem;
+  }
+
+  .music-deck {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    margin-top: 1rem;
+    box-shadow: 6px 7px 0 rgba(242, 200, 73, 0.82);
   }
 
   .status-panel dl {
