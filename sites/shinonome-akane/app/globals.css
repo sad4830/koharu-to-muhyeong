@@ -845,7 +845,7 @@ footer {
 
 .console-actions {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 8px;
 }
 
@@ -1013,6 +1013,17 @@ footer {
 .anchor-right {
   left: 82%;
   top: 78%;
+}
+
+.moving-electrode {
+  left: 50%;
+  top: 57%;
+  border-radius: 10px;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.moving-electrode span {
+  transform: rotate(-45deg);
 }
 
 .simulation-note {

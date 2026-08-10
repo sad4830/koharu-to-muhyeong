@@ -7,7 +7,7 @@ type AbilityKey = "charge" | "circuit";
 const identity = [
   ["이름", "시노노메 아카네 (東雲 茜)"],
   ["죄명", "레드라인 · REDLINE"],
-  ["나이", "28세"],
+  ["나이", "22세"],
   ["성별", "XX"],
   ["국적", "일본"],
   ["신장 · 체중", "175cm · 66kg"],
@@ -15,6 +15,7 @@ const identity = [
   ["부서", "분노의 죄인"],
   ["등급", "II등급"],
   ["최대 출력", "중형 건물 1채 파괴 수준"],
+  ["성물", "쇄뢰(鎖雷)"],
 ];
 
 const combatLoop = [
@@ -31,12 +32,12 @@ const combatLoop = [
   {
     number: "03",
     title: "전로",
-    body: "전극을 고정해 상대가 피해야 할 직선 경로를 만들고 움직임을 제한합니다.",
+    body: "전극을 설치하고, 해머 유효타로 상대에게 이동 전극 표식을 남겨 회로의 종점으로 만듭니다.",
   },
   {
     number: "04",
     title: "선택",
-    body: "6펄스를 레드라인 돌진과 삼각 폐로 중 하나에 전부 사용합니다. 둘을 연속으로 쓸 수 없습니다.",
+    body: "6펄스를 레드라인 돌진과 쇄뢰의 삼각 폐로 중 하나에 전부 사용합니다. 둘을 연속으로 쓸 수 없습니다.",
   },
 ];
 
@@ -47,11 +48,11 @@ const limits = [
   },
   {
     title: "직선 경로",
-    body: "방전은 전극 사이를 곧게 지날 뿐 추적하거나 꺾이지 않습니다. 경로를 읽고 벗어날 수 있습니다.",
+    body: "일반 방전은 전극 사이를 곧게 지날 뿐 꺾이지 않습니다. 이동 전극 방전도 먼저 해머 유효타를 맞혀야 성립합니다.",
   },
   {
     title: "전극 파괴",
-    body: "활성 전극을 뽑거나 부수면 전로가 끊깁니다. 움직이는 물체와 생명체에는 전극을 지정할 수 없습니다.",
+    body: "활성 전극을 뽑거나 부수면 전로가 끊깁니다. 표식이 장비나 옷에 남았다면 이를 벗어 던져 이동 전극을 제거할 수 있습니다.",
   },
   {
     title: "침수 환경",
@@ -63,8 +64,15 @@ function PulseConsole() {
   const [pulse, setPulse] = useState(0);
   const [message, setMessage] = useState("충격 기록을 시작하십시오.");
   const [anchors, setAnchors] = useState([false, false, false]);
+  const [marked, setMarked] = useState(false);
 
   const activeAnchors = anchors.filter(Boolean).length;
+  const anchorPoints = [
+    [50, 17],
+    [18, 78],
+    [82, 78],
+  ];
+  const firstActiveAnchor = Math.max(0, anchors.findIndex(Boolean));
   const lineStates = useMemo(
     () => ({
       left: anchors[0] && anchors[1],
@@ -103,7 +111,14 @@ function PulseConsole() {
   const reset = () => {
     setPulse(0);
     setAnchors([false, false, false]);
+    setMarked(false);
     setMessage("모의 기록이 초기화되었습니다.");
+  };
+
+  const firePursuit = () => {
+    if (pulse < 3 || activeAnchors < 1 || !marked) return;
+    spendPulse(3, "추뢰 폐로");
+    setMarked(false);
   };
 
   return (
@@ -111,7 +126,7 @@ function PulseConsole() {
       <div className="console-heading">
         <div>
           <p className="eyebrow">ABILITY DEMONSTRATION</p>
-          <h3>충격 축전 모의 기록</h3>
+          <h3>펄스 · 쇄뢰 회로 모의 기록</h3>
         </div>
         <output className="pulse-count" aria-live="polite">
           {pulse}<span>/6</span>
@@ -142,6 +157,13 @@ function PulseConsole() {
         </button>
         <button
           type="button"
+          onClick={firePursuit}
+          disabled={pulse < 3 || activeAnchors < 1 || !marked}
+        >
+          추뢰 폐로 −3
+        </button>
+        <button
+          type="button"
           onClick={() => spendPulse(6, "레드라인 발동")}
           disabled={pulse < 6}
         >
@@ -159,13 +181,14 @@ function PulseConsole() {
       <div className="circuit-demo">
         <div className="circuit-copy">
           <p className="eyebrow">CLOSED CIRCUIT</p>
-          <h4>전극을 눌러 전로를 연결하십시오.</h4>
+          <h4>고정 전극과 이동 표식을 연결하십시오.</h4>
           <p>
-            두 점 사이의 직선만 방전됩니다. 세 전극이 연결되어도 삼각형
-            내부는 공격 범위가 아닙니다.
+            숫자 전극은 고정 회로를, 중앙의 표식은 해머 유효타로 남긴
+            이동 전극을 뜻합니다.
           </p>
           <div className="circuit-status">
-            활성 전극 <strong>{activeAnchors}/3</strong>
+            고정 전극 <strong>{activeAnchors}/3</strong> · 이동 전극
+            <strong>{marked ? "1" : "0"}/1</strong>
           </div>
         </div>
 
@@ -192,6 +215,13 @@ function PulseConsole() {
               x2="82"
               y2="78"
             />
+            <line
+              className={marked && activeAnchors > 0 ? "wire active" : "wire"}
+              x1={anchorPoints[firstActiveAnchor][0]}
+              y1={anchorPoints[firstActiveAnchor][1]}
+              x2="50"
+              y2="57"
+            />
           </svg>
           {[
             ["전극 1", "anchor-top"],
@@ -209,11 +239,23 @@ function PulseConsole() {
               <span>{index + 1}</span>
             </button>
           ))}
+          <button
+            type="button"
+            aria-pressed={marked}
+            aria-label={`이동 전극 표식 ${marked ? "제거" : "활성화"}`}
+            className={`anchor moving-electrode ${marked ? "active" : ""}`}
+            onClick={() => {
+              setMarked((current) => !current);
+              setMessage("이동 전극 표식 상태가 변경되었습니다.");
+            }}
+          >
+            <span>標</span>
+          </button>
         </div>
       </div>
 
       <p className="simulation-note">
-        ※ 위 조작은 능력의 자원과 직선 판정을 설명하기 위한 모의
+        ※ 위 조작은 이능과 성물의 자원·전극 판정을 설명하기 위한 모의
         시뮬레이션입니다.
       </p>
     </div>
@@ -232,7 +274,7 @@ function AbilityArchive() {
 
   return (
     <div className="ability-archive">
-      <div className="ability-tabs" role="tablist" aria-label="능력 선택">
+      <div className="ability-tabs" role="tablist" aria-label="이능과 성물 선택">
         <button
           type="button"
           role="tab"
@@ -249,7 +291,7 @@ function AbilityArchive() {
           onClick={() => setActive("circuit")}
           onKeyDown={selectByArrow}
         >
-          <span>02</span> 폐로방전
+          <span>02</span> 성물 · 쇄뢰
         </button>
       </div>
 
@@ -326,48 +368,51 @@ function AbilityArchive() {
         <article className="ability-panel" role="tabpanel">
           <div className="ability-title-row">
             <div>
-              <p className="eyebrow">ABILITY 02 · CLOSED DISCHARGE</p>
-              <h3>《폐로방전》</h3>
+              <p className="eyebrow">RELIC 01 · CLOSED DISCHARGE</p>
+              <h3>성물 《쇄뢰(鎖雷)》</h3>
             </div>
             <div className="timing-group">
-              <span>지속 1지문</span>
-              <span>쿨타임 2지문</span>
+              <span>전극 유지 4지문</span>
+              <span>설치 쿨타임 없음</span>
             </div>
           </div>
           <p className="ability-lead">
-            쉽게 말하면, 바닥이나 벽에 박은 전극들을 전깃줄처럼
-            연결해 그 사이의 직선만 공격하는 설치형 능력입니다.
+            붉은 전극 3개를 장전한 84cm 흑철 전술 해머입니다. 전극으로
+            종점을 지정한 뒤 아카네의 펄스를 두 종점 사이에 강제로
+            흘리는 고유 능력 《폐로방전》을 지녔습니다.
           </p>
           <div className="rule-grid">
             <div>
-              <h4>① 전극 설치</h4>
+              <h4>① 고정 전극</h4>
               <p>
-                움직이지 않는 무생물에 전극을 고정하고 직접 활성화해야
-                합니다. 최대 3개까지 활성화하며 활성 상태는 4지문
-                유지됩니다.
+                바닥·벽·구조물에 최대 3개를 설치합니다. 4지문 유지되며
+                설치 쿨타임은 없습니다. 파괴된 전극은 5지문 동안
+                재생되지 않습니다.
               </p>
             </div>
             <div>
-              <h4>② 직선 방전</h4>
+              <h4>② 이동 전극</h4>
               <p>
-                전극 2개와 2펄스를 사용합니다. 최대 거리 18m, 폭 1m의
-                단발 직선 방전으로 표면 화상과 근육 경련을 일으킵니다.
+                해머 유효타를 맞힌 상대에게 붉은 표식을 남겨 2지문 동안
+                움직이는 종점으로 만듭니다. 동시에 1명만 유지되며, 같은
+                대상에게 다시 새기는 쿨타임은 3지문입니다.
               </p>
             </div>
             <div>
-              <h4>③ 보이는 공격</h4>
+              <h4>③ 직선 폐로</h4>
               <p>
-                발동 직전 전극에서 황백색 빛과 충전음이 발생합니다.
-                방전은 적을 추적하거나 꺾이지 않으며 벽을 관통하지
-                않습니다.
+                고정 전극 2개와 2펄스를 사용해 최대 18m·폭 1m의 직선
+                방전을 일으킵니다. 지속 1지문, 쿨타임 2지문이며 적을
+                추적하거나 벽을 관통하지 않습니다.
               </p>
             </div>
             <div>
-              <h4>④ 피하는 방법</h4>
+              <h4>④ 추뢰 폐로</h4>
               <p>
-                전극을 파괴하거나 경로 밖으로 이탈할 수 있습니다.
-                절연체와 침수 지형은 전류를 차단하거나 엉뚱한 곳으로
-                분산시킵니다.
+                고정 전극 1개와 이동 전극을 3펄스로 연결합니다. 최대
+                15m, 지속 1지문, 쿨타임 3지문입니다. 상대가 종점이므로
+                단순 회피는 어렵지만 전극 파괴·사거리 이탈·엄폐와 영력
+                방벽으로 회로를 끊을 수 있습니다.
               </p>
             </div>
           </div>
@@ -382,10 +427,12 @@ function AbilityArchive() {
             </div>
             <p>
               전극 3개와 6펄스를 소비해 각 변 10m 이하의 삼각 방전선을
-              형성합니다. 내부 전체가 아니라 세 변만 공격 범위입니다.
-              세 방전선의 총 최대 위력은
-              <strong> 중형 건물 1채 파괴 수준</strong>입니다. 사용 후
-              5지문 동안 두 능력을 사용할 수 없습니다.
+              형성합니다. 기본적으로 세 변만 공격 범위지만, 이동 전극이
+              삼각형 안에 있으면 세 전극의 방전이 그 표식으로 한 번
+              수렴합니다. 모든 전격을 합친 최대 위력은
+              <strong> 중형 건물 1채 파괴 수준</strong>이며, 갈래가
+              나뉘면 위력도 분산됩니다. 사용 후 성물 능력은 5지문 동안
+              봉인됩니다.
             </p>
           </div>
         </article>
@@ -394,12 +441,14 @@ function AbilityArchive() {
       <details className="judgement-note">
         <summary>판정상 주의</summary>
         <p>
-          자동 명중·필중·즉사·내부 장기 지정 파괴 효과는 없습니다.
-          아카네 본인은 모든 천둥·번개·전기에 완전 면역이지만, 전기로
-          발생한 건물 붕괴·파편·화재와 전기가 흐르는 무기의 물리 공격은
-          그대로 받습니다. 장비와 아군은 보호되지 않습니다. 전기 그
-          자체로 변신하거나 번개 속도로 이동하지 않으며, 전력망·기상·
-          자기력·전자기파를 조작할 수도 없습니다.
+          《추뢰 폐로》는 먼저 해머 유효타로 이동 전극을 남겨야 하므로
+          조건 없는 자동 명중이나 필중이 아닙니다. 즉사·내부 장기 지정
+          파괴 효과도 없습니다. 회로가 끊기거나 방전이 빗나가도 소비한
+          펄스는 돌아오지 않습니다. 아카네 본인은 모든 천둥·번개·전기에
+          완전 면역이지만 전기로 발생한 건물 붕괴·파편·화재와 전기가
+          흐르는 무기의 물리 공격은 그대로 받습니다. 장비와 아군은
+          보호되지 않으며, 전기 그 자체로 변신하거나 전력망·기상·자기력·
+          전자기파를 조작할 수도 없습니다.
         </p>
       </details>
     </div>
@@ -436,7 +485,7 @@ export default function Home() {
           <div className="classification-row">
             <span>분노의 죄인</span>
             <span>II등급</span>
-            <span>JP–28</span>
+            <span>JP–22</span>
           </div>
           <p className="hero-code">SUBJECT 07 · BIOELECTRIC COMBATANT</p>
           <h1>
@@ -444,8 +493,8 @@ export default function Home() {
             <strong>REDLINE</strong>
           </h1>
           <blockquote>
-            “참으라고 하지 마십시오. 끝까지 부딪치고, 남은 쪽이
-            옳았다고 하면 됩니다.”
+            “참으라고 하지 마. 끝까지 부딪치고, 남은 쪽이 옳았다고
+            하면 돼.”
           </blockquote>
           <p className="hero-summary">
             맞부딪친 충격을 자신의 신경에 축전하고, 전장을 붉은 전로로
@@ -481,8 +530,8 @@ export default function Home() {
       <div className="status-ribbon" aria-label="핵심 정보">
         <span><b>소속</b> 칠죄교단</span>
         <span><b>죄목</b> 분노</span>
-        <span><b>능력</b> 2개</span>
-        <span><b>성물</b> 없음</span>
+        <span><b>이능</b> 1개</span>
+        <span><b>성물</b> 쇄뢰</span>
         <span><b>권능</b> 미각성</span>
       </div>
 
@@ -534,11 +583,12 @@ export default function Home() {
                 <span>약속 중시</span><span>강자 존중</span>
               </div>
               <p>
-                돌려 말하지 않으며, 힘과 의지가 가장 정직한 언어라고
-                믿습니다. 강한 상대와 서로의 한계를 확인하는 순간을
-                진심으로 즐기지만 약자를 일방적으로 짓밟는 행위에는
-                흥미를 느끼지 못합니다. 항복한 상대를 공격하는 것은
-                승부가 아니라 처형일 뿐이라고 말합니다.
+                상대의 나이·직급·소속과 관계없이 누구에게나 반말을
+                쓰며, 짧고 직선적으로 말합니다. 힘과 의지가 가장 정직한
+                언어라고 믿고 강한 상대와 서로의 한계를 확인하는 순간을
+                즐기지만, 약자를 일방적으로 짓밟는 행위에는 흥미를
+                느끼지 못합니다. 항복한 상대를 공격하는 것은 승부가
+                아니라 처형일 뿐이라고 말합니다.
               </p>
               <p>
                 그러나 자신의 싸움을 방해하거나 강제로 끝내려는 존재를
@@ -576,13 +626,14 @@ export default function Home() {
       <section className="ability-section section-wrap" id="ability">
         <div className="section-heading compact">
           <div>
-            <p className="eyebrow">02 · ABILITY ARCHIVE</p>
+            <p className="eyebrow">02 · ABILITY / RELIC ARCHIVE</p>
             <h2>충격을 저장하고,<br />전장을 전로로 만든다.</h2>
           </div>
           <p>
             때리거나 맞아 펄스를 모으고, 이동·타격·전극 방전에
             사용합니다. 최대 출력은 <strong>중형 건물 1채 파괴 수준</strong>이며,
-            보유 능력은 정확히 두 개입니다.
+            구성은 <strong>이능 1개 + 성물 1개</strong>로 정확히 두
+            능력입니다.
           </p>
         </div>
 
@@ -640,14 +691,15 @@ export default function Home() {
           <div className="record-heading">
             <p className="eyebrow">05 · ORIGIN RECORD</p>
             <h2>속삭임이<br />들린 밤</h2>
-            <span className="record-number">28–R/07</span>
+            <span className="record-number">22–R/07</span>
           </div>
           <div className="record-copy">
             <p>
-              시노노메 아카네는 과거 도쿄 지하 고압 설비 긴급복구
-              기사이자 불법 이능 격투장의 단골 선수였습니다. 정해진
-              규칙 안에서 서로가 쓰러질 때까지 맞부딪치는 시간만큼은
-              세상의 모든 명령과 책임에서 벗어날 수 있다고 믿었습니다.
+              시노노메 아카네는 공업고등학교 전기과 졸업 후 도쿄 지하
+              고압 설비 긴급복구 보조 기사로 일하며 불법 이능 격투장에
+              드나들었습니다. 정해진 규칙 안에서 서로가 쓰러질 때까지
+              맞부딪치는 시간만큼은 세상의 모든 명령과 책임에서 벗어날
+              수 있다고 믿었습니다.
             </p>
             <p>
               어느 날 이능 격투장을 급습한 WACA와 교전하던 도중 시설이
@@ -660,10 +712,12 @@ export default function Home() {
               “왜 멈추지? 네가 원하는 결말은 아직 오지 않았는데.”
             </blockquote>
             <p>
-              사탄의 속삭임과 함께 영력이 각성했습니다. 그녀는 무너진
-              구조물의 충격을 펄스로 바꾸어 진압선을 돌파했고, 현장에
-              접근한 분노의 죄인들을 따라 사라졌습니다. 사건은 일반
-              사회에는 도쿄 도심 변전 설비 폭발 사고로 기록되어 있습니다.
+              사탄의 속삭임과 함께 영력이 각성했습니다. 그 순간 폐쇄된
+              보관함 속 낡은 접지용 해머 《쇄뢰》도 아카네를 사용자로
+              선택했습니다. 그녀는 무너진 구조물의 충격을 펄스로 바꾸고
+              쇄뢰로 진압선을 돌파한 뒤, 현장에 접근한 분노의 죄인들을
+              따라 사라졌습니다. 사건은 일반 사회에 도쿄 도심 변전 설비
+              폭발 사고로 기록되어 있습니다.
             </p>
           </div>
         </div>
@@ -672,12 +726,13 @@ export default function Home() {
       <section className="final-section section-wrap">
         <div className="final-grid">
           <article>
-            <p className="eyebrow">EQUIPMENT</p>
-            <h3>성물 · 없음</h3>
+            <p className="eyebrow">RELIC</p>
+            <h3>성물 · 《쇄뢰(鎖雷)》</h3>
             <p>
-              길이 84cm의 구조용 전술 해머와 전극 말뚝 4개를
-              사용합니다. 모두 독자적인 힘이 없는 일반 금속 장비이며
-              전기를 생성·저장·증폭하지 않습니다.
+              길이 84cm의 흑철 전술 해머입니다. 머리에 장전된 붉은
+              전극 3개까지 포함해 하나의 성물로 취급됩니다. 자체적으로
+              무한한 전기를 만들지는 못하며, 《박동축전》으로 모은
+              펄스가 있어야 《폐로방전》을 사용할 수 있습니다.
             </p>
           </article>
           <article>
@@ -704,8 +759,8 @@ export default function Home() {
         <div className="final-quote">
           <span>FINAL NOTE</span>
           <p>
-            “맞은 만큼 돌려주는 건 복수입니다. 저는 그보다 더 멀리
-            갑니다. 견딘 모든 순간을, 마지막 한 번에 걸겠습니다.”
+            “맞은 만큼 돌려주는 건 복수야. 난 그보다 더 멀리 가.
+            견딘 모든 순간을 마지막 한 번에 걸겠어.”
           </p>
         </div>
       </section>
