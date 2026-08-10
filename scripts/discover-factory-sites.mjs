@@ -54,17 +54,6 @@ function changedFiles() {
     .filter(Boolean);
 }
 
-function isRootSiteFile(file) {
-  return (
-    /^(app|components|lib|pages|public|src|styles)\//.test(file) ||
-    /^(package(?:-lock)?\.json|pnpm-lock\.yaml|yarn\.lock)$/.test(file) ||
-    /^(next\.config\.|tsconfig|postcss\.config\.|tailwind\.config\.|vercel\.json)/.test(
-      file,
-    ) ||
-    file === "site.factory.json"
-  );
-}
-
 function normalizeRequestedSite(requested) {
   if (requested === "." || requested === "root") {
     return ".";
@@ -95,7 +84,7 @@ function selectedSitePaths() {
   );
 
   if (infraChanged) {
-    return allSitePaths();
+    return allSitePaths().filter((path) => path !== ".");
   }
 
   const paths = new Set();
@@ -103,8 +92,6 @@ function selectedSitePaths() {
     const match = file.match(/^(sites\/[^/]+)\//);
     if (match && sitePathPattern.test(match[1])) {
       paths.add(match[1]);
-    } else if (isRootSiteFile(file)) {
-      paths.add(".");
     }
   }
 

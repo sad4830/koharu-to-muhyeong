@@ -11,12 +11,16 @@ This repository is the user's permanent character-site deployment factory.
   configuration, assets, and `vercel.json` when needed.
 - Validate the changed site locally before publishing it.
 - Publish to `main`; `.github/workflows/deploy-character-sites.yml` creates or
-  reuses the Vercel project and deploys only changed sites.
+  reuses the Vercel project and deploys only changed `sites/<slug>` projects.
+- The root Koharu project already uses Vercel Git deployment. Root pushes use
+  that integration; use workflow dispatch with path `.` only for an unchanged
+  manual redeploy.
 - Do not create another GitHub repository or ask the user to import a project in
   the Vercel dashboard for routine character-site work.
 - Never commit Vercel credentials or `.vercel/` directories. If deployment says
   `VERCEL_TOKEN` is missing, ask for the one-time repository-secret setup only;
   never ask the user to paste the token into chat.
 - Do not add the local `vercel-static/` directory.
-- Do not also import factory-managed projects through Vercel Git integration;
-  that would deploy the same push twice.
+- Do not import `sites/<slug>` factory projects through Vercel Git integration;
+  that would deploy the same site twice. Do not reconnect the existing root
+  project.

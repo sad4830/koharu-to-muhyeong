@@ -15,14 +15,15 @@
 
 3. `main`에 반영합니다.
 
-GitHub Actions가 변경된 사이트만 찾아 Vercel 프로젝트를 만들거나 기존
-프로젝트에 연결한 뒤 Production으로 배포합니다. 같은 폴더를 다시 수정하면
-같은 프로젝트가 자동 재배포됩니다.
+GitHub Actions가 `sites/` 아래에서 변경된 사이트만 찾아 Vercel 프로젝트를
+만들거나 기존 프로젝트에 연결한 뒤 Production으로 배포합니다. 같은 폴더를
+다시 수정하면 같은 프로젝트가 자동 재배포됩니다.
 
 새 사이트의 폴더명과 `project` 값은 같아야 합니다. 현재 저장소 루트의
-코하루 사이트만 예외이며, 프로젝트 이름은 루트 `site.factory.json`에
-기록되어 있습니다. 팩토리 프로젝트를 Vercel Dashboard에서 다시 Git Import
-하지 마세요. 같은 push가 두 번 배포될 수 있습니다.
+코하루 사이트만 예외이며, 기존 Vercel Git 연결로 자동 재배포됩니다. 루트
+`site.factory.json`은 소스 변경 없는 수동 재배포에 사용됩니다. `sites/`
+아래 팩토리 프로젝트는 Vercel Dashboard에서 다시 Git Import 하지 마세요.
+같은 사이트가 두 번 배포될 수 있습니다.
 
 ## 최초 1회 설정
 
