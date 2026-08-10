@@ -596,30 +596,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="distinction-section">
-        <h2 className="sr-only">OOC 모티브와 출처</h2>
-        <details className="ooc-note">
-          <summary><span>OOC</span> 모티브·독창성·공식 출처 확인</summary>
-          <div className="distinction-grid">
-            <div>
-              <span>GETO SUGURU / REFERENCE</span>
-              <p>공식 설정의 게토는 굴복시킨 외부 주령을 받아들여 보유하고 자유롭게 조종하는 포획·축적형 사용자입니다.</p>
-            </div>
-            <div>
-              <span>KISARAGI MAYU / ORIGINAL</span>
-              <p>마유는 외부 존재를 흡수하거나 복제하지 않습니다. 자신의 영력을 생체 기관으로 직접 설계하고, 구슬이 깨지는 순간 처음 태어나는 일회성 소환수만 만듭니다.</p>
-            </div>
-          </div>
-          <p className="source-note">다수의 전문 전력을 지휘하다가 자원을 한 개체에 집중하는 ‘전술적 선택’만 모티브로 삼았습니다. 원작 고유 명칭·흡수 규칙·소용돌이형 결정타는 사용하지 않았습니다.</p>
-          <div className="source-links">
-            <a href="https://jujutsukaisen.jp/character/category6.php" target="_blank" rel="noreferrer" aria-label="TV 애니 공식 캐릭터 소개, 새 창에서 열림">TV 애니 공식 캐릭터 소개 ↗</a>
-            <a href="https://jujutsukaisen.jp/episodes/29.php" target="_blank" rel="noreferrer" aria-label="TV 애니 공식 29화 소개, 새 창에서 열림">TV 애니 공식 29화 소개 ↗</a>
-            <a href="https://shonenjumpplus.com/episode/10834108156762516045" target="_blank" rel="noreferrer" aria-label="원작 73화 공식 열람처, 새 창에서 열림">원작 73화 공식 열람처 ↗</a>
-            <a href="https://shonenjumpplus.com/episode/10834108156631749962" target="_blank" rel="noreferrer" aria-label="원작 0권 4화 공식 열람처, 새 창에서 열림">원작 0권 4화 공식 열람처 ↗</a>
-          </div>
-        </details>
-      </section>
-
       <footer>
         <div><b>NEST</b><span>如月 繭 · II</span></div>
         <p>SEPTEM PECCATA / GULA OPERATIVE FILE CLOSED</p>

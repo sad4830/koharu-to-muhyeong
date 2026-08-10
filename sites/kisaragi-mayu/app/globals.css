@@ -311,25 +311,6 @@ legend { width: 100%; margin: 0 0 14px; font: 800 10px var(--font-geist-mono), m
 .preference-section span { font: 800 10px var(--font-geist-mono), monospace; letter-spacing: .18em; }
 .preference-section p { font-size: 18px; font-weight: 700; line-height: 1.7; margin: 15px 0 0; }
 
-.distinction-section { padding: 100px 0 90px; background: #d7cfc1; }
-.ooc-note { width: min(1500px, calc(100% - 72px)); margin: 0 auto; }
-.ooc-note summary { list-style: none; cursor: pointer; min-height: 62px; display: flex; align-items: center; gap: 14px; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); font-weight: 800; }
-.ooc-note summary::-webkit-details-marker { display: none; }
-.ooc-note summary::after { content: "+"; margin-left: auto; font: 24px var(--font-geist-mono), monospace; }
-.ooc-note[open] summary::after { content: "−"; }
-.ooc-note summary span { width: 35px; height: 24px; display: grid; place-items: center; background: var(--ink); color: var(--bone); font: 8px var(--font-geist-mono), monospace; }
-.distinction-grid { width: min(1500px, calc(100% - 72px)); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--hairline); }
-.ooc-note .distinction-grid { width: 100%; margin-top: 26px; }
-.distinction-grid div { padding: 34px; }
-.distinction-grid div + div { border-left: 1px solid var(--hairline); background: var(--bone); }
-.distinction-grid span { font: 800 9px var(--font-geist-mono), monospace; letter-spacing: .15em; color: var(--rust); }
-.distinction-grid p { font-size: 16px; margin: 15px 0 0; }
-.source-note { width: min(1500px, calc(100% - 72px)); margin: 25px auto; color: var(--muted); font-size: 13px; }
-.ooc-note .source-note, .ooc-note .source-links { width: 100%; }
-.source-links { width: min(1500px, calc(100% - 72px)); margin: 0 auto; display: flex; flex-wrap: wrap; gap: 8px; }
-.source-links a { min-height: 44px; display: flex; align-items: center; text-decoration: none; border: 1px solid var(--hairline); border-radius: 999px; padding: 8px 14px; font: 700 10px var(--font-geist-mono), monospace; background: var(--paper); }
-.source-links a:hover { background: var(--moss-bright); }
-
 footer { background: var(--ink); color: var(--bone); min-height: 180px; padding: 55px max(36px, calc((100vw - 1500px) / 2)); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
 footer div { display: flex; align-items: baseline; gap: 18px; }
 footer b { font-size: 42px; letter-spacing: -.06em; color: var(--moss-bright); }
@@ -341,7 +322,7 @@ footer a { min-height: 44px; display: flex; align-items: center; justify-self: e
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; } }
 
 @media (max-width: 1080px) {
-  .topbar, .hero, .plain-summary, .section-kicker, .profile-grid, .ability-heading, .timing-strip, .mechanic-note, .lab, .rules-layout, .hard-limits, .one-ability-note, .combat-grid, .output-scale, .history-grid, .voice-grid, .feature-grid, .misc-strip, .ooc-note, .distinction-grid, .source-note, .source-links { width: min(100% - 48px, 980px); }
+  .topbar, .hero, .plain-summary, .section-kicker, .profile-grid, .ability-heading, .timing-strip, .mechanic-note, .lab, .rules-layout, .hard-limits, .one-ability-note, .combat-grid, .output-scale, .history-grid, .voice-grid, .feature-grid, .misc-strip { width: min(100% - 48px, 980px); }
   .hero { grid-template-columns: 1fr 1fr; gap: 20px; }
   .hero::before { left: 50%; }
   .profile-grid { gap: 55px; }
@@ -364,7 +345,7 @@ footer a { min-height: 44px; display: flex; align-items: center; justify-self: e
   .record-code { display: none; }
   .hero h1 { font-size: clamp(70px, 20vw, 112px); }
   .specimen { min-height: 520px; padding-top: 30px; }
-  .summary-lead, .profile-grid, .ability-heading, .lab-header, .lab-grid, .combat-grid, .voice-grid, .distinction-grid { grid-template-columns: 1fr; }
+  .summary-lead, .profile-grid, .ability-heading, .lab-header, .lab-grid, .combat-grid, .voice-grid { grid-template-columns: 1fr; }
   .summary-lead { gap: 28px; }
   .number-rules { grid-template-columns: 1fr; }
   .number-rules article { border-right: 0; border-bottom: 1px solid var(--hairline); }
@@ -386,13 +367,12 @@ footer a { min-height: 44px; display: flex; align-items: center; justify-self: e
   .history-grid { gap: 50px; }
   .preference-section { grid-template-columns: 1fr; }
   .preference-section .likes, .preference-section .hates { padding: 52px 24px; }
-  .distinction-grid div + div { border-left: 0; border-top: 1px solid var(--hairline); }
   footer { grid-template-columns: 1fr auto; gap: 20px; }
   footer p { display: none; }
 }
 
 @media (max-width: 560px) {
-  .topbar, .hero, .plain-summary, .section-kicker, .profile-grid, .ability-heading, .timing-strip, .mechanic-note, .lab, .rules-layout, .hard-limits, .one-ability-note, .combat-grid, .output-scale, .history-grid, .voice-grid, .feature-grid, .misc-strip, .ooc-note, .distinction-grid, .source-note, .source-links { width: calc(100% - 40px); }
+  .topbar, .hero, .plain-summary, .section-kicker, .profile-grid, .ability-heading, .timing-strip, .mechanic-note, .lab, .rules-layout, .hard-limits, .one-ability-note, .combat-grid, .output-scale, .history-grid, .voice-grid, .feature-grid, .misc-strip { width: calc(100% - 40px); }
   .topbar { height: 74px; }
   .sect-rule { width: 16px; }
   .sect-name { font-size: 9px; }
@@ -432,7 +412,6 @@ footer a { min-height: 44px; display: flex; align-items: center; justify-self: e
   .feature-grid { grid-template-columns: 1fr; }
   .feature-grid article { border-right: 0; border-bottom: 1px solid var(--hairline); }
   .feature-grid article:nth-child(3) { border-bottom: 1px solid var(--hairline); }
-  .distinction-section { padding-top: 75px; }
   footer { padding: 45px 20px; }
   footer b { font-size: 32px; }
 }
