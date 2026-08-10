@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+**/node_modules/
 /.pnp
 .pnp.*
 .yarn/*
@@ -15,7 +16,9 @@
 
 # next.js
 /.next/
+**/.next/
 /out/
+**/out/
 
 # misc
 .DS_Store
@@ -32,6 +35,7 @@ yarn-error.log*
 
 # vercel
 .vercel
+**/.vercel/
 
 # typescript
 next-env.d.ts
@@ -40,3 +44,5 @@ next-env.d.ts
 /.sites-runtime/
 /outputs/
 /work/
+/vercel-static/
+**/vercel-static/

@@ -1,0 +1,156 @@
+name: Deploy character sites
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/deploy-character-sites.yml"
+      - "scripts/discover-factory-sites.mjs"
+      - "site.factory.json"
+      - "app/**"
+      - "components/**"
+      - "lib/**"
+      - "pages/**"
+      - "public/**"
+      - "src/**"
+      - "styles/**"
+      - "package.json"
+      - "package-lock.json"
+      - "pnpm-lock.yaml"
+      - "yarn.lock"
+      - "next.config.*"
+      - "tsconfig*.json"
+      - "postcss.config.*"
+      - "tailwind.config.*"
+      - "vercel.json"
+      - "sites/**"
+  workflow_dispatch:
+    inputs:
+      site:
+        description: 'Site path, for example "." or "sites/character-name"'
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  discover:
+    name: Find changed sites
+    runs-on: ubuntu-latest
+    outputs:
+      count: ${{ steps.sites.outputs.count }}
+      matrix: ${{ steps.sites.outputs.matrix }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build deployment matrix
+        id: sites
+        env:
+          BASE_SHA: ${{ github.event.before }}
+          HEAD_SHA: ${{ github.sha }}
+          FACTORY_SITE: ${{ inputs.site }}
+        run: node scripts/discover-factory-sites.mjs
+
+  deploy:
+    name: Deploy ${{ matrix.site.project }}
+    needs: discover
+    if: needs.discover.outputs.count != '0'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        site: ${{ fromJSON(needs.discover.outputs.matrix).include }}
+    concurrency:
+      group: vercel-production-${{ matrix.site.project }}
+      cancel-in-progress: true
+    env:
+      VERCEL_SCOPE: sdfif45p6-8502s-projects
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      SITE_PATH: ${{ matrix.site.path }}
+      PROJECT_NAME: ${{ matrix.site.project }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Check Vercel credential
+        run: |
+          set -Eeuo pipefail
+          if [ -z "$VERCEL_TOKEN" ]; then
+            echo "::error::Add the VERCEL_TOKEN repository secret once to activate the factory."
+            exit 1
+          fi
+
+      - name: Install pinned Vercel CLI
+        run: npm install --global vercel@58.9.0
+
+      - name: Create or link Vercel project
+        run: |
+          set -Eeuo pipefail
+          vercel project add "$PROJECT_NAME" \
+            --scope "$VERCEL_SCOPE" \
+            --non-interactive
+          vercel link \
+            --yes \
+            --project "$PROJECT_NAME" \
+            --team "$VERCEL_SCOPE" \
+            --non-interactive \
+            --cwd "$SITE_PATH"
+
+      - name: Pull production settings
+        run: |
+          set -Eeuo pipefail
+          vercel pull \
+            --yes \
+            --project "$PROJECT_NAME" \
+            --environment=production \
+            --scope "$VERCEL_SCOPE" \
+            --non-interactive \
+            --cwd "$SITE_PATH"
+
+      - name: Build production artifact
+        run: |
+          set -Eeuo pipefail
+          vercel build \
+            --prod \
+            --yes \
+            --project "$PROJECT_NAME" \
+            --scope "$VERCEL_SCOPE" \
+            --non-interactive \
+            --cwd "$SITE_PATH"
+
+      - name: Deploy production artifact
+        id: deploy
+        run: |
+          set -Eeuo pipefail
+          deploy_json="$(vercel deploy \
+            --prebuilt \
+            --prod \
+            --yes \
+            --project "$PROJECT_NAME" \
+            --scope "$VERCEL_SCOPE" \
+            --non-interactive \
+            --json \
+            --cwd "$SITE_PATH")"
+          deployment_url="$(node -e '
+            const value = JSON.parse(process.argv[1]);
+            const raw = value.deployment?.url ?? value.url;
+            if (!raw) throw new Error("Vercel did not return a deployment URL.");
+            process.stdout.write(raw.startsWith("http") ? raw : `https://${raw}`);
+          ' "$deploy_json")"
+          echo "deployment_url=$deployment_url" >> "$GITHUB_OUTPUT"
+          {
+            echo "### $PROJECT_NAME"
+            echo
+            echo "Production: $deployment_url"
+          } >> "$GITHUB_STEP_SUMMARY"
