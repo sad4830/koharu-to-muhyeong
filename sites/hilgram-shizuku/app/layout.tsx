@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "미카게 시즈쿠 / 21 / XX",
-  description: "힐그램 수용자 미카게 시즈쿠의 공개 및 비밀 프로필 기록.",
+  title: "미카게 시즈쿠 / 21 / 여성",
+  description: "봉합된 약속을 테마로 구성한 힐그램 수용자 미카게 시즈쿠의 공개 및 비밀 프로필.",
   other: {
     "codex-preview": "development",
   },
