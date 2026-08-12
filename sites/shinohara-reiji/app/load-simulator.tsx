@@ -23,7 +23,7 @@ export default function LoadSimulator() {
       <div className="simulator-copy">
         <p className="section-no">ARK TRAINING MODULE</p>
         <h3>전투 출력 모의계</h3>
-        <p>장력을 충전해 최대 출력까지 도달하는 과정을 확인한다. 75%부터 선이 백색으로 밝아져 적에게 위치와 준비 상태가 노출된다.</p>
+        <p>버튼을 눌러 네 가닥에 힘이 얼마나 쌓였는지 확인한다. 75%부터 선이 하얗게 빛나고 큰 금속음이 나서 적에게 최대 공격을 준비 중이라는 사실이 드러난다.</p>
         <div className="simulator-actions">
           <button type="button" onClick={store} disabled={stage === stages.length - 1}>장력 충전 +</button>
           <button type="button" className="ghost-button" onClick={release} disabled={stage === 0}>하중 인계 방출</button>
