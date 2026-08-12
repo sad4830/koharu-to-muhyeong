@@ -191,6 +191,11 @@ h1 { margin: 26px 0 0; line-height: .94; letter-spacing: -.055em; }
   background: #0d1316;
 }
 .temper-copy blockquote { margin: 52px 0 0; padding: 25px 0 4px 24px; border-left: 2px solid var(--signal); color: #e2e2dc; font-size: clamp(20px, 2.2vw, 31px); font-weight: 650; }
+.mature-observation { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 18px; border-top: 1px solid var(--line-strong); border-left: 1px solid var(--line-strong); }
+.mature-observation article { min-height: 190px; padding: 25px; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); background: linear-gradient(145deg, rgba(229,111,55,.035), transparent 58%); }
+.mature-observation span { color: var(--signal-soft); font: 9px var(--font-geist-mono), monospace; letter-spacing: .16em; }
+.mature-observation strong { display: block; margin: 28px 0 16px; color: #dcddd6; font-size: 20px; }
+.mature-observation p { margin: 0; color: #929b99; font-size: 13px; line-height: 1.8; }
 
 .ability-section { padding: clamp(90px, 11vw, 155px) clamp(22px, 7vw, 110px); background: var(--paper-2); border-bottom: 1px solid var(--line); }
 .ability-header { display: grid; grid-template-columns: 1.05fr .8fr; gap: 10vw; align-items: end; }
@@ -204,6 +209,11 @@ h1 { margin: 26px 0 0; line-height: .94; letter-spacing: -.055em; }
 .principle-flow strong { font-size: 14px; }
 .principle-flow i { color: var(--signal); font: normal 22px var(--font-geist-mono), monospace; }
 .ability-principle > p { max-width: 950px; margin: 35px 0 0; color: #9ca4a2; line-height: 1.9; }
+.combat-loop { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 28px; border-top: 1px solid var(--line-strong); border-left: 1px solid var(--line-strong); }
+.combat-loop div { min-height: 150px; padding: 22px; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
+.combat-loop span { color: var(--signal); font: 10px var(--font-geist-mono), monospace; }
+.combat-loop strong { display: block; margin-top: 22px; font-size: 20px; }
+.combat-loop p { margin: 10px 0 0; color: #87908f; font-size: 12px; line-height: 1.7; }
 .spec-grid { margin: 28px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line-strong); border-left: 1px solid var(--line-strong); }
 .spec-grid div { min-height: 105px; padding: 20px; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
 .spec-grid dt { color: #778183; font: 9px var(--font-geist-mono), monospace; letter-spacing: .13em; }
@@ -241,6 +251,7 @@ h1 { margin: 26px 0 0; line-height: .94; letter-spacing: -.055em; }
 .simulator .ghost-button { background: transparent; color: var(--signal-soft); }
 .simulator-visual { padding: 26px; border: 1px solid var(--line-strong); background: #11191c; transition: border-color .2s, box-shadow .2s; }
 .simulator-visual.warning { border-color: var(--signal); box-shadow: inset 0 0 35px rgba(229,111,55,.08); }
+.simulator-visual.warning .tension-line span { background: linear-gradient(90deg, var(--signal), #fff); box-shadow: 0 0 20px rgba(255,255,255,.55); }
 .sim-top, .sim-readout { display: flex; align-items: center; justify-content: space-between; font: 9px var(--font-geist-mono), monospace; letter-spacing: .12em; }
 .sim-top span, .sim-readout span { color: #737e7f; }
 .sim-top strong { color: var(--signal-soft); font-size: 24px; }
@@ -328,6 +339,7 @@ footer { min-height: 70px; padding: 0 clamp(22px, 4vw, 64px); display: flex; ali
   .principle-flow i { transform: rotate(90deg); justify-self: center; }
   .technique-card { grid-template-columns: .6fr 1fr; }
   .technique-card dl { grid-column: 2; }
+  .mature-observation, .combat-loop { grid-template-columns: repeat(2, 1fr); }
   .note-grid { grid-template-columns: repeat(2, 1fr); }
   .ark-watch { width: min(78vw, 480px); justify-self: center; }
 }
@@ -343,6 +355,7 @@ footer { min-height: 70px; padding: 0 clamp(22px, 4vw, 64px); display: flex; ali
   .hero-index { display: none; }
   .record-section { padding-top: 84px; padding-bottom: 84px; }
   .record-copy .lead { margin-top: 0; }
+  .path-a, .path-b { transform: none; }
   .profile-facts div { grid-template-columns: 76px 1fr; }
   .no-portrait { min-height: 360px; }
   .spec-grid { grid-template-columns: repeat(2, 1fr); }
@@ -350,7 +363,7 @@ footer { min-height: 70px; padding: 0 clamp(22px, 4vw, 64px); display: flex; ali
   .technique-card dl { grid-column: auto; }
   .limits-panel, .simulator { grid-template-columns: 1fr; }
   .limits-panel li { grid-template-columns: 82px 1fr; }
-  .note-grid, .likes-grid, .quote-grid { grid-template-columns: 1fr; }
+  .mature-observation, .combat-loop, .note-grid, .likes-grid, .quote-grid { grid-template-columns: 1fr; }
   .note-grid article { min-height: 220px; }
   .sealed-file summary { grid-template-columns: 1fr auto; gap: 10px; }
   .sealed-file summary span { grid-column: 1 / -1; }
