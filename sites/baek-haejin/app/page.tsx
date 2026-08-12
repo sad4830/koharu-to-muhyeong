@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const depthStages = [
   {
@@ -37,9 +37,45 @@ export default function Home() {
   const [depth, setDepth] = useState(0);
   const stage = depthStages[depth];
 
+  useEffect(() => {
+    const root = document.documentElement;
+    const targets = document.querySelectorAll<HTMLElement>("[data-reveal]");
+
+    if (!("IntersectionObserver" in window)) {
+      return;
+    }
+
+    root.classList.add("motion-ready");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 },
+    );
+
+    targets.forEach((target) => observer.observe(target));
+
+    return () => {
+      observer.disconnect();
+      root.classList.remove("motion-ready");
+    };
+  }, []);
+
   return (
-    <main>
+    <main className="site-shell">
       <a className="skip-link" href="#record">본문으로 건너뛰기</a>
+      <div className="field-layer" aria-hidden="true">
+        <i className="field-glow" />
+        <i className="field-cut field-cut-a" />
+        <i className="field-cut field-cut-b" />
+        <i className="field-cut field-cut-c" />
+      </div>
       <header className="site-header">
         <a className="wordmark" href="#record" aria-label="백해진 기록 처음으로">
           <span className="wordmark-mark" aria-hidden="true">W</span>
@@ -50,7 +86,7 @@ export default function Home() {
           <a href="#analysis">분석 사례</a>
           <a href="#abilities">능력 기록</a>
         </nav>
-        <span className="status"><i aria-hidden="true" /> 열람 허가</span>
+        <span className="status"><b aria-hidden="true">[</b> 열람 허가 <b aria-hidden="true">]</b></span>
       </header>
 
       <section className="hero" id="record" aria-labelledby="character-name" tabIndex={-1}>
@@ -61,8 +97,11 @@ export default function Home() {
         </div>
 
         <div className="hero-copy">
-          <p className="kicker">활동명 — 단면도</p>
-          <h1 id="character-name">백해진</h1>
+          <p className="kicker">활동명 / 단면도</p>
+          <h1 id="character-name">
+            백해진
+            <span className="hero-title-echo" aria-hidden="true">백해진</span>
+          </h1>
           <p className="hero-statement">
             보이는 것을 믿지 않는다.<br />
             <em>버티고 있는 이유</em>부터 읽는다.
@@ -71,6 +110,15 @@ export default function Home() {
             붕괴 구조와 무장의 하중을 판독해, 필요한 연결부만 분리하는
             WACA 대한민국 지부의 현장 분석관.
           </p>
+        </div>
+
+        <div className="hero-visual" aria-hidden="true">
+          <div className="stress-orbit orbit-outer"><i /><i /><i /><i /></div>
+          <div className="stress-orbit orbit-inner"><i /><i /><i /></div>
+          <div className="stress-core"><span>86</span><small>LOAD MAP</small></div>
+          <div className="load-vector vector-a" />
+          <div className="load-vector vector-b" />
+          <div className="load-vector vector-c" />
         </div>
 
         <aside className="hero-index" aria-label="핵심 인적 사항">
@@ -86,13 +134,9 @@ export default function Home() {
           </dl>
           <p>CASE FILE · BHJ-0714</p>
         </aside>
-
-        <a className="scroll-cue" href="#identity">
-          기록 판독 시작 <span aria-hidden="true">↓</span>
-        </a>
       </section>
 
-      <section className="identity-section" id="identity" aria-labelledby="identity-title">
+      <section className="identity-section" id="identity" aria-labelledby="identity-title" data-reveal>
         <div className="section-number" aria-hidden="true">01</div>
         <div className="section-heading">
           <p>인적 사항</p>
@@ -112,9 +156,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="analysis-section" id="analysis" aria-labelledby="analysis-title">
+      <section className="analysis-section" id="analysis" aria-labelledby="analysis-title" data-reveal>
         <div className="analysis-heading">
-          <p>현장 기록 BHJ–23–118</p>
+          <p>현장 기록 BHJ-23-118</p>
           <h2 id="analysis-title">분석 심도 조절</h2>
           <p>같은 기록이 어떻게 분리되고 판정으로 변하는지 확인하십시오.</p>
         </div>
@@ -133,16 +177,26 @@ export default function Home() {
           ))}
         </div>
 
-        <div className={`evidence-sheet depth-${depth + 1}`} aria-live="polite">
+        <div key={stage.id} className={`evidence-sheet depth-${depth + 1}`} aria-live="polite">
           <div className="evidence-meta">
             <span>DEPTH {stage.id} / 04</span>
             <span>판독 신뢰도 {depth === 0 ? "미산출" : `${38 + depth * 16}%`}</span>
           </div>
           <div className="evidence-content">
             <div className="specimen" aria-hidden="true">
+              <div className="specimen-scan" />
+              <div className="specimen-ring ring-a" />
+              <div className="specimen-ring ring-b" />
+              <div className="fracture-path">
+                <i /><i /><i /><i />
+              </div>
               <div className="specimen-axis axis-x" />
               <div className="specimen-axis axis-y" />
               <div className="specimen-core" />
+              <div className="confidence-readout">
+                <strong>{depth === 0 ? "--" : 38 + depth * 16}</strong>
+                <span>CONFIDENCE / %</span>
+              </div>
               <span className="point point-a">A</span>
               <span className="point point-b">B</span>
               <span className="point point-c">C</span>
@@ -157,7 +211,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="dossier-section" aria-labelledby="dossier-title">
+      <section className="dossier-section" aria-labelledby="dossier-title" data-reveal>
         <div className="dossier-heading">
           <span>02</span>
           <p>인물 기록</p>
@@ -224,7 +278,7 @@ export default function Home() {
         </article>
       </section>
 
-      <section className="abilities-section" id="abilities" aria-labelledby="abilities-title">
+      <section className="abilities-section" id="abilities" aria-labelledby="abilities-title" data-reveal>
         <div className="abilities-intro">
           <span>03</span>
           <div>
@@ -298,7 +352,7 @@ export default function Home() {
         </article>
       </section>
 
-      <section className="protocol-section" aria-labelledby="protocol-title">
+      <section className="protocol-section" aria-labelledby="protocol-title" data-reveal>
         <div className="protocol-sticky">
           <p>작전 프로토콜</p>
           <h2 id="protocol-title">관찰에서<br />종결까지</h2>
@@ -313,7 +367,7 @@ export default function Home() {
         </ol>
       </section>
 
-      <section className="counter-section" aria-labelledby="counter-title">
+      <section className="counter-section" aria-labelledby="counter-title" data-reveal>
         <div className="counter-heading">
           <p>현장 대응 참고</p>
           <h2 id="counter-title">강한 이유와<br />질 수 있는 이유</h2>
@@ -326,7 +380,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="personal-section" aria-labelledby="personal-title">
+      <section className="personal-section" aria-labelledby="personal-title" data-reveal>
         <div>
           <p>04 · 부가 기록</p>
           <h2 id="personal-title">백해진을 구성하는<br />파괴 이외의 것들.</h2>
