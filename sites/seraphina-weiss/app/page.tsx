@@ -2,16 +2,16 @@
 
 import { useEffect, useState } from "react";
 
-const sigils = ["ENVY", "Ⅱ", "2GJ", "80M"];
+const sigils = ["ENVY", "Ⅱ", "MAX", "80M"];
 const keywords = ["고요한 오만", "집요한 질투", "동정 혐오", "연극적 잔혹성"];
 
 const abilityOneSpecs = [
   ["준비", "1지문"],
   ["사거리", "최대 80m"],
   ["투사체 속도", "최대 700m/s"],
-  ["위력", "최대 2GJ"],
+  ["위력", "중형 건물 1채 또는 소형 건물 2채 파괴급"],
   ["쿨타임", "발사 후 3지문"],
-  ["지속시간", "약 0.12초 · 잔류 없음"],
+  ["지속시간", "1지문 · 발사 지문 내 소멸"],
 ];
 
 const abilityTwoSpecs = [
@@ -19,7 +19,8 @@ const abilityTwoSpecs = [
   ["중심점", "사용자에게서 최대 55m"],
   ["피해 범위", "중심 반경 25m"],
   ["파편 속도", "최대 600m/s"],
-  ["위력", "범위 전체 합산 최대 2GJ"],
+  ["위력", "범위 전체 합산 중형 건물 1채 또는 소형 건물 2채 파괴급"],
+  ["지속시간", "전조 최대 2지문 · 파쇄 1지문"],
   ["쿨타임", "파쇄 후 6지문"],
 ];
 
@@ -90,7 +91,7 @@ export default function Home() {
           </div>
           <aside className="vitals" aria-label="생명 유지 상태">
             <div className="vitals-head"><span>VITAL MONITOR</span><b>CRITICAL</b></div><div className="ecg" aria-hidden="true" />
-            <dl><div><dt>호흡 보조</dt><dd>상시 필수</dd></div><div><dt>하지 운동</dt><dd>완전 소실</dd></div><div><dt>방어 능력</dt><dd>없음</dd></div><div><dt>최대 출력</dt><dd>2 GJ</dd></div></dl>
+            <dl><div><dt>호흡 보조</dt><dd>상시 필수</dd></div><div><dt>하지 운동</dt><dd>완전 소실</dd></div><div><dt>방어 능력</dt><dd>없음</dd></div><div><dt>최대 출력</dt><dd>중형 건물 1채 · 소형 건물 2채</dd></div></dl>
           </aside>
         </section>
 
@@ -119,7 +120,7 @@ export default function Home() {
               <span className="portrait-code">APPEARANCE / TEXT ONLY</span>
               <div className="portrait-monogram" aria-hidden="true">SW</div>
               <h3>외관</h3>
-              <p>허리 아래까지 흐르는 눈처럼 새하얀 장발과 흰 속눈썹, 선명한 붉은 눈을 지녔다. 햇빛을 거의 보지 못한 피부는 혈색 없이 창백하고, 볼과 손목은 뼈대가 비칠 만큼 야위었다. 여러 겹의 백색 장례복 위에는 금실 자수와 붉은 보석 사슬, 성당의 장미창을 닮은 반투명 장식이 겹쳐진다. 진주빛 전동 휠체어는 금빛 세공과 붉은 벨벳 등받이, 장미창 모양 바퀴살로 꾸며져 작은 이동식 제단처럼 보인다. 얼굴에는 흰색 전면형 호흡 마스크를 쓰며, 붉고 금빛인 호스가 등 뒤의 병원용 이동식 호흡 보조 장치로 이어진다. 휠체어와 의료 장비에는 무장이나 별도의 능력이 없다.</p>
+              <p>굉장한 미인이다. 허리 아래까지 흐르는 눈처럼 새하얀 장발과 흰 속눈썹, 선명한 붉은 눈을 지녔다. 햇빛을 거의 보지 못한 피부는 혈색 없이 창백하고, 볼과 손목은 뼈대가 비칠 만큼 야위었다. 여러 겹의 백색 장례복 위에는 금실 자수와 붉은 보석 사슬, 성당의 장미창을 닮은 반투명 장식이 겹쳐진다. 진주빛 전동 휠체어는 금빛 세공과 붉은 벨벳 등받이, 장미창 모양 바퀴살로 꾸며져 작은 이동식 제단처럼 보인다. 얼굴에는 흰색 전면형 호흡 마스크를 쓰며, 붉고 금빛인 호스가 등 뒤의 병원용 이동식 호흡 보조 장치로 이어진다. 휠체어와 의료 장비에는 무장이나 별도의 능력이 없다.</p>
             </div>
             <div className="profile-data">
               <dl className="data-list">
@@ -145,7 +146,7 @@ export default function Home() {
           <div className="ability-intro section-frame">
             <div className="section-kicker">03 / ABILITY MANIFESTATION</div>
             <h2 id="abilities-heading">두 발 대신,<br /><em>두 개의 종말.</em></h2>
-            <p>능력 수는 Ⅱ등급 허용 상한인 정확히 2개. 두 능력은 같은 지문에 동시에 발동할 수 없으며, 어느 경우에도 합산 출력이 2GJ를 넘지 않는다.</p>
+            <p>능력 수는 Ⅱ등급 허용 상한인 정확히 2개. 두 능력은 같은 지문에 동시에 발동할 수 없으며, 어느 경우에도 합산 위력이 중형 건물 1채 또는 소형 건물 2채 파괴급을 넘지 않는다.</p>
           </div>
 
           <article className="ability-card ability-one">
@@ -169,7 +170,7 @@ export default function Home() {
               <h3>《대성당 파쇄식》</h3>
               <p className="ability-lead">사용자에게서 최대 55m 떨어진 지점을 중심으로 반경 25m의 거대한 장미창과 유리 아치를 전개한 뒤, 홍백색 영력 파편을 사방에서 중심부로 쏟아붓는다.</p>
               <SpecGrid specs={abilityTwoSpecs} />
-              <div className="rule-block"><h4>작동 규칙</h4><p>1지문 동안 전조 문양이 선명하게 나타나며 지속적인 시야 확보가 필요하다. 중심점 지정 후에는 옮길 수 없다. 전조는 최대 2지문 유지되며 준비 다음 지문에 파쇄하지 않으면 자동 소멸한다. 파쇄 현상은 약 1초이며, 문양과 아치는 공격 전조일 뿐 충돌·구속·방어 판정이 없다.</p></div>
+              <div className="rule-block"><h4>작동 규칙</h4><p>1지문 동안 전조 문양이 선명하게 나타나며 지속적인 시야 확보가 필요하다. 중심점 지정 후에는 옮길 수 없다. 전조는 최대 2지문 유지되며 준비 다음 지문에 파쇄하지 않으면 자동 소멸한다. 파쇄 현상은 1지문 동안 이어지며, 문양과 아치는 공격 전조일 뿐 충돌·구속·방어 판정이 없다.</p></div>
               <div className="penalty-block"><span>사용 패널티</span><p>최대 출력 1회마다 전체 영력의 60%를 소모한다. 발동 직후 2지문 동안 자발 호흡이 완전히 멎어 호흡기에만 의존하며, 첫 1지문은 양팔의 힘도 빠져 휠체어와 능력을 모두 조작할 수 없다. 이때 호흡기가 파손되면 즉시 의식을 잃는다.</p></div>
               <div className="counter-block"><b>파훼</b><p>전조 1지문 동안 범위 이탈 · 시야 차단 · 사용자 제압. 전개 중 《장미창의 못》 사용 불가.</p></div>
             </div>
@@ -187,7 +188,7 @@ export default function Home() {
             <article className="danger-limit"><span>RESPIRATION</span><h3>호흡기 상시 의존</h3><p>장치 분리 즉시 능력 발동 불가. 1지문 뒤 심한 저산소 증상, 2지문 연속 미복구 시 의식을 잃는다.</p></article>
           </div>
           <div className="common-limits">
-            <div><span>방어</span><strong>없음</strong></div><div><span>회복</span><strong>없음</strong></div><div><span>이동 능력</span><strong>없음</strong></div><div><span>동시 발동</span><strong>불가</strong></div><div><span>범위 상한</span><strong>반경 80m</strong></div><div><span>출력 상한</span><strong>2GJ</strong></div>
+            <div><span>방어</span><strong>없음</strong></div><div><span>회복</span><strong>없음</strong></div><div><span>이동 능력</span><strong>없음</strong></div><div><span>동시 발동</span><strong>불가</strong></div><div><span>범위 상한</span><strong>반경 80m</strong></div><div><span>위력 상한</span><strong>중형 건물 1채 · 소형 건물 2채</strong></div>
           </div>
         </section>
 
