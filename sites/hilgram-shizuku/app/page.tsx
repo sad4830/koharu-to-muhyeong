@@ -311,7 +311,7 @@ function SecretProfile() {
 
       <section className="owner-section" aria-labelledby="owner-heading">
         <h2 id="owner-heading">오너란</h2>
-        <dl><div><dt>오너닉</dt><dd>추후 기재</dd></div><div><dt>나이</dt><dd>성인</dd></div></dl>
+        <dl><div><dt>오너닉</dt><dd>새드아씨</dd></div><div><dt>나이</dt><dd>성인</dd></div></dl>
       </section>
     </div>
   );
@@ -352,7 +352,7 @@ export default function Home() {
               sizes="(max-width: 767px) 92vw, 46vw"
             />
           </div>
-          <figcaption><span>INTAKE PORTRAIT</span><b>외관 참고용 / 공식 구속복 아님 / 출처 기재 필요</b></figcaption>
+          <figcaption><span>INTAKE PORTRAIT</span><b>외관 참고용 / 공식 구속복 아님 / 출처: 픽크루</b></figcaption>
         </figure>
       </section>
 
