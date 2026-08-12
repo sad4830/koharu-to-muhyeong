@@ -6,35 +6,46 @@ const identity = [
   ["나이", "24세"],
   ["성별", "XX"],
   ["국적", "일본"],
-  ["신장 · 체중", "176cm · 68kg"],
+  ["신장 / 체중", "176cm / 68kg"],
   ["소속", "칠죄교단"],
   ["부서 및 직급", "분노의 죄인"],
   ["등급", "II등급"],
-  ["활동 시점", "2027년 · 베들레헴 특별성역"],
+  ["활동 시점", "2027년, 베들레헴 특별성역"],
 ] as const;
 
 const counters = [
   {
+    glyph: "面",
     title: "면으로 덮는다",
     text: "폭발, 열기, 냉기, 독무처럼 방향 하나로 흘릴 수 없는 광역 현상은 받아칠 수 없다.",
   },
   {
+    glyph: "乱",
     title: "리듬을 바꾼다",
     text: "같은 동작의 속도와 궤도를 바꾸거나 페인트를 섞으면 읽어 둔 패턴이 즉시 무효가 된다.",
   },
   {
+    glyph: "多",
     title: "시야를 나눈다",
     text: "두 방향 이상의 동시 공격과 제3자의 기습은 한 흐름에 집중한 나기의 사각을 찌른다.",
   },
   {
+    glyph: "無",
     title: "접촉을 끊는다",
     text: "정신 간섭, 내부 발현, 무형 저주처럼 팔과 손으로 접촉할 수 없는 공격에는 반류가 성립하지 않는다.",
   },
 ] as const;
 
+const flowSteps = [
+  ["觸", "맞닿는다", "공격의 방향과 무게를 손끝으로 확인한다."],
+  ["流", "원 밖으로 흘린다", "정면 충돌을 버리고 두 팔의 원으로 힘을 감싼다."],
+  ["讀", "리듬을 읽는다", "호흡과 중심 이동에서 반복되는 파형을 붙잡는다."],
+  ["碎", "빈 곳을 부순다", "무너진 자세를 향해 남은 힘을 한꺼번에 돌려준다."],
+] as const;
+
 export default function Home() {
   return (
-    <main>
+    <div className="site-frame">
       <header className="topbar">
         <a className="wordmark" href="#top" aria-label="쿠로세 나기 기록 첫 화면">
           <span>SEPTEM PECCATA</span>
@@ -48,34 +59,48 @@ export default function Home() {
         </nav>
       </header>
 
+      <main>
+
       <section className="hero" id="top">
+        <div className="hero-kanji" aria-hidden="true">
+          <span>流</span>
+          <span>碎</span>
+        </div>
         <div className="hero-copy">
           <p className="eyebrow">분노의 죄인 | II등급</p>
           <h1>
-            정의가 다수라면,
+            흘려낸 힘으로
             <br />
-            그 다수를 꺾는다.
+            <em>바위를 부순다.</em>
           </h1>
           <p className="hero-sub">
-            힘을 부딪치지 않는다. 읽고, 흘리고, 가장 약해진 순간에 돌려준다.
+            공격을 막지 않는다. 두 팔의 원으로 삼키고, 무너진 중심에 되돌린다.
           </p>
           <div className="hero-actions">
             <a className="primary-action" href="#abilities">
-              전투 기록 열람
+              전투술 열람
             </a>
             <a className="text-action" href="#record">
-              신원 확인
+              신원 기록
             </a>
           </div>
         </div>
         <FlowSimulator />
       </section>
 
-      <section className="identity-section section-shell" id="record">
-        <div className="section-heading">
-          <p>죄인 등록 기록</p>
-          <h2>쿠로세 나기</h2>
+      <div className="flow-marquee" aria-hidden="true">
+        <div>
+          <span>접촉</span><i>觸</i><span>유도</span><i>流</i><span>회전</span><i>環</i><span>파쇄</span><i>碎</i>
+          <span>접촉</span><i>觸</i><span>유도</span><i>流</i><span>회전</span><i>環</i><span>파쇄</span><i>碎</i>
+        </div>
+      </div>
+
+      <section className="record-section section-shell" id="record">
+        <div className="record-heading">
+          <p>칠죄교단 전투 개체 기록</p>
+          <h2>쿠로세<br />나기</h2>
           <span>黒瀬 凪</span>
+          <b aria-hidden="true">逆流</b>
         </div>
         <dl className="identity-grid">
           {identity.map(([label, value]) => (
@@ -87,14 +112,15 @@ export default function Home() {
         </dl>
       </section>
 
-      <section className="manifesto section-shell" aria-labelledby="manifesto-title">
-        <div className="manifesto-mark" aria-hidden="true">
+      <section className="creed-section section-shell" aria-labelledby="creed-title">
+        <div className="creed-current" aria-hidden="true">
           <span />
           <span />
           <span />
+          <b>反</b>
         </div>
-        <div>
-          <h2 id="manifesto-title">“승자가 붙인 이름을 진실이라 부르지 마.”</h2>
+        <div className="creed-copy">
+          <h2 id="creed-title">“승자가 붙인 이름을 진실이라 부르지 마.”</h2>
           <p>
             나기의 욕망은 선악을 없애는 것이 아니다. 수가 많다는 이유로 누군가를 악이라
             몰아붙이는 질서를, 그 질서가 가장 자신 있어 하는 힘으로 무너뜨리는 것이다.
@@ -106,8 +132,8 @@ export default function Home() {
       <section className="profile-section section-shell" id="temper">
         <article className="appearance-panel">
           <div className="profile-title">
-            <span>외관</span>
-            <h2>그림 없이 남은 목격 기록</h2>
+            <span>외관 기록</span>
+            <h2>그림 없이 남은 목격 진술</h2>
           </div>
           <p>
             짙은 남청색 머리는 쇄골 언저리에서 거칠게 끊기며, 훈련할 때만 목덜미에서 낮게
@@ -118,12 +144,13 @@ export default function Home() {
             양팔의 푸른 회색 천은 장식이 아니라 손목과 팔꿈치의 과부하를 붙잡기 위한 붕대다.
           </p>
           <p className="source-note">외관 이미지 없음 | 텍스트 묘사만 수록</p>
+          <div className="panel-brush" aria-hidden="true">無像</div>
         </article>
 
         <article className="temper-panel">
           <div className="profile-title">
             <span>성격</span>
-            <h2>반권위적 · 승부 집착 · 약자 편애</h2>
+            <h2>반권위적<br />승부 집착<br />약자 편애</h2>
           </div>
           <div className="temper-copy">
             <p>
@@ -142,9 +169,12 @@ export default function Home() {
       </section>
 
       <section className="history-section section-shell">
-        <div className="history-label">특징 및 이력</div>
+        <div className="history-scar" aria-hidden="true">
+          <span>裂</span>
+        </div>
         <div className="history-copy">
-          <h2>가스 폭발로 정리된 밤</h2>
+          <p className="history-label">특징 및 이력</p>
+          <h2>가스 폭발로<br />정리된 밤</h2>
           <p>
             열아홉 살 때 도쿄 외곽의 이능 사건에 휘말렸다. WACA는 현장을 수습하고 사건을
             가스 폭발로 발표했으며, 생존자들의 기억까지 조정했다. 나기는 사람을 구한 뒤에도
@@ -170,12 +200,21 @@ export default function Home() {
         </div>
 
         <article className="ability ability-primary">
-          <div className="ability-name">
-            <span>근접 반격술</span>
-            <h3>《반류쇄경》</h3>
-            <p>反流碎勁</p>
+          <div className="ability-visual deflect-visual" aria-hidden="true">
+            <div className="water-orbit orbit-a" />
+            <div className="water-orbit orbit-b" />
+            <div className="water-orbit orbit-c" />
+            <div className="abstract-arm arm-a" />
+            <div className="abstract-arm arm-b" />
+            <div className="ability-impact" />
+            <b>流</b>
           </div>
-          <div className="ability-body">
+          <div className="ability-content">
+            <div className="ability-name">
+              <span>근접 반격술</span>
+              <h3>《반류쇄경》</h3>
+              <p>反流碎勁</p>
+            </div>
             <p className="ability-lead">
               팔과 손바닥을 따라 얇은 영력의 흐름을 만든다. 접촉한 힘을 원형 궤도로 흘린 뒤,
               무너진 자세의 틈으로 되돌려 보낸다.
@@ -183,40 +222,31 @@ export default function Home() {
             <div className="rule-clusters">
               <div>
                 <h4>발동 조건</h4>
-                <p>
-                  방향을 눈으로 확인할 수 있고 팔이나 손으로 접촉 가능한 단일 공격이어야 한다.
-                  사거리 밖에서는 단순한 보법과 체술만 사용할 수 있다.
-                </p>
+                <p>방향을 눈으로 확인할 수 있고 팔이나 손으로 접촉 가능한 단일 공격이어야 한다. 사거리 밖에서는 단순한 보법과 체술만 사용할 수 있다.</p>
               </div>
               <div>
                 <h4>출력과 범위</h4>
-                <p>
-                  반경 2m의 근접전 한정. 최대 출력은 중형 건물 1채를 파괴할 위력의 단일 공격을
-                  한 번 흘려 되돌리는 수준이며, 여러 공격을 저장하거나 합산할 수 없다.
-                </p>
+                <p>반경 2m의 근접전 한정. 최대 출력은 중형 건물 1채를 파괴할 위력의 단일 공격을 한 번 흘려 되돌리는 수준이며, 여러 공격을 저장하거나 합산할 수 없다.</p>
               </div>
               <div>
-                <h4>지속 · 쿨타임</h4>
+                <h4>지속 / 쿨타임</h4>
                 <p>지속 3지문. 종료 후 쿨타임 2지문.</p>
               </div>
               <div>
                 <h4>패널티</h4>
-                <p>
-                  성공할 때마다 손목, 팔꿈치, 어깨가 충격의 일부를 부담한다. 한 번의 발동 중
-                  세 차례 받아치면 관절이 떨려 이후 2지문 동안 최대 출력 반격이 불가능하다.
-                </p>
+                <p>성공할 때마다 손목, 팔꿈치, 어깨가 충격의 일부를 부담한다. 한 번의 발동 중 세 차례 받아치면 관절이 떨려 이후 2지문 동안 최대 출력 반격이 불가능하다.</p>
               </div>
             </div>
           </div>
         </article>
 
         <article className="ability ability-secondary">
-          <div className="ability-name">
-            <span>관찰형 전투 감각</span>
-            <h3>《파형독파》</h3>
-            <p>波形讀破</p>
-          </div>
-          <div className="ability-body">
+          <div className="ability-content">
+            <div className="ability-name">
+              <span>관찰형 전투 감각</span>
+              <h3>《파형독파》</h3>
+              <p>波形讀破</p>
+            </div>
             <p className="ability-lead">
               호흡, 중심 이동, 영력의 고조가 반복되는 순서를 읽어 한 대상의 한 공격 패턴만
               예측한다. 대응이 정교해질 뿐, 공격을 복사하거나 자동으로 피하지 않는다.
@@ -224,64 +254,56 @@ export default function Home() {
             <div className="rule-clusters">
               <div>
                 <h4>발동 조건</h4>
-                <p>
-                  동일 대상이 같은 구조의 공격을 두 차례 사용하는 전 과정을 시야 안에서 직접
-                  관찰해야 한다. 대상이나 분석 패턴을 바꾸면 축적은 처음부터 다시 시작한다.
-                </p>
+                <p>동일 대상이 같은 구조의 공격을 두 차례 사용하는 전 과정을 시야 안에서 직접 관찰해야 한다. 대상이나 분석 패턴을 바꾸면 축적은 처음부터 다시 시작한다.</p>
               </div>
               <div>
                 <h4>효과</h4>
-                <p>
-                  다음 동작의 시작점과 예상 경로를 먼저 읽어 회피와 《반류쇄경》의 접촉 타이밍을
-                  보조한다. 한 번에 한 대상, 한 패턴만 유지한다.
-                </p>
+                <p>다음 동작의 시작점과 예상 경로를 먼저 읽어 회피와 《반류쇄경》의 접촉 타이밍을 보조한다. 한 번에 한 대상, 한 패턴만 유지한다.</p>
               </div>
               <div>
-                <h4>지속 · 쿨타임</h4>
+                <h4>지속 / 쿨타임</h4>
                 <p>분석 2지문. 효과 3지문. 종료 후 쿨타임 3지문.</p>
               </div>
               <div>
                 <h4>패널티</h4>
-                <p>
-                  분석 중 시야가 대상에게 좁아져 제3자의 공격과 환경 변화에 둔해진다. 효과가
-                  끝나면 두통과 복시가 발생하며 1지문 동안 새 패턴을 분석할 수 없다.
-                </p>
+                <p>분석 중 시야가 대상에게 좁아져 제3자의 공격과 환경 변화에 둔해진다. 효과가 끝나면 두통과 복시가 발생하며 1지문 동안 새 패턴을 분석할 수 없다.</p>
               </div>
             </div>
+          </div>
+          <div className="ability-visual read-visual" aria-hidden="true">
+            <div className="scan-eye"><span /></div>
+            <div className="wave-line wave-a" />
+            <div className="wave-line wave-b" />
+            <div className="wave-line wave-c" />
+            <b>讀</b>
           </div>
         </article>
       </section>
 
       <section className="sequence-section section-shell" aria-labelledby="sequence-title">
-        <h2 id="sequence-title">흐름은 네 동작으로 완성된다</h2>
+        <h2 id="sequence-title">네 동작으로<br />바위를 가른다</h2>
         <ol>
-          <li>
-            <strong>맞닿는다</strong>
-            <span>공격의 방향을 손끝으로 확인한다.</span>
-          </li>
-          <li>
-            <strong>원 밖으로 뺀다</strong>
-            <span>정면 충돌을 피하고 힘의 중심을 비운다.</span>
-          </li>
-          <li>
-            <strong>리듬을 읽는다</strong>
-            <span>호흡과 중심 이동의 반복을 기억한다.</span>
-          </li>
-          <li>
-            <strong>빈 곳에 돌려준다</strong>
-            <span>무너진 자세를 향해 남은 힘을 보낸다.</span>
-          </li>
+          {flowSteps.map(([glyph, title, text]) => (
+            <li key={title}>
+              <b aria-hidden="true">{glyph}</b>
+              <div>
+                <strong>{title}</strong>
+                <span>{text}</span>
+              </div>
+            </li>
+          ))}
         </ol>
       </section>
 
       <section className="counter-section section-shell" id="counter">
         <div className="counter-heading">
-          <h2>흐름을 끊는 법</h2>
+          <h2>흐름을<br />끊는 법</h2>
           <p>반류는 무적의 방패가 아니다. 접촉, 시야, 반복 중 하나만 끊어도 파훼할 수 있다.</p>
         </div>
         <div className="counter-grid">
           {counters.map((counter) => (
             <article key={counter.title}>
+              <b aria-hidden="true">{counter.glyph}</b>
               <h3>{counter.title}</h3>
               <p>{counter.text}</p>
             </article>
@@ -317,11 +339,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </main>
 
       <footer>
         <p>SEPTEM PECCATA | 분노의 죄인 기록</p>
         <span>OWNER 새드아씨</span>
       </footer>
-    </main>
+    </div>
   );
 }
