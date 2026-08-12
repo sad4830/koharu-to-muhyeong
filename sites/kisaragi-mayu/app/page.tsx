@@ -118,10 +118,6 @@ export default function Home() {
   const selectedEggs = eggs.filter((egg) => selectedIds.includes(egg.id));
 
   const createEgg = () => {
-    if (nextId > 6) {
-      setResult("한 교전에서 만들 수 있는 영란 6개를 모두 사용했습니다.");
-      return;
-    }
     if (eggs.length >= 6) {
       setResult("체내 저장 한계는 6개입니다.");
       return;
@@ -259,7 +255,7 @@ export default function Home() {
         <div className="number-rules">
           <article><b>1</b><span>영란 1개</span><p>기관 1개를 가진 일반 소환수</p></article>
           <article><b>3</b><span>영란 3개</span><p>기관을 조합한 합성 소환수</p></article>
-          <article><b>6</b><span>교전당 최대</span><p>체내에 저장 가능한 전체 영란</p></article>
+          <article><b>∞</b><span>교전당 부화</span><p>횟수 제한 없이 재응축 가능</p></article>
         </div>
         <div className="rule-flow">
           <span><b>01</b> 체내 영력 응축</span>
@@ -329,11 +325,11 @@ export default function Home() {
           <span><small>응축</small><b>준비 1지문</b></span>
           <span><small>응축 쿨타임</small><b>1지문</b></span>
           <span><small>체내 저장</small><b>최대 6개</b></span>
-          <span><small>교전당 총량</small><b>최대 6개</b></span>
+          <span><small>교전당 부화</small><b>횟수 제한 없음</b></span>
           <span><small>일반 소환</small><b>지속 3지문</b></span>
           <span><small>지휘 범위</small><b>25m</b></span>
         </div>
-        <p className="mechanic-note"><b>판정 기준</b> 영란 응축은 본인 행동 1지문을 사용하며, 완성된 영란은 다음 본인 지문부터 뱉고 깨뜨려 즉시 부화시킬 수 있습니다. 단란종 소환 쿨타임 1지문은 모든 영란이 공유합니다. 한 교전에 미리 가져오거나 새로 응축해 사용할 수 있는 영란은 합계 6개이며, 부화·소멸한 영란은 교전 종료 전까지 보충할 수 없습니다.</p>
+        <p className="mechanic-note"><b>판정 기준</b> 영란 응축은 본인 행동 1지문을 사용하며, 완성된 영란은 다음 본인 지문부터 뱉고 깨뜨려 즉시 부화시킬 수 있습니다. 단란종 소환 쿨타임 1지문은 모든 영란이 공유합니다. 한 교전에서 부화시킬 수 있는 소환수의 누적 횟수에는 제한이 없으며, 사용·소멸한 영란은 준비 1지문과 응축 쿨타임 1지문을 거쳐 전투 중에도 다시 보충할 수 있습니다. 단, 체내에 동시에 저장할 수 있는 영란은 최대 6개이고 단란종은 동시에 최대 3마리까지만 활성화됩니다.</p>
 
         <div className="lab" aria-labelledby="lab-title">
           <div className="lab-header">
@@ -399,8 +395,8 @@ export default function Home() {
               <div className="preview-spec">
                 <span>{form}</span><i>/</i><span>{selectedModule.label}</span><i>/</i><span>{order}</span>
               </div>
-              <button type="button" className="primary-action" onClick={createEgg} disabled={eggs.length >= 6 || nextId > 6}>
-                영란 1개 응축 <small>{Math.min(nextId - 1, 6)} / 6 생성</small>
+              <button type="button" className="primary-action" onClick={createEgg} disabled={eggs.length >= 6}>
+                영란 1개 응축 <small>보관 {eggs.length} / 6</small>
               </button>
             </div>
           </div>
