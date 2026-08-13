@@ -8,7 +8,7 @@ const keywords = ["고요한 오만", "집요한 질투", "동정 혐오", "연�
 const abilityOneSpecs = [
   ["준비", "1지문"],
   ["사거리", "최대 80m"],
-  ["투사체 속도", "최대 700m/s"],
+  ["빔 진행 속도", "최대 700m/s"],
   ["위력", "중형 건물 1채 또는 소형 건물 2채 파괴급"],
   ["쿨타임", "발사 후 3지문"],
   ["지속시간", "1지문 · 발사 지문 내 소멸"],
@@ -18,10 +18,10 @@ const abilityTwoSpecs = [
   ["준비", "1지문"],
   ["중심점", "사용자에게서 최대 55m"],
   ["피해 범위", "중심 반경 25m"],
-  ["파편 속도", "최대 600m/s"],
+  ["빔 낙하 속도", "최대 600m/s"],
   ["위력", "범위 전체 합산 중형 건물 1채 또는 소형 건물 2채 파괴급"],
-  ["지속시간", "전조 최대 2지문 · 파쇄 1지문"],
-  ["쿨타임", "파쇄 후 6지문"],
+  ["지속시간", "전조 최대 2지문 · 빔 조사 1지문"],
+  ["쿨타임", "빔 종료 후 6지문"],
 ];
 
 function SpecGrid({ specs }: { specs: string[][] }) {
@@ -152,11 +152,11 @@ export default function Home() {
           <article className="ability-card ability-one">
             <div className="ability-number"><span>ABILITY</span><strong>01</strong></div>
             <div className="ability-copy">
-              <div className="ability-label">SINGLE TARGET · LINEAR PENETRATION</div>
+              <div className="ability-label">STRAIGHT BEAM · LINEAR PENETRATION</div>
               <h3>《장미창의 못》</h3>
-              <p className="ability-lead">등 뒤에 열두 겹의 홍백색 장미창 문양을 펼친 뒤, 이를 길이 2.4m의 단일 영력 유리창으로 압축해 직선 발사한다.</p>
+              <p className="ability-lead">등 뒤에 열두 겹의 홍백색 장미창을 펼친 뒤, 그 중심에서 가늘고 강력한 영력 빔을 정면으로 발사한다.</p>
               <SpecGrid specs={abilityOneSpecs} />
-              <div className="rule-block"><h4>작동 규칙</h4><p>1지문 동안 문양을 충전하며 발사 방향이 선명하게 드러난다. 발사 후에는 가속·감속·방향 전환·추적이 불가능하다. 지정 직선을 관통한 뒤 80m 지점에서 완전히 소멸한다. 최대 출력은 중형 건물 1채 또는 소형 건물 2채 파괴급이며, 대상 수가 늘어도 위력이 복제되지 않는다.</p></div>
+              <div className="rule-block"><h4>작동 규칙</h4><p>1지문 동안 장미창을 충전하며 빔이 향할 직선이 선명하게 드러난다. 발사한 빔은 휘거나 적을 추적하지 않고 정면으로만 나아간다. 직선상의 대상을 관통한 뒤 80m 지점에서 완전히 소멸한다. 최대 출력은 중형 건물 1채 또는 소형 건물 2채 파괴급이며, 여러 대상을 맞혀도 위력이 각각 복제되지 않는다.</p></div>
               <div className="penalty-block"><span>사용 패널티</span><p>최대 출력 1회마다 전체 영력의 30%를 소모하고 기관지 출혈과 부정맥이 발생한다. 다음 1지문 동안 말을 할 수 없으며 다른 능력도 사용할 수 없고, 휠체어 조작 속도가 절반으로 감소한다. 한 교전에서 세 번째 최대 출력 사용 시 즉시 의식을 잃는다.</p></div>
               <div className="counter-block"><b>파훼</b><p>충전 중 사선 이탈 · 엄폐 · 휠체어나 호흡 장치 제압. 빠르지만 유도되지 않는다.</p></div>
             </div>
@@ -166,11 +166,11 @@ export default function Home() {
           <article className="ability-card ability-two">
             <div className="ability-number"><span>ABILITY</span><strong>02</strong></div>
             <div className="ability-copy">
-              <div className="ability-label">AREA DENIAL · CONVERGING SHATTER</div>
+              <div className="ability-label">VERTICAL BEAM · AREA BOMBARDMENT</div>
               <h3>《대성당 파쇄식》</h3>
-              <p className="ability-lead">사용자에게서 최대 55m 떨어진 지점을 중심으로 반경 25m의 거대한 장미창과 유리 아치를 전개한 뒤, 홍백색 영력 파편을 사방에서 중심부로 쏟아붓는다.</p>
+              <p className="ability-lead">최대 55m 안의 지점을 지정해 그 상공에 거대한 장미창을 펼친 뒤, 중심에서 굵은 영력 빔 기둥을 수직으로 떨어뜨려 반경 25m를 통째로 덮는다.</p>
               <SpecGrid specs={abilityTwoSpecs} />
-              <div className="rule-block"><h4>작동 규칙</h4><p>1지문 동안 전조 문양이 선명하게 나타나며 지속적인 시야 확보가 필요하다. 중심점 지정 후에는 옮길 수 없다. 전조는 최대 2지문 유지되며 준비 다음 지문에 파쇄하지 않으면 자동 소멸한다. 파쇄 현상은 1지문 동안 이어지며, 문양과 아치는 공격 전조일 뿐 충돌·구속·방어 판정이 없다.</p></div>
+              <div className="rule-block"><h4>작동 규칙</h4><p>1지문 동안 지면과 상공에 장미창 전조가 선명하게 나타나며 지속적인 시야 확보가 필요하다. 중심점은 지정한 뒤 옮길 수 없다. 전조는 최대 2지문 유지되며 준비 다음 지문에 빔을 발사하지 않으면 자동 소멸한다. 수직 빔은 1지문 동안 지정 범위 전체를 덮으며, 발사 중 방향이나 범위가 바뀌지 않는다. 위력은 범위 전체 합산값으로 계산한다.</p></div>
               <div className="penalty-block"><span>사용 패널티</span><p>최대 출력 1회마다 전체 영력의 60%를 소모한다. 발동 직후 2지문 동안 자발 호흡이 완전히 멎어 호흡기에만 의존하며, 첫 1지문은 양팔의 힘도 빠져 휠체어와 능력을 모두 조작할 수 없다. 이때 호흡기가 파손되면 즉시 의식을 잃는다.</p></div>
               <div className="counter-block"><b>파훼</b><p>전조 1지문 동안 범위 이탈 · 시야 차단 · 사용자 제압. 전개 중 《장미창의 못》 사용 불가.</p></div>
             </div>
