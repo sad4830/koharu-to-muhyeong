@@ -157,7 +157,7 @@ export default function Home() {
               <p className="ability-lead">등 뒤에 열두 겹의 홍백색 장미창을 펼친 뒤, 그 중심에서 가늘고 강력한 영력 빔을 정면으로 발사한다.</p>
               <SpecGrid specs={abilityOneSpecs} />
               <div className="rule-block"><h4>작동 규칙</h4><p>1지문 동안 장미창을 충전하며 빔이 향할 직선이 선명하게 드러난다. 발사한 빔은 휘거나 적을 추적하지 않고 정면으로만 나아간다. 직선상의 대상을 관통한 뒤 80m 지점에서 완전히 소멸한다. 최대 출력은 중형 건물 1채 또는 소형 건물 2채 파괴급이며, 여러 대상을 맞혀도 위력이 각각 복제되지 않는다.</p></div>
-              <div className="penalty-block"><span>사용 패널티</span><p>최대 출력 1회마다 전체 영력의 30%를 소모하고 기관지 출혈과 부정맥이 발생한다. 다음 1지문 동안 말을 할 수 없으며 다른 능력도 사용할 수 없고, 휠체어 조작 속도가 절반으로 감소한다. 한 교전에서 세 번째 최대 출력 사용 시 즉시 의식을 잃는다.</p></div>
+              <div className="penalty-block"><span>사용 패널티</span><p>최대 출력 1회마다 전체 영력의 30%를 소모하고 기관지 출혈과 부정맥이 발생한다. 다음 1지문 동안 말을 할 수 없으며 다른 능력도 사용할 수 없고, 휠체어 조작 속도가 절반으로 감소한다.</p></div>
               <div className="counter-block"><b>파훼</b><p>충전 중 사선 이탈 · 엄폐 · 휠체어나 호흡 장치 제압. 빠르지만 유도되지 않는다.</p></div>
             </div>
             <div className="rose-window" aria-hidden="true"><i /><i /><i /><i /><span>✦</span></div>
