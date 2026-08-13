@@ -7,7 +7,6 @@ const stages = [0, 15, 35, 55, 75, 100];
 export default function LoadSimulator() {
   const [stage, setStage] = useState(0);
   const value = stages[stage];
-  const energy = (value * 0.02).toFixed(1);
   const state = value === 0 ? "대기" : value < 75 ? "충전 중" : value < 100 ? "위치 노출" : "최대 출력 준비";
 
   function store() {
@@ -30,7 +29,7 @@ export default function LoadSimulator() {
         </div>
       </div>
       <div className={`simulator-visual ${value >= 75 ? "warning" : ""}`}>
-        <div className="sim-top"><span>TOTAL TENSION / 4 LINES</span><strong>{energy} GJ</strong></div>
+        <div className="sim-top"><span>최대 출력 대비 충전량 / 선 4가닥</span><strong>{value}%</strong></div>
         <div className="tension-line"><span style={{ width: `${value}%` }} /></div>
         <div className="node-row" aria-hidden="true"><i /><b /><i /><b /><i /></div>
         <div className="sim-readout"><span>상태</span><strong>{state}</strong><span>파괴 규모</span><strong>{value === 100 ? "중형 건물 1채" : "충전 중"}</strong></div>

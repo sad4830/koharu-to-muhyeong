@@ -39,4 +39,7 @@ test("renders development preview metadata", async () => {
   assert.match(html, /이동에 쓴 선은 착지와 함께 사라진다/);
   assert.match(html, /사용한 세 가닥이 모두 사라지고/);
   assert.match(html, /충전하는 2지문 동안 자리에서 움직이거나/);
+  assert.doesNotMatch(html, /\b(?:MJ|GJ)\b/);
+  assert.match(html, /최대 출력의 20%까지 반격/);
+  assert.match(html, /중형 건물 1채 파괴급의 약 절반/);
 });
