@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-13T04:39:24Z",
+  "title": "Design System: HILGRAM: 미카게 시즈쿠",
+  "extensions": {
+    "colorMeta": {
+      "open-ground": {
+        "role": "neutral",
+        "displayName": "Open Platform Ground",
+        "canonical": "#f1f1f6",
+        "tonalRamp": ["#17171d", "#303039", "#4b4b56", "#686873", "#888893", "#aaaab4", "#ccccd5", "#f1f1f6"]
+      },
+      "open-surface": {
+        "role": "neutral",
+        "displayName": "Open Information Surface",
+        "canonical": "#e7e7ef",
+        "tonalRamp": ["#17171d", "#2e2e37", "#474751", "#63636e", "#80808b", "#a2a2ad", "#c4c4ce", "#e7e7ef"]
+      },
+      "open-surface-strong": {
+        "role": "neutral",
+        "displayName": "Open Strong Surface",
+        "canonical": "#dcdce7",
+        "tonalRamp": ["#17171d", "#2d2d37", "#454550", "#5e5e6a", "#7a7a86", "#9898a4", "#b9b9c5", "#dcdce7"]
+      },
+      "open-ink": {
+        "role": "neutral",
+        "displayName": "Open Record Ink",
+        "canonical": "#15151c",
+        "tonalRamp": ["#15151c", "#303038", "#4c4c55", "#6b6b74", "#8b8b94", "#adadb5", "#d0d0d6", "#f2f2f5"]
+      },
+      "open-muted": {
+        "role": "neutral",
+        "displayName": "Open Muted Ink",
+        "canonical": "#555462",
+        "tonalRamp": ["#191820", "#34333e", "#555462", "#73727f", "#92919d", "#b1b0ba", "#d1d0d7", "#f1f0f4"]
+      },
+      "open-line": {
+        "role": "neutral",
+        "displayName": "Open Structural Line",
+        "canonical": "rgba(21, 21, 28, 0.24)",
+        "tonalRamp": ["rgba(21,21,28,0.88)", "rgba(21,21,28,0.72)", "rgba(21,21,28,0.56)", "rgba(21,21,28,0.40)", "rgba(21,21,28,0.24)", "rgba(21,21,28,0.18)", "rgba(21,21,28,0.12)", "rgba(21,21,28,0.06)"]
+      },
+      "open-line-soft": {
+        "role": "neutral",
+        "displayName": "Open Soft Divider",
+        "canonical": "rgba(21, 21, 28, 0.12)",
+        "tonalRamp": ["rgba(21,21,28,0.64)", "rgba(21,21,28,0.48)", "rgba(21,21,28,0.36)", "rgba(21,21,28,0.24)", "rgba(21,21,28,0.16)", "rgba(21,21,28,0.12)", "rgba(21,21,28,0.08)", "rgba(21,21,28,0.04)"]
+      },
+      "open-accent": {
+        "role": "primary",
+        "displayName": "Open Route Violet",
+        "canonical": "#67439a",
+        "tonalRamp": ["#1d142b", "#322048", "#4a2f6e", "#67439a", "#8263ae", "#9f84c2", "#c0acd8", "#eee8f7"]
+      },
+      "open-accent-contrast": {
+        "role": "neutral",
+        "displayName": "Open Route Contrast",
+        "canonical": "#f7f5fb",
+        "tonalRamp": ["#19171e", "#332f3b", "#4d4859", "#696373", "#87808f", "#a8a1af", "#cbc5d2", "#f7f5fb"]
+      },
+      "sealed-ground": {
+        "role": "neutral",
+        "displayName": "Sealed Night Ground",
+        "canonical": "#0e0f15",
+        "tonalRamp": ["#0e0f15", "#25262e", "#3d3e47", "#575861", "#73747d", "#92939b", "#b6b6bd", "#ededf0"]
+      },
+      "sealed-surface": {
+        "role": "neutral",
+        "displayName": "Sealed Information Surface",
+        "canonical": "#171820",
+        "tonalRamp": ["#171820", "#2c2d36", "#43444e", "#5d5e68", "#797a84", "#9899a2", "#babac2", "#eeeeF2"]
+      },
+      "sealed-surface-strong": {
+        "role": "neutral",
+        "displayName": "Sealed Strong Surface",
+        "canonical": "#21222d",
+        "tonalRamp": ["#15161e", "#21222d", "#3a3b47", "#555661", "#71727d", "#90919b", "#b4b4bc", "#eeeeF1"]
+      },
+      "sealed-ink": {
+        "role": "neutral",
+        "displayName": "Sealed Record Ink",
+        "canonical": "#f0eff5",
+        "tonalRamp": ["#18171d", "#302f38", "#4a4953", "#666570", "#83828d", "#a3a2ad", "#c5c4cd", "#f0eff5"]
+      },
+      "sealed-muted": {
+        "role": "neutral",
+        "displayName": "Sealed Muted Ink",
+        "canonical": "#b9b7c3",
+        "tonalRamp": ["#18171e", "#302e38", "#494751", "#64626e", "#807e89", "#9c9aa6", "#b9b7c3", "#efedf4"]
+      },
+      "sealed-line": {
+        "role": "neutral",
+        "displayName": "Sealed Structural Line",
+        "canonical": "rgba(240, 239, 245, 0.27)",
+        "tonalRamp": ["rgba(240,239,245,0.08)", "rgba(240,239,245,0.13)", "rgba(240,239,245,0.20)", "rgba(240,239,245,0.27)", "rgba(240,239,245,0.40)", "rgba(240,239,245,0.56)", "rgba(240,239,245,0.72)", "rgba(240,239,245,0.88)"]
+      },
+      "sealed-line-soft": {
+        "role": "neutral",
+        "displayName": "Sealed Soft Divider",
+        "canonical": "rgba(240, 239, 245, 0.13)",
+        "tonalRamp": ["rgba(240,239,245,0.04)", "rgba(240,239,245,0.08)", "rgba(240,239,245,0.13)", "rgba(240,239,245,0.20)", "rgba(240,239,245,0.30)", "rgba(240,239,245,0.44)", "rgba(240,239,245,0.62)", "rgba(240,239,245,0.82)"]
+      },
+      "sealed-accent": {
+        "role": "primary",
+        "displayName": "Sealed Ultraviolet",
+        "canonical": "#bca4eb",
+        "tonalRamp": ["#21182e", "#392852", "#543c78", "#70569b", "#8d73bb", "#aa91d8", "#bca4eb", "#eee8fb"]
+      },
+      "sealed-accent-contrast": {
+        "role": "neutral",
+        "displayName": "Sealed Route Contrast",
+        "canonical": "#15121a",
+        "tonalRamp": ["#15121a", "#302b35", "#4c4652", "#696270", "#88818e", "#aaa3af", "#ccc6d1", "#f3eff7"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Platform Display", "purpose": "첫 화면의 인물명에만 사용하는 초대형 한국어 제목." },
+      "headline": { "displayName": "Record Headline", "purpose": "프로필 구간과 사건 기록의 큰 제목." },
+      "title": { "displayName": "Board Title", "purpose": "성격 키워드와 사건 정거장명." },
+      "body": { "displayName": "Long-form Record", "purpose": "프로필 설명, 분석, 과거사를 읽는 기본 문장." },
+      "route-label": { "displayName": "Route Label", "purpose": "영문 운행 상태, 코드, 수치 전용." }
+    },
+    "shadows": [
+      { "name": "header-separation", "value": "0 14px 34px -30px var(--shadow)", "purpose": "고정 헤더를 문서 면에서 아주 얕게 분리한다." },
+      { "name": "portrait-edge", "value": "inset -20px 0 46px -42px var(--shadow)", "purpose": "인물 포스터와 정보 보드 사이의 내부 경계를 보조한다." }
+    ],
+    "motion": [
+      { "name": "state-fast", "value": "180ms ease-out", "purpose": "호버, 포커스 보조, disclosure 표식 전환." },
+      { "name": "state-press", "value": "120ms ease-out", "purpose": "버튼의 1px 눌림 피드백." },
+      { "name": "mode-color", "value": "480ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "공개와 봉인 사이의 표면색 전환." },
+      { "name": "portrait-shift", "value": "700ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "봉인 전환 시 인물 사진 크롭과 인상 변화." },
+      { "name": "route-draw", "value": "920ms 180ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "첫 진입에서 노선을 한 방향으로 그린다." },
+      { "name": "reduced-motion", "value": "none", "purpose": "모션 감소 환경에서는 진입 애니메이션, 부드러운 스크롤, 상태 전환을 제거한다." }
+    ],
+    "breakpoints": [
+      { "name": "wide-adjust", "value": "1100px" },
+      { "name": "stack", "value": "860px" },
+      { "name": "mobile", "value": "600px" },
+      { "name": "compact", "value": "360px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Open Mode Switch",
+      "kind": "nav",
+      "refersTo": "mode-switch-selected-open",
+      "description": "정상 운행 기록을 선택한 2상태 프로필 탭.",
+      "html": "<nav class=\"ds-mode-switch\" aria-label=\"프로필 공개 범위\"><button class=\"ds-mode-tab ds-is-selected\"><span class=\"ds-route-code\">OP</span><span><b>공개 프로필</b><small>정상 운행 기록</small></span></button><button class=\"ds-mode-tab\"><span class=\"ds-route-code\">SR</span><span><b>비밀 프로필</b><small>봉인 해제 기록</small></span></button></nav>",
+      "css": ".ds-mode-switch{display:grid;grid-template-columns:1fr 1fr;border-block:1px solid var(--line,rgba(21,21,28,.24));font-family:var(--font-body,'Noto Sans KR Variable',sans-serif)}.ds-mode-tab{min-height:72px;display:grid;grid-template-columns:2.6rem 1fr;align-items:center;gap:.8rem;padding:.75rem;border:0;border-right:1px solid var(--line,rgba(21,21,28,.24));border-radius:0;background:transparent;color:var(--muted,#555462);text-align:left;cursor:pointer;transition:background-color 180ms ease-out,color 180ms ease-out,transform 120ms ease-out}.ds-mode-tab:last-child{border-right:0}.ds-mode-tab:hover{background:var(--surface,#e7e7ef);color:var(--ink,#15151c)}.ds-mode-tab:focus-visible{outline:3px solid var(--accent,#67439a);outline-offset:4px}.ds-mode-tab:active{transform:translateY(1px)}.ds-mode-tab.ds-is-selected{background:var(--accent,#67439a);color:var(--accent-contrast,#f7f5fb)}.ds-route-code{width:2.6rem;aspect-ratio:1;display:grid;place-items:center;border:2px solid currentColor;border-radius:50%;font:700 .76rem/1 var(--font-route,'Barlow Condensed',sans-serif)}.ds-mode-tab>span:last-child{display:flex;flex-direction:column;gap:.2rem}.ds-mode-tab b{font-size:.86rem}.ds-mode-tab small{font-size:.66rem;line-height:1.3}"
+    },
+    {
+      "name": "Sealed Mode Switch",
+      "kind": "nav",
+      "refersTo": "mode-switch-selected-sealed",
+      "description": "자정 팔레트에서 봉인 기록을 선택한 탭 변형.",
+      "html": "<div class=\"ds-secret-surface\"><nav class=\"ds-mode-switch\" aria-label=\"프로필 공개 범위\"><button class=\"ds-mode-tab\"><span class=\"ds-route-code\">OP</span><span><b>공개 프로필</b><small>정상 운행 기록</small></span></button><button class=\"ds-mode-tab ds-is-selected\"><span class=\"ds-route-code\">SR</span><span><b>비밀 프로필</b><small>봉인 해제 기록</small></span></button></nav></div>",
+      "css": ".ds-secret-surface{--ground:#0e0f15;--surface:#171820;--ink:#f0eff5;--muted:#b9b7c3;--line:rgba(240,239,245,.27);--accent:#bca4eb;--accent-contrast:#15121a;padding:1rem;background:var(--ground);color:var(--ink)}.ds-mode-switch{display:grid;grid-template-columns:1fr 1fr;border-block:1px solid var(--line);font-family:'Noto Sans KR Variable',sans-serif}.ds-mode-tab{min-height:72px;display:grid;grid-template-columns:2.6rem 1fr;align-items:center;gap:.8rem;padding:.75rem;border:0;border-right:1px solid var(--line);border-radius:0;background:transparent;color:var(--muted);text-align:left;cursor:pointer}.ds-mode-tab:last-child{border-right:0}.ds-mode-tab:hover{background:var(--surface);color:var(--ink)}.ds-mode-tab:focus-visible{outline:3px solid var(--accent);outline-offset:4px}.ds-mode-tab.ds-is-selected{background:var(--accent);color:var(--accent-contrast)}.ds-route-code{width:2.6rem;aspect-ratio:1;display:grid;place-items:center;border:2px solid currentColor;border-radius:50%;font:700 .76rem/1 'Barlow Condensed',sans-serif}.ds-mode-tab>span:last-child{display:flex;flex-direction:column;gap:.2rem}.ds-mode-tab b{font-size:.86rem}.ds-mode-tab small{font-size:.66rem;line-height:1.3}"
+    },
+    {
+      "name": "Sticky Status Toggle",
+      "kind": "button",
+      "refersTo": "status-toggle-open",
+      "description": "장문 어디서나 반대 기록으로 이동하는 헤더 상태 버튼.",
+      "html": "<button class=\"ds-status-toggle\" type=\"button\" aria-pressed=\"false\">OPEN LINE</button>",
+      "css": ".ds-status-toggle{min-width:7.4rem;padding:.72rem .85rem;border:0;border-radius:0;background:var(--accent,#67439a);color:var(--accent-contrast,#f7f5fb);font:600 .78rem/1 var(--font-route,'Barlow Condensed',sans-serif);letter-spacing:.09em;text-align:center;cursor:pointer;transition:filter 180ms ease-out,transform 120ms ease-out}.ds-status-toggle:hover{filter:brightness(1.08)}.ds-status-toggle:focus-visible{outline:3px solid var(--accent,#67439a);outline-offset:4px}.ds-status-toggle:active{transform:translateY(1px)}"
+    },
+    {
+      "name": "Identity Information Board",
+      "kind": "card",
+      "refersTo": "information-board-open",
+      "description": "한 장의 직각 보드 안에서 신원 항목을 1px 구획선으로 나누는 패턴.",
+      "html": "<dl class=\"ds-info-board\"><div class=\"ds-info-wide\"><dt>이름</dt><dd>御影 雫</dd></div><div><dt>나이</dt><dd>21세</dd></div><div><dt>번호</dt><dd>추후 선점</dd></div></dl>",
+      "css": ".ds-info-board{display:grid;grid-template-columns:1.45fr 1fr .85fr;margin:0;border-top:1px solid var(--line,rgba(21,21,28,.24));border-left:1px solid var(--line,rgba(21,21,28,.24));font-family:var(--font-body,'Noto Sans KR Variable',sans-serif)}.ds-info-board div{min-height:9.25rem;display:flex;flex-direction:column;justify-content:space-between;gap:1.5rem;padding:clamp(1.2rem,2.5vw,2rem);border-right:1px solid var(--line,rgba(21,21,28,.24));border-bottom:1px solid var(--line,rgba(21,21,28,.24));background:var(--ground,#f1f1f6)}.ds-info-board .ds-info-wide{grid-column:span 1;background:var(--surface,#e7e7ef)}.ds-info-board dt{color:var(--muted,#555462);font-size:.72rem;font-weight:650}.ds-info-board dd{margin:0;color:var(--ink,#15151c);font-size:clamp(1.15rem,2.2vw,1.8rem);font-weight:780;line-height:1.35}"
+    },
+    {
+      "name": "Route Stop",
+      "kind": "custom",
+      "description": "노선의 순서와 선택 지점을 표시하는 원형 번호 노드.",
+      "html": "<div class=\"ds-route-stop\"><span>07</span><div><b>현장 조작</b><p>모든 선택은 같은 방향으로 이어진다.</p></div></div>",
+      "css": ".ds-route-stop{display:grid;grid-template-columns:2.8rem 1fr;gap:1.5rem;align-items:start;font-family:var(--font-body,'Noto Sans KR Variable',sans-serif);color:var(--ink,#15151c)}.ds-route-stop>span{width:2.8rem;height:2.8rem;display:grid;place-items:center;border:3px solid var(--accent,#67439a);border-radius:50%;background:var(--ground,#f1f1f6);color:var(--accent,#67439a);font:700 .78rem/1 var(--font-route,'Barlow Condensed',sans-serif)}.ds-route-stop b{display:block;margin:.2rem 0 .65rem;font-size:1.2rem}.ds-route-stop p{max-width:55ch;margin:0;color:var(--muted,#555462);line-height:1.85}"
+    },
+    {
+      "name": "Sealed Transfer Board",
+      "kind": "nav",
+      "description": "봉인 전환 직후 민감 소재와 핵심 증거 경로를 함께 보여 주는 바로가기 보드.",
+      "html": "<aside class=\"ds-transfer-board\" aria-label=\"봉인 기록 바로가기\"><p>스토킹 및 살인 소재 포함</p><a href=\"#\"><strong>3</strong><span>공개 진술의 모순</span></a><a href=\"#\"><strong>7</strong><span>끝을 정한 선택</span></a></aside>",
+      "css": ".ds-transfer-board{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line,rgba(240,239,245,.27));background:var(--surface,#171820);font-family:var(--font-body,'Noto Sans KR Variable',sans-serif);color:var(--ink,#f0eff5)}.ds-transfer-board>p{grid-column:1/-1;margin:0;padding:.55rem .75rem;border-bottom:1px solid var(--line,rgba(240,239,245,.27));color:var(--muted,#b9b7c3);font-size:.75rem;font-weight:650}.ds-transfer-board a{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:.7rem;padding:.7rem .8rem;color:inherit;text-decoration:none}.ds-transfer-board a+a{border-left:1px solid var(--line,rgba(240,239,245,.27))}.ds-transfer-board a:hover span{text-decoration:underline;text-underline-offset:.25em}.ds-transfer-board a:focus-visible{outline:3px solid var(--accent,#bca4eb);outline-offset:4px}.ds-transfer-board strong{color:var(--accent,#bca4eb);font:700 1.9rem/1 var(--font-route,'Barlow Condensed',sans-serif)}.ds-transfer-board span{font-size:.82rem;font-weight:700;line-height:1.35}"
+    },
+    {
+      "name": "History Disclosure",
+      "kind": "custom",
+      "description": "긴 과거사를 기본적으로 접어 두고 명시적인 전문 열람을 제공하는 disclosure.",
+      "html": "<details class=\"ds-history\"><summary><span>과거사 전문 펼치기</span><i aria-hidden=\"true\"></i></summary><p>장문 기록은 최대 72자로 제한해 읽는다.</p></details>",
+      "css": ".ds-history{border-top:1px solid var(--line,rgba(21,21,28,.24));font-family:var(--font-body,'Noto Sans KR Variable',sans-serif);color:var(--ink,#15151c)}.ds-history summary{min-height:5.2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0 .4rem;border-bottom:1px solid var(--line,rgba(21,21,28,.24));cursor:pointer;list-style:none;font-weight:780}.ds-history summary::-webkit-details-marker{display:none}.ds-history summary:focus-visible{outline:3px solid var(--accent,#67439a);outline-offset:4px}.ds-history summary i{position:relative;width:1.35rem;height:1.35rem}.ds-history summary i:before,.ds-history summary i:after{position:absolute;top:50%;left:0;width:100%;height:2px;background:var(--accent,#67439a);content:'';transform:translateY(-50%);transition:transform 180ms ease-out}.ds-history summary i:after{transform:translateY(-50%) rotate(90deg)}.ds-history[open] summary i:after{transform:translateY(-50%)}.ds-history p{max-width:72ch;margin:0;padding-top:2.5rem;color:var(--muted,#555462);line-height:2}"
+    }
+  ],
+  "narrative": {
+    "northStar": "막차 이후 환승도",
+    "overview": "이 시스템은 차가운 역내 운행도와 인물 포스터를 결합해, 상냥한 공개 진술이 봉인된 단방향 사건 기록으로 바뀌는 순간을 보여 준다. 공개 화면은 라벤더빛 회백색 종이와 낮은 채도의 보라 노선으로 정상 운행을 가장하고, 비밀 화면은 같은 구조를 자정의 차콜 바탕과 자외선빛 노선으로 뒤집는다. 장식은 독립적인 문양이 아니라 정보의 연결 관계를 설명하는 선, 정거장, 칸막이로만 사용한다.\n\n시각 밀도는 중간이고 정보량은 높다. 큰 인물 크롭과 플랫폼 규모의 이름이 첫 화면의 감정적 진입점을 맡고, 이후에는 직각 보드와 넓은 행간, 72자 안팎의 본문 폭으로 긴 제출 기록을 읽게 한다. 공개와 비밀은 서로 다른 사이트가 아니라 동일한 인물의 두 운행 상태이므로 레이아웃 문법은 유지하고 색, 노드 수, 이미지 처리, 증거 노출 순서만 재배선한다.",
+    "keyCharacteristics": [
+      "차가운 역내 사인과 단방향 노선을 닮은 정보 구조",
+      "공개 라이트와 비밀 다크가 같은 토큰 역할을 공유하는 이중 상태",
+      "직각 패널, 1px 칸막이, 원형 정거장 노드의 반복",
+      "인물 포스터와 압축 영문 노선 라벨의 대비",
+      "장문의 설정을 스캔과 정독 모두에 맞추는 넓은 여백과 강한 제목 위계"
+    ],
+    "rules": [
+      { "name": "The Same Line Rule", "body": "공개와 비밀에서 색의 역할은 바뀌지 않는다. 바탕, 표면, 잉크, 보조 잉크, 노선 강조색을 일대일로 교체해 동일 인물의 두 상태임을 보존한다.", "section": "colors" },
+      { "name": "The Sparse Signal Rule", "body": "보라색은 연결, 선택, 진실, 포커스를 뜻할 때만 쓴다. 넓은 면을 무작위로 채우거나 세 번째 강조색을 추가하지 않는다.", "section": "colors" },
+      { "name": "The Platform Scale Rule", "body": "대형 한국어 제목은 짧고 결정적인 문구에만 허용한다. 설명 문장을 큰 글씨로 늘리거나 모든 구간을 같은 크기로 외치지 않는다.", "section": "typography" },
+      { "name": "The Two-Family Rule", "body": "한국어 정보는 Noto Sans KR, 영문 운행 코드와 수치는 Barlow Condensed를 사용한다. 별도의 장식 서체는 추가하지 않는다.", "section": "typography" },
+      { "name": "The Route Before Card Rule", "body": "정보는 둥근 카드 묶음으로 분절하지 않는다. 먼저 하나의 선형 경로와 큰 보드를 만들고, 1px 경계로 내부 칸을 나눈다.", "section": "layout" },
+      { "name": "The Flat Station Rule", "body": "정적인 정보 표면에는 그림자를 쓰지 않는다. 위계가 필요하면 표면 단계와 선 굵기, 여백을 먼저 조정한다.", "section": "elevation" },
+      { "name": "The Circle Means Stop Rule", "body": "원은 정거장 또는 순번이라는 의미를 가져야 한다. 일반 컨테이너, 버튼 모서리, 장식 배경에 원형을 남용하지 않는다.", "section": "shapes" }
+    ],
+    "dos": [
+      "**Do** 공개와 봉인 상태에 동일한 정보 구조와 토큰 역할을 유지한다.",
+      "**Do** 직각 보드, 1px 구획선, 의미 있는 원형 정거장으로 정보를 연결한다.",
+      "**Do** 한국어 장문은 최대 72ch와 넓은 행간으로 제한하고 모바일에서 단일 열로 재배치한다.",
+      "**Do** 모든 전환에 키보드 포커스, 정확한 상태 전달, 모션 감소 대체를 함께 제공한다.",
+      "**Do** 인물 이미지에는 참고 범위, 공식 복장과의 차이, 픽크루 출처를 가까이 표시한다."
+    ],
+    "donts": [
+      "**Don't** 둥근 프로필 카드, 유리 질감, 과한 그림자, 떠 있는 카드 묶음으로 운행도 문법을 희석한다.",
+      "**Don't** 보라색 외의 경쟁 강조색이나 의미 없는 장식 노드를 추가한다.",
+      "**Don't** 공개 라이트와 비밀 다크를 별개 브랜드처럼 재설계하거나 색만 바꾼 채 사건 구조를 숨긴다.",
+      "**Don't** 압축 영문 라벨 서체를 한국어 본문이나 긴 문장에 사용한다.",
+      "**Don't** 긴 과거사를 첫 화면에 그대로 펼치거나 인물 이미지의 용도와 출처를 분리한다."
+    ]
+  }
+}
