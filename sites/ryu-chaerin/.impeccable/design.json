@@ -1,0 +1,279 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-13T05:39:27Z",
+  "title": "Design System: WACA 연합 기록 | 류채린",
+  "extensions": {
+    "colorMeta": {
+      "stadium-ink": {
+        "role": "neutral",
+        "displayName": "경기장 먹색",
+        "canonical": "#17191f",
+        "tonalRamp": ["oklch(15% 0.014 275)", "oklch(26% 0.014 275)", "oklch(38% 0.014 275)", "oklch(50% 0.014 275)", "oklch(62% 0.014 275)", "oklch(74% 0.014 275)", "oklch(86% 0.014 275)", "oklch(95% 0.014 275)"]
+      },
+      "record-paper": {
+        "role": "neutral",
+        "displayName": "기록지 아이보리",
+        "canonical": "#f3f0ea",
+        "tonalRamp": ["oklch(15% 0.010 80)", "oklch(26% 0.010 80)", "oklch(38% 0.010 80)", "oklch(50% 0.010 80)", "oklch(62% 0.010 80)", "oklch(74% 0.010 80)", "oklch(86% 0.010 80)", "oklch(95% 0.010 80)"]
+      },
+      "record-surface": {
+        "role": "neutral",
+        "displayName": "기록지 음영",
+        "canonical": "#e7e2d9",
+        "tonalRamp": ["oklch(15% 0.013 78)", "oklch(26% 0.013 78)", "oklch(38% 0.013 78)", "oklch(50% 0.013 78)", "oklch(62% 0.013 78)", "oklch(74% 0.013 78)", "oklch(86% 0.013 78)", "oklch(95% 0.013 78)"]
+      },
+      "muted-copy": {
+        "role": "neutral",
+        "displayName": "연필 회색",
+        "canonical": "#59595f",
+        "tonalRamp": ["oklch(15% 0.010 280)", "oklch(26% 0.010 280)", "oklch(38% 0.010 280)", "oklch(50% 0.010 280)", "oklch(62% 0.010 280)", "oklch(74% 0.010 280)", "oklch(86% 0.010 280)", "oklch(95% 0.010 280)"]
+      },
+      "operational-coral": {
+        "role": "primary",
+        "displayName": "작전 코랄",
+        "canonical": "#d63f55",
+        "tonalRamp": ["oklch(15% 0.150 18)", "oklch(26% 0.150 18)", "oklch(38% 0.150 18)", "oklch(50% 0.150 18)", "oklch(62% 0.150 18)", "oklch(74% 0.150 18)", "oklch(86% 0.150 18)", "oklch(95% 0.150 18)"]
+      },
+      "operational-coral-deep": {
+        "role": "primary",
+        "displayName": "깊은 작전 코랄",
+        "canonical": "#a91f37",
+        "tonalRamp": ["oklch(15% 0.135 18)", "oklch(26% 0.135 18)", "oklch(38% 0.135 18)", "oklch(50% 0.135 18)", "oklch(62% 0.135 18)", "oklch(74% 0.135 18)", "oklch(86% 0.135 18)", "oklch(95% 0.135 18)"]
+      },
+      "operational-coral-hover": {
+        "role": "primary",
+        "displayName": "압축 코랄",
+        "canonical": "#891229",
+        "tonalRamp": ["oklch(15% 0.120 18)", "oklch(26% 0.120 18)", "oklch(38% 0.120 18)", "oklch(50% 0.120 18)", "oklch(62% 0.120 18)", "oklch(74% 0.120 18)", "oklch(86% 0.120 18)", "oklch(95% 0.120 18)"]
+      },
+      "signal-on-night": {
+        "role": "primary",
+        "displayName": "야간 신호 핑크",
+        "canonical": "#ff8998",
+        "tonalRamp": ["oklch(15% 0.100 15)", "oklch(26% 0.100 15)", "oklch(38% 0.100 15)", "oklch(50% 0.100 15)", "oklch(62% 0.100 15)", "oklch(74% 0.100 15)", "oklch(86% 0.100 15)", "oklch(95% 0.100 15)"]
+      },
+      "ink-on-signal": {
+        "role": "neutral",
+        "displayName": "신호 위 아이보리",
+        "canonical": "#fff8f5",
+        "tonalRamp": ["oklch(15% 0.008 38)", "oklch(26% 0.008 38)", "oklch(38% 0.008 38)", "oklch(50% 0.008 38)", "oklch(62% 0.008 38)", "oklch(74% 0.008 38)", "oklch(86% 0.008 38)", "oklch(95% 0.008 38)"]
+      },
+      "rule-line": {
+        "role": "neutral",
+        "displayName": "서류 규칙선",
+        "canonical": "#b8b3aa",
+        "tonalRamp": ["oklch(15% 0.012 75)", "oklch(26% 0.012 75)", "oklch(38% 0.012 75)", "oklch(50% 0.012 75)", "oklch(62% 0.012 75)", "oklch(74% 0.012 75)", "oklch(86% 0.012 75)", "oklch(95% 0.012 75)"]
+      },
+      "focus-blue": {
+        "role": "tertiary",
+        "displayName": "접근성 블루",
+        "canonical": "#1779c5",
+        "tonalRamp": ["oklch(15% 0.120 245)", "oklch(26% 0.120 245)", "oklch(38% 0.120 245)", "oklch(50% 0.120 245)", "oklch(62% 0.120 245)", "oklch(74% 0.120 245)", "oklch(86% 0.120 245)", "oklch(95% 0.120 245)"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "전광판 디스플레이",
+        "purpose": "첫 화면 이름과 가장 큰 정체성 선언에만 사용한다."
+      },
+      "headline": {
+        "displayName": "작전 제목",
+        "purpose": "섹션 선언, 큰 인용, 기록 구간 제목에 사용한다."
+      },
+      "title": {
+        "displayName": "기록 소제목",
+        "purpose": "현장 파일과 능력 규칙의 내부 제목에 사용한다."
+      },
+      "body": {
+        "displayName": "한국어 기록 본문",
+        "purpose": "설명, 서사, 판정 규칙의 장문 읽기에 사용한다."
+      },
+      "label": {
+        "displayName": "분류 레이블",
+        "purpose": "WACA 분류, 숫자 표식, 영문 기록 머리말에 사용한다."
+      }
+    },
+    "shadows": [
+      {
+        "name": "action-signal-glow",
+        "value": "0 12px 28px color-mix(in srgb, var(--accent) 26%, transparent)",
+        "purpose": "주요 행동 아래의 얕은 코랄 잔광이다."
+      },
+      {
+        "name": "scoreboard-float",
+        "value": "0 34px 80px color-mix(in srgb, var(--night) 25%, transparent)",
+        "purpose": "첫 화면 8카운트 보드를 경기장 장비처럼 들어 올린다."
+      }
+    ],
+    "motion": [
+      {
+        "name": "state-standard",
+        "value": "180ms ease",
+        "purpose": "헤더와 내비게이션의 색상 및 위치 전환에 사용한다."
+      },
+      {
+        "name": "action-quick",
+        "value": "160ms ease",
+        "purpose": "주요 행동과 세부 공개 기호의 즉각적인 피드백에 사용한다."
+      },
+      {
+        "name": "count-quick",
+        "value": "150ms ease",
+        "purpose": "8카운트 셀의 이동, 배경, 전경 전환에 사용한다."
+      },
+      {
+        "name": "entry-decelerate",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "첫 화면 카피 720ms와 점수판 840ms 진입에 사용한다."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "0.01ms",
+        "purpose": "모션 감소 환경에서 실질적인 전환을 제거한다."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "stack",
+        "value": "900px"
+      },
+      {
+        "name": "compact",
+        "value": "640px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "주요 작전 행동",
+      "kind": "button",
+      "refersTo": "primary-action",
+      "description": "능력 기록처럼 가장 중요한 목적지로 이동시키는 단일 주요 행동이다.",
+      "html": "<a class=\"ds-primary-action\" href=\"#abilities\">능력 운용 기록 보기</a>",
+      "css": ".ds-primary-action { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; padding: 0 20px; border-radius: 10px; background: var(--accent-surface, #a91f37); color: var(--on-accent, #fff8f5); font-family: 'Noto Sans KR Variable', 'Apple SD Gothic Neo', sans-serif; font-weight: 760; text-decoration: none; white-space: nowrap; box-shadow: 0 12px 28px color-mix(in srgb, var(--accent, #d63f55) 26%, transparent); transition: transform 160ms ease, background 160ms ease; } .ds-primary-action:hover { background: var(--accent-surface-hover, #891229); transform: translateY(-2px); } .ds-primary-action:focus-visible { outline: 3px solid var(--focus, #1779c5); outline-offset: 4px; } .ds-primary-action:active { transform: translateY(1px) scale(0.99); }"
+    },
+    {
+      "name": "기록 내비게이션",
+      "kind": "nav",
+      "refersTo": "navigation-link",
+      "description": "세 개의 주요 기록 구간을 항상 44px 이상의 조작 면으로 유지한다.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"프로필 주요 메뉴\"><a class=\"ds-nav-link\" href=\"#profile\">프로필</a><a class=\"ds-nav-link\" href=\"#abilities\">능력</a><a class=\"ds-nav-link\" href=\"#record\">기록</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 4px; } .ds-nav-link { min-height: 44px; display: inline-flex; align-items: center; padding: 0 14px; border-radius: 10px; color: var(--muted, #59595f); font-family: 'Noto Sans KR Variable', 'Apple SD Gothic Neo', sans-serif; font-size: 0.9rem; font-weight: 650; text-decoration: none; transition: background 180ms ease, color 180ms ease; } .ds-nav-link:hover { background: var(--surface, #e7e2d9); color: var(--ink, #17191f); } .ds-nav-link:focus-visible { outline: 3px solid var(--focus, #1779c5); outline-offset: 4px; }"
+    },
+    {
+      "name": "외관 기록 셀",
+      "kind": "chip",
+      "refersTo": "trait-chip",
+      "description": "캡슐 대신 규칙선 표 안에서 외관 특징을 간결하게 기록한다.",
+      "html": "<span class=\"ds-trait-chip\">호박빛 눈</span>",
+      "css": ".ds-trait-chip { min-height: 72px; display: inline-flex; align-items: center; padding: 14px 18px; border-top: 1px solid var(--line, #b8b3aa); border-right: 1px solid var(--line, #b8b3aa); background: transparent; color: var(--ink, #17191f); font-family: 'Noto Sans KR Variable', 'Apple SD Gothic Neo', sans-serif; font-size: 0.88rem; font-weight: 720; }"
+    },
+    {
+      "name": "8카운트 셀",
+      "kind": "button",
+      "refersTo": "count-cell",
+      "description": "야간 점수판에서 한 박자의 선택 상태를 숫자로 조작한다.",
+      "html": "<button class=\"ds-count-cell\" type=\"button\" aria-pressed=\"true\" aria-label=\"8카운트, 원 모어\">8</button>",
+      "css": ".ds-count-cell { min-width: 44px; min-height: 58px; padding: 0; border: 1px solid color-mix(in srgb, var(--chalk, #f3f0ea) 34%, transparent); border-radius: 8px; background: color-mix(in srgb, var(--chalk, #f3f0ea) 7%, transparent); color: var(--chalk, #f3f0ea); cursor: pointer; font-family: 'Noto Sans KR Variable', 'Apple SD Gothic Neo', sans-serif; font-weight: 800; font-variant-numeric: tabular-nums; transition: transform 150ms ease, background 150ms ease, color 150ms ease; } .ds-count-cell:hover { background: color-mix(in srgb, var(--chalk, #f3f0ea) 16%, transparent); transform: translateY(-2px); } .ds-count-cell[aria-pressed='true'] { border-color: var(--accent-surface, #a91f37); background: var(--accent-surface, #a91f37); color: var(--on-accent, #fff8f5); } .ds-count-cell:focus-visible { outline: 3px solid var(--focus, #1779c5); outline-offset: 4px; } .ds-count-cell:active { transform: translateY(1px) scale(0.98); }"
+    },
+    {
+      "name": "8카운트 작전 보드",
+      "kind": "custom",
+      "refersTo": "operational-card",
+      "description": "현재 루틴과 여덟 박자를 경기장 점수판의 문법으로 보여주는 대표 구성이다.",
+      "html": "<section class=\"ds-count-board\" aria-label=\"8카운트 동기화 보드\"><div class=\"ds-board-head\"><span>LIVE ROUTINE</span><strong>8 COUNT</strong></div><p class=\"ds-count-state\">08 / 원 모어</p><div class=\"ds-count-row\"><button class=\"ds-board-cell\" type=\"button\">1</button><button class=\"ds-board-cell ds-board-cell-active\" type=\"button\" aria-pressed=\"true\">8</button></div></section>",
+      "css": ".ds-count-board { position: relative; overflow: hidden; min-height: 320px; padding: 36px; border-radius: 14px; background: var(--night, #17191f); color: var(--chalk, #f3f0ea); box-shadow: 0 34px 80px color-mix(in srgb, var(--night, #17191f) 25%, transparent); } .ds-count-board::before { content: ''; position: absolute; inset: 0; background: linear-gradient(115deg, transparent 0 66%, color-mix(in srgb, var(--accent, #d63f55) 84%, transparent) 66% 78%, transparent 78%), linear-gradient(color-mix(in srgb, var(--chalk, #f3f0ea) 10%, transparent) 1px, transparent 1px); background-size: auto, 100% 54px; pointer-events: none; } .ds-board-head, .ds-count-state, .ds-count-row { position: relative; z-index: 1; } .ds-board-head { display: flex; justify-content: space-between; gap: 20px; color: color-mix(in srgb, var(--chalk, #f3f0ea) 72%, transparent); font: 760 0.72rem/1.7 'Noto Sans KR Variable', sans-serif; letter-spacing: 0.14em; } .ds-board-head strong { color: var(--accent-on-dark, #ff8998); font-variant-numeric: tabular-nums; } .ds-count-state { margin: 52px 0 28px; font: 400 2.6rem/1.08 'Black Han Sans', sans-serif; letter-spacing: -0.02em; } .ds-count-row { display: flex; gap: 8px; } .ds-board-cell { min-width: 44px; min-height: 58px; border: 1px solid color-mix(in srgb, var(--chalk, #f3f0ea) 34%, transparent); border-radius: 8px; background: color-mix(in srgb, var(--chalk, #f3f0ea) 7%, transparent); color: var(--chalk, #f3f0ea); font-weight: 800; transition: transform 150ms ease, background 150ms ease; } .ds-board-cell:hover { background: color-mix(in srgb, var(--chalk, #f3f0ea) 16%, transparent); transform: translateY(-2px); } .ds-board-cell-active { border-color: var(--accent-surface, #a91f37); background: var(--accent-surface, #a91f37); color: var(--on-accent, #fff8f5); } .ds-board-cell:focus-visible { outline: 3px solid var(--focus, #1779c5); outline-offset: 4px; } .ds-board-cell:active { transform: translateY(1px) scale(0.98); }"
+    },
+    {
+      "name": "야간 능력 기록",
+      "kind": "card",
+      "refersTo": "operational-card",
+      "description": "능력의 선언과 네 가지 운용 지표를 야간 작전 면에 묶는다.",
+      "html": "<article class=\"ds-ability-card\"><span class=\"ds-routine\">01</span><h3 class=\"ds-ability-title\">에이트 카운트: 원 모어</h3><p class=\"ds-ability-copy\">여덟 박자로 아군의 호흡과 진입 시점을 맞춘다.</p><dl class=\"ds-metrics\"><div><dt>대상</dt><dd>아군 최대 4명</dd></div><div><dt>지속</dt><dd>3지문</dd></div></dl></article>",
+      "css": ".ds-ability-card { position: relative; padding: clamp(30px, 6vw, 70px); border-radius: 14px; background: linear-gradient(118deg, transparent 0 90%, color-mix(in srgb, var(--accent, #d63f55) 72%, transparent) 90%), #252832; color: var(--chalk, #f3f0ea); } .ds-routine { position: absolute; top: 20px; right: 24px; color: color-mix(in srgb, currentColor 80%, transparent); font: 800 0.78rem/1.7 'Noto Sans KR Variable', sans-serif; letter-spacing: 0.14em; font-variant-numeric: tabular-nums; } .ds-ability-title { max-width: 760px; margin: 0; font: 400 clamp(2rem, 5vw, 4.4rem)/1.1 'Noto Sans KR Variable', sans-serif; letter-spacing: -0.025em; } .ds-ability-copy { max-width: 58ch; margin: 24px 0 0; color: color-mix(in srgb, currentColor 80%, transparent); font: 400 1.04rem/1.7 'Noto Sans KR Variable', sans-serif; } .ds-metrics { margin: 44px 0 0; display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid color-mix(in srgb, currentColor 35%, transparent); border-bottom: 1px solid color-mix(in srgb, currentColor 35%, transparent); } .ds-metrics div { min-height: 112px; display: flex; flex-direction: column; justify-content: center; padding: 18px; border-right: 1px solid color-mix(in srgb, currentColor 35%, transparent); } .ds-metrics div:last-child { border-right: 0; } .ds-metrics dt { color: color-mix(in srgb, currentColor 80%, transparent); font-size: 0.76rem; font-weight: 700; } .ds-metrics dd { margin: 8px 0 0; font-size: 1.08rem; font-weight: 790; font-variant-numeric: tabular-nums; }"
+    },
+    {
+      "name": "코랄 능력 기록",
+      "kind": "card",
+      "refersTo": "signal-card",
+      "description": "긴급 방호 능력을 단일 코랄 신호 면으로 구분한다.",
+      "html": "<article class=\"ds-signal-card\"><span class=\"ds-signal-routine\">02</span><h3 class=\"ds-signal-title\">스턴트 캐치: 폴 세이프</h3><p class=\"ds-signal-copy\">추락과 충돌의 충격을 여덟 개 안전 카운트로 흡수한다.</p></article>",
+      "css": ".ds-signal-card { position: relative; padding: clamp(30px, 6vw, 70px); border-radius: 14px; background: var(--accent-surface, #a91f37); color: var(--on-accent, #fff8f5); } .ds-signal-routine { position: absolute; top: 20px; right: 24px; color: color-mix(in srgb, currentColor 80%, transparent); font: 800 0.78rem/1.7 'Noto Sans KR Variable', sans-serif; letter-spacing: 0.14em; font-variant-numeric: tabular-nums; } .ds-signal-title { max-width: 760px; margin: 0; font: 400 clamp(2rem, 5vw, 4.4rem)/1.1 'Noto Sans KR Variable', sans-serif; letter-spacing: -0.025em; } .ds-signal-copy { max-width: 58ch; margin: 24px 0 0; color: color-mix(in srgb, currentColor 80%, transparent); font: 400 1.04rem/1.7 'Noto Sans KR Variable', sans-serif; }"
+    },
+    {
+      "name": "세부 규칙 공개",
+      "kind": "custom",
+      "refersTo": "operational-card",
+      "description": "패널티와 파훼법을 기본 공개 상태로 읽히게 하는 작전 기록 행이다.",
+      "html": "<details class=\"ds-disclosure\" open><summary class=\"ds-disclosure-summary\">패널티와 파훼법</summary><div class=\"ds-disclosure-body\"><strong>패널티</strong><p>유지 자세가 무너지면 즉시 해제된다.</p></div></details>",
+      "css": ".ds-disclosure { border-top: 1px solid color-mix(in srgb, currentColor 35%, transparent); color: var(--chalk, #f3f0ea); font-family: 'Noto Sans KR Variable', 'Apple SD Gothic Neo', sans-serif; } .ds-disclosure-summary { min-height: 58px; display: flex; align-items: center; cursor: pointer; font-weight: 800; list-style: none; } .ds-disclosure-summary::-webkit-details-marker { display: none; } .ds-disclosure-summary::after { content: '+'; margin-left: auto; padding-left: 20px; font-size: 1.4rem; font-weight: 500; line-height: 1; transition: transform 160ms ease; } .ds-disclosure[open] .ds-disclosure-summary::after { transform: rotate(45deg); } .ds-disclosure-summary:hover { color: var(--accent-on-dark, #ff8998); } .ds-disclosure-summary:focus-visible { outline: 3px solid var(--focus, #1779c5); outline-offset: 4px; } .ds-disclosure-body { padding: 24px 0 8px; color: color-mix(in srgb, currentColor 80%, transparent); } .ds-disclosure-body p { margin: 18px 0 0; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "8카운트 작전 기록",
+    "overview": "이 시스템은 치어 안무의 8카운트 시트와 WACA 작전 서류를 한 장의 기록물처럼 결합한다. 먹색 경기장 표면 위에 아이보리 기록지를 겹치고, 코랄 레드는 현재 선택과 작전 전환만 알리는 단일 신호로 사용한다. 에너지는 장식의 양보다 카운트, 포메이션 선, 숫자 리듬, 강한 명암 전환에서 나온다.\n\n화면은 읽기를 우선하지만 정적인 문서처럼 보이지 않는다. 큰 제목과 비대칭 열, 가로 규칙선, 각진 점수판이 긴 한국어 본문을 작전 기록의 순서로 나누며, 조작 가능한 8카운트 보드가 세계관과 사용성을 한 번에 보여준다. 일반적인 프로필 카드 모음과 초상화 중심 구성을 거부하고, 편집 지면처럼 이어지는 섹션과 측정 가능한 능력 규칙을 전면에 둔다.",
+    "keyCharacteristics": [
+      "먹색 경기장과 아이보리 기록지의 강한 명암 교대",
+      "한 화면에 하나의 목소리로 쓰이는 코랄 레드 작전 신호",
+      "8분할 카운트, 포메이션 선, 숫자 기록이 만드는 경기 운영 리듬",
+      "큰 한글 디스플레이와 촘촘한 본문의 편집형 대비",
+      "비대칭 열과 연속 지면을 중심으로 한 비카드형 프로필 구조"
+    ],
+    "rules": [
+      {
+        "name": "The 단일 신호 Rule",
+        "body": "코랄은 현재 선택, 작전 전환, 중요한 분류에만 쓴다. 장식용 보조색을 추가하지 않는다.",
+        "section": "colors"
+      },
+      {
+        "name": "The 역할 보존 Rule",
+        "body": "시스템 테마가 바뀌어도 야간 점수판과 아이보리 기록 전경의 역할은 서로 뒤집지 않는다.",
+        "section": "colors"
+      },
+      {
+        "name": "The 제목 압축 Rule",
+        "body": "Black Han Sans는 큰 선언과 카운트 상태에만 쓴다. 긴 본문과 작은 조작 레이블에는 사용하지 않는다.",
+        "section": "typography"
+      },
+      {
+        "name": "The 숫자 정렬 Rule",
+        "body": "카운트와 작전 지표에는 tabular 숫자를 사용해 기록표의 열이 흔들리지 않게 한다.",
+        "section": "typography"
+      },
+      {
+        "name": "The 연속 지면 Rule",
+        "body": "기본 정보 구조는 서로 떨어진 작은 카드 묶음이 아니라, 넓은 섹션과 규칙선이 이어지는 편집 지면으로 만든다.",
+        "section": "layout"
+      },
+      {
+        "name": "The 비대칭 균형 Rule",
+        "body": "두 열이 필요할 때 같은 폭을 자동으로 선택하지 않는다. 제목, 기록, 능력의 중요도에 따라 0.8 대 1.2 안팎의 긴장을 유지한다.",
+        "section": "layout"
+      },
+      {
+        "name": "The 제한된 부유 Rule",
+        "body": "그림자는 주요 행동과 첫 화면 점수판에만 허용한다. 정보의 위계는 먼저 톤과 규칙선으로 해결한다.",
+        "section": "elevation"
+      },
+      {
+        "name": "The 세 단계 곡률 Rule",
+        "body": "작은 조작은 8px, 행동은 10px, 큰 기록 면은 14px만 사용한다. 알약형 모서리와 과도하게 둥근 프로필 카드는 만들지 않는다.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do 코랄은 선택, 분류, 작전 전환처럼 의미가 있는 신호에만 사용한다.",
+      "Do 긴 한국어 규칙은 큰 선언형 제목, 지표 행, 세부 본문의 순서로 나눈다.",
+      "Do 8분할 카운트와 포메이션 선을 세계관과 기능이 만나는 대표 패턴으로 재사용한다.",
+      "Do 라이트와 다크 테마에서 키보드 포커스, 44px 최소 조작 크기, 모션 감소를 유지한다.",
+      "Do 인물 외관은 텍스트 기록과 기하학으로 표현한다."
+    ],
+    "donts": [
+      "Don't 일반적인 작은 프로필 카드 여러 장으로 페이지를 분절하지 않는다.",
+      "Don't 코랄과 경쟁하는 장식용 보조색이나 그라데이션 팔레트를 추가하지 않는다.",
+      "Don't 초상화, 인물 실루엣, 이미지 자리표시자를 만들지 않는다.",
+      "Don't 모든 컨테이너에 그림자나 알약형 모서리를 적용하지 않는다.",
+      "Don't 장식 때문에 능력의 범위, 지속, 재사용 대기, 패널티와 파훼 순서를 흐리지 않는다."
+    ]
+  }
+}
