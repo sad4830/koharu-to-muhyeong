@@ -336,8 +336,8 @@ export default function KarmaDossier() {
                 </p>
                 <dl className="ability-stats">
                   <div><dt>발동</dt><dd>1턴</dd></div>
-                  <div><dt>지속</dt><dd>전투 12턴 · 비전투 60분</dd></div>
-                  <div><dt>재사용</dt><dd>해제 후 3턴 · 비전투 10분</dd></div>
+                  <div><dt>지속</dt><dd>전투 12턴 · 비전투 60턴</dd></div>
+                  <div><dt>재사용</dt><dd>해제 후 3턴 · 비전투 10턴</dd></div>
                   <div><dt>보유 설계</dt><dd>최대 3개</dd></div>
                 </dl>
                 <details>
