@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-13T15:55:25Z",
+  "title": "Design System: WACA Karma Archive",
+  "extensions": {
+    "colorMeta": {
+      "archive-black": {
+        "role": "neutral",
+        "displayName": "먹빛 기록지",
+        "canonical": "#090707",
+        "tonalRamp": ["oklch(15% 0.004 17.7)", "oklch(25% 0.004 17.7)", "oklch(35% 0.004 17.7)", "oklch(45% 0.004 17.7)", "oklch(55% 0.004 17.7)", "oklch(65% 0.004 17.7)", "oklch(80% 0.004 17.7)", "oklch(95% 0.004 17.7)"]
+      },
+      "archive-black-deep": {
+        "role": "neutral",
+        "displayName": "먹빛 기록지 심부",
+        "canonical": "#050404",
+        "tonalRamp": ["oklch(15% 0.003 17.6)", "oklch(25% 0.003 17.6)", "oklch(35% 0.003 17.6)", "oklch(45% 0.003 17.6)", "oklch(55% 0.003 17.6)", "oklch(65% 0.003 17.6)", "oklch(80% 0.003 17.6)", "oklch(95% 0.003 17.6)"]
+      },
+      "dossier-surface": {
+        "role": "neutral",
+        "displayName": "먹빛 기록층",
+        "canonical": "#120d0e",
+        "tonalRamp": ["oklch(15% 0.009 4.6)", "oklch(25% 0.009 4.6)", "oklch(35% 0.009 4.6)", "oklch(45% 0.009 4.6)", "oklch(55% 0.009 4.6)", "oklch(65% 0.009 4.6)", "oklch(80% 0.009 4.6)", "oklch(95% 0.009 4.6)"]
+      },
+      "dossier-surface-raised": {
+        "role": "neutral",
+        "displayName": "먹빛 기록층 상부",
+        "canonical": "#1a1214",
+        "tonalRamp": ["oklch(15% 0.014 1.8)", "oklch(25% 0.014 1.8)", "oklch(35% 0.014 1.8)", "oklch(45% 0.014 1.8)", "oklch(55% 0.014 1.8)", "oklch(65% 0.014 1.8)", "oklch(80% 0.014 1.8)", "oklch(95% 0.014 1.8)"]
+      },
+      "funeral-ivory": {
+        "role": "neutral",
+        "displayName": "장례의 상아",
+        "canonical": "#f2eadc",
+        "tonalRamp": ["oklch(15% 0.021 81.8)", "oklch(25% 0.021 81.8)", "oklch(35% 0.021 81.8)", "oklch(45% 0.021 81.8)", "oklch(55% 0.021 81.8)", "oklch(65% 0.021 81.8)", "oklch(80% 0.021 81.8)", "oklch(95% 0.021 81.8)"]
+      },
+      "funeral-ivory-strong": {
+        "role": "neutral",
+        "displayName": "장례의 상아 선명",
+        "canonical": "#fff9ed",
+        "tonalRamp": ["oklch(15% 0.017 84.6)", "oklch(25% 0.017 84.6)", "oklch(35% 0.017 84.6)", "oklch(45% 0.017 84.6)", "oklch(55% 0.017 84.6)", "oklch(65% 0.017 84.6)", "oklch(80% 0.017 84.6)", "oklch(95% 0.017 84.6)"]
+      },
+      "testimony-muted": {
+        "role": "neutral",
+        "displayName": "퇴색한 증언",
+        "canonical": "#c6b7aa",
+        "tonalRamp": ["oklch(15% 0.025 63.4)", "oklch(25% 0.025 63.4)", "oklch(35% 0.025 63.4)", "oklch(45% 0.025 63.4)", "oklch(55% 0.025 63.4)", "oklch(65% 0.025 63.4)", "oklch(80% 0.025 63.4)", "oklch(95% 0.025 63.4)"]
+      },
+      "record-faint": {
+        "role": "neutral",
+        "displayName": "낡은 기록",
+        "canonical": "#8b7c73",
+        "tonalRamp": ["oklch(15% 0.023 53.0)", "oklch(25% 0.023 53.0)", "oklch(35% 0.023 53.0)", "oklch(45% 0.023 53.0)", "oklch(55% 0.023 53.0)", "oklch(65% 0.023 53.0)", "oklch(80% 0.023 53.0)", "oklch(95% 0.023 53.0)"]
+      },
+      "record-line": {
+        "role": "neutral",
+        "displayName": "상아색 기록선",
+        "canonical": "rgba(242, 234, 220, 0.18)",
+        "tonalRamp": ["oklch(15% 0.021 81.8 / 0.18)", "oklch(25% 0.021 81.8 / 0.18)", "oklch(35% 0.021 81.8 / 0.18)", "oklch(45% 0.021 81.8 / 0.18)", "oklch(55% 0.021 81.8 / 0.18)", "oklch(65% 0.021 81.8 / 0.18)", "oklch(80% 0.021 81.8 / 0.18)", "oklch(95% 0.021 81.8 / 0.18)"]
+      },
+      "record-line-strong": {
+        "role": "neutral",
+        "displayName": "상아색 기록선 강조",
+        "canonical": "rgba(242, 234, 220, 0.42)",
+        "tonalRamp": ["oklch(15% 0.021 81.8 / 0.42)", "oklch(25% 0.021 81.8 / 0.42)", "oklch(35% 0.021 81.8 / 0.42)", "oklch(45% 0.021 81.8 / 0.42)", "oklch(55% 0.021 81.8 / 0.42)", "oklch(65% 0.021 81.8 / 0.42)", "oklch(80% 0.021 81.8 / 0.42)", "oklch(95% 0.021 81.8 / 0.42)"]
+      },
+      "coagulated-red": {
+        "role": "primary",
+        "displayName": "응고된 적색",
+        "canonical": "#ad1937",
+        "tonalRamp": ["oklch(15% 0.179 17.5)", "oklch(25% 0.179 17.5)", "oklch(35% 0.179 17.5)", "oklch(45% 0.179 17.5)", "oklch(55% 0.179 17.5)", "oklch(65% 0.179 17.5)", "oklch(80% 0.179 17.5)", "oklch(95% 0.179 17.5)"]
+      },
+      "coagulated-red-dark": {
+        "role": "primary",
+        "displayName": "응고된 적색 음영",
+        "canonical": "#671023",
+        "tonalRamp": ["oklch(15% 0.119 14.9)", "oklch(25% 0.119 14.9)", "oklch(35% 0.119 14.9)", "oklch(45% 0.119 14.9)", "oklch(55% 0.119 14.9)", "oklch(65% 0.119 14.9)", "oklch(80% 0.119 14.9)", "oklch(95% 0.119 14.9)"]
+      },
+      "coagulated-red-deep": {
+        "role": "primary",
+        "displayName": "응고된 적색 봉인",
+        "canonical": "#4d0817",
+        "tonalRamp": ["oklch(15% 0.099 15.4)", "oklch(25% 0.099 15.4)", "oklch(35% 0.099 15.4)", "oklch(45% 0.099 15.4)", "oklch(55% 0.099 15.4)", "oklch(65% 0.099 15.4)", "oklch(80% 0.099 15.4)", "oklch(95% 0.099 15.4)"]
+      },
+      "verdict-red": {
+        "role": "primary",
+        "displayName": "응고된 적색 판결",
+        "canonical": "#ff5a68",
+        "tonalRamp": ["oklch(15% 0.200 19.2)", "oklch(25% 0.200 19.2)", "oklch(35% 0.200 19.2)", "oklch(45% 0.200 19.2)", "oklch(55% 0.200 19.2)", "oklch(65% 0.200 19.2)", "oklch(80% 0.200 19.2)", "oklch(95% 0.200 19.2)"]
+      },
+      "ark-afterglow": {
+        "role": "secondary",
+        "displayName": "ARK 잔광",
+        "canonical": "#7bd6ce",
+        "tonalRamp": ["oklch(15% 0.088 188.3)", "oklch(25% 0.088 188.3)", "oklch(35% 0.088 188.3)", "oklch(45% 0.088 188.3)", "oklch(55% 0.088 188.3)", "oklch(65% 0.088 188.3)", "oklch(80% 0.088 188.3)", "oklch(95% 0.088 188.3)"]
+      },
+      "ark-afterglow-dark": {
+        "role": "secondary",
+        "displayName": "ARK 잔광 심부",
+        "canonical": "#123d3b",
+        "tonalRamp": ["oklch(15% 0.047 190.8)", "oklch(25% 0.047 190.8)", "oklch(35% 0.047 190.8)", "oklch(45% 0.047 190.8)", "oklch(55% 0.047 190.8)", "oklch(65% 0.047 190.8)", "oklch(80% 0.047 190.8)", "oklch(95% 0.047 190.8)"]
+      },
+      "record-paper": {
+        "role": "neutral",
+        "displayName": "장례의 상아 기록지",
+        "canonical": "#ece2d1",
+        "tonalRamp": ["oklch(15% 0.025 81.1)", "oklch(25% 0.025 81.1)", "oklch(35% 0.025 81.1)", "oklch(45% 0.025 81.1)", "oklch(55% 0.025 81.1)", "oklch(65% 0.025 81.1)", "oklch(80% 0.025 81.1)", "oklch(95% 0.025 81.1)"]
+      },
+      "record-paper-ink": {
+        "role": "neutral",
+        "displayName": "먹빛 기록 잉크",
+        "canonical": "#241719",
+        "tonalRamp": ["oklch(15% 0.021 8.7)", "oklch(25% 0.021 8.7)", "oklch(35% 0.021 8.7)", "oklch(45% 0.021 8.7)", "oklch(55% 0.021 8.7)", "oklch(65% 0.021 8.7)", "oklch(80% 0.021 8.7)", "oklch(95% 0.021 8.7)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "첫 화면의 인명과 봉인 장면의 단일 판결." },
+      "headline": { "displayName": "Headline", "purpose": "주요 기록 구간의 대형 제목." },
+      "title": { "displayName": "Title", "purpose": "사건 장, 능력명, 관계 기록의 서사 단위." },
+      "body": { "displayName": "Body", "purpose": "긴 한국어 기록문과 설명." },
+      "label": { "displayName": "Evidence Label", "purpose": "사건 코드, 시간, 등급, ARK 상태." },
+      "action": { "displayName": "Action", "purpose": "봉인 개봉과 기록 조작을 위한 굵은 고딕." }
+    },
+    "shadows": [
+      {
+        "name": "persistent-music-console",
+        "value": "0 20px 65px rgba(0, 0, 0, 0.55)",
+        "purpose": "화면에 고정된 공식 음악 재생 패널을 기록 본문과 분리한다."
+      }
+    ],
+    "motion": [
+      { "name": "state-color", "value": "180ms ease", "purpose": "버튼의 배경, 활자, 경계색 전환." },
+      { "name": "seal-response", "value": "200ms ease", "purpose": "봉인 버튼의 색 반전과 2px 이동." },
+      { "name": "archive-reveal", "value": "560ms ease", "purpose": "개봉 뒤 전체 기록이 한 번 나타나는 전환." },
+      { "name": "sealed-record-open", "value": "900ms cubic-bezier(0.2, 0.8, 0.2, 1)", "purpose": "기밀 부록이 아래에서 42px 올라오는 공개 동작." },
+      { "name": "verdict-turn", "value": "1100ms cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "게이트의 결손 원이 판결 위치로 회전하는 단일 동작." },
+      { "name": "breath-cycle", "value": "7s ease-in-out", "purpose": "고백 비용 구간의 느린 호흡 증거 모티프." }
+    ],
+    "breakpoints": [
+      { "name": "tablet-collapse", "value": "980px" },
+      { "name": "mobile-dossier", "value": "640px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Record Action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "공식 음악 재생과 기록 개봉을 하나의 판결 행동으로 묶는 주 버튼.",
+      "html": "<button class=\"ds-btn-primary\" type=\"button\">기록을 열고 0:00부터 재생</button>",
+      "css": ".ds-btn-primary { min-height: 52px; border: 1px solid transparent; padding: 0.85rem 1.25rem; background: var(--red); color: #fff8ec; font-family: var(--font-body), sans-serif; font-size: 1rem; font-weight: 800; cursor: pointer; transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease; } .ds-btn-primary:hover { background: var(--red-bright); color: #1c090d; } .ds-btn-primary:focus-visible { outline: 3px solid var(--cyan); outline-offset: 4px; } .ds-btn-primary:active { background: var(--red-dark); color: #fff8ec; } .ds-btn-primary:disabled { cursor: wait; opacity: 0.58; }"
+    },
+    {
+      "name": "Secondary Record Action",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "음악 연결 실패처럼 보조 경로가 실제로 필요할 때만 나타나는 투명 버튼.",
+      "html": "<button class=\"ds-btn-secondary\" type=\"button\">기록만 먼저 열기</button>",
+      "css": ".ds-btn-secondary { min-height: 52px; border: 1px solid var(--line-strong); padding: 0.85rem 1.25rem; background: transparent; color: var(--ink); font-family: var(--font-body), sans-serif; font-size: 1rem; font-weight: 800; cursor: pointer; transition: color 180ms ease, border-color 180ms ease; } .ds-btn-secondary:hover { border-color: var(--ink); color: var(--ink-strong); } .ds-btn-secondary:focus-visible { outline: 3px solid var(--cyan); outline-offset: 4px; } .ds-btn-secondary:active { border-color: var(--red-bright); color: var(--red-bright); }"
+    },
+    {
+      "name": "Seal Disclosure Button",
+      "kind": "button",
+      "refersTo": "button-seal",
+      "description": "06:66 기밀 부록을 열고 닫는 상아색 윤곽 버튼.",
+      "html": "<button class=\"ds-btn-seal\" type=\"button\" aria-expanded=\"false\">06:66 봉인 기록 열람</button>",
+      "css": ".ds-btn-seal { min-height: 56px; padding: 0.9rem 1.5rem; border: 1px solid rgba(255, 245, 229, 0.74); background: transparent; color: #fff1df; font-family: var(--font-body), sans-serif; font-size: 1rem; font-weight: 900; letter-spacing: 0.08em; cursor: pointer; transition: background 200ms ease, color 200ms ease, transform 200ms ease; } .ds-btn-seal:hover { background: #fff1df; color: var(--red-deep); transform: translateY(-2px); } .ds-btn-seal:focus-visible { outline: 3px solid #fff1df; outline-offset: 5px; } .ds-btn-seal:active { transform: translateY(0); }"
+    },
+    {
+      "name": "Archive Navigation",
+      "kind": "nav",
+      "refersTo": "archive-nav",
+      "description": "기록 개봉 뒤에만 나타나는 WACA 브랜드와 네 개의 문서 목차.",
+      "html": "<div class=\"ds-archive-nav\"><a class=\"ds-nav-brand\" href=\"#\"><span>WACA</span><b>대한민국 · II</b></a><nav aria-label=\"기록 목차\"><a href=\"#\">인적 기록</a><a href=\"#\">이능 판정</a><a href=\"#\">사건 기록</a><a href=\"#\">봉인 문서</a></nav></div>",
+      "css": ".ds-archive-nav { display: grid; grid-template-columns: auto 1fr; align-items: center; min-height: 64px; padding: 0 3vw; border-bottom: 1px solid var(--line); background: var(--bg); color: var(--ink); font-family: var(--font-body), sans-serif; } .ds-nav-brand { display: flex; align-items: baseline; gap: 0.8rem; color: inherit; text-decoration: none; } .ds-nav-brand span { font-family: var(--font-data), monospace; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.12em; } .ds-nav-brand b { color: var(--red-bright); font-family: var(--font-data), monospace; font-size: 0.67rem; font-weight: 500; letter-spacing: 0.1em; } .ds-archive-nav nav { display: flex; justify-content: center; gap: clamp(1rem, 3vw, 3rem); } .ds-archive-nav nav a { color: var(--muted); font-size: 0.78rem; font-weight: 700; text-decoration: none; } .ds-archive-nav nav a:hover { color: var(--ink-strong); text-decoration: underline; text-underline-offset: 0.24em; } .ds-archive-nav a:focus-visible { outline: 3px solid var(--cyan); outline-offset: 4px; } .ds-archive-nav nav a:active { color: var(--red-bright); } @media (max-width: 640px) { .ds-archive-nav { grid-template-columns: 1fr; min-height: 56px; padding: 0 0.45rem; border-top: 1px solid var(--line); border-bottom: 0; } .ds-nav-brand { display: none; } .ds-archive-nav nav { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; width: 100%; } .ds-archive-nav nav a { display: grid; place-items: center; min-height: 52px; font-size: 0.68rem; text-align: center; } }"
+    },
+    {
+      "name": "II Grade Classification Panel",
+      "kind": "card",
+      "refersTo": "classification-card",
+      "description": "등급과 전투 상한을 하나의 응고된 적색 판정판으로 묶는 서명 카드.",
+      "html": "<aside class=\"ds-classification\"><span>II등급 현장 판정</span><strong>II</strong><p>개인 전투와 제한 지역 제압 가능.</p><dl><div><dt>최대 적용 반경</dt><dd>60 m</dd></div><div><dt>권능</dt><dd>미각성</dd></div></dl></aside>",
+      "css": ".ds-classification { min-height: 490px; padding: 2.25rem; background: var(--red); color: #fff8ec; font-family: var(--font-body), sans-serif; } .ds-classification > span { font-family: var(--font-data), monospace; font-size: 0.67rem; letter-spacing: 0.1em; } .ds-classification > strong { display: block; margin: 1rem 0; font-family: var(--font-display), serif; font-size: clamp(7rem, 12vw, 11rem); font-weight: 400; line-height: 0.85; } .ds-classification > p { margin: 2rem 0; font-size: 0.9rem; line-height: 1.8; } .ds-classification dl { margin: 0; border-top: 1px solid rgba(255, 248, 236, 0.45); } .ds-classification dl > div { display: flex; justify-content: space-between; gap: 1rem; padding: 0.7rem 0; border-bottom: 1px solid rgba(255, 248, 236, 0.25); } .ds-classification dt { color: rgba(255, 248, 236, 0.72); font-size: 0.78rem; font-weight: 700; } .ds-classification dd { margin: 0; color: #fff8ec; font-weight: 600; }"
+    },
+    {
+      "name": "Fact Ledger",
+      "kind": "card",
+      "refersTo": "ledger-row",
+      "description": "신원과 판정 값을 카드 없이 1px 기록선으로 정렬하는 정의 장부.",
+      "html": "<dl class=\"ds-fact-ledger\"><div><dt>이름</dt><dd>서유화 徐有花</dd></div><div><dt>등급</dt><dd>II등급</dd></div><div><dt>소속</dt><dd>세계 이능 범죄 대응 연합 WACA</dd></div></dl>",
+      "css": ".ds-fact-ledger { margin: 0; border-top: 1px solid var(--line-strong); color: var(--ink); font-family: var(--font-body), sans-serif; } .ds-fact-ledger > div { display: grid; grid-template-columns: minmax(120px, 0.36fr) 1fr; gap: 1.5rem; padding: 1.1rem 0; border-bottom: 1px solid var(--line); } .ds-fact-ledger dt { color: var(--faint); font-size: 0.78rem; font-weight: 700; } .ds-fact-ledger dd { margin: 0; color: var(--ink-strong); font-weight: 600; } @media (max-width: 640px) { .ds-fact-ledger > div { grid-template-columns: 1fr; gap: 0.35rem; } }"
+    },
+    {
+      "name": "Ability Disclosure",
+      "kind": "custom",
+      "refersTo": "disclosure-row",
+      "description": "능력의 패널티와 파훼법을 밝은 증거지 안에서 펼치는 장부 행.",
+      "html": "<details class=\"ds-disclosure\"><summary>패널티와 파훼법 확인</summary><div><p><b>강제 해제:</b> 발동 조건이 깨지면 즉시 종료된다.</p><p><b>파훼:</b> 공개된 조건을 끊어 대응한다.</p></div></details>",
+      "css": ".ds-disclosure { margin-top: 2rem; border-top: 1px solid color-mix(in srgb, var(--paper-ink) 28%, transparent); border-bottom: 1px solid color-mix(in srgb, var(--paper-ink) 28%, transparent); background: var(--paper); color: var(--paper-ink); font-family: var(--font-body), sans-serif; } .ds-disclosure summary { min-height: 52px; padding: 0.85rem 0; cursor: pointer; color: var(--paper-ink); font-weight: 800; } .ds-disclosure summary:hover { color: var(--red-deep); } .ds-disclosure summary:focus-visible { outline: 3px solid var(--cyan); outline-offset: 4px; } .ds-disclosure summary:active { color: var(--red); } .ds-disclosure > div { padding: 0.5rem 0 1.5rem; } .ds-disclosure p { margin: 0.7rem 0; color: color-mix(in srgb, var(--paper-ink) 78%, transparent); font-size: 0.9rem; } .ds-disclosure[open] summary { border-bottom: 1px solid color-mix(in srgb, var(--paper-ink) 18%, transparent); }"
+    },
+    {
+      "name": "Six Confessions Petal Gauge",
+      "kind": "chip",
+      "refersTo": "petal-gauge-active",
+      "description": "《업경: 여섯 고백》의 충전 수만 보여 주는 서사 전용 상태 표시.",
+      "html": "<div class=\"ds-petal-gauge\" aria-label=\"여섯 개 중 네 개 활성\"><span class=\"ds-petal is-active\"></span><span class=\"ds-petal is-active\"></span><span class=\"ds-petal is-active\"></span><span class=\"ds-petal is-active\"></span><span class=\"ds-petal\"></span><span class=\"ds-petal\"></span></div>",
+      "css": ".ds-petal-gauge { display: flex; gap: 0.7rem; margin: 1.5rem 0; color: var(--paper-ink); } .ds-petal { width: 24px; height: 38px; border: 1px solid currentColor; border-radius: 100% 0 100% 0; opacity: 0.35; transform: rotate(35deg); } .ds-petal.is-active { background: var(--red); border-color: var(--red); opacity: 1; }"
+    },
+    {
+      "name": "Persistent Music Console",
+      "kind": "custom",
+      "refersTo": "music-console",
+      "description": "공식 MV 상태와 재생 조작을 기록 전체에 걸쳐 유지하는 유일한 lifted surface.",
+      "html": "<aside class=\"ds-music-console\" aria-label=\"테마곡 재생 패널\"><div class=\"ds-music-head\"><span class=\"ds-state-dot is-playing\"></span><p><b>염라 (Karma)</b><span>달의하루 · 공식 MV · 재생 중</span></p><button type=\"button\">영상 접기</button></div><div class=\"ds-music-controls\"><button type=\"button\">일시정지</button><button type=\"button\">음소거</button><a href=\"#\">공식 영상</a></div></aside>",
+      "css": ".ds-music-console { width: min(365px, calc(100vw - 2rem)); border: 1px solid rgba(255, 245, 229, 0.3); background: #070707; color: #fff5e7; box-shadow: 0 20px 65px rgba(0, 0, 0, 0.55); font-family: var(--font-body), sans-serif; } .ds-music-head { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 0.7rem; min-height: 58px; padding: 0.7rem 0.9rem; } .ds-music-head p { display: grid; margin: 0; line-height: 1.25; } .ds-music-head p b { font-size: 0.8rem; } .ds-music-head p span { color: var(--muted); font-family: var(--font-data), monospace; font-size: 0.6rem; } .ds-music-head button { min-height: 40px; padding: 0.35rem 0.5rem; border: 0; background: transparent; color: var(--cyan); cursor: pointer; font-size: 0.7rem; } .ds-state-dot { width: 8px; height: 8px; border: 1px solid var(--red-bright); border-radius: 50%; } .ds-state-dot.is-playing { background: var(--red-bright); box-shadow: 0 0 13px var(--red-bright); } .ds-music-controls { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255, 245, 229, 0.2); } .ds-music-controls > * { display: grid; place-items: center; min-height: 44px; padding: 0.5rem; border: 0; border-right: 1px solid rgba(255, 245, 229, 0.15); background: transparent; color: #fff5e7; cursor: pointer; font-size: 0.68rem; text-align: center; text-decoration: none; } .ds-music-controls > *:last-child { border-right: 0; } .ds-music-console button:hover, .ds-music-console a:hover { background: rgba(255, 255, 255, 0.08); } .ds-music-console button:focus-visible, .ds-music-console a:focus-visible { outline: 3px solid var(--cyan); outline-offset: -3px; } .ds-music-console button:active, .ds-music-console a:active { color: var(--red-bright); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "봉인된 업경 기록",
+    "overview": "이 시스템은 WACA의 심판 서류를 봉인 해제하는 경험이자, 한 사람의 생일 기록과 사망 기록이 겹쳐 보이는 의식이다. 검은 기록층 위에 장례의 상아 활자와 응고된 적색 판결을 놓고, ARK 잔광만이 기계적으로 사실을 증명한다. 분위기는 ceremonial, forensic, elegiac, restrained의 순서로 작동한다. 먼저 입장 의식을 만들고, 다음으로 판독 가능한 증거를 제시하며, 마지막에 애도와 생존의 여운을 남긴다.\n\n화면은 감정적이지만 감상적으로 흐르지 않는다. 큰 명조 제목과 긴 정적, 얇은 기록선과 수치표, 먹빛과 상아색 기록지의 급격한 전환이 서사를 운반한다. 모든 표면과 조작부는 severe, tactile, dossier-like, square-edged를 기준으로 하며, 둥근 형태는 거울, 결손 원, 촛불, 여섯 꽃잎처럼 증거가 되는 상징에만 허용한다. 인물 초상이나 외부 풍경 이미지는 사용하지 않고 외관도 기록문으로만 남긴다.",
+    "keyCharacteristics": [
+      "검은 기록층과 상아색 증거지 사이의 판결 전환",
+      "응고된 적색 봉인과 희소한 ARK 잔광",
+      "명조 서사, 고딕 본문, 모노스페이스 증거 라벨의 엄격한 역할 분담",
+      "직각 표면, 1px 기록선, 증거에만 허용되는 원과 꽃잎",
+      "평평한 색면 중첩과 음악 콘솔에만 허용되는 지속적 elevation"
+    ],
+    "rules": [
+      { "name": "The Sealed Verdict Rule", "body": "응고된 적색은 봉인, 판결, 오류, 활성 상태에만 쓴다. 넓은 장식색으로 소비하지 않는다.", "section": "colors" },
+      { "name": "The ARK Is Evidence Rule", "body": "ARK 잔광은 시스템이 확인한 정보와 접근성 초점에만 쓴다. 감정적 장식이나 넓은 배경으로 확장하지 않는다.", "section": "colors" },
+      { "name": "The Serif Bears Memory Rule", "body": "감정과 기억을 운반하는 제목, 능력명, 판결 인용은 명조로 쓴다. 설명 UI까지 명조로 확장하지 않는다.", "section": "typography" },
+      { "name": "The Monospace Proves, Never Performs Rule", "body": "모노스페이스는 증거 라벨과 수치에만 쓴다. 분위기를 만들기 위한 장식 활자로 사용하지 않는다.", "section": "typography" },
+      { "name": "The Flat Dossier Rule", "body": "문서 표면은 색면과 기록선으로 분리한다. 카드, 버튼, 내비게이션에 임의의 drop shadow를 추가하지 않는다.", "section": "elevation" },
+      { "name": "The Evidence Owns Curves Rule", "body": "둥근 형태는 증거 오브젝트에만 허용한다. 상호작용 요소와 정보 컨테이너를 둥글게 만들지 않는다.", "section": "shapes" }
+    ],
+    "dos": [
+      "**Do** use 응고된 적색 for seals, verdicts, errors, and active states.",
+      "**Do** use ARK 잔광 for verified system status, links that leave the dossier, and keyboard focus.",
+      "**Do** structure dense information with 1px ledger lines, asymmetric columns, and generous vertical silence.",
+      "**Do** alternate 먹빛 기록지 and 장례의 상아 기록지 when the story changes evidentiary status.",
+      "**Do** reserve circles, cut wedges, candles, and petals for evidence-bearing motifs.",
+      "**Do** keep appearance text-only and preserve reduced-motion and keyboard behavior."
+    ],
+    "donts": [
+      "**Don't** add a character portrait, exterior image, silhouette, copied illustration, or MV still.",
+      "**Don't** soften buttons, cards, navigation, or the music console with generic rounded corners.",
+      "**Don't** use same-size card grids, ornamental glass, gradient text, or decorative glow.",
+      "**Don't** use monospace type as atmosphere; it belongs to codes, timestamps, grades, and ARK states.",
+      "**Don't** add reusable shadows outside the persistent music console.",
+      "**Don't** turn 응고된 적색 or ARK 잔광 into broad decorative backgrounds without a verdict or evidence role."
+    ]
+  }
+}
