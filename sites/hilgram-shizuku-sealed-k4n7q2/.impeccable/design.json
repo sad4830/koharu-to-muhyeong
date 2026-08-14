@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-15T00:57:01+09:00",
+  "title": "Design System: Mikage Shizuku — Sealed Profile",
+  "extensions": {
+    "colorMeta": {
+      "archive-black": {
+        "role": "neutral",
+        "displayName": "Archive Black",
+        "tonalRamp": ["oklch(15% 0.016 307.7)", "oklch(27% 0.016 307.7)", "oklch(39% 0.016 307.7)", "oklch(51% 0.016 307.7)", "oklch(63% 0.016 307.7)", "oklch(75% 0.016 307.7)", "oklch(87% 0.016 307.7)", "oklch(95% 0.016 307.7)"]
+      },
+      "archive-surface": {
+        "role": "neutral",
+        "displayName": "Archive Surface",
+        "tonalRamp": ["oklch(15% 0.020 307.6)", "oklch(27% 0.020 307.6)", "oklch(39% 0.020 307.6)", "oklch(51% 0.020 307.6)", "oklch(63% 0.020 307.6)", "oklch(75% 0.020 307.6)", "oklch(87% 0.020 307.6)", "oklch(95% 0.020 307.6)"]
+      },
+      "archive-surface-strong": {
+        "role": "neutral",
+        "displayName": "Strong Archive Surface",
+        "tonalRamp": ["oklch(15% 0.022 309.5)", "oklch(27% 0.022 309.5)", "oklch(39% 0.022 309.5)", "oklch(51% 0.022 309.5)", "oklch(63% 0.022 309.5)", "oklch(75% 0.022 309.5)", "oklch(87% 0.022 309.5)", "oklch(95% 0.022 309.5)"]
+      },
+      "record-white": {
+        "role": "neutral",
+        "displayName": "Record White",
+        "tonalRamp": ["oklch(15% 0.010 311.2)", "oklch(27% 0.010 311.2)", "oklch(39% 0.010 311.2)", "oklch(51% 0.010 311.2)", "oklch(63% 0.010 311.2)", "oklch(75% 0.010 311.2)", "oklch(87% 0.010 311.2)", "oklch(95% 0.010 311.2)"]
+      },
+      "record-muted": {
+        "role": "neutral",
+        "displayName": "Muted Record Ink",
+        "tonalRamp": ["oklch(15% 0.024 317.1)", "oklch(27% 0.024 317.1)", "oklch(39% 0.024 317.1)", "oklch(51% 0.024 317.1)", "oklch(63% 0.024 317.1)", "oklch(75% 0.024 317.1)", "oklch(87% 0.024 317.1)", "oklch(95% 0.024 317.1)"]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Archive Rule",
+        "tonalRamp": ["oklch(15% 0.029 317.0)", "oklch(27% 0.029 317.0)", "oklch(39% 0.029 317.0)", "oklch(51% 0.029 317.0)", "oklch(63% 0.029 317.0)", "oklch(75% 0.029 317.0)", "oklch(87% 0.029 317.0)", "oklch(95% 0.029 317.0)"]
+      },
+      "rule-strong": {
+        "role": "neutral",
+        "displayName": "Strong Archive Rule",
+        "tonalRamp": ["oklch(15% 0.036 317.6)", "oklch(27% 0.036 317.6)", "oklch(39% 0.036 317.6)", "oklch(51% 0.036 317.6)", "oklch(63% 0.036 317.6)", "oklch(75% 0.036 317.6)", "oklch(87% 0.036 317.6)", "oklch(95% 0.036 317.6)"]
+      },
+      "restoration-lilac": {
+        "role": "primary",
+        "displayName": "Restoration Lilac",
+        "tonalRamp": ["oklch(15% 0.062 311.2)", "oklch(27% 0.062 311.2)", "oklch(39% 0.062 311.2)", "oklch(51% 0.062 311.2)", "oklch(63% 0.062 311.2)", "oklch(75% 0.062 311.2)", "oklch(87% 0.062 311.2)", "oklch(95% 0.062 311.2)"]
+      },
+      "lilac-wash": {
+        "role": "secondary",
+        "displayName": "Lilac Wash",
+        "tonalRamp": ["oklch(15% 0.036 308.3)", "oklch(27% 0.036 308.3)", "oklch(39% 0.036 308.3)", "oklch(51% 0.036 308.3)", "oklch(63% 0.036 308.3)", "oklch(75% 0.036 308.3)", "oklch(87% 0.036 308.3)", "oklch(95% 0.036 308.3)"]
+      },
+      "lilac-ink": {
+        "role": "secondary",
+        "displayName": "Lilac Ink",
+        "tonalRamp": ["oklch(15% 0.034 312.4)", "oklch(27% 0.034 312.4)", "oklch(39% 0.034 312.4)", "oklch(51% 0.034 312.4)", "oklch(63% 0.034 312.4)", "oklch(75% 0.034 312.4)", "oklch(87% 0.034 312.4)", "oklch(95% 0.034 312.4)"]
+      },
+      "control-lilac": {
+        "role": "secondary",
+        "displayName": "Control Lilac",
+        "tonalRamp": ["oklch(15% 0.058 312.1)", "oklch(27% 0.058 312.1)", "oklch(39% 0.058 312.1)", "oklch(51% 0.058 312.1)", "oklch(63% 0.058 312.1)", "oklch(75% 0.058 312.1)", "oklch(87% 0.058 312.1)", "oklch(95% 0.058 312.1)"]
+      },
+      "control-ink": {
+        "role": "neutral",
+        "displayName": "Control Ink",
+        "tonalRamp": ["oklch(15% 0.041 311.0)", "oklch(27% 0.041 311.0)", "oklch(39% 0.041 311.0)", "oklch(51% 0.041 311.0)", "oklch(63% 0.041 311.0)", "oklch(75% 0.041 311.0)", "oklch(87% 0.041 311.0)", "oklch(95% 0.041 311.0)"]
+      },
+      "portrait-paper": {
+        "role": "neutral",
+        "displayName": "Portrait Paper",
+        "tonalRamp": ["oklch(15% 0.002 325.6)", "oklch(27% 0.002 325.6)", "oklch(39% 0.002 325.6)", "oklch(51% 0.002 325.6)", "oklch(63% 0.002 325.6)", "oklch(75% 0.002 325.6)", "oklch(87% 0.002 325.6)", "oklch(95% 0.002 325.6)"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Restored Name",
+        "purpose": "일본어 이름과 소형 워드마크에만 사용하는 정체성 세리프."
+      },
+      "headline": {
+        "displayName": "Record Heading",
+        "purpose": "긴 기록의 섹션 경계를 빠르게 찾게 하는 산세리프 제목."
+      },
+      "title": {
+        "displayName": "Statement",
+        "purpose": "결정적 진술과 사상 리드 문장."
+      },
+      "body": {
+        "displayName": "Archive Reading",
+        "purpose": "최대 72ch의 한국어 장문을 위한 고행간 본문."
+      },
+      "label": {
+        "displayName": "Archive Metadata",
+        "purpose": "상태, 시점, 표의 키와 복원 메타데이터."
+      }
+    },
+    "shadows": [
+      {
+        "name": "archive-portrait",
+        "value": "0 26px 74px rgba(7, 4, 9, 0.38)",
+        "purpose": "보관된 초상 프레임을 먹회색 바탕에서 분리한다."
+      },
+      {
+        "name": "ideology-afterglow",
+        "value": "0 18px 54px color-mix(in srgb, #d6bee7 8%, transparent)",
+        "purpose": "캐릭터 사상 패널에만 거의 보이지 않는 라일락 잔광을 준다."
+      }
+    ],
+    "motion": [
+      {
+        "name": "state-fast",
+        "value": "180ms ease",
+        "purpose": "호버, 눌림, disclosure 꺾쇠 같은 작은 상태 전환."
+      },
+      {
+        "name": "theme-medium",
+        "value": "280ms ease",
+        "purpose": "표면 색, 초상 필터와 오버레이의 차분한 전환."
+      },
+      {
+        "name": "view-reveal",
+        "value": "430ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "문서 본문이 살짝 상승하며 선명해지는 첫 진입."
+      },
+      {
+        "name": "portrait-reveal",
+        "value": "620ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "초상의 봉인이 위에서 아래로 열리는 첫 진입."
+      },
+      {
+        "name": "portrait-transform",
+        "value": "500ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "초상 이미지 변형을 느리지만 즉각 반응하는 곡선으로 연결한다."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-record",
+        "value": "430px"
+      },
+      {
+        "name": "single-column",
+        "value": "760px"
+      },
+      {
+        "name": "compressed-desktop",
+        "value": "980px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Archive Navigation",
+      "kind": "nav",
+      "refersTo": "archive-navigation",
+      "description": "세리프 워드마크와 봉인 상태를 양끝에 두는 반투명 기록 헤더.",
+      "html": "<nav class='ds-archive-nav' aria-label='프로필 머리글'><a class='ds-archive-wordmark' href='#top'>御影 雫 <small>HILGRAM</small></a><span class='ds-archive-status'>운영진 열람용</span></nav>",
+      "css": ".ds-archive-nav { display: flex; min-height: 72px; align-items: center; justify-content: space-between; gap: 24px; padding: 10px 24px; border-bottom: 1px solid #493e4d; background: color-mix(in srgb, #1f1b23 92%, transparent); color: #f7f3fa; font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', system-ui, sans-serif; backdrop-filter: blur(16px); } .ds-archive-wordmark { color: inherit; font-family: 'Shizuku Serif', 'Noto Serif KR', serif; font-size: 1.15rem; font-weight: 700; letter-spacing: -0.02em; text-decoration: none; } .ds-archive-wordmark small { margin-left: 12px; color: #c8bdcc; font-family: 'Pretendard Variable', Pretendard, sans-serif; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.16em; } .ds-archive-wordmark:hover { color: #d6bee7; } .ds-archive-wordmark:focus-visible { outline: 3px solid #d6bee7; outline-offset: 4px; } .ds-archive-status { padding: 8px 13px; border: 1px solid #68596d; border-radius: 10px; color: #d6bee7; font-size: 0.82rem; font-weight: 760; } @media (max-width: 480px) { .ds-archive-nav { min-height: 66px; gap: 12px; padding: 8px 14px; } .ds-archive-wordmark small { display: none; } }"
+    },
+    {
+      "name": "Skip Link",
+      "kind": "custom",
+      "refersTo": "skip-link",
+      "description": "키보드 포커스에서만 나타나는 고대비 본문 건너뛰기 링크.",
+      "html": "<a class='ds-skip-link' href='#content'>본문으로 건너뛰기</a><div id='content'></div>",
+      "css": ".ds-skip-link { display: inline-block; padding: 10px 14px; border-radius: 10px; background: #d9c2e8; color: #24182c; font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', system-ui, sans-serif; font-weight: 700; text-decoration: none; transform: translateY(-160%); } .ds-skip-link:focus-visible { outline: 3px solid #d6bee7; outline-offset: 4px; transform: translateY(0); }"
+    },
+    {
+      "name": "Sealed Badge",
+      "kind": "chip",
+      "refersTo": "sealed-badge",
+      "description": "열람 범위를 조용히 알리는 윤곽형 상태 표식.",
+      "html": "<span class='ds-sealed-badge'>운영진 열람용</span>",
+      "css": ".ds-sealed-badge { display: inline-flex; align-items: center; min-height: 38px; padding: 8px 13px; border: 1px solid #68596d; border-radius: 10px; background: transparent; color: #d6bee7; font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', system-ui, sans-serif; font-size: 0.82rem; font-weight: 760; letter-spacing: 0.02em; }"
+    },
+    {
+      "name": "Portrait Archive",
+      "kind": "card",
+      "refersTo": "portrait-frame",
+      "description": "복원 메타데이터와 모서리 표식을 겹친 정사각형 초상 프레임.",
+      "html": "<figure class='ds-portrait'><div class='ds-portrait-image'><span>SEALED 01</span><span>RESTORE LOG / 09.12</span></div><figcaption>입소 전 외관 참고 / 힐그램 지정 의상은 프로필 서술 기준</figcaption></figure>",
+      "css": ".ds-portrait { width: min(100%, 360px); margin: 0; color: #c8bdcc; font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', system-ui, sans-serif; } .ds-portrait-image { position: relative; display: flex; aspect-ratio: 1; justify-content: space-between; overflow: hidden; padding: 28px; border-radius: 14px; background: linear-gradient(160deg, rgba(20, 15, 23, 0.06), rgba(47, 25, 37, 0.42)), linear-gradient(135deg, #efeeef, #b8b1bd); box-shadow: 0 26px 74px rgba(7, 4, 9, 0.38); color: rgba(247, 243, 250, 0.74); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; } .ds-portrait-image::before { position: absolute; inset: 16px; background: linear-gradient(#d6bee7, #d6bee7) left top / 28px 1px no-repeat, linear-gradient(#d6bee7, #d6bee7) left top / 1px 28px no-repeat, linear-gradient(#d6bee7, #d6bee7) right top / 28px 1px no-repeat, linear-gradient(#d6bee7, #d6bee7) right top / 1px 28px no-repeat, linear-gradient(#d6bee7, #d6bee7) left bottom / 28px 1px no-repeat, linear-gradient(#d6bee7, #d6bee7) left bottom / 1px 28px no-repeat, linear-gradient(#d6bee7, #d6bee7) right bottom / 28px 1px no-repeat, linear-gradient(#d6bee7, #d6bee7) right bottom / 1px 28px no-repeat; content: ''; opacity: 0.62; } .ds-portrait figcaption { margin-top: 16px; font-size: 1rem; line-height: 1.55; }"
+    },
+    {
+      "name": "Ruled Record",
+      "kind": "custom",
+      "refersTo": "record-row",
+      "description": "라벨과 사실값을 얇은 룰로 정렬하는 핵심 데이터 행.",
+      "html": "<dl class='ds-record'><div class='ds-record-row'><dt>진짜 이름</dt><dd>御影 雫 / 미카게 시즈쿠</dd></div><div class='ds-record-row'><dt>나이</dt><dd>22세</dd></div></dl>",
+      "css": ".ds-record { width: min(100%, 680px); margin: 0; border-top: 1px solid #493e4d; color: #f7f3fa; font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', system-ui, sans-serif; } .ds-record-row { display: grid; grid-template-columns: minmax(112px, 0.36fr) minmax(0, 1fr); gap: 26px; padding: 20px 0; border-bottom: 1px solid #493e4d; } .ds-record-row dt { color: #c8bdcc; font-size: 0.88rem; font-weight: 700; } .ds-record-row dd { margin: 0; color: #f7f3fa; font-size: 1.02rem; font-weight: 590; } @media (max-width: 430px) { .ds-record-row { grid-template-columns: 1fr; gap: 5px; } }"
+    },
+    {
+      "name": "Summary Panel",
+      "kind": "card",
+      "refersTo": "summary-card",
+      "description": "긴 서사의 입구를 어두운 라일락 면으로 구분하는 요약 패널.",
+      "html": "<section class='ds-summary'><h3>과거사 요약</h3><p>가장 아름다웠던 과거가 더 진실하다는 믿음은 기록을 감시와 통제로 바꾸었다.</p></section>",
+      "css": ".ds-summary { width: min(100%, 720px); padding: clamp(34px, 5vw, 54px); border-radius: 14px; background: #342a3d; color: #f7f3fa; font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', system-ui, sans-serif; } .ds-summary h3 { margin: 0 0 24px; color: #ecdef5; font-size: clamp(1.7rem, 3vw, 2.4rem); font-weight: 760; letter-spacing: -0.035em; line-height: 1.25; } .ds-summary p { max-width: 72ch; margin: 0; font-size: clamp(1rem, 1.25vw, 1.08rem); line-height: 1.9; }"
+    },
+    {
+      "name": "Timeline Row",
+      "kind": "custom",
+      "refersTo": "timeline-row",
+      "description": "라일락 시점과 설명을 나란히 놓는 인과 기록 행.",
+      "html": "<ol class='ds-timeline'><li><time>22세</time><p>이별을 현재의 선택이 아닌 오류로 해석한다.</p></li><li><time>현재</time><p>사실은 고백하지만 타인의 변화 권리는 인정하지 못한다.</p></li></ol>",
+      "css": ".ds-timeline { width: min(100%, 720px); margin: 0; padding: 0; border-top: 1px solid #493e4d; color: #c8bdcc; font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', system-ui, sans-serif; list-style: none; } .ds-timeline li { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 28px; padding: 22px 0; border-bottom: 1px solid #493e4d; } .ds-timeline time { color: #d6bee7; font-size: 0.9rem; font-weight: 800; font-variant-numeric: tabular-nums; } .ds-timeline p { margin: 0; line-height: 1.75; } @media (max-width: 480px) { .ds-timeline li { grid-template-columns: 70px minmax(0, 1fr); gap: 18px; } }"
+    },
+    {
+      "name": "Relationship Disclosure",
+      "kind": "custom",
+      "refersTo": "relationship-disclosure",
+      "description": "열린 선관 제안을 수평 룰 사이에서 단계적으로 펼치는 disclosure.",
+      "html": "<details class='ds-disclosure'><summary>기억을 맡긴 사람</summary><p>손상된 사진이나 잊고 싶은 기록을 건넨 인물.</p></details>",
+      "css": ".ds-disclosure { width: min(100%, 680px); border-top: 1px solid #493e4d; border-bottom: 1px solid #493e4d; color: #f7f3fa; font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', system-ui, sans-serif; } .ds-disclosure summary { position: relative; min-height: 58px; padding: 17px 48px 17px 0; font-weight: 720; cursor: pointer; list-style: none; } .ds-disclosure summary::after { position: absolute; top: 50%; right: 5px; width: 11px; height: 11px; border-right: 2px solid #d6bee7; border-bottom: 2px solid #d6bee7; content: ''; transform: translateY(-70%) rotate(45deg); transition: transform 180ms ease; } .ds-disclosure summary:hover { color: #d6bee7; } .ds-disclosure summary:focus-visible { outline: 3px solid #d6bee7; outline-offset: 4px; } .ds-disclosure[open] summary::after { transform: translateY(-25%) rotate(225deg); } .ds-disclosure p { margin: 0; padding: 0 44px 24px 0; color: #c8bdcc; line-height: 1.75; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "봉인된 복원 원부 (The Sealed Restoration Ledger)",
+    "overview": "“봉인된 복원 원부”는 한때 다정했던 사진과 기록이 통제의 증거로 변한 상태를 보여 주는 시각 체계다. 먹회색 보관실 위에 흐린 흰 기록문, 어두운 라일락 표식, 정밀한 평행선을 얹어 차갑지만 과장되지 않은 열람 경험을 만든다.\n\n표현력은 장식의 양보다 대비와 편집 순서에서 나온다. 세리프 이름과 어두워진 초상이 첫 인상을 만들고, 이후에는 산세리프 본문과 1px 구분선이 긴 기록을 차분하게 운반한다. 피, 칼, 범죄 현장 테이프, 강한 글리치 같은 직접적인 범죄 이미지는 이 세계의 언어가 아니다.",
+    "keyCharacteristics": [
+      "먹회색과 어두운 라일락의 절제된 단색성",
+      "흐린 흰 기록문과 제한적으로 쓰는 라일락 강조",
+      "사진 복원 마크를 닮은 얇은 평행선과 모서리 표식",
+      "초상에서 진술과 기록으로 넘어가는 차분한 편집 흐름"
+    ],
+    "rules": [
+      {
+        "name": "라일락 희소성",
+        "body": "복원 라일락은 상태와 의미를 가리킬 때만 사용하고, 화면 대부분은 먹회색과 흐린 흰색이 지배하게 한다.",
+        "section": "colors"
+      },
+      {
+        "name": "두 목소리",
+        "body": "세리프는 이름과 정체성에만, 산세리프는 진술·설명·데이터·조작에 사용한다.",
+        "section": "typography"
+      },
+      {
+        "name": "톤 우선",
+        "body": "새 표면은 먼저 배경 톤과 1px 룰로 계층을 만들고, 그림자는 실제로 떠 있는 사진이나 핵심 패널에만 허용한다.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do 아카이브 블랙을 화면의 중심으로 두고 그림자보다 표면 톤으로 깊이를 만든다.",
+      "Do 세리프는 이름과 워드마크에만, 산세리프는 모든 장문과 데이터에 사용한다.",
+      "Do 복원 라일락을 캐치프레이즈, 시점, 링크, 포커스처럼 의미가 있는 표식에만 쓴다.",
+      "Do 레코드 행은 1px 룰, 16px 이상의 본문, 최대 72ch와 넉넉한 행간을 유지한다.",
+      "Do 760px 이하에서 단일 열로 전환하고 초상, 사실, 이름, 진술의 읽기 순서를 보존한다."
+    ],
+    "donts": [
+      "Don't 피, 칼, 범죄 현장 테이프, 경고색 빨강, 강한 글리치를 시각적 지름길로 사용하지 않는다.",
+      "Don't 초상을 원색으로 밝히거나 캐릭터 이미지가 문서보다 먼저 소리치게 만들지 않는다.",
+      "Don't 모든 섹션을 둥근 카드로 감싸 기록의 연속성과 수평 룰 리듬을 끊지 않는다.",
+      "Don't 장문 본문에 장식 세리프나 16px 미만의 한국어 글자를 사용하지 않는다.",
+      "Don't 정보 이해를 애니메이션이나 배경 투명도에 의존시키지 않는다."
+    ]
+  }
+}

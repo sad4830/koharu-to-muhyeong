@@ -1,273 +1,39 @@
 {
-  "schemaVersion": 2,
-  "generatedAt": "2026-08-14T13:56:40+09:00",
-  "title": "Design System: Mikage Shizuku / HILGRAM",
-  "extensions": {
-    "colorMeta": {
-      "public-bg": {
-        "role": "neutral",
-        "displayName": "Misted Restoration Paper",
-        "canonical": "#f5f3f7",
-        "tonalRamp": ["oklch(15% 0.012 305)", "oklch(26% 0.012 305)", "oklch(38% 0.012 305)", "oklch(50% 0.012 305)", "oklch(62% 0.012 305)", "oklch(74% 0.012 305)", "oklch(86% 0.012 305)", "oklch(95% 0.012 305)"]
-      },
-      "public-surface": {
-        "role": "neutral",
-        "displayName": "Archive Surface",
-        "canonical": "#fcfbfd",
-        "tonalRamp": ["oklch(15% 0.008 305)", "oklch(26% 0.008 305)", "oklch(38% 0.008 305)", "oklch(50% 0.008 305)", "oklch(62% 0.008 305)", "oklch(74% 0.008 305)", "oklch(86% 0.008 305)", "oklch(97% 0.008 305)"]
-      },
-      "public-surface-strong": {
-        "role": "neutral",
-        "displayName": "Restored White",
-        "canonical": "#ffffff",
-        "tonalRamp": ["oklch(15% 0 0)", "oklch(26% 0 0)", "oklch(38% 0 0)", "oklch(50% 0 0)", "oklch(62% 0 0)", "oklch(74% 0 0)", "oklch(86% 0 0)", "oklch(100% 0 0)"]
-      },
-      "public-text": {
-        "role": "neutral",
-        "displayName": "Record Ink",
-        "canonical": "#24212b",
-        "tonalRamp": ["oklch(15% 0.018 305)", "oklch(26% 0.018 305)", "oklch(38% 0.018 305)", "oklch(50% 0.018 305)", "oklch(62% 0.018 305)", "oklch(74% 0.018 305)", "oklch(86% 0.018 305)", "oklch(95% 0.018 305)"]
-      },
-      "public-muted": {
-        "role": "neutral",
-        "displayName": "Faded Annotation",
-        "canonical": "#625d6c",
-        "tonalRamp": ["oklch(15% 0.02 305)", "oklch(26% 0.02 305)", "oklch(38% 0.02 305)", "oklch(50% 0.02 305)", "oklch(62% 0.02 305)", "oklch(74% 0.02 305)", "oklch(86% 0.02 305)", "oklch(95% 0.02 305)"]
-      },
-      "public-line": {
-        "role": "neutral",
-        "displayName": "Pale Record Line",
-        "canonical": "#d8d1df",
-        "tonalRamp": ["oklch(15% 0.025 305)", "oklch(26% 0.025 305)", "oklch(38% 0.025 305)", "oklch(50% 0.025 305)", "oklch(62% 0.025 305)", "oklch(74% 0.025 305)", "oklch(86% 0.025 305)", "oklch(95% 0.025 305)"]
-      },
-      "public-line-strong": {
-        "role": "neutral",
-        "displayName": "Restoration Guide",
-        "canonical": "#b9aec2",
-        "tonalRamp": ["oklch(15% 0.035 305)", "oklch(26% 0.035 305)", "oklch(38% 0.035 305)", "oklch(50% 0.035 305)", "oklch(62% 0.035 305)", "oklch(74% 0.035 305)", "oklch(86% 0.035 305)", "oklch(95% 0.035 305)"]
-      },
-      "public-accent": {
-        "role": "primary",
-        "displayName": "Preservation Lilac",
-        "canonical": "#694b7d",
-        "tonalRamp": ["oklch(15% 0.04 315)", "oklch(26% 0.06 315)", "oklch(38% 0.08 315)", "oklch(50% 0.10 315)", "oklch(62% 0.09 315)", "oklch(74% 0.07 315)", "oklch(86% 0.04 315)", "oklch(95% 0.015 315)"]
-      },
-      "public-accent-soft": {
-        "role": "primary",
-        "displayName": "Lilac Wash",
-        "canonical": "#e9ddf1",
-        "tonalRamp": ["oklch(15% 0.04 315)", "oklch(26% 0.05 315)", "oklch(38% 0.06 315)", "oklch(50% 0.065 315)", "oklch(62% 0.06 315)", "oklch(74% 0.05 315)", "oklch(86% 0.035 315)", "oklch(95% 0.018 315)"]
-      },
-      "public-accent-ink": {
-        "role": "primary",
-        "displayName": "Lilac Ink",
-        "canonical": "#4f3560",
-        "tonalRamp": ["oklch(15% 0.05 315)", "oklch(26% 0.07 315)", "oklch(38% 0.09 315)", "oklch(50% 0.10 315)", "oklch(62% 0.09 315)", "oklch(74% 0.07 315)", "oklch(86% 0.04 315)", "oklch(95% 0.018 315)"]
-      },
-      "public-button": {
-        "role": "primary",
-        "displayName": "Public Action Lilac",
-        "canonical": "#67457f",
-        "tonalRamp": ["oklch(15% 0.05 315)", "oklch(26% 0.07 315)", "oklch(38% 0.09 315)", "oklch(50% 0.11 315)", "oklch(62% 0.10 315)", "oklch(74% 0.075 315)", "oklch(86% 0.045 315)", "oklch(95% 0.018 315)"]
-      },
-      "public-button-text": {
-        "role": "neutral",
-        "displayName": "Public Action White",
-        "canonical": "#ffffff",
-        "tonalRamp": ["oklch(15% 0 0)", "oklch(26% 0 0)", "oklch(38% 0 0)", "oklch(50% 0 0)", "oklch(62% 0 0)", "oklch(74% 0 0)", "oklch(86% 0 0)", "oklch(100% 0 0)"]
-      },
-      "secret-bg": {
-        "role": "neutral",
-        "displayName": "Ink Archive",
-        "canonical": "#1f1b23",
-        "tonalRamp": ["oklch(15% 0.018 315)", "oklch(26% 0.018 315)", "oklch(38% 0.018 315)", "oklch(50% 0.018 315)", "oklch(62% 0.018 315)", "oklch(74% 0.018 315)", "oklch(86% 0.018 315)", "oklch(95% 0.018 315)"]
-      },
-      "secret-surface": {
-        "role": "neutral",
-        "displayName": "Sealed Surface",
-        "canonical": "#27222c",
-        "tonalRamp": ["oklch(15% 0.02 315)", "oklch(26% 0.02 315)", "oklch(38% 0.02 315)", "oklch(50% 0.02 315)", "oklch(62% 0.02 315)", "oklch(74% 0.02 315)", "oklch(86% 0.02 315)", "oklch(95% 0.02 315)"]
-      },
-      "secret-surface-strong": {
-        "role": "neutral",
-        "displayName": "Deep Record Surface",
-        "canonical": "#2c2631",
-        "tonalRamp": ["oklch(15% 0.025 315)", "oklch(26% 0.025 315)", "oklch(38% 0.025 315)", "oklch(50% 0.025 315)", "oklch(62% 0.025 315)", "oklch(74% 0.025 315)", "oklch(86% 0.025 315)", "oklch(95% 0.025 315)"]
-      },
-      "secret-text": {
-        "role": "neutral",
-        "displayName": "Restored White Text",
-        "canonical": "#f7f3fa",
-        "tonalRamp": ["oklch(15% 0.012 315)", "oklch(26% 0.012 315)", "oklch(38% 0.012 315)", "oklch(50% 0.012 315)", "oklch(62% 0.012 315)", "oklch(74% 0.012 315)", "oklch(86% 0.012 315)", "oklch(96% 0.012 315)"]
-      },
-      "secret-muted": {
-        "role": "neutral",
-        "displayName": "Dimmed Annotation",
-        "canonical": "#c8bdcc",
-        "tonalRamp": ["oklch(15% 0.025 315)", "oklch(26% 0.025 315)", "oklch(38% 0.025 315)", "oklch(50% 0.025 315)", "oklch(62% 0.025 315)", "oklch(74% 0.025 315)", "oklch(86% 0.025 315)", "oklch(95% 0.025 315)"]
-      },
-      "secret-line": {
-        "role": "neutral",
-        "displayName": "Dark Record Line",
-        "canonical": "#493e4d",
-        "tonalRamp": ["oklch(15% 0.03 315)", "oklch(26% 0.03 315)", "oklch(38% 0.03 315)", "oklch(50% 0.03 315)", "oklch(62% 0.03 315)", "oklch(74% 0.03 315)", "oklch(86% 0.03 315)", "oklch(95% 0.03 315)"]
-      },
-      "secret-line-strong": {
-        "role": "neutral",
-        "displayName": "Sealed Guide Line",
-        "canonical": "#68596d",
-        "tonalRamp": ["oklch(15% 0.035 315)", "oklch(26% 0.035 315)", "oklch(38% 0.035 315)", "oklch(50% 0.035 315)", "oklch(62% 0.035 315)", "oklch(74% 0.035 315)", "oklch(86% 0.035 315)", "oklch(95% 0.035 315)"]
-      },
-      "secret-accent": {
-        "role": "primary",
-        "displayName": "Restored Lilac",
-        "canonical": "#d6bee7",
-        "tonalRamp": ["oklch(15% 0.04 315)", "oklch(26% 0.055 315)", "oklch(38% 0.07 315)", "oklch(50% 0.08 315)", "oklch(62% 0.075 315)", "oklch(74% 0.06 315)", "oklch(86% 0.04 315)", "oklch(95% 0.018 315)"]
-      },
-      "secret-accent-soft": {
-        "role": "primary",
-        "displayName": "Sealed Lilac Wash",
-        "canonical": "#342a3d",
-        "tonalRamp": ["oklch(15% 0.04 315)", "oklch(26% 0.05 315)", "oklch(38% 0.06 315)", "oklch(50% 0.065 315)", "oklch(62% 0.06 315)", "oklch(74% 0.05 315)", "oklch(86% 0.035 315)", "oklch(95% 0.018 315)"]
-      },
-      "secret-accent-ink": {
-        "role": "primary",
-        "displayName": "Restored Lilac Ink",
-        "canonical": "#ecdef5",
-        "tonalRamp": ["oklch(15% 0.035 315)", "oklch(26% 0.045 315)", "oklch(38% 0.055 315)", "oklch(50% 0.06 315)", "oklch(62% 0.055 315)", "oklch(74% 0.045 315)", "oklch(86% 0.03 315)", "oklch(95% 0.015 315)"]
-      },
-      "secret-button": {
-        "role": "primary",
-        "displayName": "Secret Action Lilac",
-        "canonical": "#d9c2e8",
-        "tonalRamp": ["oklch(15% 0.04 315)", "oklch(26% 0.055 315)", "oklch(38% 0.07 315)", "oklch(50% 0.08 315)", "oklch(62% 0.075 315)", "oklch(74% 0.06 315)", "oklch(86% 0.04 315)", "oklch(95% 0.018 315)"]
-      },
-      "secret-button-text": {
-        "role": "neutral",
-        "displayName": "Secret Action Ink",
-        "canonical": "#24182c",
-        "tonalRamp": ["oklch(15% 0.035 315)", "oklch(26% 0.035 315)", "oklch(38% 0.035 315)", "oklch(50% 0.035 315)", "oklch(62% 0.035 315)", "oklch(74% 0.035 315)", "oklch(86% 0.035 315)", "oklch(95% 0.035 315)"]
-      }
-    },
-    "typographyMeta": {
-      "display": { "displayName": "Character Seal", "purpose": "Self-hosted Shizuku Serif for the character name and wordmark only." },
-      "headline": { "displayName": "Decision Headline", "purpose": "Large gate copy for a consequential disclosure choice." },
-      "title": { "displayName": "Record Section", "purpose": "Section-level labels within the profile record." },
-      "body": { "displayName": "Long-form Record", "purpose": "Korean narrative copy with generous leading and controlled line length." },
-      "label": { "displayName": "Archive Metadata", "purpose": "Compact labels, dates, state metadata, and restoration marks." }
-    },
-    "shadows": [
-      { "name": "portrait-public", "value": "0 24px 70px rgba(65, 45, 77, 0.13)", "purpose": "The sole broad lift under the public portrait frame." },
-      { "name": "portrait-secret", "value": "0 26px 74px rgba(7, 4, 9, 0.38)", "purpose": "The darker thematic counterpart under the secret portrait." },
-      { "name": "ideology-low", "value": "0 18px 54px color-mix(in srgb, var(--accent) 8%, transparent)", "purpose": "A faint thematic lift for the ideology panel only." }
-    ],
-    "motion": [
-      { "name": "state-fast", "value": "160ms ease", "purpose": "Gate action hover, color, and pressed feedback." },
-      { "name": "control-standard", "value": "180ms ease", "purpose": "Switcher state and disclosure indicator changes." },
-      { "name": "theme-standard", "value": "280ms ease", "purpose": "Page palette and portrait filter transitions." },
-      { "name": "reveal-ease", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Restoration-like content and portrait reveals." },
-      { "name": "view-reveal", "value": "430ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Content enters from 18px below with a 5px blur." },
-      { "name": "portrait-filter", "value": "500ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Subtle portrait scale during theme disclosure." },
-      { "name": "portrait-reveal", "value": "620ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Top-to-bottom clipped portrait reveal." }
-    ],
-    "breakpoints": [
-      { "name": "compact-desktop", "value": "980px" },
-      { "name": "mobile", "value": "760px" },
-      { "name": "narrow-mobile", "value": "430px" }
-    ]
+  "name": "Mikage Shizuku Public Record",
+  "description": "A restrained photo-restoration record for the public HILGRAM profile.",
+  "colors": {
+    "background": "#f5f3f7",
+    "surface": "#fcfbfd",
+    "surfaceStrong": "#ffffff",
+    "text": "#24212b",
+    "muted": "#625d6c",
+    "line": "#d8d1df",
+    "lineStrong": "#b9aec2",
+    "accent": "#694b7d",
+    "accentSoft": "#e9ddf1",
+    "accentInk": "#4f3560"
   },
-  "components": [
-    {
-      "name": "Public View Switcher",
-      "kind": "nav",
-      "refersTo": "view-switcher",
-      "description": "The three-state public navigation with a dark active record tab.",
-      "html": "<nav class=\"ds-view-switcher\" aria-label=\"프로필 구분\"><button aria-current=\"page\">공개</button><button>비밀</button><button>오너</button></nav>",
-      "css": ".ds-view-switcher { display:inline-grid; grid-template-columns:repeat(3,minmax(58px,1fr)); gap:4px; padding:4px; border:1px solid #d8d1df; border-radius:14px; background:#fcfbfd; } .ds-view-switcher button { min-height:44px; padding:8px 16px; border:0; border-radius:10px; background:transparent; color:#625d6c; font-family:'Pretendard Variable','Pretendard','Noto Sans KR',system-ui,sans-serif; font-size:1rem; font-weight:750; cursor:pointer; transition:color 180ms ease,background-color 180ms ease,transform 180ms ease; } .ds-view-switcher button:hover { color:#24212b; } .ds-view-switcher button:focus-visible { outline:3px solid #694b7d; outline-offset:4px; } .ds-view-switcher button:active { transform:translateY(1px); } .ds-view-switcher button[aria-current='page'] { background:#24212b; color:#f5f3f7; }"
+  "typography": {
+    "display": {
+      "fontFamily": "Shizuku Serif, Noto Serif KR, Noto Serif JP, serif",
+      "fontSize": "clamp(4.2rem, 7.4vw, 6rem)",
+      "fontWeight": 700,
+      "lineHeight": 1.03,
+      "letterSpacing": "-0.035em"
     },
-    {
-      "name": "Secret View Switcher",
-      "kind": "nav",
-      "refersTo": "view-switcher-active",
-      "description": "The same navigation roles remapped to the ink-dark secret theme.",
-      "html": "<nav class=\"ds-secret-switcher\" aria-label=\"프로필 구분\"><button>공개</button><button aria-current=\"page\">비밀</button><button>오너</button></nav>",
-      "css": ".ds-secret-switcher { display:inline-grid; grid-template-columns:repeat(3,minmax(58px,1fr)); gap:4px; padding:4px; border:1px solid #493e4d; border-radius:14px; background:#27222c; } .ds-secret-switcher button { min-height:44px; padding:8px 16px; border:0; border-radius:10px; background:transparent; color:#c8bdcc; font-family:'Pretendard Variable','Pretendard','Noto Sans KR',system-ui,sans-serif; font-size:1rem; font-weight:750; cursor:pointer; transition:color 180ms ease,background-color 180ms ease,transform 180ms ease; } .ds-secret-switcher button:hover { color:#f7f3fa; } .ds-secret-switcher button:focus-visible { outline:3px solid #d6bee7; outline-offset:4px; } .ds-secret-switcher button:active { transform:translateY(1px); } .ds-secret-switcher button[aria-current='page'] { background:#f7f3fa; color:#1f1b23; }"
-    },
-    {
-      "name": "Primary Gate Action",
-      "kind": "button",
-      "refersTo": "button-primary",
-      "description": "The explicit action that opens the sealed profile after the content warning.",
-      "html": "<button class=\"ds-gate-primary\" type=\"button\">비밀 프로필 열기</button>",
-      "css": ".ds-gate-primary { min-height:48px; padding:12px 20px; border:1px solid #d9c2e8; border-radius:12px; background:#d9c2e8; color:#24182c; font-family:'Pretendard Variable','Pretendard','Noto Sans KR',system-ui,sans-serif; font-weight:760; white-space:nowrap; cursor:pointer; transition:transform 160ms ease,background-color 160ms ease,color 160ms ease; } .ds-gate-primary:hover { background:color-mix(in srgb,#d9c2e8 88%,white); } .ds-gate-primary:focus-visible { outline:3px solid #d6bee7; outline-offset:4px; } .ds-gate-primary:active { transform:translateY(1px); }"
-    },
-    {
-      "name": "Secondary Gate Action",
-      "kind": "button",
-      "refersTo": "button-secondary",
-      "description": "The non-destructive return action beside the secret disclosure control.",
-      "html": "<button class=\"ds-gate-secondary\" type=\"button\">공개 프로필로 돌아가기</button>",
-      "css": ".ds-gate-secondary { min-height:48px; padding:12px 20px; border:1px solid #68596d; border-radius:12px; background:transparent; color:#f7f3fa; font-family:'Pretendard Variable','Pretendard','Noto Sans KR',system-ui,sans-serif; font-weight:760; white-space:nowrap; cursor:pointer; transition:transform 160ms ease,background-color 160ms ease,color 160ms ease; } .ds-gate-secondary:hover { background:#27222c; } .ds-gate-secondary:focus-visible { outline:3px solid #d6bee7; outline-offset:4px; } .ds-gate-secondary:active { transform:translateY(1px); }"
-    },
-    {
-      "name": "Record Row",
-      "kind": "custom",
-      "description": "A labeled fact pair separated by one-pixel evidence lines.",
-      "html": "<dl class=\"ds-record-list\"><div class=\"ds-record-row\"><dt>이름</dt><dd>御影 雫 / 미카게 시즈쿠</dd></div><div class=\"ds-record-row\"><dt>나이</dt><dd>22세</dd></div></dl>",
-      "css": ".ds-record-list { margin:0; color:#24212b; font-family:'Pretendard Variable','Pretendard','Noto Sans KR',system-ui,sans-serif; } .ds-record-row { display:grid; grid-template-columns:minmax(112px,.36fr) minmax(0,1fr); gap:26px; padding:20px 0; border-bottom:1px solid #d8d1df; } .ds-record-row:first-child { border-top:1px solid #d8d1df; } .ds-record-row dt { color:#625d6c; font-size:.88rem; font-weight:700; } .ds-record-row dd { margin:0; color:#24212b; font-size:1.02rem; font-weight:590; text-wrap:pretty; } @media (max-width:430px) { .ds-record-row { grid-template-columns:1fr; gap:5px; } .ds-record-row dd { font-size:.98rem; } }"
-    },
-    {
-      "name": "Restoration Summary Panel",
-      "kind": "card",
-      "refersTo": "restoration-panel",
-      "description": "A softly tinted record surface for compressed, interpretation-critical summaries.",
-      "html": "<section class=\"ds-summary-panel\"><h2>과거사 요약</h2><p>기록의 원인과 선택, 대가를 한 단락으로 압축합니다.</p></section>",
-      "css": ".ds-summary-panel { padding:clamp(34px,5vw,54px); border:0; border-radius:14px; background:#342a3d; color:#f7f3fa; font-family:'Pretendard Variable','Pretendard','Noto Sans KR',system-ui,sans-serif; } .ds-summary-panel h2 { margin:0 0 24px; color:#ecdef5; font-size:clamp(1.7rem,3vw,2.4rem); font-weight:760; line-height:1.25; letter-spacing:-.035em; } .ds-summary-panel p { max-width:72ch; margin:0; color:#f7f3fa; font-size:clamp(1rem,1.25vw,1.08rem); line-height:1.9; text-wrap:pretty; word-break:keep-all; } .ds-summary-panel:focus-within { outline:3px solid #d6bee7; outline-offset:4px; }"
-    },
-    {
-      "name": "Keyword Line",
-      "kind": "chip",
-      "description": "Unboxed personality keywords separated by a restrained slash rather than pills.",
-      "html": "<div class=\"ds-keyword-line\" aria-label=\"성격 키워드\"><span>세심한</span><span>상냥한</span><span>끈질긴</span></div>",
-      "css": ".ds-keyword-line { display:flex; flex-wrap:wrap; gap:10px 24px; margin:0; font-family:'Pretendard Variable','Pretendard','Noto Sans KR',system-ui,sans-serif; } .ds-keyword-line span { position:relative; color:#694b7d; font-size:.96rem; font-weight:760; } .ds-keyword-line span + span::before { position:absolute; top:50%; left:-14px; color:#b9aec2; content:'/'; transform:translateY(-50%); }"
-    },
-    {
-      "name": "Disclosure Row",
-      "kind": "custom",
-      "description": "A line-based expandable relationship record with a rotating lilac indicator.",
-      "html": "<div class=\"ds-hooks\"><details><summary>기억을 맡긴 사람</summary><p>합의 전에는 열린 관계 제안으로 남겨 둡니다.</p></details></div>",
-      "css": ".ds-hooks { border-top:1px solid #d8d1df; color:#24212b; font-family:'Pretendard Variable','Pretendard','Noto Sans KR',system-ui,sans-serif; } .ds-hooks details { border-bottom:1px solid #d8d1df; } .ds-hooks summary { position:relative; min-height:58px; padding:17px 48px 17px 0; color:#24212b; font-weight:720; cursor:pointer; list-style:none; } .ds-hooks summary::-webkit-details-marker { display:none; } .ds-hooks summary::after { position:absolute; top:50%; right:5px; width:11px; height:11px; border-right:2px solid #694b7d; border-bottom:2px solid #694b7d; content:''; transform:translateY(-70%) rotate(45deg); transition:transform 180ms ease; } .ds-hooks details[open] summary::after { transform:translateY(-25%) rotate(225deg); } .ds-hooks summary:hover { color:#694b7d; } .ds-hooks summary:focus-visible { outline:3px solid #694b7d; outline-offset:4px; } .ds-hooks p { max-width:68ch; margin:0; padding:0 44px 24px 0; color:#625d6c; line-height:1.75; }"
+    "body": {
+      "fontFamily": "Pretendard Variable, Pretendard, Noto Sans KR, Apple SD Gothic Neo, Malgun Gothic, system-ui, sans-serif",
+      "fontSize": "clamp(1rem, 1.25vw, 1.08rem)",
+      "lineHeight": 1.9
     }
-  ],
-  "narrative": {
-    "northStar": "복원 기록의 여백",
-    "overview": "이 시스템은 모던한 사진 복원 기록처럼 보인다. 흐린 흰 종이와 먹회색 화면, 절제된 라일락 한 색, 넓게 남긴 여백이 인물과 문장을 먼저 보이게 한다. 장식은 복원의 정밀함을 암시하는 1px 크롭 마크와 음성 기록선, 한 쌍의 초상 평행선, 기록 번호에 한정하며, 중간 정도의 장식성은 유지하되 과시적으로 번쩍이지 않는다.\n\n공개와 비밀은 서로 다른 장식 세계가 아니라 같은 습관의 밝고 어두운 판본이다. 동일한 구조와 의미 역할을 유지한 채 토큰만 전환해, 친절한 기억이 통제적 보존으로 바뀌는 순간을 사용자가 직접 열어 보게 한다. 피, 칼, 범죄 현장 테이프, 강한 글리치 같은 흔한 범죄 서류 연출은 쓰지 않는다.",
-    "keyCharacteristics": [
-      "흐린 종이와 먹회색을 오가는 동일한 의미 토큰",
-      "한 번에 한 목소리만 내는 절제된 라일락",
-      "사진 복원용 여백, 14px 표면, 1px 크롭·음성 기록선",
-      "세리프 이름표와 가독성 높은 산세리프 기록문의 대비",
-      "색뿐 아니라 라벨, 버튼 상태, 명시적 관문으로 구분되는 공개와 비밀"
-    ],
-    "rules": [
-      { "name": "The One Lilac Rule", "body": "라일락은 정보의 핵심, 현재 상태, 복원 표시를 위한 한 목소리다. 큰 면적의 장식 배경으로 확장하지 않는다.", "section": "colors" },
-      { "name": "The Semantic Mirror Rule", "body": "공개와 비밀은 동일한 의미 역할을 동일한 위치에서 교체한다. 색만 달라져도 정보 구조와 조작 방식은 바뀌지 않는다.", "section": "colors" },
-      { "name": "The Name Is the Seal Rule", "body": "셀프 호스팅 세리프는 인물명과 워드마크에만 사용한다. 본문이나 인터페이스 전반으로 번지지 않는다.", "section": "typography" },
-      { "name": "The Restoration Margin Rule", "body": "여백은 비어 있는 장식이 아니라 사진과 기록을 분리하는 작업 공간이다. 새로운 모듈이 생겨도 핵심 콘텐츠 폭과 섹션 호흡을 먼저 보존한다.", "section": "layout" },
-      { "name": "The Flat Record Rule", "body": "카드마다 그림자를 주지 않는다. 깊이는 초상, 결정적 사상 패널, 고정 상단 바에만 허용한다.", "section": "elevation" },
-      { "name": "The One-Pixel Evidence Rule", "body": "선은 장식 테두리가 아니라 기록의 구획과 정렬 증거다. 크롭 마크, 평행선, 행 구분 외에 두꺼운 프레임을 추가하지 않는다.", "section": "shapes" }
-    ],
-    "dos": [
-      "Do 공개와 비밀에 동일한 구조와 의미 역할을 유지하고, 정확한 테마 토큰으로 상태를 바꾼다.",
-      "Do 라일락을 현재 상태, 핵심 문장, 복원 표시처럼 해석에 필요한 지점에만 쓴다.",
-      "Do 14px 표면, 1px 기록선, 넓은 여백을 함께 사용해 모던한 사진 복원 기록의 인상을 유지한다.",
-      "Do 상태를 색뿐 아니라 텍스트 라벨, aria-current, 명시적 관문 동작으로 전달한다."
-    ],
-    "donts": [
-      "Don't 피, 칼, 범죄 현장 테이프, 강한 글리치로 비밀이나 폭력을 장식한다.",
-      "Don't 모든 섹션을 카드화하거나 그림자로 띄워 기록의 연속성을 끊는다.",
-      "Don't 세리프를 본문과 조작부까지 확장하거나 라일락을 다색 장식 팔레트로 늘린다.",
-      "Don't 모션 감소와 투명도 감소 설정을 우회한다."
-    ]
+  },
+  "rounded": {
+    "control": "10px",
+    "surface": "14px"
+  },
+  "spacing": {
+    "control": "12px",
+    "content": "24px",
+    "section": "clamp(56px, 7vw, 88px)"
   }
 }
