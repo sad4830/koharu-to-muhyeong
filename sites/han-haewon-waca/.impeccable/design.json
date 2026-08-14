@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-14T15:51:09+09:00",
+  "title": "Design System: 한해원 WACA 기록",
+  "extensions": {
+    "colorMeta": {
+      "room": {
+        "role": "neutral",
+        "displayName": "격리실 먹빛",
+        "canonical": "#0b0d0f",
+        "tonalRamp": ["oklch(15% 0.006 220)", "oklch(25% 0.006 220)", "oklch(35% 0.006 220)", "oklch(47% 0.006 220)", "oklch(60% 0.006 220)", "oklch(72% 0.006 220)", "oklch(84% 0.006 220)", "oklch(95% 0.006 220)"]
+      },
+      "room-raised": {
+        "role": "neutral",
+        "displayName": "상승 먹빛",
+        "canonical": "#15181a",
+        "tonalRamp": ["oklch(15% 0.008 220)", "oklch(25% 0.008 220)", "oklch(35% 0.008 220)", "oklch(47% 0.008 220)", "oklch(60% 0.008 220)", "oklch(72% 0.008 220)", "oklch(84% 0.008 220)", "oklch(95% 0.008 220)"]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "감열지 냉백",
+        "canonical": "#e9ece7",
+        "tonalRamp": ["oklch(15% 0.01 135)", "oklch(25% 0.01 135)", "oklch(35% 0.01 135)", "oklch(47% 0.01 135)", "oklch(60% 0.01 135)", "oklch(72% 0.01 135)", "oklch(84% 0.01 135)", "oklch(95% 0.01 135)"]
+      },
+      "paper-dim": {
+        "role": "neutral",
+        "displayName": "감열지 음영",
+        "canonical": "#dfe3de",
+        "tonalRamp": ["oklch(15% 0.01 145)", "oklch(25% 0.01 145)", "oklch(35% 0.01 145)", "oklch(47% 0.01 145)", "oklch(60% 0.01 145)", "oklch(72% 0.01 145)", "oklch(84% 0.01 145)", "oklch(95% 0.01 145)"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "문서 잉크",
+        "canonical": "#121618",
+        "tonalRamp": ["oklch(15% 0.008 220)", "oklch(25% 0.008 220)", "oklch(35% 0.008 220)", "oklch(47% 0.008 220)", "oklch(60% 0.008 220)", "oklch(72% 0.008 220)", "oklch(84% 0.008 220)", "oklch(95% 0.008 220)"]
+      },
+      "ink-muted": {
+        "role": "neutral",
+        "displayName": "보조 문서 잉크",
+        "canonical": "#59605c",
+        "tonalRamp": ["oklch(15% 0.012 150)", "oklch(25% 0.012 150)", "oklch(35% 0.012 150)", "oklch(47% 0.012 150)", "oklch(60% 0.012 150)", "oklch(72% 0.012 150)", "oklch(84% 0.012 150)", "oklch(95% 0.012 150)"]
+      },
+      "room-text": {
+        "role": "neutral",
+        "displayName": "암실 주 문자",
+        "canonical": "#f1f3ef",
+        "tonalRamp": ["oklch(15% 0.008 135)", "oklch(25% 0.008 135)", "oklch(35% 0.008 135)", "oklch(47% 0.008 135)", "oklch(60% 0.008 135)", "oklch(72% 0.008 135)", "oklch(84% 0.008 135)", "oklch(95% 0.008 135)"]
+      },
+      "room-muted": {
+        "role": "neutral",
+        "displayName": "암실 보조 문자",
+        "canonical": "#a8aeaa",
+        "tonalRamp": ["oklch(15% 0.009 150)", "oklch(25% 0.009 150)", "oklch(35% 0.009 150)", "oklch(47% 0.009 150)", "oklch(60% 0.009 150)", "oklch(72% 0.009 150)", "oklch(84% 0.009 150)", "oklch(95% 0.009 150)"]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "종이 규정선",
+        "canonical": "#aeb5af",
+        "tonalRamp": ["oklch(15% 0.012 145)", "oklch(25% 0.012 145)", "oklch(35% 0.012 145)", "oklch(47% 0.012 145)", "oklch(60% 0.012 145)", "oklch(72% 0.012 145)", "oklch(84% 0.012 145)", "oklch(95% 0.012 145)"]
+      },
+      "rule-dark": {
+        "role": "neutral",
+        "displayName": "암실 규정선",
+        "canonical": "#34383a",
+        "tonalRamp": ["oklch(15% 0.008 220)", "oklch(25% 0.008 220)", "oklch(35% 0.008 220)", "oklch(47% 0.008 220)", "oklch(60% 0.008 220)", "oklch(72% 0.008 220)", "oklch(84% 0.008 220)", "oklch(95% 0.008 220)"]
+      },
+      "blood": {
+        "role": "primary",
+        "displayName": "동맥 적색",
+        "canonical": "#b51f2e",
+        "tonalRamp": ["oklch(15% 0.11 24)", "oklch(25% 0.14 24)", "oklch(35% 0.17 24)", "oklch(47% 0.2 24)", "oklch(60% 0.18 24)", "oklch(72% 0.14 24)", "oklch(84% 0.08 24)", "oklch(95% 0.03 24)"]
+      },
+      "blood-on-dark": {
+        "role": "primary",
+        "displayName": "암실 위 적색",
+        "canonical": "#e05463",
+        "tonalRamp": ["oklch(15% 0.1 19)", "oklch(25% 0.13 19)", "oklch(35% 0.16 19)", "oklch(47% 0.19 19)", "oklch(60% 0.17 19)", "oklch(72% 0.13 19)", "oklch(84% 0.08 19)", "oklch(95% 0.03 19)"]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "활성 백색",
+        "canonical": "#ffffff",
+        "tonalRamp": ["oklch(15% 0 0)", "oklch(25% 0 0)", "oklch(35% 0 0)", "oklch(47% 0 0)", "oklch(60% 0 0)", "oklch(72% 0 0)", "oklch(84% 0 0)", "oklch(95% 0 0)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "등록 이름", "purpose": "첫 화면의 인물명과 가장 큰 결론." },
+      "headline": { "displayName": "기록 명제", "purpose": "각 섹션의 윤리적·서사적 명제." },
+      "body": { "displayName": "열람 본문", "purpose": "규칙과 서사를 40–70ch로 읽는 기본 문장." },
+      "label": { "displayName": "임상 데이터", "purpose": "영문 코드, 판정, 수치, 색인." }
+    },
+    "shadows": [
+      { "name": "ledger-hero", "value": "0 1.4rem 4rem rgba(0, 0, 0, 0.28)", "purpose": "첫 감열지 원장을 격리실 바닥에서 분리한다." },
+      { "name": "ledger-sheet", "value": "0 1rem 3rem rgba(0, 0, 0, 0.24)", "purpose": "개별 능력 증거철만 들어 올린다." },
+      { "name": "signal-status", "value": "0 0.15rem 0.5rem rgba(181, 31, 46, 0.45)", "purpose": "활성 상태점에만 작은 적색 잔광을 준다." },
+      { "name": "signal-timeline", "value": "0 0.2rem 0.7rem rgba(181, 31, 46, 0.35)", "purpose": "타임라인 사건점의 생체 신호를 표시한다." }
+    ],
+    "motion": [
+      { "name": "ease-record", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "링크, 밑줄, 파형이 빠르게 정착하는 공통 이징." },
+      { "name": "consent-wave", "value": "5.5s cubic-bezier(0.16, 1, 0.3, 1) infinite", "purpose": "동맥 적색 dash가 원장 파형을 한 번 횡단한다." },
+      { "name": "consent-phases", "value": "5.5s linear infinite", "purpose": "동의, 배치, 회수를 같은 주기 안에서 순차 활성화한다." },
+      { "name": "reduced-motion", "value": "none", "purpose": "파형 이동을 제거하고 세 단계 전체를 정적으로 활성화한다." }
+    ],
+    "breakpoints": [
+      { "name": "ledger-collapse", "value": "1100px" },
+      { "name": "mobile-reading-order", "value": "820px" },
+      { "name": "narrow-record", "value": "520px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Sticky Record Navigation",
+      "kind": "nav",
+      "description": "먹빛 격리실 위에서 기록 구획을 이동하는 44px 링크 행.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"주요 기록\"><a href=\"#profile\">등록부</a><a href=\"#abilities\">능력</a><a href=\"#history\">과거사</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: clamp(1.2rem, 3vw, 2.4rem); padding: 0 1rem; border-bottom: 1px solid var(--rule-dark); background: var(--room); font-family: var(--body-font); } .ds-nav a { position: relative; display: inline-flex; align-items: center; min-block-size: 44px; color: var(--room-muted); font-size: .84rem; font-weight: 650; text-decoration: none; } .ds-nav a::after { position: absolute; right: 0; bottom: .2rem; left: 0; height: 1px; background: var(--blood); content: ''; transform: scaleX(0); transform-origin: left; transition: transform 300ms cubic-bezier(.16,1,.3,1); } .ds-nav a:hover, .ds-nav a:focus-visible { color: var(--room-text); } .ds-nav a:hover::after, .ds-nav a:focus-visible::after { transform: scaleX(1); } .ds-nav a:focus-visible { outline: 2px solid var(--paper); outline-offset: 2px; box-shadow: 0 0 0 4px var(--blood-on-dark); }"
+    },
+    {
+      "name": "Primary Record Link",
+      "kind": "button",
+      "refersTo": "primary-link",
+      "description": "중요 기록으로 이동하는 잉크 면 링크와 선형 화살표.",
+      "html": "<a class=\"ds-primary-link\" href=\"#abilities\">전투 기록 열람<span aria-hidden=\"true\"></span></a>",
+      "css": ".ds-primary-link { display: inline-flex; align-items: center; justify-content: space-between; gap: 1.5rem; min-height: 3.25rem; padding: .75rem 1rem .75rem 1.15rem; background: var(--ink); color: var(--paper); font-family: var(--body-font); font-size: .82rem; font-weight: 700; text-decoration: none; transition: background-color 260ms cubic-bezier(.16,1,.3,1), color 260ms cubic-bezier(.16,1,.3,1); } .ds-primary-link:hover { background: var(--blood); color: #fff; } .ds-primary-link:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; box-shadow: 0 0 0 4px var(--blood); } .ds-primary-link span { display: inline-block; width: 1rem; height: .75rem; border-bottom: 1px solid currentColor; transform: translateY(-.2rem); }"
+    },
+    {
+      "name": "Secondary Record Link",
+      "kind": "button",
+      "description": "보조 기록으로 이동하는 최소 44px 텍스트 링크.",
+      "html": "<a class=\"ds-text-link\" href=\"#history\">NEST 사건 기록</a>",
+      "css": ".ds-text-link { display: inline-flex; align-items: center; min-block-size: 44px; color: var(--ink-muted); font-family: var(--body-font); font-size: .82rem; font-weight: 650; text-decoration-thickness: 1px; text-underline-offset: .25em; } .ds-text-link:hover { color: var(--blood); } .ds-text-link:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; box-shadow: 0 0 0 4px var(--blood); }"
+    },
+    {
+      "name": "Consent Waveform",
+      "kind": "custom",
+      "description": "동의, 배치, 회수를 5.5초 주기로 연결하는 대표 상호작용.",
+      "html": "<div class=\"ds-wave\"><svg viewBox=\"0 0 640 180\" aria-hidden=\"true\"><path class=\"ds-wave-base\" d=\"M20 96H160l28-58 48 116 42-78 34 20h108l28-34 38 68 30-34h104\"/><path class=\"ds-wave-signal\" d=\"M20 96H160l28-58 48 116 42-78 34 20h108l28-34 38 68 30-34h104\"/></svg><div class=\"ds-wave-phases\"><span>동의</span><span>배치</span><span>회수</span></div></div>",
+      "css": ".ds-wave { padding: 1.25rem; background: var(--ink); color: var(--room-text); font-family: var(--body-font); } .ds-wave svg { width: 100%; min-height: 9rem; overflow: visible; } .ds-wave path { fill: none; vector-effect: non-scaling-stroke; } .ds-wave-base { stroke: #3b4042; stroke-width: 1; } .ds-wave-signal { stroke: var(--blood); stroke-width: 3; stroke-dasharray: 100 900; stroke-linecap: square; animation: ds-pulse 5.5s cubic-bezier(.16,1,.3,1) infinite; } .ds-wave-phases { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid var(--rule-dark); border-bottom: 1px solid var(--rule-dark); } .ds-wave-phases span { min-height: 44px; padding: .7rem; color: var(--blood-on-dark); font-size: .72rem; font-weight: 650; animation: ds-phase-a 5.5s linear infinite; } .ds-wave-phases span + span { border-left: 1px solid var(--rule-dark); } .ds-wave-phases span:nth-child(2) { animation-name: ds-phase-b; } .ds-wave-phases span:nth-child(3) { animation-name: ds-phase-c; } @keyframes ds-pulse { from { stroke-dashoffset: 1000; } to { stroke-dashoffset: 0; } } @keyframes ds-phase-a { 0%,28%,100% { background:#241316;color:#fff; } 34%,94% { background:transparent;color:var(--blood-on-dark); } } @keyframes ds-phase-b { 0%,30%,64%,100% { background:transparent;color:var(--blood-on-dark); } 36%,58% { background:#241316;color:#fff; } } @keyframes ds-phase-c { 0%,60%,100% { background:transparent;color:var(--blood-on-dark); } 66%,94% { background:#241316;color:#fff; } } @media (prefers-reduced-motion: reduce) { .ds-wave-signal { animation:none;stroke-dasharray:none; } .ds-wave-phases span { animation:none;background:#241316;color:#fff; } }"
+    },
+    {
+      "name": "Record Scope Tabs",
+      "kind": "button",
+      "refersTo": "record-tab",
+      "description": "공개·제한 기록을 잉크 반전으로 구분하는 키보드 탭.",
+      "html": "<div class=\"ds-tabs\" role=\"tablist\" aria-label=\"기록 공개 범위\"><button role=\"tab\" aria-selected=\"true\">공개 기록</button><button role=\"tab\" aria-selected=\"false\">제한 기록</button></div>",
+      "css": ".ds-tabs { display:flex; border:1px solid var(--ink); background:var(--paper); font-family:var(--body-font); } .ds-tabs button { min-height:3rem; padding:.65rem 1.1rem; border:0; background:transparent; color:var(--ink-muted); cursor:pointer; font-size:.78rem; font-weight:700; } .ds-tabs button + button { border-left:1px solid var(--ink); } .ds-tabs button[aria-selected='true'] { background:var(--ink); color:var(--paper); } .ds-tabs button:hover:not([aria-selected='true']) { color:var(--blood); } .ds-tabs button:focus-visible { outline:2px solid var(--ink); outline-offset:2px; box-shadow:0 0 0 4px var(--blood); }"
+    },
+    {
+      "name": "Ability Evidence Sheet",
+      "kind": "card",
+      "description": "좁은 색인축과 규정선으로 능력 제목·발동값을 묶는 감열지 증거철.",
+      "html": "<article class=\"ds-sheet\"><div class=\"ds-sheet-index\"><span>ABILITY A</span><strong>01</strong></div><div class=\"ds-sheet-copy\"><h3>대리맥: 빌린 정상</h3><p>동의받은 혈액의 정상적인 생체 신호를 기준 삼는다.</p></div></article>",
+      "css": ".ds-sheet { display:grid; grid-template-columns:5rem 1fr; max-width:42rem; background:var(--paper); color:var(--ink); box-shadow:0 1rem 3rem rgba(0,0,0,.24); font-family:var(--body-font); } .ds-sheet-index { display:flex; flex-direction:column; align-items:center; justify-content:space-between; padding:1.5rem 0; border-right:1px solid var(--rule); } .ds-sheet-index span { font-size:.62rem; letter-spacing:.1em; writing-mode:vertical-rl; } .ds-sheet-index strong { color:var(--blood); font-size:3rem; line-height:1; } .ds-sheet-copy { padding:2.5rem; } .ds-sheet-copy h3 { max-width:9ch; margin:0; font-size:clamp(2.5rem,4.5vw,5rem); line-height:1.05; letter-spacing:-.04em; } .ds-sheet-copy p { max-width:38ch; margin:2rem 0 0; color:var(--ink-muted); line-height:1.72; } .ds-sheet:focus-within { outline:2px solid var(--ink); outline-offset:2px; box-shadow:0 0 0 4px var(--blood); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "심전도 감열지와 임상시험 동의서가 겹친 동의 파형 원장",
+    "overview": "냉백색 감열지 문서가 먹빛 격리실 위에 놓이고, 동맥 적색 신호가 동의·배치·회수를 기록한다. 페이지는 영웅 초상이나 게임 스탯이 아니라 체인 오브 커스터디를 따라 읽는 고밀도 원장이다. 비대칭 열, 날카로운 모서리, 긴 세로 기록축으로 검수 순서를 만들며 적색은 상태와 선택에만 제한한다.",
+    "keyCharacteristics": [
+      "냉백색 종이와 먹빛 격리실의 강한 명도 분할",
+      "1px 규정선으로 이어지는 증거철·혈액백 라벨 문법",
+      "자가 호스팅 Pretendard Variable 한 가족의 극단적 굵기·크기 대비",
+      "동의 → 배치 → 회수를 5.5초에 순환하는 단일 대표 파형",
+      "인물 외관 없이 선택, 규칙, 기록만으로 정체성을 드러내는 Read 모드"
+    ],
+    "rules": [
+      { "name": "The Arterial Exception Rule", "body": "동맥 적색은 넓은 장식 면이 아니라 상태, 경고, 선택, 진행 신호일 때만 쓴다.", "section": "colors" },
+      { "name": "The One-Family Rule", "body": "세리프·고딕 장식체·아이콘 폰트를 추가하지 않고, `WACA Sans`의 크기·굵기·자간만으로 위계를 만든다.", "section": "typography" },
+      { "name": "The Ledger Order Rule", "body": "모바일에서도 판정(facts)을 서사(copy)보다 먼저 보여 주고, 파형(signal)은 설명 뒤에 배치한다.", "section": "layout" },
+      { "name": "The Evidence Stack Rule", "body": "그림자는 종이 증거철의 층을 설명할 때만 사용하며, 카드 hover 장식으로 반복하지 않는다.", "section": "elevation" },
+      { "name": "The Sharp Consent Rule", "body": "둥근 카드, 캡슐형 버튼, 부드러운 앱 패널을 만들지 않는다. 원형은 오직 신호 표식이다.", "section": "shapes" }
+    ],
+    "dos": [
+      "**Do** 냉백색 종이와 먹빛 방을 큰 면으로 분리하고, 1px 규정선으로 정보의 소유·순서를 연결한다.",
+      "**Do** 동맥 적색을 상태·선택·진행에만 사용하고, 본문은 검증된 명도 대비 조합을 유지한다.",
+      "**Do** 모바일 첫 화면을 `rail → facts → copy → signal` 순서로 보존한다.",
+      "**Do** 파형은 동의 → 배치 → 회수 5.5초 순환 하나만 대표 모션으로 사용하고 reduced-motion 정지 상태를 제공한다."
+    ],
+    "donts": [
+      "**Don't** 캐릭터 외관, 초상, 실루엣, 신체 일부, 외형 서술을 생성하거나 암시하지 않는다.",
+      "**Don't** 관, 박쥐 떼, 성당 장식, 십자가, 피 튀김 같은 고전 뱀파이어 고딕·호러 모티프를 사용하지 않는다.",
+      "**Don't** 둥근 카드 대시보드, 게임 스탯창, 공식 WACA 서비스처럼 보이는 UI를 만들지 않는다."
+    ]
+  }
+}
