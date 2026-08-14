@@ -1,290 +1,232 @@
 ---
-name: "HILGRAM: 미카게 시즈쿠"
-description: "UV CROSS-EXAMINATION — 공개 진술과 봉인 기록이 한 자외선 심문 파일에서 겹쳐지는 캐릭터 프로필"
+name: "Mikage Shizuku / HILGRAM"
+description: "A restrained photo-restoration record where considerate memory and coercive preservation share one visual grammar."
 colors:
-  void: "#09070d"
-  room: "#0d0b12"
-  file: "#15111c"
-  file-2: "#1c1725"
-  file-3: "#241d2f"
-  paper: "#eeeaf3"
-  body: "#d8d1df"
-  muted: "#ada5b9"
-  rule: "rgba(214, 203, 229, 0.16)"
-  rule-strong: "rgba(214, 203, 229, 0.34)"
-  uv-accent: "#a68bc8"
-  uv-accent-bright: "#d9baff"
-  uv-accent-soft: "rgba(166, 139, 200, 0.13)"
-  evidence: "#c27d91"
-  focus: "#efd0ff"
-  paper-ink: "#19131d"
-  paper-muted: "#5f5765"
-  sealed-accent: "#b892a0"
-  sealed-accent-bright: "#f3bed0"
-  sealed-accent-soft: "rgba(194, 125, 145, 0.13)"
-  print-ground: "#fff"
-  print-ink: "#111"
-  print-body: "#222"
-  print-muted: "#444"
-  print-rule: "#bbb"
-  print-rule-strong: "#333"
-  print-evidence: "#6e3548"
+  public-bg: "#f5f3f7"
+  public-surface: "#fcfbfd"
+  public-surface-strong: "#ffffff"
+  public-text: "#24212b"
+  public-muted: "#625d6c"
+  public-line: "#d8d1df"
+  public-line-strong: "#b9aec2"
+  public-accent: "#694b7d"
+  public-accent-soft: "#e9ddf1"
+  public-accent-ink: "#4f3560"
+  public-button: "#67457f"
+  public-button-text: "#ffffff"
+  secret-bg: "#1f1b23"
+  secret-surface: "#27222c"
+  secret-surface-strong: "#2c2631"
+  secret-text: "#f7f3fa"
+  secret-muted: "#c8bdcc"
+  secret-line: "#493e4d"
+  secret-line-strong: "#68596d"
+  secret-accent: "#d6bee7"
+  secret-accent-soft: "#342a3d"
+  secret-accent-ink: "#ecdef5"
+  secret-button: "#d9c2e8"
+  secret-button-text: "#24182c"
 typography:
-  body: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "16px", lineHeight: 1.75 }
-  micro-data: { fontFamily: "Barlow Condensed, sans-serif", fontSize: ".72rem", fontWeight: 600, lineHeight: 1 }
-  data-label: { fontFamily: "Barlow Condensed, sans-serif", fontSize: ".75rem", fontWeight: 700, lineHeight: 1, letterSpacing: ".15em" }
-  compact-copy: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: ".78rem" }
-  wordmark: { fontFamily: "Barlow Condensed, sans-serif", fontSize: ".82rem", fontWeight: 700, lineHeight: 1, letterSpacing: ".2em" }
-  note: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: ".84rem" }
-  fact-value: { fontFamily: "Barlow Condensed, sans-serif", fontSize: ".85rem", fontWeight: 700, lineHeight: 1.2 }
-  control-title: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: ".86rem", fontWeight: 700 }
-  ledger-item: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: ".9rem" }
-  ledger-title: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: ".92rem" }
-  hero-quote: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: ".98rem", lineHeight: 1.8 }
-  control-code: { fontFamily: "Barlow Condensed, sans-serif", fontSize: "1.05rem", fontWeight: 700, lineHeight: 1 }
-  owner-value: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "1.1rem", fontWeight: 750 }
-  identity-index: { fontFamily: "Barlow Condensed, sans-serif", fontSize: "1.4rem", fontWeight: 700, lineHeight: 1 }
-  alert-count: { fontFamily: "Barlow Condensed, sans-serif", fontSize: "1.6rem", fontWeight: 700, lineHeight: 1 }
-  choice-index: { fontFamily: "Barlow Condensed, sans-serif", fontSize: "2rem", fontWeight: 700, lineHeight: 1 }
-  contradiction-index: { fontFamily: "Barlow Condensed, sans-serif", fontSize: "2.1rem", fontWeight: 700, lineHeight: 1 }
-  testimony-index: { fontFamily: "Barlow Condensed, sans-serif", fontSize: "2.5rem", fontWeight: 700, lineHeight: 1 }
-  preference-mark: { fontFamily: "Barlow Condensed, sans-serif", fontSize: "2.6rem", fontWeight: 700, lineHeight: 1 }
-  catchphrase: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(1rem, 1.35vw, 1.2rem)", fontWeight: 500 }
-  hero-display: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(3.4rem, 7vw, 6rem)", fontWeight: 850, lineHeight: .93, letterSpacing: "-.04em" }
-  hero-kanji: { fontFamily: "Barlow Condensed, sans-serif", fontSize: "clamp(.9rem, 1.3vw, 1.15rem)", fontWeight: 600, lineHeight: 1, letterSpacing: ".18em" }
-  section-heading: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(2.4rem, 4.8vw, 5.3rem)", lineHeight: .96, letterSpacing: "-.04em" }
-  reading: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(1rem, 1.25vw, 1.08rem)", lineHeight: 1.95 }
-  identity-value: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(1rem, 1.6vw, 1.35rem)", fontWeight: 720 }
-  testimony-title: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(1.15rem, 1.8vw, 1.55rem)" }
-  preference-answer: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(1rem, 1.5vw, 1.2rem)", lineHeight: 1.7 }
-  feature-quote: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(1.05rem, 1.7vw, 1.35rem)", fontWeight: 620, lineHeight: 1.75 }
-  empty-record: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(4rem, 9vw, 6rem)", fontWeight: 850, lineHeight: 1 }
-  sealed-heading: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(3.2rem, 5vw, 5.25rem)", lineHeight: .94, letterSpacing: "-.04em" }
-  contradiction-claim: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(1.3rem, 2.5vw, 2.4rem)", fontWeight: 760, lineHeight: 1.25 }
-  keyword: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(1rem, 1.6vw, 1.3rem)", fontWeight: 760 }
-  choice-heading: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(3rem, 6vw, 6rem)", lineHeight: .95, letterSpacing: "-.04em" }
-  choice-title: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(1.15rem, 1.8vw, 1.5rem)" }
-  verdict-thesis: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(3.5rem, 7.6vw, 6rem)", fontWeight: 850, lineHeight: .94, letterSpacing: "-.04em" }
-  belief-question: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(3.5rem, 7.2vw, 6rem)", fontWeight: 850, lineHeight: .94, letterSpacing: "-.04em" }
-  footer-statement: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(1.35rem, 2.2vw, 2rem)", fontWeight: 800 }
-  hero-display-mobile: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(3.6rem, 16vw, 6rem)", fontWeight: 850, lineHeight: .93, letterSpacing: "-.04em" }
-  section-heading-mobile: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(2.8rem, 13vw, 5rem)", lineHeight: .96 }
-  sealed-heading-mobile: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(2.5rem, 10vw, 4.5rem)", lineHeight: .94 }
-  verdict-question-mobile: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(3.5rem, 15vw, 5.6rem)", fontWeight: 850, lineHeight: .94 }
-  choice-heading-mobile: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(3.2rem, 16vw, 5rem)", lineHeight: .95 }
-  control-helper-mobile: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: ".72rem" }
+  display:
+    fontFamily: "Shizuku Serif, Noto Serif KR, Noto Serif JP, serif"
+    fontSize: "clamp(4.2rem, 7.4vw, 6rem)"
+    fontWeight: 700
+    lineHeight: 1.03
+    letterSpacing: "-0.035em"
+  headline:
+    fontFamily: "Pretendard Variable, Pretendard, Noto Sans KR, Apple SD Gothic Neo, Malgun Gothic, system-ui, sans-serif"
+    fontSize: "clamp(2.6rem, 5.5vw, 4.9rem)"
+    fontWeight: 780
+    lineHeight: 1.08
+    letterSpacing: "-0.04em"
+  title:
+    fontFamily: "Pretendard Variable, Pretendard, Noto Sans KR, Apple SD Gothic Neo, Malgun Gothic, system-ui, sans-serif"
+    fontSize: "clamp(1.7rem, 3vw, 2.4rem)"
+    fontWeight: 760
+    lineHeight: 1.25
+    letterSpacing: "-0.035em"
+  body:
+    fontFamily: "Pretendard Variable, Pretendard, Noto Sans KR, Apple SD Gothic Neo, Malgun Gothic, system-ui, sans-serif"
+    fontSize: "clamp(1rem, 1.25vw, 1.08rem)"
+    fontWeight: 400
+    lineHeight: 1.9
+    letterSpacing: "normal"
+  label:
+    fontFamily: "Pretendard Variable, Pretendard, Noto Sans KR, Apple SD Gothic Neo, Malgun Gothic, system-ui, sans-serif"
+    fontSize: "0.9rem"
+    fontWeight: 800
+    lineHeight: 1.55
+    letterSpacing: "0.08em"
 rounded:
-  square: "0px"
-  confidential-mark: "4px"
-  evidence-label: "5px"
-  portrait: "8px"
-  mode-control: "10px"
-  evidence-frame: "18px"
-  interrogation-loop: "50%"
+  control: "10px"
+  action: "12px"
+  surface: "14px"
+  pill: "999px"
 spacing:
-  page-max: "1480px"
-  reading-max: "68ch"
-  header: "62px"
-  header-mobile: "54px"
-  section-inline: "clamp(1.25rem, 5vw, 5.5rem)"
-  section-block: "clamp(5.5rem, 9vw, 9rem)"
-  choice-block: "clamp(6rem, 10vw, 10rem)"
-  verdict-block: "clamp(6rem, 11vw, 11rem)"
-  mobile-inline: "1.15rem"
-  focus-offset: "4px"
+  switch-gap: "4px"
+  compact: "8px"
+  control: "12px"
+  inset: "18px"
+  content: "24px"
+  group: "30px"
+  section: "clamp(56px, 7vw, 88px)"
 components:
-  file-status:
+  view-switcher:
+    backgroundColor: "{colors.public-surface}"
+    textColor: "{colors.public-muted}"
+    rounded: "{rounded.surface}"
+    padding: "4px"
+  view-switcher-active:
+    backgroundColor: "{colors.public-text}"
+    textColor: "{colors.public-bg}"
+    rounded: "{rounded.control}"
+  button-primary:
+    backgroundColor: "{colors.secret-button}"
+    textColor: "{colors.secret-button-text}"
+    rounded: "{rounded.action}"
+    padding: "12px 20px"
+  button-secondary:
     backgroundColor: "transparent"
-    textColor: "{colors.paper}"
-    typography: "{typography.data-label}"
-    rounded: "{rounded.square}"
-    padding: ".5rem .7rem"
-    height: "44px"
-  mode-tab:
-    backgroundColor: "transparent"
-    textColor: "{colors.muted}"
-    rounded: "{rounded.square}"
-    padding: ".6rem .8rem"
-    height: "62px"
-  mode-tab-open-selected:
-    backgroundColor: "{colors.uv-accent}"
-    textColor: "{colors.room}"
-    rounded: "{rounded.square}"
-  mode-tab-sealed-selected:
-    backgroundColor: "{colors.evidence}"
-    textColor: "{colors.room}"
-    rounded: "{rounded.square}"
-  index-link:
-    backgroundColor: "transparent"
-    textColor: "{colors.paper}"
-    rounded: "{rounded.square}"
-    padding: ".55rem .75rem"
-    height: "54px"
-  evidence-label:
-    backgroundColor: "{colors.paper}"
-    textColor: "{colors.file-3}"
-    typography: "{typography.micro-data}"
-    rounded: "{rounded.evidence-label}"
-    padding: ".5rem .7rem"
-  owner-record:
-    backgroundColor: "{colors.file-2}"
-    textColor: "{colors.paper}"
-    rounded: "{rounded.evidence-label}"
-    padding: "1.5rem"
-  verdict-sheet:
-    backgroundColor: "{colors.paper}"
-    textColor: "{colors.paper-ink}"
-    rounded: "{rounded.square}"
-    padding: "clamp(6rem, 11vw, 11rem) clamp(1.25rem, 5vw, 5.5rem)"
+    textColor: "{colors.secret-text}"
+    rounded: "{rounded.action}"
+    padding: "12px 20px"
+  restoration-panel:
+    backgroundColor: "{colors.secret-accent-soft}"
+    textColor: "{colors.secret-text}"
+    rounded: "{rounded.surface}"
+    padding: "clamp(34px, 5vw, 54px)"
 ---
 
-# Design System: HILGRAM: 미카게 시즈쿠
+# Design System: Mikage Shizuku / HILGRAM
 
 ## Overview
 
-**Creative North Star: “UV CROSS-EXAMINATION”**
+**Creative North Star: "복원 기록의 여백"**
 
-This is the restored first-version interrogation dossier, grounded in historical seed `6b3f0fe`. A near-black plum room holds one muted-violet file whose public and sealed states reveal different readings of the same canonical record. The world is procedural, intimate, and quietly threatening rather than theatrical.
+이 시스템은 모던한 사진 복원 기록처럼 보인다. 흐린 흰 종이와 먹회색 화면, 절제된 라일락 한 색, 넓게 남긴 여백이 인물과 문장을 먼저 보이게 한다. 장식은 복원의 정밀함을 암시하는 1px 크롭 마크와 음성 기록선, 한 쌍의 초상 평행선, 기록 번호에 한정하며, 중간 정도의 장식성은 유지하되 과시적으로 번쩍이지 않는다.
 
-The first viewport is a full-height intake record: testimony, identity facts, and the state control occupy the left column; the framed `EVIDENCE 01` portrait occupies the right. A single vertical UV film runs through the document and becomes more visible when the file is sealed. The reading sequence is fixed: identify the subject, compare states, break three contradictions, follow seven deliberate choices, read the pale verdict sheet, open the complete deposition, and face the final question.
+공개와 비밀은 서로 다른 장식 세계가 아니라 같은 습관의 밝고 어두운 판본이다. 동일한 구조와 의미 역할을 유지한 채 토큰만 전환해, 친절한 기억이 통제적 보존으로 바뀌는 순간을 사용자가 직접 열어 보게 한다. 피, 칼, 범죄 현장 테이프, 강한 글리치 같은 흔한 범죄 서류 연출은 쓰지 않는다.
 
 **Key Characteristics:**
 
-- Near-black plum room with layered violet dossier planes.
-- One vertical UV evidence film, restrained scanlines, and fine rules.
-- Public and sealed file states share structure while changing active evidence color and portrait treatment.
-- Exactly three contradiction rows and seven numbered choices.
-- One pale verdict sheet interrupts the dark file before the complete deposition.
-- The supplied portrait remains an intake artifact with its three-part limitation/source caption adjacent.
-
-**The Same File Rule.** Public and sealed states are two readings of one dossier; keep the structure stable and let evidence, copy, and active color disclose the difference.
+- 흐린 종이와 먹회색을 오가는 동일한 의미 토큰
+- 한 번에 한 목소리만 내는 절제된 라일락
+- 사진 복원용 여백, 14px 표면, 1px 크롭·음성 기록선
+- 세리프 이름표와 가독성 높은 산세리프 기록문의 대비
+- 색뿐 아니라 라벨, 버튼 상태, 명시적 관문으로 구분되는 공개와 비밀
 
 ## Colors
 
-Muted violet establishes the ultraviolet atmosphere; dusty evidence rose marks verified or sealed material; pale lavender paper is reserved for text, selection, and the single verdict interruption.
+팔레트는 공개 상태의 흐린 종이와 비밀 상태의 먹회색 보관실을 같은 라일락 계열로 묶는다. 각 테마는 배경, 표면, 본문, 보조문, 선, 강조, 버튼 역할을 일대일로 유지한다.
 
 ### Primary
 
-- **Ultraviolet Violet** (`uv-accent`, `uv-accent-bright`, `uv-accent-soft`): public-state activity, selection, the vertical film, codes, and low-opacity hover fields.
-- **Evidence Rose** (`evidence`): sealed-state activity, contradiction connectors, warnings, verified counts, and incident markers.
-
-### Secondary
-
-- **Sealed Mauve** (`sealed-accent`, `sealed-accent-bright`, `sealed-accent-soft`): the sealed file's supporting selection and ambient states; it never replaces Evidence Rose for verified facts.
+- **보존 라일락** (`public-accent`, `public-button`): 공개 상태의 캐치프레이즈, 링크, 키워드와 결정적 동작에만 사용한다.
+- **복원 라일락** (`secret-accent`, `secret-button`): 어두운 상태에서 같은 의미를 더 밝은 명도로 이어 간다.
 
 ### Neutral
 
-- **Interrogation Depths** (`void`, `room`, `file`, `file-2`, `file-3`): browser canvas, bounded room, and successively lighter dossier planes.
-- **Cold Record Copy** (`paper`, `body`, `muted`): headings, long reading copy, and secondary metadata.
-- **Procedural Rules** (`rule`, `rule-strong`): all dividers, frames, ledgers, and sticky boundaries.
-- **Verdict Ink** (`paper-ink`, `paper-muted`): dark copy on the pale verdict sheet.
-- **Focus Lilac** (`focus`): the sole keyboard focus outline.
-- **Print Set** (`print-ground`, `print-ink`, `print-body`, `print-muted`, `print-rule`, `print-rule-strong`, `print-evidence`): the explicit ink-on-white print remap.
+- **흐린 복원지** (`public-bg`, `public-surface`, `public-surface-strong`): 페이지, 반투명 상단 바, 강조 기록 면을 단계적으로 구분한다.
+- **먹회색 보관실** (`secret-bg`, `secret-surface`, `secret-surface-strong`): 비밀 상태의 동일한 세 층이며, 새 장식이 아니라 밝기 반전으로 전환을 알린다.
+- **기록 먹색** (`public-text`, `public-muted`)과 **복원 백색** (`secret-text`, `secret-muted`): 제목과 긴 본문의 위계를 담당한다.
+- **평행 기록선** (`public-line`, `public-line-strong`, `secret-line`, `secret-line-strong`): 1px 구획과 2px 화살표에만 사용한다.
+- **라일락 워시** (`public-accent-soft`, `secret-accent-soft`): 요약처럼 의미상 한 단계 압축된 기록 면을 만든다.
 
-**The Evidence Hierarchy Rule.** Violet establishes UV atmosphere; rose identifies confirmed evidence; pale paper appears as a decisive verdict, not as a general card surface.
+**The One Lilac Rule.** 라일락은 정보의 핵심, 현재 상태, 복원 표시를 위한 한 목소리다. 큰 면적의 장식 배경으로 확장하지 않는다.
+
+**The Semantic Mirror Rule.** 공개와 비밀은 동일한 의미 역할을 동일한 위치에서 교체한다. 색만 달라져도 정보 구조와 조작 방식은 바뀌지 않는다.
 
 ## Typography
 
-**Display Font:** Noto Sans KR Variable (sans-serif fallback)
+**Display Font:** Shizuku Serif, 로컬 `/fonts/noto-serif-kr-shizuku.woff`를 `font-weight: 700`으로 셀프 호스팅하고 Noto Serif KR, Noto Serif JP, serif로 폴백한다.
 
-**Body Font:** Noto Sans KR Variable (sans-serif fallback)
+**Body Font:** Pretendard Variable, Pretendard, Noto Sans KR, Apple SD Gothic Neo, Malgun Gothic, system-ui, sans-serif.
 
-**Data Font:** Barlow Condensed (sans-serif fallback; loaded at 600 and 700)
-
-Noto carries all Korean identity, testimony, analysis, and deposition text. Barlow Condensed carries short Latin record codes, counts, dates, and measurements. The frontmatter records every fixed and fluid step used by the build, including the 840px overrides.
+**Character:** 이름은 묵직한 복원 인장처럼 세리프로 남기고, 기록과 조작은 중립적인 산세리프로 읽힌다. 장식성은 서체 교체보다 크기, 무게, 여백의 대비에서 나온다.
 
 ### Hierarchy
 
-- **Hero Display:** dense, high-weight Korean identity with the smaller kanji line separated in condensed data type.
-- **Section Display:** compact headings with tight leading; mobile headings scale down without losing the dossier's blunt cadence.
-- **Reading:** body copy stays within the `reading-max` measure; normal reading uses generous leading and the deposition extends to `72ch` with `2` line-height.
-- **Data:** micro labels, indices, record codes, and counts remain compact and high-contrast; these are metadata, not decorative headings.
+- **Display** (`700`, `clamp(4.2rem, 7.4vw, 6rem)`, `1.03`): 첫 화면의 인물명에만 사용한다. 모바일은 `clamp(3.2rem, 16vw, 4.8rem)`으로 재조정한다.
+- **Headline** (`780`, `clamp(2.6rem, 5.5vw, 4.9rem)`, `1.08`): 비밀 기록 관문의 경고 제목처럼 한 번의 중요한 판단에 사용한다.
+- **Title** (`760`, `clamp(1.7rem, 3vw, 2.4rem)`, `1.25`): 기록 섹션 제목이다.
+- **Body** (`400`, `clamp(1rem, 1.25vw, 1.08rem)`, `1.9`): 한국어 장문은 최대 `72ch`, `text-wrap: pretty`, `word-break: keep-all`을 사용한다.
+- **Label** (`700–850`, `0.68rem–0.96rem`, 최대 `0.12em`): 메타데이터와 기록 번호에는 높은 무게와 제한된 자간을 사용한다.
 
-**The Two-Type Rule.** Noto speaks and explains; Barlow counts and indexes. Never set Korean prose in the condensed data face.
+**The Name Is the Seal Rule.** 셀프 호스팅 세리프는 인물명과 워드마크에만 사용한다. 본문이나 인터페이스 전반으로 번지지 않는다.
 
 ## Layout
 
-The dossier is centered at `page-max` and bounded by vertical rules. A sticky three-column header precedes the two-column intake hero. A sticky horizontal record index follows the hero; record sections use a narrow heading column and a wider evidence/read column. The vertical UV film begins beneath the header at 44.2% of the shell and narrows to a 4px line on small screens.
+데스크톱 본문은 최대 `1480px`의 두 열 그리드다. 초상 열은 `minmax(350px, 0.88fr)`, 기록 열은 `minmax(0, 1.12fr)`로 약 42:58을 이루며, 열 간격은 `clamp(54px, 7vw, 118px)`이다. 초상은 상단에서 `100px` 떨어진 위치에 고정되고, 오른쪽 인트로는 `calc(100dvh - 128px)`의 첫 화면 안에서 이름과 한 문장을 중앙에 놓는다. 전체 좌우 여백은 `clamp(24px, 4vw, 64px)`이고 섹션 리듬은 `clamp(56px, 7vw, 88px)`이다.
 
-- **1100px:** intake and record columns tighten; the identity ledger becomes two columns; secondary two-column content stacks.
-- **840px:** the header becomes 54px, the intake becomes a single ordered column, the record index remains horizontally scrollable, and sections use the mobile inline gutter.
-- **540px:** portrait captions, sealed alerts, ledgers, keyword registers, and owner data become single-column; tab height becomes 58px.
-- **360px:** tab helper copy hides and the smallest facts/index targets compress without dropping below the 320px page floor.
+`980px` 이하에서는 열 비율과 간격을 줄이고 복잡한 내부 그리드를 단순화한다. `760px` 이하에서는 한 열로 전환해 초상, 기본 사실, 이름, 문장을 순서대로 쌓고, 초상은 최대 `230px`, 페이지 여백은 `18px`이 된다. 비밀 관문에서는 초상을 감춰 판단 문장과 동작을 먼저 보인다. `430px` 이하에서는 기록 행을 한 열로 바꾸고 관문 버튼을 전체 너비로 쌓는다.
 
-**The One Beam Rule.** Preserve one continuous vertical UV film across the dossier; do not multiply it into decorative stripes.
+**The Restoration Margin Rule.** 여백은 비어 있는 장식이 아니라 사진과 기록을 분리하는 작업 공간이다. 새로운 모듈이 생겨도 핵심 콘텐츠 폭과 섹션 호흡을 먼저 보존한다.
 
 ## Elevation & Depth
 
-Depth is mostly tonal and procedural: nested plum planes, transparent overlays, rules, the vertical UV film, and scanlines. Only the framed portrait (`0 30px 100px rgba(7, 5, 10, 0.52)`) and owner record (`0 18px 50px rgba(7, 5, 10, 0.24)`) receive ambient shadows; the contradiction connector uses a localized evidence glow (`0 0 12px rgba(194, 125, 145, 0.45)`). There is no blur or glass treatment.
+기본 구조는 1px 선과 색조 레이어로 평평하게 유지한다. 초상 프레임에만 공개 상태 `0 24px 70px rgba(65, 45, 77, 0.13)`, 비밀 상태 `0 26px 74px rgba(7, 4, 9, 0.38)`의 넓고 낮은 그림자를 사용한다. 사상 패널은 `0 18px 54px color-mix(in srgb, var(--accent) 8%, transparent)`으로 더 약하게 떠오른다. 상단 바의 `16px` 블러는 문맥을 잃지 않는 고정 탐색을 위한 것이며, 투명도 감소 설정에서는 즉시 단색 배경으로 바뀐다.
 
-**The Evidence-Only Lift Rule.** Shadow belongs to physical intake artifacts and the UV verification line, never to every section or ledger cell.
+**The Flat Record Rule.** 카드마다 그림자를 주지 않는다. 깊이는 초상, 결정적 사상 패널, 고정 상단 바에만 허용한다.
 
 ## Shapes
 
-Most information surfaces remain square. The mode control uses a restrained 10px enclosure; the portrait matte uses 8px, its rear frame 18px, and small physical labels 4–5px. The final interrogation's 50% rotated outline is a one-off questioning gesture, not a reusable pill.
+주요 표면은 부드럽지만 장난스럽지 않은 `14px` 모서리를 공유한다. 관문 버튼은 `12px`, 스위처 내부 상태는 `10px`, 스크롤 손잡이와 평행선 끝은 `999px`이다. 구획은 대부분 1px 직선이며, 사진 프레임 안쪽 `16px` 위치의 길이 `28px`, 두께 `1px` 크롭 마크와 길이 `76px`, 두께 `2px`의 두 평행선이 복원 기록의 반복 서명이다. 음성 기록 위의 평행선은 길이 `72px`와 `46px`, 두께 `1px`다.
 
-Rules are structural: 1px dividers build ledgers and file frames, a 3px evidence edge flags usage limits, and rotated squares mark active file state and keywords.
+**The One-Pixel Evidence Rule.** 선은 장식 테두리가 아니라 기록의 구획과 정렬 증거다. 크롭 마크, 평행선, 행 구분 외에 두꺼운 프레임을 추가하지 않는다.
 
 ## Components
 
-### File Status Control
+### View Switcher
 
-A 44px-minimum header button shows `OPEN FILE` or `SEALED FILE`, the next action, and a rotated active-color marker. It exposes `aria-pressed`, changes the complete state, and uses the global focus outline.
+- **Shape:** 외곽은 `14px`, 내부 상태는 `10px`; `4px` 간격과 패딩을 가진 세 칸 그리드다.
+- **State:** 기본은 보조문 색, 현재 페이지는 본문색 배경과 페이지 배경색 글자로 반전한다. 버튼은 최소 `44px` 높이를 유지한다.
+- **Motion:** 색과 배경은 `180ms ease`, 누름은 아래로 `1px`; 포커스는 전역 `3px` 라일락 외곽선과 `4px` 오프셋이다.
 
-### Public / Sealed Tabs
+### Portrait Frame
 
-Two equal tabs sit inside a 10px dark enclosure. The selected tab fills with the state's active color and uses room-dark text; hover uses the soft accent. Arrow keys, Home, End, roving focus, `aria-selected`, and `aria-controls` are part of the component.
+- **Shape:** 정사각형, `14px` 모서리, `overflow: hidden`; 이미지는 `contain`, 상단 중앙 정렬이다.
+- **Signature:** 안쪽 `16px`의 1px 크롭 마크, 우하단의 두 평행선, 상단 기록 메타데이터를 겹친다.
+- **Theme:** 비밀 상태에서 이미지는 `saturate(0.76) contrast(1.05) brightness(0.82)`와 `scale(1.01)`로 조용히 어두워진다.
 
-### EVIDENCE 01 Portrait
+### Record Rows and Grids
 
-The square intake image sits in an 8px matte with an offset 18px frame and one evidence label. Sealed state reduces saturation, raises contrast, adds slight sepia, and tightens the crop. The exact caption remains three adjacent facts: appearance reference only, not the official restraint uniform, source Picrew.
+- **Structure:** 기록 행은 `minmax(112px, 0.36fr) / 1fr`, `26px` 간격, 상하 `20px` 패딩과 1px 구분선을 사용한다.
+- **Responsive:** `760px` 이하에서는 라벨 열을 `104px`로 줄이고, `430px` 이하에서는 한 열과 `5px` 간격으로 쌓는다.
 
-### Record Index
+### Restoration Panels
 
-A sticky horizontal index stays beneath the header. Each 54px link pairs a condensed number with a Korean section name; overflow scrolls horizontally on narrow screens.
+- **Summary:** 라일락 워시 배경, `14px` 모서리, `clamp(34px, 5vw, 54px)` 내부 여백으로 요약 기록을 묶는다.
+- **Ideology:** 강한 표면색과 매우 약한 라일락 그림자로 핵심 사상을 분리한다.
 
-### Identity and Testimony Ledgers
+### Gate Actions
 
-Identity is a five-cell ruled ledger with numbered fields and one emphasized leading cell. Public personality uses three staggered testimony rows. Preference and feature records use ruled rows rather than floating containers.
+- **Primary:** 비밀 버튼색 면과 대비 글자, `12px 20px`, 최소 높이 `48px`, `12px` 모서리다.
+- **Secondary:** 투명 배경과 강한 구분선으로 되돌아가기 동작을 제공한다.
+- **States:** `160ms ease`로 배경과 색을 바꾸며, 눌림은 아래로 `1px` 이동한다. `430px` 이하에서는 두 버튼 모두 전체 너비다.
 
-### Cross-Examination
+### Disclosure Rows
 
-The sealed comparison is an accessible three-row table. Each row preserves the struck public claim, one glowing UV connector, and the verified fact together; the mobile form stacks the same semantic cells without losing either side.
+- **Structure:** 위아래 1px 선 사이에 최소 `58px` 높이의 요약 행을 둔다.
+- **Indicator:** 라일락 2px 직각선을 회전해 열림과 닫힘을 표현하며 `180ms ease`로 전환한다.
 
-### Seven-Choice Ledger
+### View Transition
 
-Exactly seven ordered rows pair a Barlow index, a short title, and the complete decision text. The layout becomes a two-column index/content row at 840px and remains a ledger, not an illustration.
-
-### Pale Verdict Sheet
-
-The only light full-width plane uses cold paper, dark ink, a small case header, one large conclusion, and two reading columns. On mobile it becomes a single reading flow.
-
-### Complete Deposition
-
-A native closed `details` element reveals six numbered paragraphs. Its plus rotates into a line in 180ms; print forces the entire deposition visible.
-
-### Owner Record and Final Interrogation
-
-The owner data is a compact 5px-radius evidence label with three ruled fields. The final interrogation returns to the void plane, adds one oversized rotated loop, and closes with the belief question and two columns of analysis.
-
-### Motion and state
-
-Portrait reveal and UV development run for 700ms with `cubic-bezier(.16, 1, .3, 1)` when motion is allowed. Portrait mode change uses `filter 360ms ease` and `transform 500ms cubic-bezier(.16, 1, .3, 1)`. Root state transition uses 460ms with the same easing and a restrained opacity crossfade. Reduced motion collapses all animation and transition durations to `.01ms`; reduced transparency removes scanlines and the UV film.
+- **Entry:** 콘텐츠는 `430ms cubic-bezier(0.16, 1, 0.3, 1)` 동안 `18px` 아래와 `5px` 블러에서 복원된다. 초상은 같은 이징으로 `620ms` 클립 리빌을 사용한다.
+- **Theme:** 배경과 글자, 이미지 필터는 `280ms ease`; 초상 확대는 `500ms cubic-bezier(0.16, 1, 0.3, 1)`이다.
+- **Reduced motion:** `prefers-reduced-motion: reduce`에서는 모든 애니메이션과 관련 전환을 제거한다.
 
 ## Do's and Don'ts
 
-### Do
+### Do:
 
-- **Do** preserve the near-black plum room, muted-violet dossier planes, single UV film, Evidence Rose verification, and pale verdict interruption.
-- **Do** keep public and sealed states keyboard-operable, URL-addressable through `?record=sealed`, politely announced, and synchronized with browser theme color.
-- **Do** keep exactly three contradiction rows, seven choice rows, the full six-paragraph deposition, and every confirmed profile field.
-- **Do** keep the portrait caption adjacent and honest about use, costume mismatch, source, and unresolved rights.
-- **Do** preserve the 1100/840/540/360 responsive contract, print reveal, and reduced-preference behavior.
+- **Do** 공개와 비밀에 동일한 구조와 의미 역할을 유지하고, 정확한 테마 토큰으로 상태를 바꾼다.
+- **Do** 라일락을 현재 상태, 핵심 문장, 복원 표시처럼 해석에 필요한 지점에만 쓴다.
+- **Do** 14px 표면, 1px 기록선, 넓은 여백을 함께 사용해 모던한 사진 복원 기록의 인상을 유지한다.
+- **Do** 상태를 색뿐 아니라 텍스트 라벨, `aria-current`, 명시적 관문 동작으로 전달한다.
 
-### Don't
+### Don't:
 
-- **Don't** convert the dossier into a generic card collection or distribute the pale verdict color across ordinary sections.
-- **Don't** add extra beams, accent families, glass, blur, or shadows beyond the physical evidence artifacts and UV connector.
-- **Don't** separate a false claim from its verified fact or summarize away the seven choices and complete deposition.
-- **Don't** turn compact metadata into decorative heading copy or use Barlow Condensed for Korean prose.
-- **Don't** remove focus visibility, tab keyboard behavior, status announcements, URL state, source limitations, or print content.
+- **Don't** 피, 칼, 범죄 현장 테이프, 강한 글리치로 비밀이나 폭력을 장식한다.
+- **Don't** 모든 섹션을 카드화하거나 그림자로 띄워 기록의 연속성을 끊는다.
+- **Don't** 세리프를 본문과 조작부까지 확장하거나 라일락을 다색 장식 팔레트로 늘린다.
+- **Don't** 모션 감소와 투명도 감소 설정을 우회한다.

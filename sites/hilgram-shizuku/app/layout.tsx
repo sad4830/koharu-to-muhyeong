@@ -1,64 +1,41 @@
-import type { Metadata, Viewport } from "next";
-import "@fontsource-variable/noto-sans-kr/wght.css";
-import "@fontsource/barlow-condensed/600.css";
-import "@fontsource/barlow-condensed/700.css";
+import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "미카게 시즈쿠 / 21 / 여성",
-  description: "한 번 맺은 약속을 끝내지 못한 힐그램 수용자 미카게 시즈쿠의 공개 및 비밀 프로필.",
   metadataBase: new URL("https://hilgram-shizuku.vercel.app"),
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    title: "미카게 시즈쿠 / 21 / 여성",
-    description: "공개 진술과 봉인된 사건 기록을 한 심문 파일에서 읽는 힐그램 캐릭터 프로필.",
-    url: "/",
-    siteName: "HILGRAM",
-    locale: "ko_KR",
-    type: "profile",
-    images: [{
-      url: "/mikage-shizuku.webp",
-      width: 1280,
-      height: 1280,
-      alt: "미카게 시즈쿠 외관 참고 이미지",
-    }],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  icons: {
-    icon: "/favicon.svg",
-  },
+  title: "御影 雫 / 22 / 女性",
+  description:
+    "힐그램 수용자 미카게 시즈쿠의 공개 프로필과 비밀 프로필.",
   other: {
     "codex-preview": "development",
   },
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+  },
 };
 
-export const viewport: Viewport = {
-  colorScheme: "light dark",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#0d0b12" },
-    { media: "(prefers-color-scheme: dark)", color: "#100c14" },
-  ],
-};
-
-const directionContract = `<!--
-THESIS: The same dark interrogation file changes under ultraviolet evidence light, exposing the planned murder beneath a gentle statement.
-OWN-WORLD: Near-black plum room, muted violet dossier surfaces, restrained scanlines, one vertical UV evidence film, an EVIDENCE 01 intake portrait, and a single pale verdict sheet.
-STORY: Identify the subject, compare the open statement with the sealed record, break three contradictions, follow seven deliberate choices, read the full deposition, and face the final question.
-FIRST VIEWPORT: A full-height two-column intake record places testimony and controls at left, the framed Picrew evidence portrait at right, exact source captions below, and the public or sealed state visible without scrolling.
-FORM: UV Cross-Examination — a restoration of the first dark-purple interrogation dossier, rebuilt around the complete canonical record; historical seed 6b3f0fe.
+const directionContract = `<!-- impeccable-direction-contract 00f18842
+THESIS: 친절한 기억과 폭력적인 보존이 같은 습관에서 갈라지는 인물 기록. 흔한 피 묻은 범죄 서류 연출을 거부한다.
+OWN-WORLD: 흐린 흰색과 먹회색, 절제된 라일락 한 색, 사진 복원용 여백, 둥근 14px 표면과 가는 평행선.
+STORY: 방문자는 공개된 배려를 먼저 읽고, 스스로 비밀 기록을 열어 그 배려가 통제로 변한 원인과 책임을 이해한다.
+FIRST VIEWPORT: 왼쪽 42% 초상, 오른쪽 이름과 한 문장, 상단에 공개와 비밀 상태 전환. 주 동작은 비밀 프로필 열기다.
+FORM: 모던 사진 보존 기록, 사용자 고정 방향, seed 00f18842.
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
 -->`;
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="ko">
       <body>
-        <template id="impeccable-direction-contract" dangerouslySetInnerHTML={{ __html: directionContract }} />
+        <template
+          data-impeccable-contract="00f18842"
+          dangerouslySetInnerHTML={{ __html: directionContract }}
+        />
         {children}
       </body>
     </html>

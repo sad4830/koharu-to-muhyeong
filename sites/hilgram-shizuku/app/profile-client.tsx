@@ -1,223 +1,638 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-type ProfileMode = "public" | "secret";
+type View = "public" | "secret-gate" | "secret" | "owner";
 
-const identity = [
-  ["이름", "御影 雫 (미카게 시즈쿠)"],
-  ["나이", "21세"],
-  ["성별", "여성 (XX)"],
-  ["번호", "추후 선점"],
-  ["키 / 몸무게", "159cm / 49kg"],
+const publicBasics = [
+  ["이름", "御影 雫 / 미카게 시즈쿠"],
+  ["나이", "22세"],
+  ["성별", "여성"],
+  ["번호", "선점 후 기입"],
+  ["키 / 몸무게", "158 cm / 48 kg"],
 ];
 
-const publicTraits = [
-  ["상냥한 낯", "누구에게나 낮고 부드러운 목소리로 말한다. 상대의 말을 끊지 않고, 사소한 부탁도 웃으며 받아주는 편이다."],
-  ["세심한 관찰", "한 번 들은 취향과 습관을 잘 잊지 않는다. 자신보다 타인의 변화를 먼저 알아채며 필요한 것을 조용히 챙긴다."],
-  ["불안한 애착", "가까운 사람이 멀어지는 기색에 유난히 예민하다. 직접 화를 내기보다는 확인 질문을 반복하고 곁에 머물려 한다."],
+const secretBasics = [
+  ["진짜 이름", "御影 雫 / 미카게 시즈쿠"],
+  ["나이", "22세"],
+  ["진짜 성별", "여성"],
+  ["번호", "선점 후 기입"],
+  ["키 / 몸무게", "158 cm / 48 kg"],
 ];
 
-const publicPreferences = {
-  like: ["우유를 넣은 홍차", "리본 공예", "창문을 두드리는 빗소리", "사소한 약속", "머리카락을 땋아 주는 일"],
-  hate: ["큰 목소리", "날붙이", "답장이 오지 않는 시간", "망가진 물건", "일방적으로 대화를 끝내는 사람"],
-};
-
-const secretPreferences = {
-  like: ["반드시 필요한 사람이 되는 것", "규칙적으로 도착하는 답장", "둘만 아는 생활 습관", "한 쌍으로 맞춘 물건", "자신에게 의지하는 표정"],
-  hate: ["일방적인 이별 통보", "잠긴 휴대전화", "예고 없이 바뀐 일정", "관계에 간섭하는 제삼자", "자신 없이도 잘 지내는 모습"],
-  scare: "자신이 없어도 상대의 삶이 아무 문제 없이 계속되고, 끝내 다른 사람으로 대체되는 것",
-};
-
-const contradictions = [
-  ["유토가 불러 집에 갔다", "초대 기록이 없고, 귀가 전 복제 열쇠로 선입실했다"],
-  ["날붙이를 싫어한다", "살해 도구와 자해를 직접 선택했다. 공포는 피해자 연기다"],
-  ["왼팔은 공격당한 상처다", "상처 방향이 진술과 다르며 정당방위 위장을 위해 스스로 냈다"],
+const publicLikes = [
+  "낡은 사진을 복원하는 일",
+  "포도 맛 사탕",
+  "작은 약속을 기억해 주는 사람",
+  "가지런히 땋은 머리",
 ];
 
-const incidentTimeline = [
-  ["01", "첫 만남", "열아홉 살, 공동 수업에서 유토를 만났다. 비 오는 날 들은 ‘계속 곁에 있어 줄게’라는 말을 취소할 수 없는 약속으로 받아들였다."],
-  ["02", "감시", "답장 간격과 귀가 시간을 기록하고 잠든 유토의 휴대전화를 확인했다. 예비 열쇠도 몰래 복제했다."],
-  ["03", "관계 조작", "유토의 계정으로 친구에게 모욕적인 메시지를 보냈다. 타지역 취업 지원을 삭제하고 담당자에게 포기 연락까지 대신 보냈다."],
-  ["04", "이별 통보", "조작을 발견한 유토는 이별과 접근 금지를 요구하고 이사를 준비했다. 시즈쿠는 잘못을 인정한 척하며 일정을 계속 확인했다."],
-  ["05", "선입실", "이사 전날 복제한 열쇠로 유토의 집에 먼저 들어가 기다렸다. 유토가 자신을 불렀다는 공개 진술은 거짓이다."],
-  ["06", "살해", "관계 회복을 거절당한 뒤 우발적으로 격분한 것이 아니라, 누구에게도 갈 수 없게 하겠다고 판단해 집 안의 칼로 살해했다."],
-  ["07", "현장 조작", "현장을 몸싸움처럼 흐트러뜨리고 다른 칼을 피해자의 손 가까이에 뒀다. 왼팔을 스스로 벤 뒤 정당방위를 신고했다."],
+const publicHates = [
+  "읽고 답하지 않은 메시지",
+  "예고 없이 바뀌는 일정",
+  "사진이나 대화를 지우는 행동",
+  "과거는 지나갔다는 말",
 ];
 
-const sectionLinks = {
-  public: [["신원", "#public-identity"], ["외관", "#public-appearance"], ["성격", "#public-personality"], ["L/H/S", "#public-preference"], ["특징", "#public-feature"], ["선관", "#public-relation"]],
-  secret: [["사건", "#case-board-title"], ["신원", "#secret-identity"], ["모순", "#secret-appearance"], ["분석", "#secret-personality"], ["L/H/S", "#secret-preference"], ["선택", "#incident-heading"], ["과거", "#history-heading"], ["사상", "#belief-heading"]],
-} as const;
+const secretLikes = [
+  "날짜와 시간이 남은 기록",
+  "상대의 취향을 먼저 맞히는 순간",
+  "변하지 않는 약속",
+  "자신만 알고 있는 사소한 버릇",
+];
 
-function ModeSwitch({ mode, onChange }: { mode: ProfileMode; onChange: (mode: ProfileMode) => void }) {
-  const publicRef = useRef<HTMLButtonElement>(null);
-  const secretRef = useRef<HTMLButtonElement>(null);
-  const select = (next: ProfileMode, focus = false) => {
-    onChange(next);
-    if (focus) requestAnimationFrame(() => setTimeout(() => (next === "public" ? publicRef : secretRef).current?.focus(), 0));
-  };
-  const onKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
-    if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
-    event.preventDefault();
-    const next = event.key === "Home" ? "public" : event.key === "End" ? "secret" : mode === "public" ? "secret" : "public";
-    select(next, true);
-  };
+const secretHates = [
+  "관계에 거리를 두자는 말",
+  "자신이 모르는 새 인간관계",
+  "기억과 현재가 다르다는 지적",
+  "타인의 거절을 최종 결정으로 인정하는 일",
+];
+
+const openHooks = [
+  {
+    title: "기억을 맡긴 사람",
+    body: "시즈쿠에게 손상된 사진이나 잊고 싶은 기록을 건넨 인물. 복원을 원하는 범위와 시즈쿠가 보존하려는 범위가 달라질 수 있습니다.",
+  },
+  {
+    title: "삭제를 요구한 사람",
+    body: "자신에 관한 사진이나 메모를 지워 달라고 분명히 요구한 인물. 시즈쿠가 처음으로 타인의 삭제 권한을 시험받는 관계입니다.",
+  },
+  {
+    title: "마지막 음성을 들은 사람",
+    body: "시즈쿠가 간직한 마지막 음성의 존재를 알게 된 인물. 용서와 사실 확인 가운데 무엇을 선택할지는 상대 오너와 협의합니다.",
+  },
+];
+
+function RecordList({ rows }: { rows: string[][] }) {
   return (
-    <div className="mode-switch" role="tablist" aria-label="프로필 공개 범위" onKeyDown={onKeyDown}>
-      <button ref={publicRef} id="public-tab" type="button" role="tab" aria-selected={mode === "public"} aria-controls="profile-panel" tabIndex={mode === "public" ? 0 : -1} onClick={() => select("public")}>
-        <span className="switch-code" aria-label="기록 코드 OP" data-legacy-label="노선 코드 OP">OP</span><span><b>공개 프로필</b><small data-legacy-label="정상 운행 기록">본인 진술 기록</small></span>
-      </button>
-      <button ref={secretRef} id="secret-tab" type="button" role="tab" aria-selected={mode === "secret"} aria-controls="profile-panel" tabIndex={mode === "secret" ? 0 : -1} onClick={() => select("secret")}>
-        <span className="switch-code" aria-label="기록 코드 SR" data-legacy-label="노선 코드 SR">SR</span><span><b>비밀 프로필</b><small>봉인 해제 기록</small></span>
-      </button>
+    <dl className="record-list">
+      {rows.map(([label, value]) => (
+        <div className="record-row" key={label}>
+          <dt>{label}</dt>
+          <dd>{value}</dd>
+        </div>
+      ))}
+    </dl>
+  );
+}
+
+function PreferenceGroup({
+  likes,
+  hates,
+  secret,
+}: {
+  likes: string[];
+  hates: string[];
+  secret: string;
+}) {
+  return (
+    <div className="preference-grid">
+      <section>
+        <h3>Like</h3>
+        <ul>
+          {likes.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </section>
+      <section>
+        <h3>Hate</h3>
+        <ul>
+          {hates.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </section>
+      <section className="secret-preference">
+        <h3>Secret</h3>
+        <p>{secret}</p>
+      </section>
     </div>
   );
 }
 
-function SectionHeading({ id, title, code, note }: { id: string; title: string; code: string; note: string }) {
-  return <header className="section-heading"><h2 id={id}>{title}</h2><span className="section-code" aria-label={`기록 코드 ${code}`} data-legacy-label={`노선 코드 ${code}`}>{code}</span><p>{note}</p></header>;
-}
-
-function RecordSection({ id, title, code, note, className = "", children }: { id: string; title: string; code: string; note: string; className?: string; children: React.ReactNode }) {
-  return <section className={`record-section ${className}`} aria-labelledby={id}><SectionHeading id={id} title={title} code={code} note={note} /><div className="record-body">{children}</div></section>;
-}
-
-function IdentityLedger({ label }: { label: string }) {
-  return <dl className="identity-ledger" aria-label={label}>{identity.map(([term, value], index) => <div key={term}><span aria-hidden="true">0{index + 1}</span><dt>{term}</dt><dd>{value}</dd></div>)}</dl>;
-}
-
-function AppearanceCopy({ secret = false }: { secret?: boolean }) {
+function RelationshipHooks() {
   return (
-    <div className="appearance-copy reading-copy">
-      <p>허리 아래까지 내려오는 짙은 남보라색 머리카락을 좌우로 나누어 굵은 양갈래 땋은 머리로 묶었다. 정돈되지 않은 층진 앞머리가 한쪽 눈가를 조금 덮고, 정수리에는 짧은 머리카락 한 가닥이 위로 뻗어 있다. 드러난 눈은 채도가 낮은 연보라색이며 동공은 평범하다. 둥근 눈매와 옅은 미소로 첫인상은 순하고 붙임성 있어 보인다. 양쪽 앞머리에는 가느다란 은색 실핀을 두 개씩 꽂았다.</p>
-      <p>복장은 흰색이 주조인 무릎 아래 길이의 원피스형 구속복이다. 검은 구속줄이 상완과 손목, 가슴 아래, 허리, 허벅지를 고정한다. 목둘레와 소매 가장자리에는 옅은 보라색 프릴을 얇게 덧대고, 가슴에는 크지 않은 검은 리본을 매어 메이드복을 연상시키는 정도로만 꾸몄다. 신발은 장식 없는 검은색 슬립온이다. 왼팔 안쪽에는 길지 않은 흉터가 하나 남아 있다.</p>
-      {secret && <aside className="truth-note"><strong>검증 결과 / 조작된 상처</strong><p>왼팔 안쪽의 흉터는 피해자에게 입은 상처가 아니다. 범행을 정당방위처럼 보이게 만들기 위해 스스로 낸 상처다. 공개 프로필의 ‘날붙이를 싫어한다’는 항목 역시 피해자처럼 보이기 위한 연기다.</p></aside>}
-    </div>
-  );
-}
-
-function PreferenceLedger({ secret = false }: { secret?: boolean }) {
-  const preferences = secret ? secretPreferences : publicPreferences;
-  const rows = [
-    { mark: "L", id: "preference-like", title: "좋아하는 것", items: preferences.like },
-    { mark: "H", id: "preference-hate", title: "싫어하는 것", items: preferences.hate },
-  ];
-  return (
-    <div className="preference-ledger">
-      {rows.map((row) => <section key={row.mark} aria-labelledby={row.id}><b aria-hidden="true">{row.mark}</b><h3 id={row.id}>{row.title}</h3><ol>{row.items.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span>{item}</li>)}</ol></section>)}
-      <section aria-labelledby="preference-fear"><b aria-hidden="true">S</b><h3 id="preference-fear">두려운 것</h3><p>{secret ? secretPreferences.scare : "공란"}</p></section>
-    </div>
-  );
-}
-
-function FeatureRecord({ secret = false }: { secret?: boolean }) {
-  return (
-    <div className="feature-record">
-      <dl><div><dt>생일</dt><dd>6월 12일</dd></div><div><dt>혈액형</dt><dd>AB형</dd></div><div><dt>출신</dt><dd>일본 가나가와현</dd></div></dl>
-      <div className="feature-copy">
-        <p>{secret ? "사건 전에는 복식전문학교 재학생이자 의상실 수선 보조였다. 가까운 사람의 일정과 취향을 기억하는 것을 애정 표현인 동시에 통제 수단으로 사용하며, 상대가 말하지 않은 행선지까지 알고 있을 때 안정감을 느낀다." : "사건 전에는 복식전문학교에 다니며 작은 의상실에서 수선 보조로 일했다. 손재주가 좋아 뜯어진 천이나 풀린 매듭을 빠르게 고친다. 다른 사람을 이름으로 부르기 전에는 반드시 허락을 구하지만, 한 번 허락받은 호칭은 관계가 달라져도 바꾸지 않는다."}</p>
-        <blockquote><strong>{secret ? "위장 진술" : "본인 진술"}</strong><span>{secret ? "신고 전부터 증거와 자신의 상처를 이용해 구성한 각본이다. 같은 순서와 표현으로 반복하도록 외워 두었다." : "교제하던 남성이 불러 그의 집을 찾아갔다가 공격당했고, 몸싸움 중 자신을 지키려다 상대가 사망했다고 주장한다. 왼팔의 흉터도 그때 생겼다고 설명한다."}</span></blockquote>
-      </div>
+    <div className="hooks" aria-label="열린 선관 제안">
+      {openHooks.map((hook) => (
+        <details key={hook.title}>
+          <summary>{hook.title}</summary>
+          <p>{hook.body}</p>
+        </details>
+      ))}
     </div>
   );
 }
 
 function PublicProfile() {
   return (
-    <div className="profile profile-public">
-      <RecordSection id="public-identity" title="신원 기록" code="AGE 21" note="본인이 진술한 내용을 기준으로 작성되었습니다." className="identity-section"><IdentityLedger label="공개 신원 기록" /></RecordSection>
-      <RecordSection id="public-appearance" title="외관" code="LOOK" note="인상착의 및 공식 복장 기록" className="appearance-section"><div className="appearance-layout"><AppearanceCopy /><aside className="usage-notice"><strong>이미지 사용 범위</strong><p>첨부 이미지는 머리와 인상 참고용이다. 규정상 공식 복장은 위 서술의 구속복이며, 이미지 속 의상과 다르다.</p></aside></div></RecordSection>
-      <RecordSection id="public-personality" title="성격" code="TEMPER" note="대인 관찰 기록" className="personality-section"><div className="testimony-stack">{publicTraits.map(([title, text], index) => <article key={title}><span aria-hidden="true">0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>)}</div></RecordSection>
-      <RecordSection id="public-preference" title="L / H / S" code="PREF" note="본인 작성 선호 기록" className="preference-section"><PreferenceLedger /></RecordSection>
-      <RecordSection id="public-feature" title="특징" code="INFO" note="생활 기록 및 본인 진술" className="feature-section"><FeatureRecord /></RecordSection>
-      <RecordSection id="public-relation" title="선관" code="END" note="관계 기록 종결" className="relation-section"><p className="empty-record">없음</p></RecordSection>
+    <div className="profile-copy view-enter" id="profile-content">
+      <header className="profile-intro">
+        <h1 data-view-heading="public" tabIndex={-1}>
+          <span lang="ja">御影 雫</span>
+          <small>미카게 시즈쿠</small>
+        </h1>
+        <div className="voice-record">
+          <blockquote>
+            “좋아하는 건 오래 보고 싶잖아요. 그러니까 저는, 아주 잘 기억해요.”
+          </blockquote>
+          <p className="catchphrase">[ 기억해 두면, 없어지지 않아요. ]</p>
+        </div>
+      </header>
+
+      <section className="content-section" aria-labelledby="public-record">
+        <h2 id="public-record">공개 프로필</h2>
+        <RecordList rows={publicBasics} />
+      </section>
+
+      <section
+        className="content-section reading-section"
+        aria-labelledby="public-appearance"
+      >
+        <h2 id="public-appearance">외관</h2>
+        <p>
+          옅은 보랏빛이 감도는 먹회색 머리카락을 허벅지 아래까지 길러 양옆으로
+          굵게 땋았다. 정수리에는 길게 뻗은 잔머리가 있고, 무거운 앞머리가 왼쪽
+          눈을 반쯤 가린다. 양쪽 앞머리에는 은색 일자 핀을 두 개씩 나란히 꽂는다.
+          크고 둥근 연보라색 눈, 늘 옅게 달아오른 뺨, 코 옆의 작은 점이 눈에 띈다.
+          입꼬리를 조금 올린 채 상대를 오래 바라보는 버릇 때문에 첫인상은 순하고
+          얌전하다.
+        </p>
+        <p>
+          힐그램 안에서는 흰색 하이넥 셔츠형 원피스와 흰 바지를 겹쳐 입는다.
+          검은 구속줄이 위팔, 손목, 허리, 발목을 고정하며 장식은 둥근 은색
+          머리핀과 옅은 라일락색 박음질뿐이다. 입소 전 즐겨 하던 긴 분홍색
+          네일과 반지는 회수되었고 손톱 끝에 옅은 색만 남았다. 발에는 흰색
+          캔버스화를 신고 검은 고정끈을 맨다. 전신은 가늘고 작은 체구지만 자세를
+          흐트러뜨리는 일이 거의 없다.
+        </p>
+      </section>
+
+      <section
+        className="content-section reading-section"
+        aria-labelledby="public-personality"
+      >
+        <h2 id="public-personality">성격</h2>
+        <div className="keyword-line" aria-label="성격 키워드">
+          <span>세심한</span>
+          <span>상냥한</span>
+          <span>끈질긴</span>
+        </div>
+        <p>
+          다른 사람이 흘려 말한 취향과 약속을 놀라울 만큼 정확히 기억한다. 먼저
+          필요한 물건을 건네고, 대화가 끊기면 상대가 편한 주제로 조용히 이어
+          준다. 거절당해도 표정을 흐리지 않으며 한 발 물러나는 것처럼 보인다.
+          다만 자신이 중요하다고 판단한 일은 끝났다는 말을 들어도 혼자 계속
+          챙긴다. 친절과 집요함의 경계가 흐리지만 본인은 이를 책임감이라 믿는다.
+        </p>
+      </section>
+
+      <section className="content-section" aria-labelledby="public-preferences">
+        <h2 id="public-preferences">L / H / S</h2>
+        <PreferenceGroup
+          likes={publicLikes}
+          hates={publicHates}
+          secret="공란"
+        />
+      </section>
+
+      <section className="content-section" aria-labelledby="public-features">
+        <h2 id="public-features">특징</h2>
+        <div className="feature-grid">
+          <p><strong>생일</strong><span>9월 12일</span></p>
+          <p><strong>혈액형</strong><span>A형</span></p>
+          <p><strong>국적</strong><span>일본</span></p>
+          <p><strong>직업</strong><span>사진 복원 스튜디오 보조</span></p>
+          <p><strong>말투</strong><span>나직한 존댓말. 상대의 이름을 자주 부른다.</span></p>
+          <p><strong>습관</strong><span>대화가 끝난 시간과 마지막 문장을 메모한다.</span></p>
+        </div>
+      </section>
+
+      <section
+        className="content-section reading-section"
+        aria-labelledby="public-relationship"
+      >
+        <h2 id="public-relationship">선관</h2>
+        <p>
+          현재 확정 선관은 없습니다. 공개 프로필과 비밀 프로필을 합쳐 최대 3명까지
+          협의할 수 있습니다.
+        </p>
+      </section>
     </div>
   );
 }
 
 function SecretProfile() {
   return (
-    <div className="profile profile-secret">
-      <section className="seal-break" aria-labelledby="case-board-title"><div className="seal-copy"><h2 id="case-board-title">도착지는 처음부터<br />하나뿐이었다.</h2><p className="confidential-mark">CONFIDENTIAL / SEALED RECORD</p></div><dl className="case-metadata"><div><dt>피해자</dt><dd>長瀬 悠人 (나가세 유토), 22세</dd></div><div><dt>혐의</dt><dd>계획 살인 및 현장 조작</dd></div><div><dt>수용자 번호</dt><dd>추후 선점</dd></div></dl></section>
-      <RecordSection id="secret-identity" title="진짜 신원" code="AGE 21" note="수사 기록과 본인 확인 결과" className="identity-section"><IdentityLedger label="진짜 신원 기록" /></RecordSection>
-      <RecordSection id="secret-appearance" title="외관과 위장" code="FALSE" note="공개 진술과 확인된 기록 비교" className="appearance-section secret-appearance">
-        <AppearanceCopy secret />
-        <div className="cross-examination" role="table" aria-label="공개 진술과 확인된 기록 비교">
-          <header role="row"><span role="columnheader">공개 진술</span><span aria-hidden="true">UV</span><span role="columnheader">확인된 기록</span></header>
-          {contradictions.map(([claim, fact], index) => <article key={claim} role="row"><b aria-hidden="true">0{index + 1}</b><div role="cell"><small>공개 진술</small><del>{claim}</del></div><i aria-hidden="true" /><div role="cell"><small>확인된 기록</small><p>{fact}</p></div></article>)}
+    <div className="profile-copy view-enter" id="profile-content">
+      <header className="profile-intro secret-intro">
+        <h1 data-view-heading="secret" tabIndex={-1}>
+          <span lang="ja">御影 雫</span>
+          <small>미카게 시즈쿠</small>
+        </h1>
+        <div className="voice-record">
+          <blockquote>
+            “그 애가 저를 사랑했던 건 사실이에요. 저는 그 사실이 사라지지 않게 했을 뿐이에요.”
+          </blockquote>
+          <p className="catchphrase">[ 사랑은 변하기 전에 보관해야 한다. ]</p>
         </div>
-      </RecordSection>
-      <RecordSection id="secret-personality" title="성격 분석" code="PSY" note="행동 패턴과 정서 반응" className="analysis-section"><div className="keyword-register" aria-label="성격 키워드"><span>소유적 애착</span><span>인지적 공감</span><span>침착한 기만</span><span>죄책감 결여</span></div><div className="analysis-copy reading-copy"><p>상대의 표정과 말투를 읽고 그 사람이 원하는 반응을 돌려주는 능력은 뛰어나지만 타인의 고통을 함께 느끼지는 못한다. 누군가 우는 이유는 이해해도 그 슬픔에는 거의 동요하지 않으며, 필요하다면 위로와 눈물까지 자연스럽게 연기한다. 규칙과 행동의 결과를 정확히 이해하면서도 자신의 목적에 불리할 때만 이를 무시한다.</p><p>시즈쿠에게 사랑은 서로의 자유를 인정하는 관계가 아니라 상대의 생활 전부에 자신이 포함된 상태다. 한 번 자신을 사랑한다고 말한 사람에게는 혼자 관계를 끝낼 권리가 없다고 여긴다. 살인을 후회하지 않는다. 실패했다고 여기는 부분은 피해자를 죽인 사실이 아니라 범행을 완전히 사고로 꾸미지 못한 점뿐이다.</p></div></RecordSection>
-      <RecordSection id="secret-preference" title="L / H / S" code="INNER" note="봉인된 선호 및 공포 기록" className="preference-section secret-preference-section"><PreferenceLedger secret /></RecordSection>
-      <RecordSection id="secret-feature" title="특징" code="TRACE" note="생활 추적과 위장 진술" className="feature-section secret-feature-section"><FeatureRecord secret /></RecordSection>
-      <section className="choice-trace" aria-labelledby="incident-heading"><header><div><h2 id="incident-heading">일곱 번의 선택</h2><span>07 VERIFIED DECISIONS</span></div><p>첫 약속에서 현장 조작까지, 모든 선택은 같은 방향으로만 이어졌다.</p></header><ol>{incidentTimeline.map(([index, title, text]) => <li key={index}><b>{index}</b><div><h3>{title}</h3><p>{text}</p></div></li>)}</ol></section>
-      <section className="verdict-sheet" aria-labelledby="summary-heading"><header><h2 id="summary-heading">사건 요약</h2><span>CASE CONCLUSION</span></header><p className="summary-thesis">떠나는 대신,<br />누구에게도 갈 수 없게.</p><div className="summary-copy"><p>타인의 감정을 읽고 필요한 반응을 연기하는 법을 익힌 시즈쿠는 열아홉 살에 나가세 유토와 교제했다. 유토를 사랑했지만 그 사랑을 소유권처럼 받아들여 휴대전화와 일정을 감시하고 인간관계와 취업까지 조작했다.</p><p>이를 알게 된 유토가 이별과 이사를 결정하자 복제한 열쇠로 그의 집에 들어가 기다렸다. 관계 회복을 거절당한 뒤 계획적으로 살해했으며, 현장과 자신의 상처를 조작해 정당방위로 위장했다. 시즈쿠는 살인을 후회하지 않는다. 유토가 먼저 약속을 저버렸기에 자신이 관계의 결말을 정할 권리가 있었다고 믿는다.</p></div></section>
-      <RecordSection id="history-heading" title="과거사" code="FULL" note="진술 및 수사 기록 전문" className="history-section">
-        <details className="history-disclosure"><summary><span>과거사 전문 펼치기</span><i aria-hidden="true" /></summary><div className="history-copy">
-          <p>시즈쿠는 감정 표현이 적고 집을 자주 비우는 부모 밑에서 자랐다. 학대를 받거나 생계를 위협받은 적은 없었지만 관심은 성적이나 집안일처럼 눈에 보이는 성과를 냈을 때만 돌아왔다. 어린 시절부터 타인의 기분을 살피고 원하는 반응을 제공하면 관계를 붙잡아 둘 수 있다는 사실을 익혔다. 울거나 사과해야 할 순간을 빠르게 알아차렸지만 그 감정이 실제로 생기지 않는다는 사실을 문제로 여기지는 않았다. 사람에게 사랑받는 법은 배웠으나 사람을 독립된 인격으로 존중하는 법은 배우지 못했다.</p>
-          <p>열아홉 살 때 복식전문학교의 공동 수업에서 나가세 유토를 만났다. 유토는 낯선 환경에 적응하지 못하는 듯 보였던 시즈쿠를 자주 챙겼다. 비 오는 날 우산을 함께 쓰며 “곤란한 일이 있으면 언제든 연락해. 계속 곁에 있어 줄게.”라고 말했다. 그에게는 가벼운 호의였지만 시즈쿠는 이를 관계에 대한 약속으로 받아들였다. 두 사람은 몇 달 뒤 교제를 시작했다.</p>
-          <p>처음의 시즈쿠는 헌신적인 연인이었다. 유토가 좋아하는 음식을 익히고 과제와 아르바이트 일정을 대신 정리했으며 아플 때는 밤새 곁을 지켰다. 그러나 곧 그의 답장 간격과 만나는 사람, 귀가 시간까지 기록하기 시작했다. 잠든 유토의 휴대전화를 확인하고 예비 열쇠를 몰래 복제했다. 자신과 거리를 두라고 조언한 친구에게는 유토의 계정으로 모욕적인 메시지를 보내 둘 사이를 갈라놓았다. 유토가 다른 지역의 일자리를 알아보자 지원 일정을 삭제하고 담당자에게 포기 연락까지 대신 보냈다. 시즈쿠에게 이런 행동은 방해가 아니라 두 사람의 관계를 위협하는 실수를 자신이 바로잡는 일이었다.</p>
-          <p>유토는 복제된 열쇠와 조작된 메시지를 발견한 뒤 이별을 통보했다. 연락하지 말라는 요구에도 시즈쿠가 그의 집 앞에 나타나자 경찰에 신고하겠다고 경고했고, 얼마 뒤 이사를 준비했다. 시즈쿠는 울거나 매달리지 않고 잘못을 인정하는 척했다. 유토가 안심한 동안 그의 일정을 계속 확인했고 이사 전날 복제한 열쇠로 집에 들어가 먼저 기다렸다.</p>
-          <p>귀가한 유토가 나가라고 요구하자 시즈쿠는 준비해 온 말로 관계를 되돌리려 했다. 그러나 유토는 자신이 했던 약속은 이미 끝났으며 다시는 시즈쿠를 사랑하지 않을 것이라고 말했다. 시즈쿠는 격분해 우발적으로 공격한 것이 아니다. 그가 살아서 떠나는 것보다 죽어서 누구의 것도 되지 않는 편이 낫다고 판단했고, 집 안의 칼로 그를 찔러 살해했다. 숨이 끊어진 것을 확인한 뒤 현장을 몸싸움처럼 흐트러뜨리고 유토의 손 가까이에 다른 칼을 두었다. 이어 자신의 왼팔에 얕은 상처를 낸 후 신고해 유토가 먼저 공격했으며 자신을 지키려 했다고 진술했다.</p>
-          <p>유토의 휴대전화에는 시즈쿠를 불러낸 기록이 없었고 건물 영상에는 그가 귀가하기 전에 시즈쿠가 먼저 들어가는 모습이 남아 있었다. 왼팔의 상처 방향과 현장의 흔적도 진술과 맞지 않았다. 체포된 뒤에도 시즈쿠는 같은 이야기를 반복했다. 유토를 죽인 기억이 없는 것이 아니라, 자신이 정한 관계를 지키기 위해 한 행동을 타인에게 설명할 필요가 없다고 여겼기 때문이다. 그녀는 지금도 유토가 자신을 버린 순간 먼저 약속을 파괴했고 자신은 그 결말을 확정했을 뿐이라고 생각한다.</p>
-        </div></details>
-      </RecordSection>
-      <section className="owner-label" aria-label="선관 및 오너란"><p>RECORD OWNER</p><dl><div><dt>선관</dt><dd>없음</dd></div><div><dt>오너닉</dt><dd>새드아씨</dd></div><div><dt>나이</dt><dd>성인</dd></div></dl></section>
-      <section className="final-interrogation" aria-labelledby="belief-heading"><header><h2 id="belief-heading">캐릭터의 사상</h2><span>FINAL QUESTION</span></header><p className="belief-question">한번 내어 준 마음을<br />되찾아 갈 권리가 있는가.</p><div className="belief-copy reading-copy"><p>사랑한다는 말은 감정의 표현이 아니라 상대에게 건네는 약속이며, 한번 성립한 약속은 어느 한쪽의 변심만으로 취소될 수 없다고 믿는다. 상대가 떠나려는 선택을 존중하는 것은 사랑이 아니라 포기라고 여긴다. 유토를 죽인 일을 사랑 때문에 판단력을 잃은 결과라고 주장하지 않는다. 그가 자신을 떠날 미래와 누구에게도 갈 수 없는 죽음 가운데 후자를 의식적으로 선택했다.</p><p>용서받는다면 자신의 사랑과 소유 방식이 인정받았다고 받아들일 가능성이 높다. 용서받지 못하더라도 피해자의 고통보다 자신의 진심을 이해받지 못했다는 사실에 분노한다. 죄의 존재는 인정하지만 그것이 잘못이라는 판단에는 동의하지 않는다.</p></div></section>
+      </header>
+
+      <section className="content-section" aria-labelledby="secret-record">
+        <h2 id="secret-record">비밀 프로필</h2>
+        <RecordList rows={secretBasics} />
+      </section>
+
+      <section
+        className="content-section reading-section"
+        aria-labelledby="secret-appearance"
+      >
+        <h2 id="secret-appearance">외관</h2>
+        <p>
+          공개 프로필에 적힌 모습과 같다. 다만 긴 앞머리 아래의 왼쪽 눈은 상대가
+          자리를 뜨거나 시선을 돌릴 때 훨씬 오래 움직임을 좇는다. 웃을 때 두 손으로
+          하트를 만드는 습관은 연인과 찍은 첫 사진의 자세를 반복하는 것이다.
+          압박을 받으면 은색 머리핀 두 쌍이 정확히 평행한지 손끝으로 확인한다.
+        </p>
+        <p>
+          흰 구속복의 검은 허리끈을 유독 단단히 조여 매며, 풀린 매듭을 보면 대화를
+          멈추고 바로잡는다. 입소 전에는 연인의 기념일마다 같은 라일락색 옷과
+          하트 장신구를 착용했다. 지금 남은 라일락색 박음질은 본인이 허락받은
+          유일한 장식이다.
+        </p>
+      </section>
+
+      <section
+        className="content-section reading-section"
+        aria-labelledby="secret-personality"
+      >
+        <h2 id="secret-personality">성격</h2>
+        <div className="keyword-line" aria-label="비밀 성격 키워드">
+          <span>보존 강박</span>
+          <span>통제적 애정</span>
+          <span>선택적 정직</span>
+        </div>
+        <p>
+          시즈쿠의 세심함은 상대를 이해하기 위한 관찰에서 시작했지만, 지금은
+          상대가 변하지 못하도록 관리하는 방식이 되었다. 사실관계는 좀처럼
+          거짓말하지 않는다. 대신 타인의 거절과 변화만 일시적인 오류로 취급한다.
+          자신이 대신 기억하고 준비하면 관계가 안전해진다고 믿으며, 그 과정에서
+          상대가 느끼는 두려움은 현재의 혼란일 뿐이라고 축소한다. 죄를 고백할 수는
+          있지만 자신이 사랑한 사람의 선택권을 빼앗았다는 문장만은 아직 말하지 못한다.
+        </p>
+      </section>
+
+      <section className="content-section" aria-labelledby="secret-preferences">
+        <h2 id="secret-preferences">L / H / S</h2>
+        <PreferenceGroup
+          likes={secretLikes}
+          hates={secretHates}
+          secret="사랑했던 사람이 자신과 무관한 미래를 선택하고, 그 선택을 존중해 달라고 요구하는 것."
+        />
+      </section>
+
+      <section className="content-section" aria-labelledby="secret-features">
+        <h2 id="secret-features">특징</h2>
+        <div className="feature-grid">
+          <p><strong>생일</strong><span>9월 12일</span></p>
+          <p><strong>혈액형</strong><span>A형</span></p>
+          <p><strong>국적</strong><span>일본</span></p>
+          <p><strong>직업</strong><span>사진 복원 스튜디오 보조</span></p>
+          <p><strong>소지 기록</strong><span>삭제하지 못한 47초짜리 음성 파일</span></p>
+          <p><strong>범행 대상</strong><span>연인이었던 사에키 토우마, 당시 23세</span></p>
+        </div>
+      </section>
+
+      <section className="content-section summary-panel" aria-labelledby="story-summary">
+        <h2 id="story-summary">과거사 요약</h2>
+        <p>
+          시즈쿠는 손상된 사진을 원래 모습에 가깝게 되돌리는 일을 배우며, 변한
+          현재보다 가장 아름다웠던 과거가 더 진실하다고 믿게 되었다. 연인 사에키
+          토우마가 자신의 세심함을 사랑해 주자 모든 대화와 습관을 기록하기 시작했다.
+          기록은 곧 감시가 되었고 토우마는 관계를 끝내려 했다. 시즈쿠는 마지막으로
+          추억을 정리하자며 그를 스튜디오로 불러 계획적으로 움직였고, 돌아갈 기회를
+          주지 않은 채 살해했다. 이후 그의 계정과 사진을 이용해 이별과 잠적을 꾸몄지만,
+          “사랑했던 건 진짜지만 끝낼 권리도 내게 있다”는 마지막 음성을 지우지 못해
+          범행이 드러났다. 지금도 살인을 인정하면서 사랑을 보존했다는 해석은 놓지 않는다.
+        </p>
+      </section>
+
+      <article className="content-section story" aria-labelledby="full-story">
+        <h2 id="full-story">과거사</h2>
+
+        <section>
+          <h3>고치는 법을 먼저 배운 아이</h3>
+          <p>
+            시즈쿠의 어머니는 오래된 가족사진을 복원하는 작은 작업실에서 일했다.
+            찢어진 모서리를 잇고 바랜 얼굴의 색을 되찾는 일은 특별한 기적처럼
+            보였지만, 어머니는 늘 복원은 새로 만드는 일이 아니라 남아 있는 증거를
+            존중하는 일이라고 말했다. 시즈쿠는 그중 앞부분만 받아들였다. 상처 난
+            것도 충분히 공을 들이면 가장 좋았던 모습으로 되돌릴 수 있다는 믿음이었다.
+          </p>
+          <p>
+            열두 살 때 가장 친한 친구가 이사한 뒤 연락이 끊겼다. 누구의 잘못도
+            아니었지만 시즈쿠는 둘이 함께 찍은 사진과 편지를 날짜순으로 정리하며
+            버텼다. 친구가 없는 현재보다 기록 속에서 웃는 둘이 더 선명했다. 그때부터
+            관계가 멀어지는 이유를 묻는 대신, 좋았던 순간을 정확히 보관하면 관계도
+            사라지지 않는다고 믿었다.
+          </p>
+        </section>
+
+        <section>
+          <h3>사랑받은 방식</h3>
+          <p>
+            스무 살의 시즈쿠는 사진 복원 스튜디오에서 보조로 일하며 대학 사진
+            동아리에서 사에키 토우마를 만났다. 토우마는 자신이 무심코 말한 음료와
+            영화 제목을 시즈쿠가 기억해 주는 일을 좋아했다. 첫 데이트의 영수증,
+            함께 탄 전철 시각, 감기에 걸린 날 먹은 약까지 정리한 작은 앨범을 받고
+            그는 “네가 기억해 줘서 좋다”고 말했다. 시즈쿠에게 그 문장은 사랑의
+            규칙이 되었다.
+          </p>
+          <p>
+            처음의 기록은 배려였다. 그러나 토우마의 답장이 늦어질수록 시즈쿠는
+            빈칸을 견디지 못했다. 공유가 끝난 위치 기록을 계속 확인하고, 그의
+            휴대전화에 남은 대화를 몰래 복사하고, 자신이 모르는 사람과 찍힌 사진을
+            인화본에서 지웠다. 덕분에 시즈쿠는 늘 완벽한 선물과 대답을 준비했고
+            다툼도 정확한 과거 문장으로 이겼다. 단기적으로 관계는 조용해졌지만,
+            토우마는 점점 사랑받는 사람이 아니라 정리되는 자료처럼 느꼈다.
+          </p>
+        </section>
+
+        <section>
+          <h3>끝내자는 문장</h3>
+          <p>
+            토우마가 백업 파일을 발견했을 때 그는 처음으로 분명히 그만두라고 말했다.
+            시즈쿠는 사과하고 자료를 지우겠다고 답했지만 삭제하지 않았다. 대신 더
+            들키지 않는 방식으로 기록했다. 결국 토우마는 관계를 끝내고 혼자 살 집을
+            알아보았다. 시즈쿠에게 이별은 한 사람의 현재 선택이 아니었다. 기록 속에서
+            자신을 사랑하던 진짜 토우마가 피로와 주변 사람에게 잠시 흐려진 상태였다.
+          </p>
+          <p>
+            시즈쿠는 한 달만 제대로 정리할 시간을 달라고 했다. 그동안 스튜디오의
+            작업대 위에 두 사람의 사진을 날짜순으로 복원하고, 사건 뒤에 보낼 메시지와
+            자신의 동선을 미리 준비했다. 범행 당일에는 모든 자료를 돌려주겠다고
+            토우마를 불렀다. 문을 잠그고 그의 몸이 둔해지도록 미리 준비한 음료를
+            건넨 뒤, 다시 사랑한다고 말해 달라고 요구했다. 토우마는 “사랑했던 건
+            진짜지만 끝낼 권리도 내게 있다”고 답했다.
+          </p>
+        </section>
+
+        <section>
+          <h3>남기기로 한 선택</h3>
+          <p>
+            시즈쿠는 그 말을 녹음하고 있었다. 토우마가 힘을 잃은 뒤에도 멈출 수 있는
+            순간은 있었다. 그러나 그가 문밖으로 나가면 기록 속 사랑까지 거짓이 될
+            것이라 생각했다. 시즈쿠는 스튜디오 장비의 검은 고정끈으로 그의 목을 졸랐고,
+            손이 풀리려는 순간 한 번 더 힘을 주었다. 우발적인 실수가 아니라, 상대의
+            미래보다 자신이 보존한 과거를 선택한 살인이었다.
+          </p>
+          <p>
+            이후 토우마의 계정으로 잠시 떠나겠다는 메시지를 보내고 사진의 시간 정보를
+            바꾸었다. 헤어진 연인이 사라진 것처럼 보이게 만드는 데 자신이 배운 기술을
+            사용했다. 단 하나, 마지막 음성 파일은 지우지 못했다. 그 안에 남은
+            “사랑했던 건 진짜”라는 문장을 없애면 자신이 지키려 한 사랑도 사라진다고
+            믿었기 때문이다. 수사관은 그 파일의 원본 정보에서 스튜디오와 범행 시각을
+            확인했다. 시즈쿠는 체포 직후 살해 사실을 인정했지만, 토우마를 빼앗았다는
+            말 대신 변하기 전의 그를 지켰다고 진술했다.
+          </p>
+        </section>
+      </article>
+
+      <section className="content-section" aria-labelledby="timeline-title">
+        <h2 id="timeline-title">인과 연표</h2>
+        <ol className="timeline">
+          <li><time>12세</time><p>친구와 연락이 끊긴 뒤 사진과 편지를 정리하며 기록은 관계를 보존한다는 믿음을 만든다.</p></li>
+          <li><time>20세</time><p>토우마가 자신의 기억력과 세심함을 사랑해 주자 기록 행동이 관계의 보상으로 굳어진다.</p></li>
+          <li><time>21세</time><p>불안을 줄이기 위해 기록 범위를 넓히고, 배려는 동의 없는 감시와 편집으로 변한다.</p></li>
+          <li><time>22세</time><p>이별을 현재의 선택이 아닌 오류로 해석하고, 준비한 마지막 만남에서 토우마를 살해한다.</p></li>
+          <li><time>현재</time><p>사실은 고백하지만 타인의 변화와 거절을 지울 권리가 자신에게 없었다는 책임은 인정하지 못한다.</p></li>
+        </ol>
+      </section>
+
+      <section className="content-section ideology" aria-labelledby="ideology-title">
+        <h2 id="ideology-title">캐릭터의 사상</h2>
+        <p className="ideology-lead">
+          “사람은 흔들리지만, 한때 진심이었던 기록은 흔들리지 않는다.”
+        </p>
+        <p>
+          시즈쿠는 가장 행복했던 순간의 마음을 한 사람의 본질로 보고, 그 뒤의 변화는
+          외부 요인이나 피로가 만든 손상이라고 생각한다. 그래서 타인의 현재 의사보다
+          과거의 약속을 더 높은 증거로 취급한다. 그녀가 심문에서 넘어야 할 지점은
+          살해 사실의 인정이 아니다. 사랑했던 과거가 진짜였어도 상대에게 관계를 끝내고
+          변할 권리가 있었다고 인정하는 것이다.
+        </p>
+      </section>
+
+      <section
+        className="content-section reading-section"
+        aria-labelledby="secret-relationship"
+      >
+        <h2 id="secret-relationship">선관</h2>
+        <p>
+          현재 확정 선관은 없습니다. 아래 내용은 모두 관계 제안이며 상대 오너와 합의한
+          뒤에만 확정됩니다. 공개 프로필과 합쳐 최대 3명까지 가능합니다.
+        </p>
+        <RelationshipHooks />
+      </section>
     </div>
   );
 }
 
-function RecordIndex({ mode }: { mode: ProfileMode }) {
-  return <nav className="record-index" aria-label={`${mode === "public" ? "공개" : "비밀"} 기록 목차`}><p>RECORD INDEX / {mode === "public" ? "OPEN" : "SEALED"}</p><div>{sectionLinks[mode].map(([label, href], index) => <a key={href} href={href}><span>{String(index + 1).padStart(2, "0")}</span>{label}</a>)}</div></nav>;
+function SecretGate({
+  onOpen,
+  onCancel,
+}: {
+  onOpen: () => void;
+  onCancel: () => void;
+}) {
+  return (
+    <div className="secret-gate view-enter" id="profile-content">
+      <p className="gate-mark" aria-hidden="true">PRIVATE</p>
+      <h1 data-view-heading="secret-gate" tabIndex={-1}>
+        이 기록은 살인과 집착의 진상을 포함합니다.
+      </h1>
+      <p>
+        비밀 프로필에는 피해자, 범행 과정, 은폐 시도, 캐릭터의 왜곡된 사상이
+        구체적으로 적혀 있습니다. 내용을 확인하시겠습니까?
+      </p>
+      <div className="gate-actions">
+        <button className="primary-action" type="button" onClick={onOpen}>
+          비밀 프로필 열기
+        </button>
+        <button className="secondary-action" type="button" onClick={onCancel}>
+          공개 프로필로 돌아가기
+        </button>
+      </div>
+      <p className="gate-meta" aria-hidden="true">
+        <span>ENTRY 01</span>
+        <span>RESTORATION RECORD / SEALED</span>
+      </p>
+    </div>
+  );
 }
 
-export default function ProfileClient({ initialMode = "public" }: { initialMode?: ProfileMode }) {
-  const [mode, setMode] = useState<ProfileMode>(initialMode);
-  const [announcement, setAnnouncement] = useState("");
-  const catchphrase = mode === "public" ? "돌아올 자리는 늘 비워둘게." : "약속은 한쪽이 포기한다고 없어지지 않아.";
-  const quote = mode === "public" ? "계속 곁에 있겠다고 했잖아. 난 그 말을 믿었을 뿐이야." : "헤어지자는 말은 대화의 끝이 아니잖아. 아직 내가 동의하지 않았는데.";
+function OwnerProfile() {
+  return (
+    <div className="profile-copy owner-copy view-enter" id="profile-content">
+      <header className="profile-intro">
+        <h1 data-view-heading="owner" tabIndex={-1}>오너란</h1>
+        <div className="voice-record">
+          <blockquote>프로필 및 선관 협의는 오너를 통해 진행합니다.</blockquote>
+          <p className="catchphrase">[ OWNER INFORMATION ]</p>
+        </div>
+      </header>
+      <section className="content-section" aria-labelledby="owner-record">
+        <h2 id="owner-record">오너 정보</h2>
+        <RecordList
+          rows={[
+            ["오너닉", "새드아씨"],
+            ["나이", "성인"],
+            ["외관 출처", "사용자 제공 이미지 / 출처 확인 필요"],
+            ["원본 링크", "미제공 / 제출 전 확인 필요"],
+          ]}
+        />
+      </section>
+      <section
+        className="content-section reading-section"
+        aria-labelledby="owner-note"
+      >
+        <h2 id="owner-note">확인 사항</h2>
+        <p>
+          첨부 이미지는 입소 전 외관 참고용입니다. 힐그램 내부 의상은 프로필에 적힌
+          흰색 주조의 지정 구속복과 검은 구속줄을 기준으로 합니다. 선관은 합의 이후에만
+          확정하며 상대 캐릭터의 감정과 행동을 미리 정하지 않습니다.
+        </p>
+      </section>
+    </div>
+  );
+}
+
+export default function ProfileClient() {
+  const [view, setView] = useState<View>("public");
+  const [secretUnlocked, setSecretUnlocked] = useState(false);
+  const shouldFocusView = useRef(false);
+
+  const theme =
+    view === "secret" || view === "secret-gate" ? "secret" : "public";
 
   useEffect(() => {
-    document.documentElement.dataset.record = mode;
-    document.querySelectorAll<HTMLMetaElement>('meta[name="theme-color"]').forEach((meta) => { meta.content = mode === "secret" ? "#100c14" : "#0d0b12"; });
-  }, [mode]);
+    if (!shouldFocusView.current) return;
 
-  const changeMode = (next: ProfileMode) => {
-    if (next === mode) return;
-    const commit = () => {
-      setMode(next);
-      setAnnouncement(next === "secret" ? "비밀 프로필이 열렸습니다." : "공개 프로필이 열렸습니다.");
-      document.documentElement.dataset.record = next;
-      const url = new URL(window.location.href);
-      if (next === "secret") url.searchParams.set("record", "sealed"); else url.searchParams.delete("record");
-      window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
-      if (window.scrollY > window.innerHeight * 0.85) requestAnimationFrame(() => document.getElementById("profile-panel")?.scrollIntoView());
-    };
-    if ("startViewTransition" in document && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) (document as Document & { startViewTransition: (callback: () => void) => void }).startViewTransition(commit); else commit();
+    document
+      .querySelector<HTMLElement>(`[data-view-heading="${view}"]`)
+      ?.focus({ preventScroll: true });
+    shouldFocusView.current = false;
+  }, [view]);
+
+  const selectView = (nextView: View) => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+    shouldFocusView.current = true;
+    setView(nextView);
   };
 
-  const nextMode = mode === "public" ? "secret" : "public";
-  const statusLabel = mode === "public" ? "OPEN FILE" : "SEALED FILE";
-  const legacyStatus = mode === "public" ? "OPEN LINE" : "SEALED LINE";
-  const actionLabel = `${nextMode === "secret" ? "비밀" : "공개"} 프로필로 전환`;
+  const openSecret = () => {
+    if (secretUnlocked) {
+      selectView("secret");
+      return;
+    }
+    selectView("secret-gate");
+  };
 
   return (
-    <main className="dossier-shell" data-mode={mode}>
-      <a className="skip-link" href="#profile-panel">프로필 본문으로 이동</a><p className="sr-status" aria-live="polite">{announcement}</p>
-      <header className="dossier-header"><a href="#top" aria-label="페이지 맨 위로 이동" className="wordmark">HILGRAM</a><p>INMATE / ID PENDING</p><button className="mode-status" type="button" aria-label={`${statusLabel}, ${actionLabel}`} aria-pressed={mode === "secret"} data-legacy-status={legacyStatus} onClick={() => changeMode(nextMode)}><span>{statusLabel}</span><small>{actionLabel}</small><i aria-hidden="true" /></button></header>
+    <div className="site-shell" data-theme={theme} data-view={view}>
+      <a className="skip-link" href="#profile-content">본문으로 건너뛰기</a>
 
-      <section className="intake-hero" id="top" aria-labelledby="character-name">
-        <div className="hero-copy"><p className="catchphrase">{catchphrase}</p><h1 id="character-name"><span>御影 雫</span>미카게 시즈쿠</h1><p className="subject-index">심문 대상자 기록 / SUBJECT 01</p><blockquote>“{quote}”</blockquote><dl className="hero-facts" aria-label="요약 신원"><div><dt>AGE</dt><dd>21</dd></div><div><dt>SEX</dt><dd>XX</dd></div><div><dt>BODY</dt><dd>159 / 49</dd></div><div><dt>BORN</dt><dd>06.12 / AB</dd></div><div><dt>FROM</dt><dd>神奈川</dd></div></dl><ModeSwitch mode={mode} onChange={changeMode} /></div>
-        <figure className="evidence-portrait"><span className="evidence-id">EVIDENCE 01</span><div className="portrait-matte"><Image src="/mikage-shizuku.webp" alt="짙은 남보라색 양갈래 땋은 머리와 연보라색 눈의 미카게 시즈쿠" width={1280} height={1280} priority unoptimized sizes="(max-width: 840px) 100vw, 56vw" /></div><figcaption><strong>외관 참고용</strong><span>공식 구속복 아님</span><span>출처: 픽크루</span></figcaption></figure>
-        {mode === "secret" && <aside className="sealed-alerts" aria-label="봉인 기록 바로가기"><p>스토킹 및 살인 소재 포함</p><a href="#secret-appearance"><strong>3</strong><span>공개 진술의 모순</span></a><a href="#incident-heading"><strong>7</strong><span>끝을 정한 선택</span></a></aside>}
-      </section>
+      <header className="topbar">
+        <a
+          className="wordmark"
+          href="#top"
+          aria-label="미카게 시즈쿠 프로필 처음으로"
+        >
+          <span lang="ja">御影 雫</span>
+          <small>HILGRAM</small>
+        </a>
+        <nav className="view-switcher" aria-label="프로필 구분">
+          <button
+            type="button"
+            aria-current={view === "public" ? "page" : undefined}
+            aria-controls="profile-content"
+            onClick={() => selectView("public")}
+          >
+            공개
+          </button>
+          <button
+            type="button"
+            aria-current={
+              view === "secret" || view === "secret-gate" ? "page" : undefined
+            }
+            aria-controls="profile-content"
+            aria-expanded={view === "secret" || view === "secret-gate"}
+            onClick={openSecret}
+          >
+            비밀
+          </button>
+          <button
+            type="button"
+            aria-current={view === "owner" ? "page" : undefined}
+            aria-controls="profile-content"
+            onClick={() => selectView("owner")}
+          >
+            오너
+          </button>
+        </nav>
+      </header>
 
-      <RecordIndex mode={mode} />
-      <section id="profile-panel" className="profile-panel" role="tabpanel" tabIndex={0} aria-labelledby={mode === "public" ? "public-tab" : "secret-tab"} key={mode}><p className="print-mode">기록 범위: {mode === "public" ? "공개 프로필" : "비밀 프로필"}</p>{mode === "public" ? <PublicProfile /> : <SecretProfile />}</section>
-      <footer className="dossier-footer"><p>공개 진술. 봉인된 기록.</p><small>스토킹 및 살인 소재가 포함된 창작 캐릭터 프로필입니다.</small><a href="#top">페이지 맨 위로</a></footer>
-    </main>
+      <main className="profile-layout" id="top">
+        <aside className="portrait-column" aria-label="캐릭터 외관">
+          <div className="portrait-frame">
+            <img
+              src="/mikage-shizuku.webp"
+              width="1200"
+              height="1200"
+              alt="보라색 눈과 긴 땋은 머리의 여성이 고딕 로리타 복장으로 손하트를 만들며 미소 짓는 상반신 그림"
+            />
+            <div className="archive-meta" aria-hidden="true">
+              <span>ORIGINAL 01</span>
+              <span>RESTORE LOG / 09.12</span>
+            </div>
+            <div className="parallel-mark" aria-hidden="true"><i /><i /></div>
+          </div>
+          <p className="portrait-caption">
+            입소 전 외관 참고 / 힐그램 지정 의상은 프로필 서술 기준
+          </p>
+          <div className="portrait-facts" aria-label="기본 정보">
+            <span>22세</span>
+            <span>여성</span>
+            <span>158 cm / 48 kg</span>
+          </div>
+        </aside>
+
+        <section className="content-column">
+          {view === "public" && <PublicProfile />}
+          {view === "secret-gate" && (
+            <SecretGate
+              onOpen={() => {
+                setSecretUnlocked(true);
+                selectView("secret");
+              }}
+              onCancel={() => selectView("public")}
+            />
+          )}
+          {view === "secret" && <SecretProfile />}
+          {view === "owner" && <OwnerProfile />}
+        </section>
+      </main>
+
+      <footer className="site-footer">
+        <p>御影 雫 / 22 / 女性</p>
+        <div>
+          <a href="https://posty.pe/pkv5n8fc" target="_blank" rel="noreferrer">
+            HILGRAM 총공지
+          </a>
+          <span>오너 새드아씨</span>
+          <span>외관 출처 확인 필요</span>
+        </div>
+      </footer>
+    </div>
   );
 }
