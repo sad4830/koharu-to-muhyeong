@@ -69,7 +69,15 @@ function RecordList({ rows }: { rows: string[][] }) {
       {rows.map(([label, value]) => (
         <div className="record-row" key={label}>
           <dt>{label}</dt>
-          <dd>{value}</dd>
+          <dd>
+            {value.startsWith("https://") ? (
+              <a href={value} target="_blank" rel="noreferrer">
+                {value}
+              </a>
+            ) : (
+              value
+            )}
+          </dd>
         </div>
       ))}
     </dl>
@@ -79,11 +87,11 @@ function RecordList({ rows }: { rows: string[][] }) {
 function PreferenceGroup({
   likes,
   hates,
-  secret,
+  scared,
 }: {
   likes: string[];
   hates: string[];
-  secret: string;
+  scared: string;
 }) {
   return (
     <div className="preference-grid">
@@ -103,9 +111,9 @@ function PreferenceGroup({
           ))}
         </ul>
       </section>
-      <section className="secret-preference">
-        <h3>Secret</h3>
-        <p>{secret}</p>
+      <section className="scared-preference">
+        <h3>Scared</h3>
+        <p>{scared}</p>
       </section>
     </div>
   );
@@ -192,7 +200,7 @@ function PublicProfile() {
         <PreferenceGroup
           likes={publicLikes}
           hates={publicHates}
-          secret="공란"
+          scared="공란"
         />
       </section>
 
@@ -287,7 +295,7 @@ function SecretProfile() {
         <PreferenceGroup
           likes={secretLikes}
           hates={secretHates}
-          secret="사랑했던 사람이 자신과 무관한 미래를 선택하고, 그 선택을 존중해 달라고 요구하는 것."
+          scared="사랑했던 사람이 자신과 무관한 미래를 선택하고, 그 선택을 존중해 달라고 요구하는 것."
         />
       </section>
 
@@ -487,8 +495,8 @@ function OwnerProfile() {
           rows={[
             ["오너닉", "새드아씨"],
             ["나이", "성인"],
-            ["외관 출처", "사용자 제공 이미지 / 출처 확인 필요"],
-            ["원본 링크", "미제공 / 제출 전 확인 필요"],
+            ["외관 출처", "Picrew"],
+            ["원본 링크", "https://picrew.me/en/image_maker/1649970"],
           ]}
         />
       </section>
@@ -630,7 +638,13 @@ export default function ProfileClient() {
             HILGRAM 총공지
           </a>
           <span>오너 새드아씨</span>
-          <span>외관 출처 확인 필요</span>
+          <a
+            href="https://picrew.me/en/image_maker/1649970"
+            target="_blank"
+            rel="noreferrer"
+          >
+            외관 출처 Picrew
+          </a>
         </div>
       </footer>
     </div>

@@ -455,6 +455,12 @@ a {
   text-wrap: pretty;
 }
 
+.record-row dd a {
+  color: var(--accent);
+  overflow-wrap: anywhere;
+  text-underline-offset: 4px;
+}
+
 .reading-section > p,
 .story p,
 .summary-panel > p,
@@ -515,7 +521,7 @@ a {
   border-left: 1px solid var(--line);
 }
 
-.preference-grid section.secret-preference {
+.preference-grid section.scared-preference {
   grid-column: 1 / -1;
   padding: 26px 0 28px;
   border-top: 1px solid var(--line);
@@ -1044,7 +1050,7 @@ a {
 
   .preference-grid section,
   .preference-grid section:nth-child(2),
-  .preference-grid section.secret-preference {
+  .preference-grid section.scared-preference {
     grid-column: 1;
     padding: 24px 0;
     border-left: 0;
