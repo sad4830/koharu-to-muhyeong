@@ -337,7 +337,7 @@ export default function KarmaDossier() {
                 <dl className="ability-stats">
                   <div><dt>발동</dt><dd>1턴</dd></div>
                   <div><dt>지속</dt><dd>전투 12턴 · 비전투 60턴</dd></div>
-                  <div><dt>재사용</dt><dd>해제 후 3턴 · 비전투 10턴</dd></div>
+                  <div><dt>재사용</dt><dd>전투: 해제 후 5턴 · 비전투: 해제 후 15턴</dd></div>
                   <div><dt>보유 설계</dt><dd>최대 3개</dd></div>
                 </dl>
                 <details>
@@ -371,7 +371,7 @@ export default function KarmaDossier() {
                 </dl>
                 <div className="petal-uses">
                   <p><b>한 장:</b> 공격 1회 요격, 차량 외판 관통, 옷이나 장비를 지형에 고정. 마법적 구속은 아니다.</p>
-                  <p><b>여섯 장:</b> 한 턴 동안 꽃형 방패 또는 관통 나선으로 결합. 최대 출력은 소형 건물 일부 붕괴 수준으로 II등급 상한보다 낮다. 사용 뒤 전부 소모되고 5턴간 성물이 봉인된다.</p>
+                  <p><b>여섯 장:</b> 한 턴 동안 꽃형 방패 또는 관통 나선으로 결합. 최대 출력은 소형 건물 일부 붕괴 수준으로 II등급 상한보다 낮다. 사용 뒤 전부 소모되고 7턴간 성물이 봉인된다.</p>
                 </div>
                 <details>
                   <summary>패널티와 파훼법 확인</summary>
