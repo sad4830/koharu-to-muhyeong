@@ -40,17 +40,17 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   colorScheme: "light dark",
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f1f1f6" },
-    { media: "(prefers-color-scheme: dark)", color: "#111219" },
+    { media: "(prefers-color-scheme: light)", color: "#f3f0ec" },
+    { media: "(prefers-color-scheme: dark)", color: "#100c12" },
   ],
 };
 
 const directionContract = `<!--
-THESIS: A one-way night transit map turns every promise into a stop and refuses the usual dossier or profile-card arrangement.
-OWN-WORLD: Cool station surfaces, ultraviolet route lines, sharp information boards, circular stop nodes, condensed route labels, and one decisive portrait crop.
-STORY: Identify Shizuku, read the public statement, switch lines to expose three contradictions, trace seven choices, then inspect the full history and ideology.
-FIRST VIEWPORT: Portrait poster left, route board right, character name at platform scale, and the public-secret line switch visible without scrolling.
-FORM: After-hours transfer map, grounded direction 3 of 7, seed c12c8752.
+THESIS: A finished promise turns wrong-side-out, exposing the seam that was always control. The page refuses dossiers, transit maps, card grids, and interrogation dashboards.
+OWN-WORLD: Cold couture paper, near-black lining, one carmine thread, asymmetric pattern-cutting spreads, exposed seam allowance, oversized edition type, and a portrait cut like fabric.
+STORY: Meet the polished outside, turn the garment, unpick three false seams, follow seven deliberate cuts, then reach the knot she refuses to release.
+FIRST VIEWPORT: A full-height fashion cover layers one irregular Picrew cutout, restrained MIKAGE/SHIZUKU edition type, testimony and measurements at left, source captions at right, and the outside/lining switch at the lower edge.
+FORM: Promise, Wrong Side Out — couture cover into unpicked lining, grounded direction 5 of 7, seed f1671878.
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
 -->`;
 

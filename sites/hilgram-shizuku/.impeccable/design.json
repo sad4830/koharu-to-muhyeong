@@ -1,231 +1,417 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-13T04:39:24Z",
+  "generatedAt": "2026-08-14T00:57:18Z",
   "title": "Design System: HILGRAM: 미카게 시즈쿠",
   "extensions": {
+    "provenance": {
+      "conceptSeed": "f1671878",
+      "groundedDirection": 5,
+      "groundedDirectionTotal": 7,
+      "source": "app/layout.tsx direction contract"
+    },
+    "modeTokens": {
+      "--ground": { "public": "#f3f0ec", "secret": "#100c12" },
+      "--ground-2": { "public": "#e8e2e5", "secret": "#1d161f" },
+      "--paper": { "public": "#faf8f4", "secret": "#181219" },
+      "--ink": { "public": "#1b171d", "secret": "#f1eaef" },
+      "--muted": { "public": "#5c545d", "secret": "#c1b6be" },
+      "--faint": { "public": "rgba(27, 23, 29, .11)", "secret": "rgba(241, 234, 239, .08)" },
+      "--rule": { "public": "rgba(27, 23, 29, .35)", "secret": "rgba(241, 234, 239, .28)" },
+      "--strong-rule": { "public": "rgba(27, 23, 29, .76)", "secret": "rgba(241, 234, 239, .72)" },
+      "--thread": { "public": "#a52d52", "secret": "#e07999" },
+      "--thread-soft": { "public": "#d4a0b2", "secret": "#704052" },
+      "--thread-ink": { "public": "#fff8fa", "secret": "#1c1016" }
+    },
     "colorMeta": {
-      "open-ground": {
-        "role": "neutral",
-        "displayName": "Open Platform Ground",
-        "canonical": "#f1f1f6",
-        "tonalRamp": ["#17171d", "#303039", "#4b4b56", "#686873", "#888893", "#aaaab4", "#ccccd5", "#f1f1f6"]
-      },
-      "open-surface": {
-        "role": "neutral",
-        "displayName": "Open Information Surface",
-        "canonical": "#e7e7ef",
-        "tonalRamp": ["#17171d", "#2e2e37", "#474751", "#63636e", "#80808b", "#a2a2ad", "#c4c4ce", "#e7e7ef"]
-      },
-      "open-surface-strong": {
-        "role": "neutral",
-        "displayName": "Open Strong Surface",
-        "canonical": "#dcdce7",
-        "tonalRamp": ["#17171d", "#2d2d37", "#454550", "#5e5e6a", "#7a7a86", "#9898a4", "#b9b9c5", "#dcdce7"]
-      },
-      "open-ink": {
-        "role": "neutral",
-        "displayName": "Open Record Ink",
-        "canonical": "#15151c",
-        "tonalRamp": ["#15151c", "#303038", "#4c4c55", "#6b6b74", "#8b8b94", "#adadb5", "#d0d0d6", "#f2f2f5"]
-      },
-      "open-muted": {
-        "role": "neutral",
-        "displayName": "Open Muted Ink",
-        "canonical": "#555462",
-        "tonalRamp": ["#191820", "#34333e", "#555462", "#73727f", "#92919d", "#b1b0ba", "#d1d0d7", "#f1f0f4"]
-      },
-      "open-line": {
-        "role": "neutral",
-        "displayName": "Open Structural Line",
-        "canonical": "rgba(21, 21, 28, 0.24)",
-        "tonalRamp": ["rgba(21,21,28,0.88)", "rgba(21,21,28,0.72)", "rgba(21,21,28,0.56)", "rgba(21,21,28,0.40)", "rgba(21,21,28,0.24)", "rgba(21,21,28,0.18)", "rgba(21,21,28,0.12)", "rgba(21,21,28,0.06)"]
-      },
-      "open-line-soft": {
-        "role": "neutral",
-        "displayName": "Open Soft Divider",
-        "canonical": "rgba(21, 21, 28, 0.12)",
-        "tonalRamp": ["rgba(21,21,28,0.64)", "rgba(21,21,28,0.48)", "rgba(21,21,28,0.36)", "rgba(21,21,28,0.24)", "rgba(21,21,28,0.16)", "rgba(21,21,28,0.12)", "rgba(21,21,28,0.08)", "rgba(21,21,28,0.04)"]
-      },
-      "open-accent": {
-        "role": "primary",
-        "displayName": "Open Route Violet",
-        "canonical": "#67439a",
-        "tonalRamp": ["#1d142b", "#322048", "#4a2f6e", "#67439a", "#8263ae", "#9f84c2", "#c0acd8", "#eee8f7"]
-      },
-      "open-accent-contrast": {
-        "role": "neutral",
-        "displayName": "Open Route Contrast",
-        "canonical": "#f7f5fb",
-        "tonalRamp": ["#19171e", "#332f3b", "#4d4859", "#696373", "#87808f", "#a8a1af", "#cbc5d2", "#f7f5fb"]
-      },
-      "sealed-ground": {
-        "role": "neutral",
-        "displayName": "Sealed Night Ground",
-        "canonical": "#0e0f15",
-        "tonalRamp": ["#0e0f15", "#25262e", "#3d3e47", "#575861", "#73747d", "#92939b", "#b6b6bd", "#ededf0"]
-      },
-      "sealed-surface": {
-        "role": "neutral",
-        "displayName": "Sealed Information Surface",
-        "canonical": "#171820",
-        "tonalRamp": ["#171820", "#2c2d36", "#43444e", "#5d5e68", "#797a84", "#9899a2", "#babac2", "#eeeeF2"]
-      },
-      "sealed-surface-strong": {
-        "role": "neutral",
-        "displayName": "Sealed Strong Surface",
-        "canonical": "#21222d",
-        "tonalRamp": ["#15161e", "#21222d", "#3a3b47", "#555661", "#71727d", "#90919b", "#b4b4bc", "#eeeeF1"]
-      },
-      "sealed-ink": {
-        "role": "neutral",
-        "displayName": "Sealed Record Ink",
-        "canonical": "#f0eff5",
-        "tonalRamp": ["#18171d", "#302f38", "#4a4953", "#666570", "#83828d", "#a3a2ad", "#c5c4cd", "#f0eff5"]
-      },
-      "sealed-muted": {
-        "role": "neutral",
-        "displayName": "Sealed Muted Ink",
-        "canonical": "#b9b7c3",
-        "tonalRamp": ["#18171e", "#302e38", "#494751", "#64626e", "#807e89", "#9c9aa6", "#b9b7c3", "#efedf4"]
-      },
-      "sealed-line": {
-        "role": "neutral",
-        "displayName": "Sealed Structural Line",
-        "canonical": "rgba(240, 239, 245, 0.27)",
-        "tonalRamp": ["rgba(240,239,245,0.08)", "rgba(240,239,245,0.13)", "rgba(240,239,245,0.20)", "rgba(240,239,245,0.27)", "rgba(240,239,245,0.40)", "rgba(240,239,245,0.56)", "rgba(240,239,245,0.72)", "rgba(240,239,245,0.88)"]
-      },
-      "sealed-line-soft": {
-        "role": "neutral",
-        "displayName": "Sealed Soft Divider",
-        "canonical": "rgba(240, 239, 245, 0.13)",
-        "tonalRamp": ["rgba(240,239,245,0.04)", "rgba(240,239,245,0.08)", "rgba(240,239,245,0.13)", "rgba(240,239,245,0.20)", "rgba(240,239,245,0.30)", "rgba(240,239,245,0.44)", "rgba(240,239,245,0.62)", "rgba(240,239,245,0.82)"]
-      },
-      "sealed-accent": {
-        "role": "primary",
-        "displayName": "Sealed Ultraviolet",
-        "canonical": "#bca4eb",
-        "tonalRamp": ["#21182e", "#392852", "#543c78", "#70569b", "#8d73bb", "#aa91d8", "#bca4eb", "#eee8fb"]
-      },
-      "sealed-accent-contrast": {
-        "role": "neutral",
-        "displayName": "Sealed Route Contrast",
-        "canonical": "#15121a",
-        "tonalRamp": ["#15121a", "#302b35", "#4c4652", "#696270", "#88818e", "#aaa3af", "#ccc6d1", "#f3eff7"]
-      }
+      "public-ground": { "role": "neutral", "displayName": "Finished Couture Ground", "canonical": "#f3f0ec" },
+      "public-paper": { "role": "neutral", "displayName": "Finished Paper", "canonical": "#faf8f4" },
+      "public-thread": { "role": "primary", "displayName": "Carmine Thread", "canonical": "#a52d52" },
+      "secret-ground": { "role": "neutral", "displayName": "Wrong-side Ground", "canonical": "#100c12" },
+      "secret-paper": { "role": "neutral", "displayName": "Exposed Lining", "canonical": "#181219" },
+      "secret-thread": { "role": "primary", "displayName": "Lining Carmine", "canonical": "#e07999" },
+      "case-ground": { "role": "neutral", "displayName": "Case Opening Lining", "canonical": "#0a070c" },
+      "belief-ground": { "role": "neutral", "displayName": "Final Knot Ground", "canonical": "#080609" },
+      "print-ground": { "role": "neutral", "displayName": "Print White", "canonical": "#fff" },
+      "print-thread": { "role": "primary", "displayName": "Print Carmine", "canonical": "#6f1f3d" }
+    },
+    "colorInventory": [
+      "#080609",
+      "#0a070c",
+      "#100c12",
+      "#111",
+      "#181219",
+      "#1b171d",
+      "#1c1016",
+      "#1d151f",
+      "#1d161f",
+      "#222",
+      "#333",
+      "#5c545d",
+      "#6f1f3d",
+      "#704052",
+      "#a52d52",
+      "#aaa",
+      "#bdb3bb",
+      "#c1b6be",
+      "#c9bec6",
+      "#d4a0b2",
+      "#e07999",
+      "#e8e2e5",
+      "#f1eaef",
+      "#f3edf1",
+      "#f3f0ec",
+      "#faf8f4",
+      "#fff",
+      "#fff8fa",
+      "rgba(241, 234, 239, .08)",
+      "rgba(241, 234, 239, .28)",
+      "rgba(241, 234, 239, .72)",
+      "rgba(243,237,241,.26)",
+      "rgba(243,237,241,.3)",
+      "rgba(243,237,241,.68)",
+      "rgba(243,237,241,.7)",
+      "rgba(27, 23, 29, .11)",
+      "rgba(27, 23, 29, .35)",
+      "rgba(27, 23, 29, .76)",
+      "transparent",
+      "currentColor"
+    ],
+    "layoutTokens": {
+      "--header": "58px; 54px at max-width 760px",
+      "--page": "1500px",
+      "--reading": "66ch",
+      "--body-font": "\"Noto Sans KR Variable\", sans-serif",
+      "--data-font": "\"Barlow Condensed\", sans-serif",
+      "coverHeight": "calc(100svh - var(--header))",
+      "coverCopyWidth": "min(33%, 31rem)",
+      "portraitDesktopStart": "31%",
+      "coverSwitchWidth": "min(32rem, 42%)",
+      "sectionInline": "clamp(1.25rem, 5vw, 5rem)",
+      "sectionBlock": "clamp(6rem, 10vw, 10rem)",
+      "mobileInline": "1.15rem"
     },
     "typographyMeta": {
-      "display": { "displayName": "Platform Display", "purpose": "첫 화면의 인물명에만 사용하는 초대형 한국어 제목." },
-      "headline": { "displayName": "Record Headline", "purpose": "프로필 구간과 사건 기록의 큰 제목." },
-      "title": { "displayName": "Board Title", "purpose": "성격 키워드와 사건 정거장명." },
-      "body": { "displayName": "Long-form Record", "purpose": "프로필 설명, 분석, 과거사를 읽는 기본 문장." },
-      "route-label": { "displayName": "Route Label", "purpose": "영문 운행 상태, 코드, 수치 전용." }
+      "body": {
+        "displayName": "Korean Reading",
+        "purpose": "All Korean prose and display copy.",
+        "fontFamily": "Noto Sans KR Variable, sans-serif",
+        "fontSize": "16px",
+        "lineHeight": 1.8
+      },
+      "data-label": {
+        "displayName": "Pattern Data",
+        "purpose": "HILGRAM, English labels, indices, and measurements only.",
+        "fontFamily": "Barlow Condensed, sans-serif",
+        "loadedWeights": [600, 700],
+        "commonSize": ".75rem",
+        "mobileCaptionSize": ".75rem"
+      },
+      "long-copy": { "displayName": "Long Copy", "purpose": "Primary reading prose.", "maxWidth": "66ch", "lineHeight": 1.95 },
+      "history-copy": { "displayName": "History Copy", "purpose": "Expanded history.", "maxWidth": "72ch", "lineHeight": 2 }
     },
-    "shadows": [
-      { "name": "header-separation", "value": "0 14px 34px -30px var(--shadow)", "purpose": "고정 헤더를 문서 면에서 아주 얕게 분리한다." },
-      { "name": "portrait-edge", "value": "inset -20px 0 46px -42px var(--shadow)", "purpose": "인물 포스터와 정보 보드 사이의 내부 경계를 보조한다." }
+    "fluidTypography": [
+      { "selector": ".cover-title", "value": "clamp(5rem, 10.5vw, 10.5rem)" },
+      { "selector": ".catchphrase", "value": "clamp(.95rem, 1.3vw, 1.15rem)" },
+      { "selector": ".cover-copy h1", "value": "clamp(3.4rem, 6.4vw, 6.8rem)" },
+      { "selector": ".cover-copy h1 span", "value": "clamp(1rem, 1.6vw, 1.4rem)" },
+      { "selector": ".section-heading h2", "value": "clamp(3rem, 7.5vw, 8rem)" },
+      { "selector": ".identity-pattern dd", "value": "clamp(1rem, 1.7vw, 1.4rem)" },
+      { "selector": ".pleated-traits article > span, .contradiction-braid article > b", "value": "clamp(4rem, 8vw, 8rem)" },
+      { "selector": ".pleated-traits h3", "value": "clamp(1.5rem, 2.8vw, 2.6rem)" },
+      { "selector": ".preference-strand > p", "value": "clamp(1.2rem, 2.1vw, 1.8rem)" },
+      { "selector": ".maker-notes > p", "value": "clamp(1rem, 1.4vw, 1.15rem)" },
+      { "selector": ".maker-notes blockquote", "value": "clamp(1.15rem, 2vw, 1.65rem)" },
+      { "selector": ".loose-end p", "value": "clamp(6rem, 15vw, 15rem)" },
+      { "selector": ".case-opening h2", "value": "clamp(4.5rem, 10vw, 10.5rem)" },
+      { "selector": ".contradiction-braid del", "value": "clamp(2rem, 4.8vw, 5.2rem)" },
+      { "selector": ".contradiction-braid article p", "value": "clamp(1rem, 1.55vw, 1.25rem)" },
+      { "selector": ".knot-keywords span", "value": "clamp(1.2rem, 2.6vw, 2.3rem)" },
+      { "selector": ".choice-seam h2", "value": "clamp(4rem, 10vw, 10rem)" },
+      { "selector": ".choice-seam li > b", "value": "clamp(10rem, 29vw, 29rem)" },
+      { "selector": ".choice-seam li h3", "value": "clamp(1.7rem, 3vw, 2.8rem)" },
+      { "selector": ".summary-thesis", "value": "clamp(4rem, 9vw, 9rem)" },
+      { "selector": ".belief-question", "value": "clamp(4rem, 8.5vw, 8.5rem)" },
+      { "selector": ".selvedge-footer p", "value": "clamp(1.4rem, 2.2vw, 2rem)" },
+      { "selector": ".cover-copy h1 @760", "value": "clamp(3.6rem, 17vw, 5.4rem)" },
+      { "selector": ".section-heading h2 @760", "value": "clamp(3rem, 15vw, 5rem)" },
+      { "selector": ".case-opening h2, .choice-seam h2 @760", "value": "clamp(4rem, 18vw, 6rem)" },
+      { "selector": ".contradiction-braid del @760", "value": "clamp(1.7rem, 9vw, 2.6rem)" },
+      { "selector": ".summary-thesis, .belief-question @760", "value": "clamp(3.8rem, 16vw, 5.6rem)" }
+    ],
+    "fixedTypography": [
+      { "selector": ".cover-copy blockquote", "value": ".94rem" },
+      { "selector": ".mode-switch b", "value": ".88rem" },
+      { "selector": ".reference-limit strong, .selvedge-footer a", "value": ".8rem" },
+      { "selector": ".reference-limit p", "value": ".84rem" },
+      { "selector": ".preference-strand li", "value": ".92rem" },
+      { "selector": ".case-opening dd, .knot-keywords span @760", "value": "1.05rem" },
+      { "selector": ".case-summary h2, .belief-manifesto h2", "value": "1.1rem" },
+      { "selector": ".maker-label dd", "value": "1.15rem" },
+      { "selector": ".contradiction-braid article > b @760", "value": "3.2rem" }
+    ],
+    "shadows": [],
+    "breakpoints": [
+      {
+        "name": "tight-desktop",
+        "value": "1100px",
+        "behavior": "Portrait begins at 36% with a 7rem caption column; copy and switch become 38%; cover title becomes 11vw; identity becomes three columns; trait and case proportions tighten."
+      },
+      {
+        "name": "mobile-stack",
+        "value": "760px",
+        "behavior": "Header becomes 54px; descriptor hides; cover orders portrait, copy, switch; index stays horizontal; spreads and ledgers stack; section gutters become 1.15rem; case, summary, belief, and footer become one column."
+      },
+      {
+        "name": "compact",
+        "value": "380px",
+        "behavior": "Status icon and tab helper hide; portrait caption and transfer links stack; identity term column narrows to 5.5rem."
+      }
     ],
     "motion": [
-      { "name": "state-fast", "value": "180ms ease-out", "purpose": "호버, 포커스 보조, disclosure 표식 전환." },
-      { "name": "state-press", "value": "120ms ease-out", "purpose": "버튼의 1px 눌림 피드백." },
-      { "name": "mode-color", "value": "480ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "공개와 봉인 사이의 표면색 전환." },
-      { "name": "portrait-shift", "value": "700ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "봉인 전환 시 인물 사진 크롭과 인상 변화." },
-      { "name": "route-draw", "value": "920ms 180ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "첫 진입에서 노선을 한 방향으로 그린다." },
-      { "name": "reduced-motion", "value": "none", "purpose": "모션 감소 환경에서는 진입 애니메이션, 부드러운 스크롤, 상태 전환을 제거한다." }
+      { "name": "skip-link", "value": "transform 160ms ease-out", "purpose": "Reveal the skip link on focus." },
+      { "name": "shell-mode", "value": "background-color 500ms ease, color 350ms ease", "purpose": "Outside/lining token change." },
+      { "name": "cut-shape", "value": "clip-path 650ms cubic-bezier(.16,1,.3,1), transform 650ms cubic-bezier(.16,1,.3,1)", "purpose": "Cover plane and portrait recut." },
+      { "name": "portrait-image", "value": "filter 550ms ease, transform 700ms cubic-bezier(.16,1,.3,1)", "purpose": "Mode-specific portrait finish." },
+      { "name": "thread-knot", "value": "opacity 450ms ease", "purpose": "Reveal the secret knot." },
+      { "name": "tab-underline", "value": "transform 240ms ease", "purpose": "Selected mode seam." },
+      { "name": "disclosure", "value": "transform 220ms ease", "purpose": "Plus-to-line history mark." },
+      { "name": "sew-thread", "value": "1.35s .25s cubic-bezier(.16,1,.3,1)", "purpose": "Initial thread draw when motion is allowed." },
+      { "name": "reveal-fabric", "value": "900ms cubic-bezier(.16,1,.3,1)", "purpose": "Initial portrait cut reveal." },
+      { "name": "rise-copy", "value": "720ms 120ms cubic-bezier(.16,1,.3,1)", "purpose": "Initial cover copy rise." },
+      { "name": "local-rise", "value": "480ms cubic-bezier(.16,1,.3,1)", "purpose": "First child of the newly keyed profile." },
+      { "name": "root-view-transition", "value": "650ms cubic-bezier(.16,1,.3,1)", "purpose": "Diagonal lining-out/lining-in mode change; disabled for reduced motion." },
+      { "name": "reduced-motion", "value": ".01ms", "purpose": "One-iteration global animation and transition fallback." }
     ],
-    "breakpoints": [
-      { "name": "wide-adjust", "value": "1100px" },
-      { "name": "stack", "value": "860px" },
-      { "name": "mobile", "value": "600px" },
-      { "name": "compact", "value": "360px" }
+    "viewTransition": {
+      "rootOld": "lining-out",
+      "rootNew": "lining-in",
+      "namedElements": ["character-name", "character-portrait"],
+      "guard": "startViewTransition support and no prefers-reduced-motion: reduce"
+    },
+    "reducedPreferences": {
+      "prefers-reduced-motion": "Smooth scroll becomes auto; all animation/transition durations become .01ms with one iteration; root view-transition animation is none.",
+      "prefers-reduced-transparency": ".site-shell::before is hidden."
+    },
+    "print": {
+      "tokens": {
+        "--ground": "#fff",
+        "--ground-2": "#fff",
+        "--paper": "#fff",
+        "--ink": "#111",
+        "--muted": "#333",
+        "--rule": "#aaa",
+        "--strong-rule": "#222",
+        "--thread": "#6f1f3d",
+        "--thread-soft": "#aaa"
+      },
+      "hiddenSelectors": [
+        ".atelier-header",
+        ".mode-switch",
+        ".stitch-index",
+        ".transfer-links",
+        ".selvedge-footer",
+        ".skip-link",
+        ".cover-thread",
+        ".cover-title"
+      ],
+      "behavior": "Force white/black output; cover breaks after; portrait is 34rem; sections avoid breaks with 2rem block padding; print-mode and full history show; dark pseudo-elements hide; dark headings become #111."
+    },
+    "accessibility": [
+      "html lang is ko.",
+      "Skip link targets #profile-panel and .sr-status announces mode changes politely.",
+      "ModeSwitch is a tablist with public-tab and secret-tab, aria-selected, aria-controls, roving tabIndex, and ArrowLeft/ArrowRight/Home/End keyboard selection.",
+      "Header .mode-status exposes a changing aria-label and aria-pressed.",
+      "#profile-panel is a focusable tabpanel labelled by the selected tab.",
+      "Contradictions expose table/row/columnheader/cell roles and retain del claims beside facts.",
+      "Headings label sections; identity and measures are labelled dl structures; history is native details/summary.",
+      "Portrait has descriptive alt text and adjacent usage/source caption; decorative SVG and marks are aria-hidden.",
+      "Links, buttons, summaries, and tabindex targets receive a 3px var(--thread) focus outline offset 4px.",
+      "Primary controls retain 44px or larger touch targets; mode tabs are 64px desktop and 58px mobile."
+    ],
+    "urlContract": {
+      "defaultMode": "public",
+      "secretQuery": "?record=sealed",
+      "initialization": "app/page.tsx maps record=sealed to initialMode=secret; all other values are public.",
+      "mutation": "history.replaceState preserves pathname, other search parameters, and hash; public removes only record.",
+      "stateAttributes": ["html[data-record=public|secret]", ".site-shell[data-mode=public|secret]"],
+      "deepScroll": "After a mode change beyond .85 viewport height, #profile-panel scrolls into view.",
+      "canonical": "/"
+    },
+    "browserChrome": {
+      "themeColors": { "public": "#f3f0ec", "secret": "#100c12" },
+      "synchronization": "Each mode effect updates html[data-record] and every existing meta[name=theme-color].",
+      "secretSelectors": ["html[data-record=secret]", "html:has(.site-shell[data-mode=secret])"],
+      "secretColorScheme": "dark",
+      "secretBackground": "#100c12",
+      "secretScrollbar": "#e07999 #100c12"
+    },
+    "selectorInventory": [
+      ".site-shell[data-mode]",
+      ".atelier-header",
+      ".wordmark",
+      ".mode-status",
+      ".couture-cover",
+      ".cover-title",
+      ".cover-copy",
+      ".cover-edition",
+      ".catchphrase",
+      ".cover-measures",
+      ".cover-thread",
+      ".portrait-cutout",
+      ".portrait-shape",
+      ".cover-switch",
+      ".mode-switch",
+      ".switch-code",
+      ".transfer-links",
+      ".stitch-index",
+      ".profile-panel",
+      ".profile-section",
+      ".section-heading",
+      ".identity-pattern",
+      ".appearance-spread",
+      ".appearance-copy",
+      ".reference-limit",
+      ".truth-seam",
+      ".pleated-traits",
+      ".preference-weave",
+      ".preference-strand",
+      ".strand-l",
+      ".strand-h",
+      ".strand-s",
+      ".maker-notes",
+      ".loose-end",
+      ".case-opening",
+      ".contradiction-braid",
+      ".knot-keywords",
+      ".analysis-copy",
+      ".choice-seam",
+      ".case-summary",
+      ".summary-thesis",
+      ".summary-copy",
+      ".history-disclosure",
+      ".history-copy",
+      ".maker-label",
+      ".belief-manifesto",
+      ".belief-question",
+      ".selvedge-footer",
+      ".skip-link",
+      ".sr-status",
+      ".print-mode"
+    ],
+    "hardRules": [
+      "Public is the finished couture outside; secret is the exposed wrong-side lining of the same garment.",
+      "One carmine thread is the only accent family.",
+      "The interrogation, dossier, transit, route, rail, dashboard, and card-grid system is abolished.",
+      "Information and controls stay square; only literal thread knots and loops use rounded forms.",
+      "Keep exactly 3 contradiction rows and 7 choice items with their anchors and semantics.",
+      "Keep the Picrew usage and source caption adjacent to the portrait.",
+      "Preserve all fluid type endpoints and the exact 1100px, 760px, and 380px breakpoints.",
+      "Preserve focus, keyboard tabs, reduced motion/transparency, URL state, and print output."
     ]
   },
   "components": [
     {
-      "name": "Open Mode Switch",
-      "kind": "nav",
-      "refersTo": "mode-switch-selected-open",
-      "description": "정상 운행 기록을 선택한 2상태 프로필 탭.",
-      "html": "<nav class=\"ds-mode-switch\" aria-label=\"프로필 공개 범위\"><button class=\"ds-mode-tab ds-is-selected\"><span class=\"ds-route-code\">OP</span><span><b>공개 프로필</b><small>정상 운행 기록</small></span></button><button class=\"ds-mode-tab\"><span class=\"ds-route-code\">SR</span><span><b>비밀 프로필</b><small>봉인 해제 기록</small></span></button></nav>",
-      "css": ".ds-mode-switch{display:grid;grid-template-columns:1fr 1fr;border-block:1px solid var(--line,rgba(21,21,28,.24));font-family:var(--font-body,'Noto Sans KR Variable',sans-serif)}.ds-mode-tab{min-height:72px;display:grid;grid-template-columns:2.6rem 1fr;align-items:center;gap:.8rem;padding:.75rem;border:0;border-right:1px solid var(--line,rgba(21,21,28,.24));border-radius:0;background:transparent;color:var(--muted,#555462);text-align:left;cursor:pointer;transition:background-color 180ms ease-out,color 180ms ease-out,transform 120ms ease-out}.ds-mode-tab:last-child{border-right:0}.ds-mode-tab:hover{background:var(--surface,#e7e7ef);color:var(--ink,#15151c)}.ds-mode-tab:focus-visible{outline:3px solid var(--accent,#67439a);outline-offset:4px}.ds-mode-tab:active{transform:translateY(1px)}.ds-mode-tab.ds-is-selected{background:var(--accent,#67439a);color:var(--accent-contrast,#f7f5fb)}.ds-route-code{width:2.6rem;aspect-ratio:1;display:grid;place-items:center;border:2px solid currentColor;border-radius:50%;font:700 .76rem/1 var(--font-route,'Barlow Condensed',sans-serif)}.ds-mode-tab>span:last-child{display:flex;flex-direction:column;gap:.2rem}.ds-mode-tab b{font-size:.86rem}.ds-mode-tab small{font-size:.66rem;line-height:1.3}"
-    },
-    {
-      "name": "Sealed Mode Switch",
-      "kind": "nav",
-      "refersTo": "mode-switch-selected-sealed",
-      "description": "자정 팔레트에서 봉인 기록을 선택한 탭 변형.",
-      "html": "<div class=\"ds-secret-surface\"><nav class=\"ds-mode-switch\" aria-label=\"프로필 공개 범위\"><button class=\"ds-mode-tab\"><span class=\"ds-route-code\">OP</span><span><b>공개 프로필</b><small>정상 운행 기록</small></span></button><button class=\"ds-mode-tab ds-is-selected\"><span class=\"ds-route-code\">SR</span><span><b>비밀 프로필</b><small>봉인 해제 기록</small></span></button></nav></div>",
-      "css": ".ds-secret-surface{--ground:#0e0f15;--surface:#171820;--ink:#f0eff5;--muted:#b9b7c3;--line:rgba(240,239,245,.27);--accent:#bca4eb;--accent-contrast:#15121a;padding:1rem;background:var(--ground);color:var(--ink)}.ds-mode-switch{display:grid;grid-template-columns:1fr 1fr;border-block:1px solid var(--line);font-family:'Noto Sans KR Variable',sans-serif}.ds-mode-tab{min-height:72px;display:grid;grid-template-columns:2.6rem 1fr;align-items:center;gap:.8rem;padding:.75rem;border:0;border-right:1px solid var(--line);border-radius:0;background:transparent;color:var(--muted);text-align:left;cursor:pointer}.ds-mode-tab:last-child{border-right:0}.ds-mode-tab:hover{background:var(--surface);color:var(--ink)}.ds-mode-tab:focus-visible{outline:3px solid var(--accent);outline-offset:4px}.ds-mode-tab.ds-is-selected{background:var(--accent);color:var(--accent-contrast)}.ds-route-code{width:2.6rem;aspect-ratio:1;display:grid;place-items:center;border:2px solid currentColor;border-radius:50%;font:700 .76rem/1 'Barlow Condensed',sans-serif}.ds-mode-tab>span:last-child{display:flex;flex-direction:column;gap:.2rem}.ds-mode-tab b{font-size:.86rem}.ds-mode-tab small{font-size:.66rem;line-height:1.3}"
-    },
-    {
-      "name": "Sticky Status Toggle",
+      "name": "Header Mode Status",
       "kind": "button",
-      "refersTo": "status-toggle-open",
-      "description": "장문 어디서나 반대 기록으로 이동하는 헤더 상태 버튼.",
-      "html": "<button class=\"ds-status-toggle\" type=\"button\" aria-pressed=\"false\">OPEN LINE</button>",
-      "css": ".ds-status-toggle{min-width:7.4rem;padding:.72rem .85rem;border:0;border-radius:0;background:var(--accent,#67439a);color:var(--accent-contrast,#f7f5fb);font:600 .78rem/1 var(--font-route,'Barlow Condensed',sans-serif);letter-spacing:.09em;text-align:center;cursor:pointer;transition:filter 180ms ease-out,transform 120ms ease-out}.ds-status-toggle:hover{filter:brightness(1.08)}.ds-status-toggle:focus-visible{outline:3px solid var(--accent,#67439a);outline-offset:4px}.ds-status-toggle:active{transform:translateY(1px)}"
+      "refersTo": "mode-status",
+      "selector": ".mode-status",
+      "description": "Square 44px-minimum outside/lining toggle with a seam-shaped status mark.",
+      "html": "<button class=\"ds-mode-status\" type=\"button\" aria-pressed=\"false\"><span>OPEN LINE</span><i aria-hidden=\"true\"></i></button>",
+      "css": ".ds-mode-status { min-width: 9rem; min-height: 44px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .55rem .75rem; border: 0; border-left: 1px solid var(--strong-rule); border-radius: 0; background: transparent; color: var(--ink); font: 700 .75rem/1 var(--data-font); letter-spacing: .12em; cursor: pointer; } .ds-mode-status i { width: 2rem; height: 7px; border-top: 1px dashed currentColor; } .ds-mode-status:hover { color: var(--thread); } .ds-mode-status:focus-visible { outline: 3px solid var(--thread); outline-offset: 4px; }"
     },
     {
-      "name": "Identity Information Board",
-      "kind": "card",
-      "refersTo": "information-board-open",
-      "description": "한 장의 직각 보드 안에서 신원 항목을 1px 구획선으로 나누는 패턴.",
-      "html": "<dl class=\"ds-info-board\"><div class=\"ds-info-wide\"><dt>이름</dt><dd>御影 雫</dd></div><div><dt>나이</dt><dd>21세</dd></div><div><dt>번호</dt><dd>추후 선점</dd></div></dl>",
-      "css": ".ds-info-board{display:grid;grid-template-columns:1.45fr 1fr .85fr;margin:0;border-top:1px solid var(--line,rgba(21,21,28,.24));border-left:1px solid var(--line,rgba(21,21,28,.24));font-family:var(--font-body,'Noto Sans KR Variable',sans-serif)}.ds-info-board div{min-height:9.25rem;display:flex;flex-direction:column;justify-content:space-between;gap:1.5rem;padding:clamp(1.2rem,2.5vw,2rem);border-right:1px solid var(--line,rgba(21,21,28,.24));border-bottom:1px solid var(--line,rgba(21,21,28,.24));background:var(--ground,#f1f1f6)}.ds-info-board .ds-info-wide{grid-column:span 1;background:var(--surface,#e7e7ef)}.ds-info-board dt{color:var(--muted,#555462);font-size:.72rem;font-weight:650}.ds-info-board dd{margin:0;color:var(--ink,#15151c);font-size:clamp(1.15rem,2.2vw,1.8rem);font-weight:780;line-height:1.35}"
-    },
-    {
-      "name": "Route Stop",
-      "kind": "custom",
-      "description": "노선의 순서와 선택 지점을 표시하는 원형 번호 노드.",
-      "html": "<div class=\"ds-route-stop\"><span>07</span><div><b>현장 조작</b><p>모든 선택은 같은 방향으로 이어진다.</p></div></div>",
-      "css": ".ds-route-stop{display:grid;grid-template-columns:2.8rem 1fr;gap:1.5rem;align-items:start;font-family:var(--font-body,'Noto Sans KR Variable',sans-serif);color:var(--ink,#15151c)}.ds-route-stop>span{width:2.8rem;height:2.8rem;display:grid;place-items:center;border:3px solid var(--accent,#67439a);border-radius:50%;background:var(--ground,#f1f1f6);color:var(--accent,#67439a);font:700 .78rem/1 var(--font-route,'Barlow Condensed',sans-serif)}.ds-route-stop b{display:block;margin:.2rem 0 .65rem;font-size:1.2rem}.ds-route-stop p{max-width:55ch;margin:0;color:var(--muted,#555462);line-height:1.85}"
-    },
-    {
-      "name": "Sealed Transfer Board",
+      "name": "Outside / Lining Tabs",
       "kind": "nav",
-      "description": "봉인 전환 직후 민감 소재와 핵심 증거 경로를 함께 보여 주는 바로가기 보드.",
-      "html": "<aside class=\"ds-transfer-board\" aria-label=\"봉인 기록 바로가기\"><p>스토킹 및 살인 소재 포함</p><a href=\"#\"><strong>3</strong><span>공개 진술의 모순</span></a><a href=\"#\"><strong>7</strong><span>끝을 정한 선택</span></a></aside>",
-      "css": ".ds-transfer-board{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line,rgba(240,239,245,.27));background:var(--surface,#171820);font-family:var(--font-body,'Noto Sans KR Variable',sans-serif);color:var(--ink,#f0eff5)}.ds-transfer-board>p{grid-column:1/-1;margin:0;padding:.55rem .75rem;border-bottom:1px solid var(--line,rgba(240,239,245,.27));color:var(--muted,#b9b7c3);font-size:.75rem;font-weight:650}.ds-transfer-board a{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:.7rem;padding:.7rem .8rem;color:inherit;text-decoration:none}.ds-transfer-board a+a{border-left:1px solid var(--line,rgba(240,239,245,.27))}.ds-transfer-board a:hover span{text-decoration:underline;text-underline-offset:.25em}.ds-transfer-board a:focus-visible{outline:3px solid var(--accent,#bca4eb);outline-offset:4px}.ds-transfer-board strong{color:var(--accent,#bca4eb);font:700 1.9rem/1 var(--font-route,'Barlow Condensed',sans-serif)}.ds-transfer-board span{font-size:.82rem;font-weight:700;line-height:1.35}"
+      "refersTo": "mode-tab",
+      "selector": ".mode-switch",
+      "description": "Two accessible tabs joined by hard rules and selected with one carmine seam.",
+      "html": "<div class=\"ds-mode-switch\" role=\"tablist\" aria-label=\"프로필 공개 범위\"><button role=\"tab\" aria-selected=\"true\"><b>공개 프로필</b><small>정상 운행 기록</small></button><button role=\"tab\" aria-selected=\"false\"><b>비밀 프로필</b><small>봉인 해제 기록</small></button></div>",
+      "css": ".ds-mode-switch { display: grid; grid-template-columns: 1fr 1fr; border-block: 1px solid var(--strong-rule); } .ds-mode-switch button { position: relative; min-height: 64px; padding: .7rem 1rem; border: 0; border-right: 1px solid var(--rule); border-radius: 0; background: transparent; color: var(--muted); text-align: left; } .ds-mode-switch button:last-child { border-right: 0; } .ds-mode-switch button[aria-selected=\"true\"] { color: var(--ink); box-shadow: inset 0 -4px var(--thread); } .ds-mode-switch small { display: block; margin-top: .15rem; font-size: .75rem; } .ds-mode-switch button:focus-visible { outline: 3px solid var(--thread); outline-offset: 4px; }"
+    },
+    {
+      "name": "Stitch Index",
+      "kind": "nav",
+      "refersTo": "index-link",
+      "selector": ".stitch-index",
+      "description": "Flat horizontal anchored index strip; explicitly not a transit rail.",
+      "html": "<nav class=\"ds-stitch-index\" aria-label=\"공개 기록 목차\"><p>INDEX / OUTSIDE</p><a href=\"#identity\"><span>01</span>신원</a><a href=\"#appearance\"><span>02</span>외관</a></nav>",
+      "css": ".ds-stitch-index { display: flex; border-block: 1px solid var(--strong-rule); background: var(--ground); } .ds-stitch-index p { margin: 0; min-width: 10rem; padding: .9rem 1.2rem; border-right: 1px solid var(--strong-rule); color: var(--muted); font: 650 .75rem/1 var(--data-font); letter-spacing: .12em; } .ds-stitch-index a { min-width: 6rem; min-height: 48px; display: flex; align-items: center; justify-content: center; gap: .45rem; padding: .55rem .8rem; border-right: 1px dashed var(--rule); color: var(--ink); text-decoration: none; } .ds-stitch-index a:hover, .ds-stitch-index a span { color: var(--thread); } .ds-stitch-index a:focus-visible { outline: 3px solid var(--thread); outline-offset: 4px; }"
+    },
+    {
+      "name": "Identity Pattern",
+      "kind": "custom",
+      "selector": ".identity-pattern",
+      "description": "Five hard-edged measurements staggered across a diagonal cutting guide.",
+      "html": "<dl class=\"ds-identity-pattern\" aria-label=\"신원 기록\"><div><dt>이름</dt><dd>御影 雫</dd></div><div><dt>나이</dt><dd>21세</dd></div><div><dt>성별</dt><dd>여성 (XX)</dd></div></dl>",
+      "css": ".ds-identity-pattern { display: grid; grid-template-columns: 1.55fr repeat(2, 1fr); gap: 1px; padding: 2.5rem 0 3rem; background: linear-gradient(174deg, transparent calc(50% - 1px), var(--strong-rule) 50%, transparent calc(50% + 1px)); } .ds-identity-pattern div { padding: clamp(1rem, 2.5vw, 2rem); background: color-mix(in srgb, var(--paper) 82%, transparent); } .ds-identity-pattern dt { color: var(--muted); font-size: .75rem; } .ds-identity-pattern dd { margin: 1.2rem 0 0; font-size: clamp(1rem, 1.7vw, 1.4rem); font-weight: 760; }"
+    },
+    {
+      "name": "False Seam Comparison",
+      "kind": "custom",
+      "selector": ".contradiction-braid",
+      "description": "One of exactly three public claims unpicked beside its verified fact.",
+      "html": "<article class=\"ds-false-seam\" role=\"row\"><b aria-hidden=\"true\">01</b><div role=\"cell\"><small>공개 진술</small><del>날붙이를 싫어한다</del></div><div role=\"cell\"><small>확인된 기록</small><p>살해 도구와 자해를 직접 선택했다.</p></div></article>",
+      "css": ".ds-false-seam { display: grid; grid-template-columns: 5rem 1.05fr .95fr; align-items: center; gap: 2rem; min-height: 18rem; border-top: 1px solid var(--strong-rule); color: var(--ink); } .ds-false-seam > b { color: var(--thread-soft); font: 700 clamp(4rem, 8vw, 8rem)/1 var(--data-font); } .ds-false-seam small { display: block; margin-bottom: 1rem; color: var(--thread); font-size: .75rem; font-weight: 750; } .ds-false-seam del { display: block; color: var(--muted); font-size: clamp(2rem, 4.8vw, 5.2rem); font-weight: 850; line-height: 1.08; text-decoration-color: var(--thread); text-decoration-thickness: 5px; } .ds-false-seam p { max-width: 33ch; margin: 0; line-height: 1.8; }"
+    },
+    {
+      "name": "Deliberate Choice",
+      "kind": "custom",
+      "selector": ".choice-seam li",
+      "description": "One of exactly seven alternating cuts, with an oversized faded number and double-thread edge.",
+      "html": "<article class=\"ds-choice\"><b aria-hidden=\"true\">05</b><div><small>CHOICE 05</small><h3>선입실</h3><p>복제한 열쇠로 먼저 들어가 기다렸다.</p></div></article>",
+      "css": ".ds-choice { position: relative; min-height: 24rem; display: grid; grid-template-columns: 1fr minmax(18rem, 34rem); align-items: center; overflow: hidden; border-top: 1px dashed var(--rule); color: var(--ink); } .ds-choice > b { position: absolute; color: color-mix(in srgb, var(--thread) 18%, transparent); font: 800 clamp(10rem, 29vw, 29rem)/.8 var(--data-font); } .ds-choice > div { position: relative; grid-column: 2; padding: 2rem; background: color-mix(in srgb, var(--ground) 88%, transparent); border-left: 5px double var(--thread); } .ds-choice small { color: var(--thread); font: 650 .75rem/1 var(--data-font); letter-spacing: .12em; } .ds-choice h3 { margin: .8rem 0 1.2rem; font-size: clamp(1.7rem, 3vw, 2.8rem); } .ds-choice p { margin: 0; color: var(--muted); line-height: 1.9; }"
+    },
+    {
+      "name": "Truth Seam",
+      "kind": "custom",
+      "selector": ".truth-seam",
+      "description": "Secret-only correction set against a doubled carmine seam allowance.",
+      "html": "<aside class=\"ds-truth-seam\"><strong>FALSE SEAM</strong><p>공개 프로필의 설명은 피해자처럼 보이기 위한 연기다.</p></aside>",
+      "css": ".ds-truth-seam { display: grid; grid-template-columns: minmax(8rem, 1fr) minmax(0, 3fr); gap: 2rem; padding: 2rem 0 2rem 2rem; border-left: 6px double var(--thread); color: var(--ink); } .ds-truth-seam strong { color: var(--thread); font: 700 .8rem/1 var(--data-font); letter-spacing: .12em; } .ds-truth-seam p { max-width: 58ch; margin: 0; font-weight: 670; }"
     },
     {
       "name": "History Disclosure",
       "kind": "custom",
-      "description": "긴 과거사를 기본적으로 접어 두고 명시적인 전문 열람을 제공하는 disclosure.",
-      "html": "<details class=\"ds-history\"><summary><span>과거사 전문 펼치기</span><i aria-hidden=\"true\"></i></summary><p>장문 기록은 최대 72자로 제한해 읽는다.</p></details>",
-      "css": ".ds-history{border-top:1px solid var(--line,rgba(21,21,28,.24));font-family:var(--font-body,'Noto Sans KR Variable',sans-serif);color:var(--ink,#15151c)}.ds-history summary{min-height:5.2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0 .4rem;border-bottom:1px solid var(--line,rgba(21,21,28,.24));cursor:pointer;list-style:none;font-weight:780}.ds-history summary::-webkit-details-marker{display:none}.ds-history summary:focus-visible{outline:3px solid var(--accent,#67439a);outline-offset:4px}.ds-history summary i{position:relative;width:1.35rem;height:1.35rem}.ds-history summary i:before,.ds-history summary i:after{position:absolute;top:50%;left:0;width:100%;height:2px;background:var(--accent,#67439a);content:'';transform:translateY(-50%);transition:transform 180ms ease-out}.ds-history summary i:after{transform:translateY(-50%) rotate(90deg)}.ds-history[open] summary i:after{transform:translateY(-50%)}.ds-history p{max-width:72ch;margin:0;padding-top:2.5rem;color:var(--muted,#555462);line-height:2}"
+      "selector": ".history-disclosure",
+      "description": "Native closed details whose plus becomes a line; the full content is forced visible in print.",
+      "html": "<details class=\"ds-history\"><summary><span>과거사 전문 펼치기</span><i aria-hidden=\"true\"></i></summary><p>과거사 전문이 이어진다.</p></details>",
+      "css": ".ds-history { border-top: 1px solid var(--strong-rule); color: var(--ink); } .ds-history summary { min-height: 6rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--strong-rule); cursor: pointer; font-weight: 760; } .ds-history summary i { position: relative; width: 2rem; height: 2rem; } .ds-history summary i::before, .ds-history summary i::after { position: absolute; top: 50%; left: 0; width: 100%; height: 2px; background: var(--thread); content: \"\"; transition: transform 220ms ease; } .ds-history summary i::after { transform: rotate(90deg); } .ds-history[open] summary i::after { transform: rotate(0); } .ds-history summary:focus-visible { outline: 3px solid var(--thread); outline-offset: 4px; } .ds-history p { color: var(--muted); line-height: 2; }"
     }
   ],
   "narrative": {
-    "northStar": "막차 이후 환승도",
-    "overview": "이 시스템은 차가운 역내 운행도와 인물 포스터를 결합해, 상냥한 공개 진술이 봉인된 단방향 사건 기록으로 바뀌는 순간을 보여 준다. 공개 화면은 라벤더빛 회백색 종이와 낮은 채도의 보라 노선으로 정상 운행을 가장하고, 비밀 화면은 같은 구조를 자정의 차콜 바탕과 자외선빛 노선으로 뒤집는다. 장식은 독립적인 문양이 아니라 정보의 연결 관계를 설명하는 선, 정거장, 칸막이로만 사용한다.\n\n시각 밀도는 중간이고 정보량은 높다. 큰 인물 크롭과 플랫폼 규모의 이름이 첫 화면의 감정적 진입점을 맡고, 이후에는 직각 보드와 넓은 행간, 72자 안팎의 본문 폭으로 긴 제출 기록을 읽게 한다. 공개와 비밀은 서로 다른 사이트가 아니라 동일한 인물의 두 운행 상태이므로 레이아웃 문법은 유지하고 색, 노드 수, 이미지 처리, 증거 노출 순서만 재배선한다.",
+    "northStar": "PROMISE, WRONG SIDE OUT / 약속의 안감",
+    "overview": "The public view is the finished outside of a couture garment: cold paper, controlled measurements, an irregular portrait cutout, and edition-scale type. The secret view turns the same promise wrong-side-out: near-black lining, exposed seam allowance, three unpicked false seams, seven deliberate cuts, and one carmine thread that tightens into a knot. The prior interrogation, dossier, transit-map, card-grid, rail, and dashboard system is abolished.",
     "keyCharacteristics": [
-      "차가운 역내 사인과 단방향 노선을 닮은 정보 구조",
-      "공개 라이트와 비밀 다크가 같은 토큰 역할을 공유하는 이중 상태",
-      "직각 패널, 1px 칸막이, 원형 정거장 노드의 반복",
-      "인물 포스터와 압축 영문 노선 라벨의 대비",
-      "장문의 설정을 스캔과 정독 모두에 맞추는 넓은 여백과 강한 제목 위계"
+      "Finished paper outside; exposed dark lining inside.",
+      "One carmine thread carries selection, focus, seams, warnings, and narrative continuity.",
+      "High asymmetry, irregular pattern-cut polygons, oversized edition type, and generous reading space.",
+      "Exactly three false seams and seven deliberate cuts remain factual counts.",
+      "The Picrew portrait is cut like fabric and keeps its usage caption adjacent."
     ],
     "rules": [
-      { "name": "The Same Line Rule", "body": "공개와 비밀에서 색의 역할은 바뀌지 않는다. 바탕, 표면, 잉크, 보조 잉크, 노선 강조색을 일대일로 교체해 동일 인물의 두 상태임을 보존한다.", "section": "colors" },
-      { "name": "The Sparse Signal Rule", "body": "보라색은 연결, 선택, 진실, 포커스를 뜻할 때만 쓴다. 넓은 면을 무작위로 채우거나 세 번째 강조색을 추가하지 않는다.", "section": "colors" },
-      { "name": "The Platform Scale Rule", "body": "대형 한국어 제목은 짧고 결정적인 문구에만 허용한다. 설명 문장을 큰 글씨로 늘리거나 모든 구간을 같은 크기로 외치지 않는다.", "section": "typography" },
-      { "name": "The Two-Family Rule", "body": "한국어 정보는 Noto Sans KR, 영문 운행 코드와 수치는 Barlow Condensed를 사용한다. 별도의 장식 서체는 추가하지 않는다.", "section": "typography" },
-      { "name": "The Route Before Card Rule", "body": "정보는 둥근 카드 묶음으로 분절하지 않는다. 먼저 하나의 선형 경로와 큰 보드를 만들고, 1px 경계로 내부 칸을 나눈다.", "section": "layout" },
-      { "name": "The Flat Station Rule", "body": "정적인 정보 표면에는 그림자를 쓰지 않는다. 위계가 필요하면 표면 단계와 선 굵기, 여백을 먼저 조정한다.", "section": "elevation" },
-      { "name": "The Circle Means Stop Rule", "body": "원은 정거장 또는 순번이라는 의미를 가져야 한다. 일반 컨테이너, 버튼 모서리, 장식 배경에 원형을 남용하지 않는다.", "section": "shapes" }
+      { "name": "Wrong-Side-Out", "body": "Every state change must feel like the same garment turning over; a palette swap alone is insufficient.", "section": "overview" },
+      { "name": "One Thread", "body": "Carmine is the sole accent family; never introduce a second accent or revive the former violet evidence palette.", "section": "colors" },
+      { "name": "Two Hands", "body": "Noto tells the story; Barlow marks the pattern. Never set Korean prose in Barlow Condensed.", "section": "typography" },
+      { "name": "Flat Fabric", "body": "A surface may overlap, cut, or expose its lining; it never floats like a card.", "section": "elevation" }
     ],
     "dos": [
-      "**Do** 공개와 봉인 상태에 동일한 정보 구조와 토큰 역할을 유지한다.",
-      "**Do** 직각 보드, 1px 구획선, 의미 있는 원형 정거장으로 정보를 연결한다.",
-      "**Do** 한국어 장문은 최대 72ch와 넓은 행간으로 제한하고 모바일에서 단일 열로 재배치한다.",
-      "**Do** 모든 전환에 키보드 포커스, 정확한 상태 전달, 모션 감소 대체를 함께 제공한다.",
-      "**Do** 인물 이미지에는 참고 범위, 공식 복장과의 차이, 픽크루 출처를 가까이 표시한다."
+      "Do treat public and secret as the finished outside and exposed lining of one couture object.",
+      "Do preserve the single carmine thread, square information surfaces, irregular cut shapes, and double-seam grammar.",
+      "Do keep exactly three contradiction rows and seven choice items, with their anchors and accessible labels.",
+      "Do keep the Picrew usage/source caption adjacent and preserve focus, tab keyboard behavior, reduced preferences, URL state, and print output.",
+      "Do preserve every fluid type endpoint and the exact 1100/760/380 responsive contract."
     ],
     "donts": [
-      "**Don't** 둥근 프로필 카드, 유리 질감, 과한 그림자, 떠 있는 카드 묶음으로 운행도 문법을 희석한다.",
-      "**Don't** 보라색 외의 경쟁 강조색이나 의미 없는 장식 노드를 추가한다.",
-      "**Don't** 공개 라이트와 비밀 다크를 별개 브랜드처럼 재설계하거나 색만 바꾼 채 사건 구조를 숨긴다.",
-      "**Don't** 압축 영문 라벨 서체를 한국어 본문이나 긴 문장에 사용한다.",
-      "**Don't** 긴 과거사를 첫 화면에 그대로 펼치거나 인물 이미지의 용도와 출처를 분리한다."
-    ]
+      "Don't restore interrogation rooms, dossiers, evidence boards, transit maps, routes, rails, dashboards, card grids, or ornamental stamps.",
+      "Don't add rounded cards, pills, chips, glass, blur, shadows, or a competing accent; thread loops are the only rounded forms.",
+      "Don't convert .stitch-index into a navigation rail or .choice-seam into a route diagram.",
+      "Don't use Barlow Condensed for Korean prose or flatten the public/secret transition into a color-only theme toggle.",
+      "Don't remove contradiction facts, source limitations, content warning, accessible state, reduced-preference fallbacks, or print reveal."
+    ],
+    "metadata": {
+      "conceptSeed": "f1671878",
+      "groundedDirection": 5,
+      "groundedDirectionTotal": 7
+    }
   }
 }
