@@ -1,351 +1,290 @@
 ---
 name: "HILGRAM: 미카게 시즈쿠"
-description: "PROMISE, WRONG SIDE OUT — 완성된 약속의 겉과 드러난 안감을 한 가닥 카민 실로 잇는 캐릭터 프로필"
+description: "UV CROSS-EXAMINATION — 공개 진술과 봉인 기록이 한 자외선 심문 파일에서 겹쳐지는 캐릭터 프로필"
 colors:
-  public-ground: "#f3f0ec"
-  public-ground-2: "#e8e2e5"
-  public-paper: "#faf8f4"
-  public-ink: "#1b171d"
-  public-muted: "#5c545d"
-  public-faint: "rgba(27, 23, 29, .11)"
-  public-rule: "rgba(27, 23, 29, .35)"
-  public-strong-rule: "rgba(27, 23, 29, .76)"
-  public-thread: "#a52d52"
-  public-thread-soft: "#d4a0b2"
-  public-thread-ink: "#fff8fa"
-  secret-ground: "#100c12"
-  secret-ground-2: "#1d161f"
-  secret-paper: "#181219"
-  secret-ink: "#f1eaef"
-  secret-muted: "#c1b6be"
-  secret-faint: "rgba(241, 234, 239, .08)"
-  secret-rule: "rgba(241, 234, 239, .28)"
-  secret-strong-rule: "rgba(241, 234, 239, .72)"
-  secret-thread: "#e07999"
-  secret-thread-soft: "#704052"
-  secret-thread-ink: "#1c1016"
-  case-ground: "#0a070c"
-  case-plane: "#1d151f"
-  dark-spread-ink: "#f3edf1"
-  dark-spread-muted: "#bdb3bb"
-  dark-spread-faint: "rgba(243,237,241,.3)"
-  dark-spread-rule: "rgba(243,237,241,.26)"
-  dark-spread-strong-rule: "rgba(243,237,241,.68)"
-  belief-ground: "#080609"
-  belief-copy: "#c9bec6"
-  belief-rule: "rgba(243,237,241,.7)"
+  void: "#09070d"
+  room: "#0d0b12"
+  file: "#15111c"
+  file-2: "#1c1725"
+  file-3: "#241d2f"
+  paper: "#eeeaf3"
+  body: "#d8d1df"
+  muted: "#ada5b9"
+  rule: "rgba(214, 203, 229, 0.16)"
+  rule-strong: "rgba(214, 203, 229, 0.34)"
+  uv-accent: "#a68bc8"
+  uv-accent-bright: "#d9baff"
+  uv-accent-soft: "rgba(166, 139, 200, 0.13)"
+  evidence: "#c27d91"
+  focus: "#efd0ff"
+  paper-ink: "#19131d"
+  paper-muted: "#5f5765"
+  sealed-accent: "#b892a0"
+  sealed-accent-bright: "#f3bed0"
+  sealed-accent-soft: "rgba(194, 125, 145, 0.13)"
   print-ground: "#fff"
   print-ink: "#111"
-  print-muted: "#333"
-  print-rule: "#aaa"
-  print-strong-rule: "#222"
-  print-thread: "#6f1f3d"
-  transparent: "transparent"
-  current-color: "currentColor"
+  print-body: "#222"
+  print-muted: "#444"
+  print-rule: "#bbb"
+  print-rule-strong: "#333"
+  print-evidence: "#6e3548"
 typography:
-  body:
-    fontFamily: "Noto Sans KR Variable, sans-serif"
-    fontSize: "16px"
-    lineHeight: 1.8
-  data-label:
-    fontFamily: "Barlow Condensed, sans-serif"
-    fontSize: ".75rem"
-    fontWeight: 600
-    lineHeight: 1
-    letterSpacing: ".12em"
-  cover-outline:
-    fontFamily: "Barlow Condensed, sans-serif"
-    fontSize: "clamp(5rem, 10.5vw, 10.5rem)"
-    fontWeight: 900
-    lineHeight: 0.76
-    letterSpacing: "-.035em"
-  cover-name:
-    fontFamily: "Noto Sans KR Variable, sans-serif"
-    fontSize: "clamp(3.4rem, 6.4vw, 6.8rem)"
-    fontWeight: 900
-    lineHeight: 0.92
-    letterSpacing: "-.065em"
-  section-heading:
-    fontFamily: "Noto Sans KR Variable, sans-serif"
-    fontSize: "clamp(3rem, 7.5vw, 8rem)"
-    fontWeight: 900
-    lineHeight: 0.86
-    letterSpacing: "-.06em"
-  case-heading:
-    fontFamily: "Noto Sans KR Variable, sans-serif"
-    fontSize: "clamp(4.5rem, 10vw, 10.5rem)"
-    fontWeight: 900
-    lineHeight: 0.84
-    letterSpacing: "-.07em"
-  choice-heading:
-    fontFamily: "Noto Sans KR Variable, sans-serif"
-    fontSize: "clamp(4rem, 10vw, 10rem)"
-    fontWeight: 900
-    lineHeight: 0.85
-    letterSpacing: "-.065em"
-  summary-thesis:
-    fontFamily: "Noto Sans KR Variable, sans-serif"
-    fontSize: "clamp(4rem, 9vw, 9rem)"
-    fontWeight: 900
-    lineHeight: 0.9
-    letterSpacing: "-.065em"
-  belief-question:
-    fontFamily: "Noto Sans KR Variable, sans-serif"
-    fontSize: "clamp(4rem, 8.5vw, 8.5rem)"
-    fontWeight: 900
-    lineHeight: 0.9
-    letterSpacing: "-.065em"
-  catchphrase:
-    fontSize: "clamp(.95rem, 1.3vw, 1.15rem)"
-  cover-kanji:
-    fontSize: "clamp(1rem, 1.6vw, 1.4rem)"
-  cover-quote:
-    fontSize: ".94rem"
-  switch-label:
-    fontSize: ".88rem"
-  identity-value:
-    fontSize: "clamp(1rem, 1.7vw, 1.4rem)"
-  reference-label:
-    fontSize: ".8rem"
-  reference-copy:
-    fontSize: ".84rem"
-  trait-title:
-    fontSize: "clamp(1.5rem, 2.8vw, 2.6rem)"
-  preference-item:
-    fontSize: ".92rem"
-  preference-answer:
-    fontSize: "clamp(1.2rem, 2.1vw, 1.8rem)"
-  maker-copy:
-    fontSize: "clamp(1rem, 1.4vw, 1.15rem)"
-  maker-quote:
-    fontSize: "clamp(1.15rem, 2vw, 1.65rem)"
-  loose-end:
-    fontSize: "clamp(6rem, 15vw, 15rem)"
-  case-value:
-    fontSize: "1.05rem"
-  contradiction-claim:
-    fontSize: "clamp(2rem, 4.8vw, 5.2rem)"
-  contradiction-fact:
-    fontSize: "clamp(1rem, 1.55vw, 1.25rem)"
-  knot-keyword:
-    fontSize: "clamp(1.2rem, 2.6vw, 2.3rem)"
-  choice-title:
-    fontSize: "clamp(1.7rem, 3vw, 2.8rem)"
-  small-section-title:
-    fontSize: "1.1rem"
-  maker-value:
-    fontSize: "1.15rem"
-  footer-copy:
-    fontSize: "clamp(1.4rem, 2.2vw, 2rem)"
-  footer-link:
-    fontSize: ".8rem"
-  cover-name-mobile:
-    fontSize: "clamp(3.6rem, 17vw, 5.4rem)"
-  case-choice-heading-mobile:
-    fontSize: "clamp(4rem, 18vw, 6rem)"
-  contradiction-index-mobile:
-    fontSize: "3.2rem"
-  contradiction-claim-mobile:
-    fontSize: "clamp(1.7rem, 9vw, 2.6rem)"
-  knot-keyword-mobile:
-    fontSize: "1.05rem"
-  summary-belief-mobile:
-    fontSize: "clamp(3.8rem, 16vw, 5.6rem)"
+  body: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "16px", lineHeight: 1.75 }
+  micro-data: { fontFamily: "Barlow Condensed, sans-serif", fontSize: ".72rem", fontWeight: 600, lineHeight: 1 }
+  data-label: { fontFamily: "Barlow Condensed, sans-serif", fontSize: ".75rem", fontWeight: 700, lineHeight: 1, letterSpacing: ".15em" }
+  compact-copy: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: ".78rem" }
+  wordmark: { fontFamily: "Barlow Condensed, sans-serif", fontSize: ".82rem", fontWeight: 700, lineHeight: 1, letterSpacing: ".2em" }
+  note: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: ".84rem" }
+  fact-value: { fontFamily: "Barlow Condensed, sans-serif", fontSize: ".85rem", fontWeight: 700, lineHeight: 1.2 }
+  control-title: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: ".86rem", fontWeight: 700 }
+  ledger-item: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: ".9rem" }
+  ledger-title: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: ".92rem" }
+  hero-quote: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: ".98rem", lineHeight: 1.8 }
+  control-code: { fontFamily: "Barlow Condensed, sans-serif", fontSize: "1.05rem", fontWeight: 700, lineHeight: 1 }
+  owner-value: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "1.1rem", fontWeight: 750 }
+  identity-index: { fontFamily: "Barlow Condensed, sans-serif", fontSize: "1.4rem", fontWeight: 700, lineHeight: 1 }
+  alert-count: { fontFamily: "Barlow Condensed, sans-serif", fontSize: "1.6rem", fontWeight: 700, lineHeight: 1 }
+  choice-index: { fontFamily: "Barlow Condensed, sans-serif", fontSize: "2rem", fontWeight: 700, lineHeight: 1 }
+  contradiction-index: { fontFamily: "Barlow Condensed, sans-serif", fontSize: "2.1rem", fontWeight: 700, lineHeight: 1 }
+  testimony-index: { fontFamily: "Barlow Condensed, sans-serif", fontSize: "2.5rem", fontWeight: 700, lineHeight: 1 }
+  preference-mark: { fontFamily: "Barlow Condensed, sans-serif", fontSize: "2.6rem", fontWeight: 700, lineHeight: 1 }
+  catchphrase: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(1rem, 1.35vw, 1.2rem)", fontWeight: 500 }
+  hero-display: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(3.4rem, 7vw, 6rem)", fontWeight: 850, lineHeight: .93, letterSpacing: "-.04em" }
+  hero-kanji: { fontFamily: "Barlow Condensed, sans-serif", fontSize: "clamp(.9rem, 1.3vw, 1.15rem)", fontWeight: 600, lineHeight: 1, letterSpacing: ".18em" }
+  section-heading: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(2.4rem, 4.8vw, 5.3rem)", lineHeight: .96, letterSpacing: "-.04em" }
+  reading: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(1rem, 1.25vw, 1.08rem)", lineHeight: 1.95 }
+  identity-value: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(1rem, 1.6vw, 1.35rem)", fontWeight: 720 }
+  testimony-title: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(1.15rem, 1.8vw, 1.55rem)" }
+  preference-answer: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(1rem, 1.5vw, 1.2rem)", lineHeight: 1.7 }
+  feature-quote: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(1.05rem, 1.7vw, 1.35rem)", fontWeight: 620, lineHeight: 1.75 }
+  empty-record: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(4rem, 9vw, 6rem)", fontWeight: 850, lineHeight: 1 }
+  sealed-heading: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(3.2rem, 5vw, 5.25rem)", lineHeight: .94, letterSpacing: "-.04em" }
+  contradiction-claim: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(1.3rem, 2.5vw, 2.4rem)", fontWeight: 760, lineHeight: 1.25 }
+  keyword: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(1rem, 1.6vw, 1.3rem)", fontWeight: 760 }
+  choice-heading: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(3rem, 6vw, 6rem)", lineHeight: .95, letterSpacing: "-.04em" }
+  choice-title: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(1.15rem, 1.8vw, 1.5rem)" }
+  verdict-thesis: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(3.5rem, 7.6vw, 6rem)", fontWeight: 850, lineHeight: .94, letterSpacing: "-.04em" }
+  belief-question: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(3.5rem, 7.2vw, 6rem)", fontWeight: 850, lineHeight: .94, letterSpacing: "-.04em" }
+  footer-statement: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(1.35rem, 2.2vw, 2rem)", fontWeight: 800 }
+  hero-display-mobile: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(3.6rem, 16vw, 6rem)", fontWeight: 850, lineHeight: .93, letterSpacing: "-.04em" }
+  section-heading-mobile: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(2.8rem, 13vw, 5rem)", lineHeight: .96 }
+  sealed-heading-mobile: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(2.5rem, 10vw, 4.5rem)", lineHeight: .94 }
+  verdict-question-mobile: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(3.5rem, 15vw, 5.6rem)", fontWeight: 850, lineHeight: .94 }
+  choice-heading-mobile: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: "clamp(3.2rem, 16vw, 5rem)", lineHeight: .95 }
+  control-helper-mobile: { fontFamily: "Noto Sans KR Variable, sans-serif", fontSize: ".72rem" }
 rounded:
-  default: "0px"
-  knot-outer: "48% 52% 44% 56%"
-  knot-inner: "58% 42% 55% 45%"
-  belief-loop: "50%"
+  square: "0px"
+  confidential-mark: "4px"
+  evidence-label: "5px"
+  portrait: "8px"
+  mode-control: "10px"
+  evidence-frame: "18px"
+  interrogation-loop: "50%"
 spacing:
-  section-inline: "clamp(1.25rem, 5vw, 5rem)"
-  section-block: "clamp(6rem, 10vw, 10rem)"
-  cover-gutter: "clamp(1.4rem, 4vw, 4.5rem)"
+  page-max: "1480px"
+  reading-max: "68ch"
+  header: "62px"
+  header-mobile: "54px"
+  section-inline: "clamp(1.25rem, 5vw, 5.5rem)"
+  section-block: "clamp(5.5rem, 9vw, 9rem)"
+  choice-block: "clamp(6rem, 10vw, 10rem)"
+  verdict-block: "clamp(6rem, 11vw, 11rem)"
   mobile-inline: "1.15rem"
-  hairline: "1px"
-  double-seam: "5px"
+  focus-offset: "4px"
 components:
-  mode-status:
+  file-status:
     backgroundColor: "transparent"
-    textColor: "{colors.public-ink}"
+    textColor: "{colors.paper}"
     typography: "{typography.data-label}"
-    rounded: "{rounded.default}"
-    padding: ".55rem .75rem"
+    rounded: "{rounded.square}"
+    padding: ".5rem .7rem"
     height: "44px"
   mode-tab:
     backgroundColor: "transparent"
-    textColor: "{colors.public-muted}"
-    rounded: "{rounded.default}"
-    padding: ".7rem 1rem"
-    height: "64px"
+    textColor: "{colors.muted}"
+    rounded: "{rounded.square}"
+    padding: ".6rem .8rem"
+    height: "62px"
+  mode-tab-open-selected:
+    backgroundColor: "{colors.uv-accent}"
+    textColor: "{colors.room}"
+    rounded: "{rounded.square}"
+  mode-tab-sealed-selected:
+    backgroundColor: "{colors.evidence}"
+    textColor: "{colors.room}"
+    rounded: "{rounded.square}"
   index-link:
     backgroundColor: "transparent"
-    textColor: "{colors.public-ink}"
-    rounded: "{rounded.default}"
-    padding: ".55rem .8rem"
-    height: "48px"
+    textColor: "{colors.paper}"
+    rounded: "{rounded.square}"
+    padding: ".55rem .75rem"
+    height: "54px"
+  evidence-label:
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.file-3}"
+    typography: "{typography.micro-data}"
+    rounded: "{rounded.evidence-label}"
+    padding: ".5rem .7rem"
+  owner-record:
+    backgroundColor: "{colors.file-2}"
+    textColor: "{colors.paper}"
+    rounded: "{rounded.evidence-label}"
+    padding: "1.5rem"
+  verdict-sheet:
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.paper-ink}"
+    rounded: "{rounded.square}"
+    padding: "clamp(6rem, 11vw, 11rem) clamp(1.25rem, 5vw, 5.5rem)"
 ---
 
 # Design System: HILGRAM: 미카게 시즈쿠
 
 ## Overview
 
-**Creative North Star: “PROMISE, WRONG SIDE OUT / 약속의 안감”**
+**Creative North Star: “UV CROSS-EXAMINATION”**
 
-The public view is the finished outside of a couture garment: cold paper, controlled measurements, an irregular portrait cutout, and edition-scale type. The secret view turns the same promise wrong-side-out: near-black lining, exposed seam allowance, three unpicked false seams, seven deliberate cuts, and one carmine thread that tightens into a knot. The public and secret states are one garment, not separate brands.
+This is the restored first-version interrogation dossier, grounded in historical seed `6b3f0fe`. A near-black plum room holds one muted-violet file whose public and sealed states reveal different readings of the same canonical record. The world is procedural, intimate, and quietly threatening rather than theatrical.
 
-The prior interrogation, dossier, transit-map, card-grid, rail, and dashboard system is abolished. Existing copy that happens to say “record” or “line” is product text, not visual authority. Do not restore evidence boards, route diagrams, section rails, floating cards, stamps, or case-file decoration.
-
-This is grounded direction **5 of 7**, concept seed **`f1671878`**.
+The first viewport is a full-height intake record: testimony, identity facts, and the state control occupy the left column; the framed `EVIDENCE 01` portrait occupies the right. A single vertical UV film runs through the document and becomes more visible when the file is sealed. The reading sequence is fixed: identify the subject, compare states, break three contradictions, follow seven deliberate choices, read the pale verdict sheet, open the complete deposition, and face the final question.
 
 **Key Characteristics:**
 
-- Finished paper outside; exposed dark lining inside.
-- One carmine thread carries selection, focus, seams, warnings, and narrative continuity.
-- High asymmetry, irregular pattern-cut polygons, oversized edition type, and generous reading space.
-- Exactly three false seams and seven deliberate cuts remain factual counts, not decorative motifs.
-- The Picrew portrait is cut like fabric and keeps its three-part usage caption adjacent.
+- Near-black plum room with layered violet dossier planes.
+- One vertical UV evidence film, restrained scanlines, and fine rules.
+- Public and sealed file states share structure while changing active evidence color and portrait treatment.
+- Exactly three contradiction rows and seven numbered choices.
+- One pale verdict sheet interrupts the dark file before the complete deposition.
+- The supplied portrait remains an intake artifact with its three-part limitation/source caption adjacent.
 
-**The Wrong-Side-Out Rule.** Every state change must feel like the same garment turning over; a palette swap alone is insufficient.
+**The Same File Rule.** Public and sealed states are two readings of one dossier; keep the structure stable and let evidence, copy, and active color disclose the difference.
 
 ## Colors
 
-The frontmatter is the complete literal color inventory from `app/globals.css`, including fixed dark-spread colors, print colors, `transparent`, and `currentColor`. Runtime roles are overridden on `.site-shell[data-mode="secret"]`:
+Muted violet establishes the ultraviolet atmosphere; dusty evidence rose marks verified or sealed material; pale lavender paper is reserved for text, selection, and the single verdict interruption.
 
-| CSS role | Public token | Secret override |
-|---|---|---|
-| `--ground` | `public-ground` | `secret-ground` |
-| `--ground-2` | `public-ground-2` | `secret-ground-2` |
-| `--paper` | `public-paper` | `secret-paper` |
-| `--ink` | `public-ink` | `secret-ink` |
-| `--muted` | `public-muted` | `secret-muted` |
-| `--faint` | `public-faint` | `secret-faint` |
-| `--rule` | `public-rule` | `secret-rule` |
-| `--strong-rule` | `public-strong-rule` | `secret-strong-rule` |
-| `--thread` | `public-thread` | `secret-thread` |
-| `--thread-soft` | `public-thread-soft` | `secret-thread-soft` |
-| `--thread-ink` | `public-thread-ink` | `secret-thread-ink` |
+### Primary
 
-`case-*` and `dark-spread-*` belong only to `.case-opening`; `belief-*` belongs only to `.belief-manifesto`; `print-*` replaces the shared roles in print. The light/dark browser theme colors in `layout.tsx` match `public-ground` and `secret-ground`; mode changes synchronize every existing `theme-color` meta. Both `html[data-record="secret"]` and the direct-SSR fallback `html:has(.site-shell[data-mode="secret"])` set dark color-scheme/background and a `secret-thread` on `secret-ground` scrollbar.
+- **Ultraviolet Violet** (`uv-accent`, `uv-accent-bright`, `uv-accent-soft`): public-state activity, selection, the vertical film, codes, and low-opacity hover fields.
+- **Evidence Rose** (`evidence`): sealed-state activity, contradiction connectors, warnings, verified counts, and incident markers.
 
-**The One Thread Rule.** Carmine is the sole accent family. Never introduce a second accent or revive the former violet evidence palette.
+### Secondary
+
+- **Sealed Mauve** (`sealed-accent`, `sealed-accent-bright`, `sealed-accent-soft`): the sealed file's supporting selection and ambient states; it never replaces Evidence Rose for verified facts.
+
+### Neutral
+
+- **Interrogation Depths** (`void`, `room`, `file`, `file-2`, `file-3`): browser canvas, bounded room, and successively lighter dossier planes.
+- **Cold Record Copy** (`paper`, `body`, `muted`): headings, long reading copy, and secondary metadata.
+- **Procedural Rules** (`rule`, `rule-strong`): all dividers, frames, ledgers, and sticky boundaries.
+- **Verdict Ink** (`paper-ink`, `paper-muted`): dark copy on the pale verdict sheet.
+- **Focus Lilac** (`focus`): the sole keyboard focus outline.
+- **Print Set** (`print-ground`, `print-ink`, `print-body`, `print-muted`, `print-rule`, `print-rule-strong`, `print-evidence`): the explicit ink-on-white print remap.
+
+**The Evidence Hierarchy Rule.** Violet establishes UV atmosphere; rose identifies confirmed evidence; pale paper appears as a decisive verdict, not as a general card surface.
 
 ## Typography
 
-Noto Sans KR Variable carries all Korean display and reading text. Barlow Condensed, loaded at 600 and 700, is reserved for HILGRAM, English edition labels, indices, and measurements. Body text is `16px/1.8`; `.long-copy` uses `1.95` line-height and `--reading: 66ch`, while `.history-copy` uses `72ch/2`.
+**Display Font:** Noto Sans KR Variable (sans-serif fallback)
 
-Every intentional fluid size is listed exactly so its minimum and maximum endpoints are normative:
+**Body Font:** Noto Sans KR Variable (sans-serif fallback)
 
-| Selector / role | Implemented size |
-|---|---|
-| `.cover-title` | `clamp(5rem, 10.5vw, 10.5rem)` |
-| `.catchphrase` | `clamp(.95rem, 1.3vw, 1.15rem)` |
-| `.cover-copy h1` | `clamp(3.4rem, 6.4vw, 6.8rem)` |
-| `.cover-copy h1 span` | `clamp(1rem, 1.6vw, 1.4rem)` |
-| `.section-heading h2` | `clamp(3rem, 7.5vw, 8rem)` |
-| `.identity-pattern dd` | `clamp(1rem, 1.7vw, 1.4rem)` |
-| `.pleated-traits article > span`, `.contradiction-braid article > b` | `clamp(4rem, 8vw, 8rem)` |
-| `.pleated-traits h3` | `clamp(1.5rem, 2.8vw, 2.6rem)` |
-| `.preference-strand > p` | `clamp(1.2rem, 2.1vw, 1.8rem)` |
-| `.maker-notes > p` | `clamp(1rem, 1.4vw, 1.15rem)` |
-| `.maker-notes blockquote` | `clamp(1.15rem, 2vw, 1.65rem)` |
-| `.loose-end p` | `clamp(6rem, 15vw, 15rem)` |
-| `.case-opening h2` | `clamp(4.5rem, 10vw, 10.5rem)` |
-| `.contradiction-braid del` | `clamp(2rem, 4.8vw, 5.2rem)` |
-| `.contradiction-braid article p` | `clamp(1rem, 1.55vw, 1.25rem)` |
-| `.knot-keywords span` | `clamp(1.2rem, 2.6vw, 2.3rem)` |
-| `.choice-seam h2` | `clamp(4rem, 10vw, 10rem)` |
-| `.choice-seam li > b` | `clamp(10rem, 29vw, 29rem)` |
-| `.choice-seam li h3` | `clamp(1.7rem, 3vw, 2.8rem)` |
-| `.summary-thesis` | `clamp(4rem, 9vw, 9rem)` |
-| `.belief-question` | `clamp(4rem, 8.5vw, 8.5rem)` |
-| `.selvedge-footer p` | `clamp(1.4rem, 2.2vw, 2rem)` |
+**Data Font:** Barlow Condensed (sans-serif fallback; loaded at 600 and 700)
 
-At `max-width: 760px`, the intentional overrides are `.cover-copy h1: clamp(3.6rem, 17vw, 5.4rem)`, `.section-heading h2: clamp(3rem, 15vw, 5rem)`, `.case-opening h2` and `.choice-seam h2: clamp(4rem, 18vw, 6rem)`, `.contradiction-braid del: clamp(1.7rem, 9vw, 2.6rem)`, and `.summary-thesis` / `.belief-question: clamp(3.8rem, 16vw, 5.6rem)`.
+Noto carries all Korean identity, testimony, analysis, and deposition text. Barlow Condensed carries short Latin record codes, counts, dates, and measurements. The frontmatter records every fixed and fluid step used by the build, including the 840px overrides.
 
-Operational labels, including the mobile portrait caption, hold at or above `.75rem` (12px). Wordmark and switch codes are `.9rem`; touch-target size, focus, contrast, and adjacent captions complete the accessibility contract.
+### Hierarchy
 
-**The Two-Hands Rule.** Noto tells the story; Barlow marks the pattern. Never set Korean prose in Barlow Condensed.
+- **Hero Display:** dense, high-weight Korean identity with the smaller kanji line separated in condensed data type.
+- **Section Display:** compact headings with tight leading; mobile headings scale down without losing the dossier's blunt cadence.
+- **Reading:** body copy stays within the `reading-max` measure; normal reading uses generous leading and the deposition extends to `72ch` with `2` line-height.
+- **Data:** micro labels, indices, record codes, and counts remain compact and high-contrast; these are metadata, not decorative headings.
+
+**The Two-Type Rule.** Noto speaks and explains; Barlow counts and indexes. Never set Korean prose in the condensed data face.
 
 ## Layout
 
-The root layout tokens are exact: `--header: 58px` (`54px` at `max-width: 760px`), `--page: 1500px`, `--reading: 66ch`, `--body-font: "Noto Sans KR Variable", sans-serif`, and `--data-font: "Barlow Condensed", sans-serif`. `.atelier-header` is sticky. `.couture-cover` is a full-height cover (`calc(100svh - var(--header))`) bounded by `--page`; copy occupies `min(33%, 31rem)`, the portrait begins at 31%, and the switch occupies `min(32rem, 42%)`. Content sections share the frontmatter section gutters and anchor scroll margins based on `--header`.
+The dossier is centered at `page-max` and bounded by vertical rules. A sticky three-column header precedes the two-column intake hero. A sticky horizontal record index follows the hero; record sections use a narrow heading column and a wider evidence/read column. The vertical UV film begins beneath the header at 44.2% of the shell and narrows to a 4px line on small screens.
 
-Breakpoints are exact and exhaustive:
+- **1100px:** intake and record columns tighten; the identity ledger becomes two columns; secondary two-column content stacks.
+- **840px:** the header becomes 54px, the intake becomes a single ordered column, the record index remains horizontally scrollable, and sections use the mobile inline gutter.
+- **540px:** portrait captions, sealed alerts, ledgers, keyword registers, and owner data become single-column; tab height becomes 58px.
+- **360px:** tab helper copy hides and the smallest facts/index targets compress without dropping below the 320px page floor.
 
-- `max-width: 1100px`: portrait begins at 36% with a 7rem caption column; copy and switch become 38%; outline title becomes 11vw; identity becomes a three-column pattern; trait and case proportions tighten.
-- `max-width: 760px`: `--header` becomes 54px; header descriptor hides; cover becomes portrait → copy → switch; portrait is 57svh with a 51svh cut shape; caption remains three columns; index becomes a horizontal strip; ledgers and spreads stack; section inline padding becomes 1.15rem; case, summary, belief, and footer become single-column; all mobile type overrides above apply.
-- `max-width: 380px`: the status seam icon and tab helper copy hide; portrait caption and transfer links stack; identity terms narrow to 5.5rem.
-
-The page is not a card grid. `.stitch-index` is a flat anchored index strip, not a transit rail; `.identity-pattern`, spreads, and alternating choice fields create the reading rhythm.
+**The One Beam Rule.** Preserve one continuous vertical UV film across the dossier; do not multiply it into decorative stripes.
 
 ## Elevation & Depth
 
-There are no box shadows and no blur. Depth comes from tonal planes, 1px/dashed/double rules, `color-mix()` translucency, irregular `clip-path` cuts, and the fixed fabric-grid overlay in `.site-shell::before` (`.18` public, `.14` secret; multiply becomes screen). `prefers-reduced-transparency: reduce` removes that overlay entirely.
+Depth is mostly tonal and procedural: nested plum planes, transparent overlays, rules, the vertical UV film, and scanlines. Only the framed portrait (`0 30px 100px rgba(7, 5, 10, 0.52)`) and owner record (`0 18px 50px rgba(7, 5, 10, 0.24)`) receive ambient shadows; the contradiction connector uses a localized evidence glow (`0 0 12px rgba(194, 125, 145, 0.45)`). There is no blur or glass treatment.
 
-**The Flat Fabric Rule.** A surface may overlap, cut, or expose its lining; it never floats like a card.
+**The Evidence-Only Lift Rule.** Shadow belongs to physical intake artifacts and the UV verification line, never to every section or ledger cell.
 
 ## Shapes
 
-Interactive and information surfaces use square corners (`0px`). Portrait and cover planes use irregular polygon cuts. Double borders represent seam allowance; dashed borders represent stitch or construction marks. The asymmetric radii in `.knot-keywords i` and the `50%` loop in `.belief-manifesto::before` are literal thread knots only—never pills, chips, badges, or cards.
+Most information surfaces remain square. The mode control uses a restrained 10px enclosure; the portrait matte uses 8px, its rear frame 18px, and small physical labels 4–5px. The final interrogation's 50% rotated outline is a one-off questioning gesture, not a reusable pill.
+
+Rules are structural: 1px dividers build ledgers and file frames, a 3px evidence edge flags usage limits, and rotated squares mark active file state and keywords.
 
 ## Components
 
-| Component | Implemented selector(s) | Contract |
-|---|---|---|
-| `ProfileClient` | `.site-shell[data-mode]` | Owns public/secret state, root token override, HTML `data-record`, announcements, URL, scroll correction, and view transition. |
-| Atelier header | `.atelier-header`, `.wordmark`, `.mode-status` | Sticky 58/54px header; 44px minimum wordmark/toggle; status toggle exposes `aria-pressed`. |
-| `ModeSwitch` | `.mode-switch`, `#public-tab`, `#secret-tab`, `.switch-code` | Two tabs, 64px desktop/58px mobile, selected carmine underline, ArrowLeft/ArrowRight/Home/End focus selection. |
-| Couture cover | `.couture-cover`, `.cover-title`, `.cover-copy`, `.cover-measures`, `.cover-thread` | Edition cover, one sewn SVG thread, outside/lining copy, measurements, and the main mode switch. |
-| Portrait | `.portrait-cutout`, `.portrait-shape` | One supplied image, irregular fabric crop, mode-specific filter/shape, adjacent three-part source/usage caption. |
-| Secret index | `.transfer-links` | Secret-only content warning plus anchors for exactly 3 contradictions and 7 choices. |
-| Section index | `.stitch-index` | Mode-specific anchor strip; horizontally scrollable, never a rail or map. |
-| Shared section | `.profile-section`, `.section-heading` | Pattern-note eyebrow, oversized heading, code, and header-relative scroll margin. |
-| Identity pattern | `.identity-pattern` | Five `<dl>` measurements staggered like pattern pieces; becomes rows at 760px. |
-| Appearance | `.appearance-spread`, `.appearance-copy`, `.reference-limit`, `.truth-seam` | Two-column reading spread; secret adds the false-seam correction. |
-| Public traits | `.pleated-traits` | Exactly three progressively offset pleats. |
-| Preferences | `.preference-weave`, `.preference-strand`, `.strand-l`, `.strand-h`, `.strand-s` | L/H/S strands; S may be prose or `공란`. |
-| Maker notes | `.maker-notes` | Facts, prose, and a double-seam statement; shared public/secret content shell. |
-| Secret opening | `.case-opening` | Fixed near-black lining spread with victim, charge, and number. |
-| Contradictions | `.contradiction-braid` | ARIA table with exactly three `<del>` claims beside verified facts. |
-| Personality knot | `.knot-keywords`, `.analysis-copy` | Four keywords around a drawn thread knot, followed by two reading columns. |
-| Choice sequence | `.choice-seam` | Exactly seven alternating, oversized numbered choices; not a route diagram. |
-| Conclusion | `.case-summary`, `.summary-thesis`, `.summary-copy` | Full carmine ground and fixed conclusion copy. |
-| History | `.history-disclosure`, `.history-copy` | Native closed `<details>` with a 220ms plus-to-line mark and numbered full prose. |
-| Owner label | `.maker-label` | A deliberately rotated dashed maker label, not a dossier card. |
-| Belief ending | `.belief-manifesto`, `.belief-question` | Near-black final lining with one oversized thread loop. |
-| Footer | `.selvedge-footer` | Double-thread top edge, content warning, and 44px top link. |
+### File Status Control
 
-### Motion
+A 44px-minimum header button shows `OPEN FILE` or `SEALED FILE`, the next action, and a rotated active-color marker. It exposes `aria-pressed`, changes the complete state, and uses the global focus outline.
 
-- Local transitions: skip link `160ms ease-out`; shell background/color `500ms ease` / `350ms ease`; cover and portrait cuts `650ms cubic-bezier(.16,1,.3,1)`; portrait filter/transform `550ms ease` / `700ms cubic-bezier(.16,1,.3,1)`; knot opacity `450ms ease`; selected-tab underline `240ms ease`; disclosure mark `220ms ease`.
-- With `prefers-reduced-motion: no-preference`: `.cover-thread path` sews in `1.35s` after `.25s`; `.portrait-shape` reveals in `900ms`; `.cover-copy` rises in `720ms` after `120ms`; `.profile > :first-child` rises locally in `480ms`; all use `cubic-bezier(.16,1,.3,1)`.
-- Root view transition: `650ms cubic-bezier(.16,1,.3,1)` with `lining-out` / `lining-in` diagonal clip paths. `character-name` and `character-portrait` are named transition elements. JavaScript starts it only when supported and reduced motion is not requested.
-- With `prefers-reduced-motion: reduce`: smooth scrolling becomes `auto`; all animation and transition durations become `.01ms` with one iteration; root view-transition animation is disabled.
+### Public / Sealed Tabs
 
-### Accessibility and URL contract
+Two equal tabs sit inside a 10px dark enclosure. The selected tab fills with the state's active color and uses room-dark text; hover uses the soft accent. Arrow keys, Home, End, roving focus, `aria-selected`, and `aria-controls` are part of the component.
 
-The document is `lang="ko"`. A skip link targets `#profile-panel`; `.sr-status` announces mode changes; the active panel is focusable, labelled by the active tab, and uses `role="tabpanel"`. Mode tabs expose `aria-selected` / `aria-controls`; the header toggle exposes `aria-pressed`; section headings, labelled `<dl>` structures, the contradiction ARIA table, native `<details>`, image alt text, adjacent caption, and hidden decorative SVG/marks preserve semantics. Every link, button, summary, and focusable tab gets a 3px `--thread` focus outline with 4px offset.
+### EVIDENCE 01 Portrait
 
-Default URL state is public. `?record=sealed` initializes and represents secret mode; switching uses `history.replaceState`, preserves the path, other query parameters, and hash, removes only `record` when returning public, and scrolls to `#profile-panel` when the prior scroll exceeds `.85` viewport height. The same state updates `html[data-record]`, all existing `theme-color` metas, and the dark scrollbar/browser canvas contract. Canonical URL remains `/` under the configured metadata base.
+The square intake image sits in an 8px matte with an offset 18px frame and one evidence label. Sealed state reduces saturation, raises contrast, adds slight sepia, and tightens the crop. The exact caption remains three adjacent facts: appearance reference only, not the official restraint uniform, source Picrew.
 
-### Print
+### Record Index
 
-Print remaps the shared roles to the `print-*` colors, hides `.atelier-header`, `.mode-switch`, `.stitch-index`, `.transfer-links`, `.selvedge-footer`, `.skip-link`, `.cover-thread`, and `.cover-title`, and forces the shell, cover, panel, sections, case opening, summary, and belief ending to white/black. The cover ends a page; portrait height becomes 34rem; content sections avoid internal breaks with 2rem block padding; `.print-mode` becomes visible; history content is forced open; dark decorative pseudo-elements disappear; dark-spread headings print in black.
+A sticky horizontal index stays beneath the header. Each 54px link pairs a condensed number with a Korean section name; overflow scrolls horizontally on narrow screens.
+
+### Identity and Testimony Ledgers
+
+Identity is a five-cell ruled ledger with numbered fields and one emphasized leading cell. Public personality uses three staggered testimony rows. Preference and feature records use ruled rows rather than floating containers.
+
+### Cross-Examination
+
+The sealed comparison is an accessible three-row table. Each row preserves the struck public claim, one glowing UV connector, and the verified fact together; the mobile form stacks the same semantic cells without losing either side.
+
+### Seven-Choice Ledger
+
+Exactly seven ordered rows pair a Barlow index, a short title, and the complete decision text. The layout becomes a two-column index/content row at 840px and remains a ledger, not an illustration.
+
+### Pale Verdict Sheet
+
+The only light full-width plane uses cold paper, dark ink, a small case header, one large conclusion, and two reading columns. On mobile it becomes a single reading flow.
+
+### Complete Deposition
+
+A native closed `details` element reveals six numbered paragraphs. Its plus rotates into a line in 180ms; print forces the entire deposition visible.
+
+### Owner Record and Final Interrogation
+
+The owner data is a compact 5px-radius evidence label with three ruled fields. The final interrogation returns to the void plane, adds one oversized rotated loop, and closes with the belief question and two columns of analysis.
+
+### Motion and state
+
+Portrait reveal and UV development run for 700ms with `cubic-bezier(.16, 1, .3, 1)` when motion is allowed. Portrait mode change uses `filter 360ms ease` and `transform 500ms cubic-bezier(.16, 1, .3, 1)`. Root state transition uses 460ms with the same easing and a restrained opacity crossfade. Reduced motion collapses all animation and transition durations to `.01ms`; reduced transparency removes scanlines and the UV film.
 
 ## Do's and Don'ts
 
 ### Do
 
-- **Do** treat public and secret as the finished outside and exposed lining of one couture object.
-- **Do** preserve the single carmine thread, square information surfaces, irregular cut shapes, and double-seam grammar.
-- **Do** keep exactly three contradiction rows and seven choice items, with their anchors and accessible labels.
-- **Do** keep the Picrew usage/source caption adjacent and preserve focus, tab keyboard behavior, reduced preferences, URL state, and print output.
-- **Do** preserve every fluid type endpoint and the exact 1100/760/380 responsive contract.
+- **Do** preserve the near-black plum room, muted-violet dossier planes, single UV film, Evidence Rose verification, and pale verdict interruption.
+- **Do** keep public and sealed states keyboard-operable, URL-addressable through `?record=sealed`, politely announced, and synchronized with browser theme color.
+- **Do** keep exactly three contradiction rows, seven choice rows, the full six-paragraph deposition, and every confirmed profile field.
+- **Do** keep the portrait caption adjacent and honest about use, costume mismatch, source, and unresolved rights.
+- **Do** preserve the 1100/840/540/360 responsive contract, print reveal, and reduced-preference behavior.
 
 ### Don't
 
-- **Don't** restore interrogation rooms, dossiers, evidence boards, transit maps, routes, rails, dashboards, card grids, or ornamental stamps.
-- **Don't** add rounded cards, pills, chips, glass, blur, shadows, or a competing accent; thread loops are the only rounded forms.
-- **Don't** convert `.stitch-index` into a navigation rail or `.choice-seam` into a route diagram.
-- **Don't** use Barlow Condensed for Korean prose or flatten the public/secret transition into a color-only theme toggle.
-- **Don't** remove the adjacent contradiction facts, source limitations, content warning, accessible state, reduced-motion/transparency fallbacks, or print reveal.
+- **Don't** convert the dossier into a generic card collection or distribute the pale verdict color across ordinary sections.
+- **Don't** add extra beams, accent families, glass, blur, or shadows beyond the physical evidence artifacts and UV connector.
+- **Don't** separate a false claim from its verified fact or summarize away the seven choices and complete deposition.
+- **Don't** turn compact metadata into decorative heading copy or use Barlow Condensed for Korean prose.
+- **Don't** remove focus visibility, tab keyboard behavior, status announcements, URL state, source limitations, or print content.

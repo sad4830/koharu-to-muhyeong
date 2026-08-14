@@ -2,12 +2,12 @@
 version: 1
 slug: "app-page-tsx"
 primary_target: "app/page.tsx"
-related_targets: ["app/layout.tsx","app/globals.css"]
+related_targets: ["app/layout.tsx","app/globals.css","app/profile-client.tsx"]
 ---
 
 ## Scope and visitor mode
 
-Single-route character profile. Read mode with an expressive narrative layer.
+Single-route character dossier. Read mode with a stateful public versus sealed evidence layer.
 
 ## Audience and job
 
@@ -15,15 +15,15 @@ Single-route character profile. Read mode with an expressive narrative layer.
 
 ## Content and constraints
 
-기존 공개·비밀 탭, 모든 필수 프로필 항목, 전체 과거사, 픽크루 출처 경고, URL과 주요 앵커를 보존한다. 날붙이 기피와 정당방위 진술은 의도된 거짓말임을 비밀 기록에서 명시한다.
+기존 공개·비밀 탭, 모든 필수 프로필 항목, 전체 과거사, 픽크루 출처 경고, URL과 주요 앵커를 보존한다. 날붙이 기피와 정당방위 진술은 의도된 거짓말임을 비밀 기록에서 명시한다. `?record=sealed`, 키보드 탭, 라이브 상태 공지, 인쇄 범위, 모션 감소 설정을 유지한다.
 
 ## Chosen direction
 
-막차 이후 환승도. 정상 운행도처럼 보이는 공개 진술이 비밀 탭에서 폐쇄되지 않는 단방향 노선으로 재배선된다. 차가운 역내 사인, 날카로운 직선 패널, 자외선빛 보라 노선, 실제 인물 포스터 크롭을 한 시각 세계로 사용한다.
+UV CROSS-EXAMINATION. 역사적 시드 `6b3f0fe`인 최초판의 어두운 보라 심문 기록과 EVIDENCE 01 증거사진을 복원한다. 한 줄기의 자외선 증거 필름이 같은 문서 위에서 공개 진술과 봉인된 사실을 겹쳐 드러내며, 이후 버전의 노선도·재봉·패션 에디토리얼 문법은 사용하지 않는다.
 
 ## Memorable moment
 
-비밀 프로필로 전환하면 같은 보라색 노선이 일곱 개의 선택을 연결하는 사건 경로로 바뀌고, 공개 진술의 세 거짓말이 환승 오류처럼 한눈에 드러난다.
+봉인 기록으로 전환하면 인물 사진의 채도가 낮아지고 보라빛 증거 필름이 켜진다. 세 개의 거짓 진술이 공개 진술·UV 검증선·확인 기록으로 깨진 뒤, 일곱 번의 의식적 선택과 밝은 사건 결론지가 이어진다.
 
 ## Unresolved decisions
 

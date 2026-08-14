@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "미카게 시즈쿠 / 21 / 여성",
-    description: "공개 진술과 봉인된 사건 기록을 한 노선 위에서 읽는 힐그램 캐릭터 프로필.",
+    description: "공개 진술과 봉인된 사건 기록을 한 심문 파일에서 읽는 힐그램 캐릭터 프로필.",
     url: "/",
     siteName: "HILGRAM",
     locale: "ko_KR",
@@ -40,17 +40,17 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   colorScheme: "light dark",
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f3f0ec" },
-    { media: "(prefers-color-scheme: dark)", color: "#100c12" },
+    { media: "(prefers-color-scheme: light)", color: "#0d0b12" },
+    { media: "(prefers-color-scheme: dark)", color: "#100c14" },
   ],
 };
 
 const directionContract = `<!--
-THESIS: A finished promise turns wrong-side-out, exposing the seam that was always control. The page refuses dossiers, transit maps, card grids, and interrogation dashboards.
-OWN-WORLD: Cold couture paper, near-black lining, one carmine thread, asymmetric pattern-cutting spreads, exposed seam allowance, oversized edition type, and a portrait cut like fabric.
-STORY: Meet the polished outside, turn the garment, unpick three false seams, follow seven deliberate cuts, then reach the knot she refuses to release.
-FIRST VIEWPORT: A full-height fashion cover layers one irregular Picrew cutout, restrained MIKAGE/SHIZUKU edition type, testimony and measurements at left, source captions at right, and the outside/lining switch at the lower edge.
-FORM: Promise, Wrong Side Out — couture cover into unpicked lining, grounded direction 5 of 7, seed f1671878.
+THESIS: The same dark interrogation file changes under ultraviolet evidence light, exposing the planned murder beneath a gentle statement.
+OWN-WORLD: Near-black plum room, muted violet dossier surfaces, restrained scanlines, one vertical UV evidence film, an EVIDENCE 01 intake portrait, and a single pale verdict sheet.
+STORY: Identify the subject, compare the open statement with the sealed record, break three contradictions, follow seven deliberate choices, read the full deposition, and face the final question.
+FIRST VIEWPORT: A full-height two-column intake record places testimony and controls at left, the framed Picrew evidence portrait at right, exact source captions below, and the public or sealed state visible without scrolling.
+FORM: UV Cross-Examination — a restoration of the first dark-purple interrogation dossier, rebuilt around the complete canonical record; historical seed 6b3f0fe.
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
 -->`;
 

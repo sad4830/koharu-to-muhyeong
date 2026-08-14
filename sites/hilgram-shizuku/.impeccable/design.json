@@ -1,417 +1,187 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-14T00:57:18Z",
+  "generatedAt": "2026-08-14T01:52:24Z",
   "title": "Design System: HILGRAM: 미카게 시즈쿠",
   "extensions": {
     "provenance": {
-      "conceptSeed": "f1671878",
-      "groundedDirection": 5,
-      "groundedDirectionTotal": 7,
-      "source": "app/layout.tsx direction contract"
-    },
-    "modeTokens": {
-      "--ground": { "public": "#f3f0ec", "secret": "#100c12" },
-      "--ground-2": { "public": "#e8e2e5", "secret": "#1d161f" },
-      "--paper": { "public": "#faf8f4", "secret": "#181219" },
-      "--ink": { "public": "#1b171d", "secret": "#f1eaef" },
-      "--muted": { "public": "#5c545d", "secret": "#c1b6be" },
-      "--faint": { "public": "rgba(27, 23, 29, .11)", "secret": "rgba(241, 234, 239, .08)" },
-      "--rule": { "public": "rgba(27, 23, 29, .35)", "secret": "rgba(241, 234, 239, .28)" },
-      "--strong-rule": { "public": "rgba(27, 23, 29, .76)", "secret": "rgba(241, 234, 239, .72)" },
-      "--thread": { "public": "#a52d52", "secret": "#e07999" },
-      "--thread-soft": { "public": "#d4a0b2", "secret": "#704052" },
-      "--thread-ink": { "public": "#fff8fa", "secret": "#1c1016" }
+      "direction": "UV CROSS-EXAMINATION",
+      "historicalSeed": "6b3f0fe",
+      "finishDisposition": "ship",
+      "source": "app/layout.tsx direction contract and shipped implementation"
     },
     "colorMeta": {
-      "public-ground": { "role": "neutral", "displayName": "Finished Couture Ground", "canonical": "#f3f0ec" },
-      "public-paper": { "role": "neutral", "displayName": "Finished Paper", "canonical": "#faf8f4" },
-      "public-thread": { "role": "primary", "displayName": "Carmine Thread", "canonical": "#a52d52" },
-      "secret-ground": { "role": "neutral", "displayName": "Wrong-side Ground", "canonical": "#100c12" },
-      "secret-paper": { "role": "neutral", "displayName": "Exposed Lining", "canonical": "#181219" },
-      "secret-thread": { "role": "primary", "displayName": "Lining Carmine", "canonical": "#e07999" },
-      "case-ground": { "role": "neutral", "displayName": "Case Opening Lining", "canonical": "#0a070c" },
-      "belief-ground": { "role": "neutral", "displayName": "Final Knot Ground", "canonical": "#080609" },
-      "print-ground": { "role": "neutral", "displayName": "Print White", "canonical": "#fff" },
-      "print-thread": { "role": "primary", "displayName": "Print Carmine", "canonical": "#6f1f3d" }
+      "void": { "role": "neutral", "displayName": "Interrogation Void", "canonical": "#09070d", "tonalRamp": ["color-mix(in srgb, #09070d 55%, #000)", "color-mix(in srgb, #09070d 70%, #000)", "color-mix(in srgb, #09070d 85%, #000)", "#09070d", "color-mix(in srgb, #09070d 85%, #fff)", "color-mix(in srgb, #09070d 65%, #fff)", "color-mix(in srgb, #09070d 45%, #fff)", "color-mix(in srgb, #09070d 20%, #fff)"] },
+      "room": { "role": "neutral", "displayName": "Plum Room", "canonical": "#0d0b12", "tonalRamp": ["color-mix(in srgb, #0d0b12 55%, #000)", "color-mix(in srgb, #0d0b12 70%, #000)", "color-mix(in srgb, #0d0b12 85%, #000)", "#0d0b12", "color-mix(in srgb, #0d0b12 85%, #fff)", "color-mix(in srgb, #0d0b12 65%, #fff)", "color-mix(in srgb, #0d0b12 45%, #fff)", "color-mix(in srgb, #0d0b12 20%, #fff)"] },
+      "file": { "role": "neutral", "displayName": "Dossier Plane I", "canonical": "#15111c", "tonalRamp": ["color-mix(in srgb, #15111c 55%, #000)", "color-mix(in srgb, #15111c 70%, #000)", "color-mix(in srgb, #15111c 85%, #000)", "#15111c", "color-mix(in srgb, #15111c 85%, #fff)", "color-mix(in srgb, #15111c 65%, #fff)", "color-mix(in srgb, #15111c 45%, #fff)", "color-mix(in srgb, #15111c 20%, #fff)"] },
+      "file-2": { "role": "neutral", "displayName": "Dossier Plane II", "canonical": "#1c1725", "tonalRamp": ["color-mix(in srgb, #1c1725 55%, #000)", "color-mix(in srgb, #1c1725 70%, #000)", "color-mix(in srgb, #1c1725 85%, #000)", "#1c1725", "color-mix(in srgb, #1c1725 85%, #fff)", "color-mix(in srgb, #1c1725 65%, #fff)", "color-mix(in srgb, #1c1725 45%, #fff)", "color-mix(in srgb, #1c1725 20%, #fff)"] },
+      "file-3": { "role": "neutral", "displayName": "Dossier Plane III", "canonical": "#241d2f", "tonalRamp": ["color-mix(in srgb, #241d2f 55%, #000)", "color-mix(in srgb, #241d2f 70%, #000)", "color-mix(in srgb, #241d2f 85%, #000)", "#241d2f", "color-mix(in srgb, #241d2f 85%, #fff)", "color-mix(in srgb, #241d2f 65%, #fff)", "color-mix(in srgb, #241d2f 45%, #fff)", "color-mix(in srgb, #241d2f 20%, #fff)"] },
+      "paper": { "role": "neutral", "displayName": "Cold Record Paper", "canonical": "#eeeaf3", "tonalRamp": ["color-mix(in srgb, #eeeaf3 55%, #000)", "color-mix(in srgb, #eeeaf3 70%, #000)", "color-mix(in srgb, #eeeaf3 85%, #000)", "#eeeaf3", "color-mix(in srgb, #eeeaf3 85%, #fff)", "color-mix(in srgb, #eeeaf3 65%, #fff)", "color-mix(in srgb, #eeeaf3 45%, #fff)", "color-mix(in srgb, #eeeaf3 20%, #fff)"] },
+      "body": { "role": "neutral", "displayName": "Deposition Copy", "canonical": "#d8d1df", "tonalRamp": ["color-mix(in srgb, #d8d1df 55%, #000)", "color-mix(in srgb, #d8d1df 70%, #000)", "color-mix(in srgb, #d8d1df 85%, #000)", "#d8d1df", "color-mix(in srgb, #d8d1df 85%, #fff)", "color-mix(in srgb, #d8d1df 65%, #fff)", "color-mix(in srgb, #d8d1df 45%, #fff)", "color-mix(in srgb, #d8d1df 20%, #fff)"] },
+      "muted": { "role": "neutral", "displayName": "Muted Metadata", "canonical": "#ada5b9", "tonalRamp": ["color-mix(in srgb, #ada5b9 55%, #000)", "color-mix(in srgb, #ada5b9 70%, #000)", "color-mix(in srgb, #ada5b9 85%, #000)", "#ada5b9", "color-mix(in srgb, #ada5b9 85%, #fff)", "color-mix(in srgb, #ada5b9 65%, #fff)", "color-mix(in srgb, #ada5b9 45%, #fff)", "color-mix(in srgb, #ada5b9 20%, #fff)"] },
+      "rule": { "role": "neutral", "displayName": "Procedural Rule", "canonical": "rgba(214, 203, 229, 0.16)", "tonalRamp": ["rgba(214, 203, 229, 0.06)", "rgba(214, 203, 229, 0.1)", "rgba(214, 203, 229, 0.13)", "rgba(214, 203, 229, 0.16)", "rgba(214, 203, 229, 0.24)", "rgba(214, 203, 229, 0.34)", "rgba(214, 203, 229, 0.52)", "rgba(214, 203, 229, 0.72)"] },
+      "rule-strong": { "role": "neutral", "displayName": "Strong Procedural Rule", "canonical": "rgba(214, 203, 229, 0.34)", "tonalRamp": ["rgba(214, 203, 229, 0.08)", "rgba(214, 203, 229, 0.14)", "rgba(214, 203, 229, 0.22)", "rgba(214, 203, 229, 0.34)", "rgba(214, 203, 229, 0.46)", "rgba(214, 203, 229, 0.58)", "rgba(214, 203, 229, 0.72)", "rgba(214, 203, 229, 0.9)"] },
+      "uv-accent": { "role": "primary", "displayName": "Ultraviolet Violet", "canonical": "#a68bc8", "tonalRamp": ["#231b2e", "#382a49", "#51406a", "#735d91", "#a68bc8", "#bea7dc", "#d9c8ec", "#f1eafd"] },
+      "uv-accent-bright": { "role": "primary", "displayName": "Bright UV", "canonical": "#d9baff", "tonalRamp": ["#2a2038", "#43315b", "#624683", "#8a62b5", "#b98de9", "#d9baff", "#ead7ff", "#f8f0ff"] },
+      "uv-accent-soft": { "role": "primary", "displayName": "Soft UV Field", "canonical": "rgba(166, 139, 200, 0.13)", "tonalRamp": ["rgba(166, 139, 200, 0.04)", "rgba(166, 139, 200, 0.07)", "rgba(166, 139, 200, 0.1)", "rgba(166, 139, 200, 0.13)", "rgba(166, 139, 200, 0.2)", "rgba(166, 139, 200, 0.3)", "rgba(166, 139, 200, 0.45)", "rgba(166, 139, 200, 0.65)"] },
+      "evidence": { "role": "secondary", "displayName": "Evidence Rose", "canonical": "#c27d91", "tonalRamp": ["#2e1820", "#492630", "#693746", "#914e62", "#c27d91", "#d49aac", "#e6bac8", "#f7e5eb"] },
+      "focus": { "role": "primary", "displayName": "Focus Lilac", "canonical": "#efd0ff", "tonalRamp": ["#2d2134", "#473454", "#684b7a", "#956cad", "#c397dc", "#efd0ff", "#f5e1ff", "#fcf5ff"] },
+      "paper-ink": { "role": "neutral", "displayName": "Verdict Ink", "canonical": "#19131d", "tonalRamp": ["#09070b", "#100c13", "#19131d", "#342a3a", "#5c4f63", "#897d8d", "#bab1bc", "#eeeaf0"] },
+      "paper-muted": { "role": "neutral", "displayName": "Verdict Muted Ink", "canonical": "#5f5765", "tonalRamp": ["#18141b", "#29232d", "#403747", "#5f5765", "#827988", "#aaa3ad", "#d1ccd4", "#f4f1f5"] },
+      "sealed-accent": { "role": "secondary", "displayName": "Sealed Mauve", "canonical": "#b892a0", "tonalRamp": ["#2a1d22", "#432e36", "#61424d", "#875c6a", "#b892a0", "#ccacb7", "#dfc9d1", "#f4e9ed"] },
+      "sealed-accent-bright": { "role": "secondary", "displayName": "Bright Sealed Mauve", "canonical": "#f3bed0", "tonalRamp": ["#321f27", "#51313d", "#754657", "#a66278", "#da8faa", "#f3bed0", "#f8d9e3", "#fdf1f5"] },
+      "sealed-accent-soft": { "role": "secondary", "displayName": "Soft Evidence Field", "canonical": "rgba(194, 125, 145, 0.13)", "tonalRamp": ["rgba(194, 125, 145, 0.04)", "rgba(194, 125, 145, 0.07)", "rgba(194, 125, 145, 0.1)", "rgba(194, 125, 145, 0.13)", "rgba(194, 125, 145, 0.2)", "rgba(194, 125, 145, 0.3)", "rgba(194, 125, 145, 0.45)", "rgba(194, 125, 145, 0.65)"] },
+      "print-ground": { "role": "neutral", "displayName": "Print Ground", "canonical": "#fff", "tonalRamp": ["#262626", "#484848", "#6c6c6c", "#909090", "#b5b5b5", "#d3d3d3", "#ededed", "#fff"] },
+      "print-ink": { "role": "neutral", "displayName": "Print Ink", "canonical": "#111", "tonalRamp": ["#050505", "#0a0a0a", "#111", "#303030", "#595959", "#888", "#bdbdbd", "#eee"] },
+      "print-body": { "role": "neutral", "displayName": "Print Body", "canonical": "#222", "tonalRamp": ["#080808", "#141414", "#222", "#3d3d3d", "#636363", "#909090", "#c0c0c0", "#efefef"] },
+      "print-muted": { "role": "neutral", "displayName": "Print Muted", "canonical": "#444", "tonalRamp": ["#101010", "#282828", "#444", "#626262", "#858585", "#aaa", "#d0d0d0", "#f3f3f3"] },
+      "print-rule": { "role": "neutral", "displayName": "Print Rule", "canonical": "#bbb", "tonalRamp": ["#2d2d2d", "#505050", "#747474", "#969696", "#bbb", "#d0d0d0", "#e6e6e6", "#f7f7f7"] },
+      "print-rule-strong": { "role": "neutral", "displayName": "Print Strong Rule", "canonical": "#333", "tonalRamp": ["#0c0c0c", "#202020", "#333", "#505050", "#747474", "#9e9e9e", "#cacaca", "#f1f1f1"] },
+      "print-evidence": { "role": "secondary", "displayName": "Print Evidence Rose", "canonical": "#6e3548", "tonalRamp": ["#1b0c11", "#301722", "#4c2633", "#6e3548", "#95566b", "#ba8092", "#dcafbD", "#f5e2e8"] }
     },
-    "colorInventory": [
-      "#080609",
-      "#0a070c",
-      "#100c12",
-      "#111",
-      "#181219",
-      "#1b171d",
-      "#1c1016",
-      "#1d151f",
-      "#1d161f",
-      "#222",
-      "#333",
-      "#5c545d",
-      "#6f1f3d",
-      "#704052",
-      "#a52d52",
-      "#aaa",
-      "#bdb3bb",
-      "#c1b6be",
-      "#c9bec6",
-      "#d4a0b2",
-      "#e07999",
-      "#e8e2e5",
-      "#f1eaef",
-      "#f3edf1",
-      "#f3f0ec",
-      "#faf8f4",
-      "#fff",
-      "#fff8fa",
-      "rgba(241, 234, 239, .08)",
-      "rgba(241, 234, 239, .28)",
-      "rgba(241, 234, 239, .72)",
-      "rgba(243,237,241,.26)",
-      "rgba(243,237,241,.3)",
-      "rgba(243,237,241,.68)",
-      "rgba(243,237,241,.7)",
-      "rgba(27, 23, 29, .11)",
-      "rgba(27, 23, 29, .35)",
-      "rgba(27, 23, 29, .76)",
-      "transparent",
-      "currentColor"
-    ],
-    "layoutTokens": {
-      "--header": "58px; 54px at max-width 760px",
-      "--page": "1500px",
-      "--reading": "66ch",
-      "--body-font": "\"Noto Sans KR Variable\", sans-serif",
-      "--data-font": "\"Barlow Condensed\", sans-serif",
-      "coverHeight": "calc(100svh - var(--header))",
-      "coverCopyWidth": "min(33%, 31rem)",
-      "portraitDesktopStart": "31%",
-      "coverSwitchWidth": "min(32rem, 42%)",
-      "sectionInline": "clamp(1.25rem, 5vw, 5rem)",
-      "sectionBlock": "clamp(6rem, 10vw, 10rem)",
-      "mobileInline": "1.15rem"
+    "modeTokens": {
+      "--active": { "public": "var(--accent)", "sealed": "var(--evidence)" },
+      "--accent": { "public": "#a68bc8", "sealed": "#b892a0" },
+      "--accent-bright": { "public": "#d9baff", "sealed": "#f3bed0" },
+      "--accent-soft": { "public": "rgba(166, 139, 200, 0.13)", "sealed": "rgba(194, 125, 145, 0.13)" }
     },
     "typographyMeta": {
-      "body": {
-        "displayName": "Korean Reading",
-        "purpose": "All Korean prose and display copy.",
-        "fontFamily": "Noto Sans KR Variable, sans-serif",
-        "fontSize": "16px",
-        "lineHeight": 1.8
-      },
-      "data-label": {
-        "displayName": "Pattern Data",
-        "purpose": "HILGRAM, English labels, indices, and measurements only.",
-        "fontFamily": "Barlow Condensed, sans-serif",
-        "loadedWeights": [600, 700],
-        "commonSize": ".75rem",
-        "mobileCaptionSize": ".75rem"
-      },
-      "long-copy": { "displayName": "Long Copy", "purpose": "Primary reading prose.", "maxWidth": "66ch", "lineHeight": 1.95 },
-      "history-copy": { "displayName": "History Copy", "purpose": "Expanded history.", "maxWidth": "72ch", "lineHeight": 2 }
+      "body": { "displayName": "Korean Interface", "purpose": "Default interface and reading copy." },
+      "data-label": { "displayName": "Record Data", "purpose": "Short Latin codes, numbers, dates, and measurements only." },
+      "hero-display": { "displayName": "Subject Identity", "purpose": "First-viewport Korean character name." },
+      "section-heading": { "displayName": "Record Heading", "purpose": "Primary section titles." },
+      "reading": { "displayName": "Evidence Reading", "purpose": "Long character, analysis, and deposition copy." },
+      "contradiction-claim": { "displayName": "Disputed Claim", "purpose": "The struck public side of each contradiction." },
+      "verdict-thesis": { "displayName": "Verdict Thesis", "purpose": "The single pale conclusion sheet." },
+      "belief-question": { "displayName": "Final Question", "purpose": "Closing interrogation question." }
     },
-    "fluidTypography": [
-      { "selector": ".cover-title", "value": "clamp(5rem, 10.5vw, 10.5rem)" },
-      { "selector": ".catchphrase", "value": "clamp(.95rem, 1.3vw, 1.15rem)" },
-      { "selector": ".cover-copy h1", "value": "clamp(3.4rem, 6.4vw, 6.8rem)" },
-      { "selector": ".cover-copy h1 span", "value": "clamp(1rem, 1.6vw, 1.4rem)" },
-      { "selector": ".section-heading h2", "value": "clamp(3rem, 7.5vw, 8rem)" },
-      { "selector": ".identity-pattern dd", "value": "clamp(1rem, 1.7vw, 1.4rem)" },
-      { "selector": ".pleated-traits article > span, .contradiction-braid article > b", "value": "clamp(4rem, 8vw, 8rem)" },
-      { "selector": ".pleated-traits h3", "value": "clamp(1.5rem, 2.8vw, 2.6rem)" },
-      { "selector": ".preference-strand > p", "value": "clamp(1.2rem, 2.1vw, 1.8rem)" },
-      { "selector": ".maker-notes > p", "value": "clamp(1rem, 1.4vw, 1.15rem)" },
-      { "selector": ".maker-notes blockquote", "value": "clamp(1.15rem, 2vw, 1.65rem)" },
-      { "selector": ".loose-end p", "value": "clamp(6rem, 15vw, 15rem)" },
-      { "selector": ".case-opening h2", "value": "clamp(4.5rem, 10vw, 10.5rem)" },
-      { "selector": ".contradiction-braid del", "value": "clamp(2rem, 4.8vw, 5.2rem)" },
-      { "selector": ".contradiction-braid article p", "value": "clamp(1rem, 1.55vw, 1.25rem)" },
-      { "selector": ".knot-keywords span", "value": "clamp(1.2rem, 2.6vw, 2.3rem)" },
-      { "selector": ".choice-seam h2", "value": "clamp(4rem, 10vw, 10rem)" },
-      { "selector": ".choice-seam li > b", "value": "clamp(10rem, 29vw, 29rem)" },
-      { "selector": ".choice-seam li h3", "value": "clamp(1.7rem, 3vw, 2.8rem)" },
-      { "selector": ".summary-thesis", "value": "clamp(4rem, 9vw, 9rem)" },
-      { "selector": ".belief-question", "value": "clamp(4rem, 8.5vw, 8.5rem)" },
-      { "selector": ".selvedge-footer p", "value": "clamp(1.4rem, 2.2vw, 2rem)" },
-      { "selector": ".cover-copy h1 @760", "value": "clamp(3.6rem, 17vw, 5.4rem)" },
-      { "selector": ".section-heading h2 @760", "value": "clamp(3rem, 15vw, 5rem)" },
-      { "selector": ".case-opening h2, .choice-seam h2 @760", "value": "clamp(4rem, 18vw, 6rem)" },
-      { "selector": ".contradiction-braid del @760", "value": "clamp(1.7rem, 9vw, 2.6rem)" },
-      { "selector": ".summary-thesis, .belief-question @760", "value": "clamp(3.8rem, 16vw, 5.6rem)" }
-    ],
-    "fixedTypography": [
-      { "selector": ".cover-copy blockquote", "value": ".94rem" },
-      { "selector": ".mode-switch b", "value": ".88rem" },
-      { "selector": ".reference-limit strong, .selvedge-footer a", "value": ".8rem" },
-      { "selector": ".reference-limit p", "value": ".84rem" },
-      { "selector": ".preference-strand li", "value": ".92rem" },
-      { "selector": ".case-opening dd, .knot-keywords span @760", "value": "1.05rem" },
-      { "selector": ".case-summary h2, .belief-manifesto h2", "value": "1.1rem" },
-      { "selector": ".maker-label dd", "value": "1.15rem" },
-      { "selector": ".contradiction-braid article > b @760", "value": "3.2rem" }
-    ],
-    "shadows": [],
-    "breakpoints": [
-      {
-        "name": "tight-desktop",
-        "value": "1100px",
-        "behavior": "Portrait begins at 36% with a 7rem caption column; copy and switch become 38%; cover title becomes 11vw; identity becomes three columns; trait and case proportions tighten."
-      },
-      {
-        "name": "mobile-stack",
-        "value": "760px",
-        "behavior": "Header becomes 54px; descriptor hides; cover orders portrait, copy, switch; index stays horizontal; spreads and ledgers stack; section gutters become 1.15rem; case, summary, belief, and footer become one column."
-      },
-      {
-        "name": "compact",
-        "value": "380px",
-        "behavior": "Status icon and tab helper hide; portrait caption and transfer links stack; identity term column narrows to 5.5rem."
-      }
+    "shadows": [
+      { "name": "portrait-ambient", "value": "0 30px 100px rgba(7, 5, 10, 0.52)", "purpose": "Physical depth beneath the EVIDENCE 01 portrait matte." },
+      { "name": "owner-record-ambient", "value": "0 18px 50px rgba(7, 5, 10, 0.24)", "purpose": "Low physical lift beneath the owner record." },
+      { "name": "uv-verification", "value": "0 0 12px rgba(194, 125, 145, 0.45)", "purpose": "Localized glow on the contradiction verification line." }
     ],
     "motion": [
-      { "name": "skip-link", "value": "transform 160ms ease-out", "purpose": "Reveal the skip link on focus." },
-      { "name": "shell-mode", "value": "background-color 500ms ease, color 350ms ease", "purpose": "Outside/lining token change." },
-      { "name": "cut-shape", "value": "clip-path 650ms cubic-bezier(.16,1,.3,1), transform 650ms cubic-bezier(.16,1,.3,1)", "purpose": "Cover plane and portrait recut." },
-      { "name": "portrait-image", "value": "filter 550ms ease, transform 700ms cubic-bezier(.16,1,.3,1)", "purpose": "Mode-specific portrait finish." },
-      { "name": "thread-knot", "value": "opacity 450ms ease", "purpose": "Reveal the secret knot." },
-      { "name": "tab-underline", "value": "transform 240ms ease", "purpose": "Selected mode seam." },
-      { "name": "disclosure", "value": "transform 220ms ease", "purpose": "Plus-to-line history mark." },
-      { "name": "sew-thread", "value": "1.35s .25s cubic-bezier(.16,1,.3,1)", "purpose": "Initial thread draw when motion is allowed." },
-      { "name": "reveal-fabric", "value": "900ms cubic-bezier(.16,1,.3,1)", "purpose": "Initial portrait cut reveal." },
-      { "name": "rise-copy", "value": "720ms 120ms cubic-bezier(.16,1,.3,1)", "purpose": "Initial cover copy rise." },
-      { "name": "local-rise", "value": "480ms cubic-bezier(.16,1,.3,1)", "purpose": "First child of the newly keyed profile." },
-      { "name": "root-view-transition", "value": "650ms cubic-bezier(.16,1,.3,1)", "purpose": "Diagonal lining-out/lining-in mode change; disabled for reduced motion." },
-      { "name": "reduced-motion", "value": ".01ms", "purpose": "One-iteration global animation and transition fallback." }
+      { "name": "portrait-mode", "value": "filter 360ms ease, transform 500ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Reprocesses and tightens the portrait when file state changes." },
+      { "name": "evidence-reveal", "value": "700ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Initial portrait clip reveal when motion is allowed." },
+      { "name": "uv-develop", "value": "700ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Develops the vertical UV film in sealed state." },
+      { "name": "root-record-transition", "value": "460ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Restrained opacity crossfade between file states." },
+      { "name": "deposition-mark", "value": "transform 180ms ease", "purpose": "Turns the disclosure plus into a line." },
+      { "name": "reduced-motion", "value": "0.01ms", "purpose": "Global one-iteration fallback; disables root view-transition animation." }
     ],
-    "viewTransition": {
-      "rootOld": "lining-out",
-      "rootNew": "lining-in",
-      "namedElements": ["character-name", "character-portrait"],
-      "guard": "startViewTransition support and no prefers-reduced-motion: reduce"
+    "breakpoints": [
+      { "name": "tight-desktop", "value": "1100px", "behavior": "Tightens intake and record columns; identity becomes two columns; secondary layouts stack." },
+      { "name": "mobile-stack", "value": "840px", "behavior": "Header becomes 54px; intake and record sections become single-column; index remains horizontal; primary mobile type overrides apply." },
+      { "name": "compact", "value": "540px", "behavior": "Portrait captions, sealed alerts, ledgers, keyword register, and owner data stack; tabs become 58px." },
+      { "name": "minimum", "value": "360px", "behavior": "Tab helper copy hides and facts/index targets compress inside the 320px page floor." }
+    ],
+    "layout": {
+      "pageMax": "1480px",
+      "readingMax": "68ch",
+      "depositionMax": "72ch",
+      "header": "62px; 54px at max-width 840px",
+      "uvFilm": "left 44.2%; width clamp(4.5rem, 7vw, 7rem); 4px at max-width 840px",
+      "sectionGrid": "minmax(15rem, 0.68fr) minmax(0, 1.32fr)"
     },
     "reducedPreferences": {
-      "prefers-reduced-motion": "Smooth scroll becomes auto; all animation/transition durations become .01ms with one iteration; root view-transition animation is none.",
-      "prefers-reduced-transparency": ".site-shell::before is hidden."
+      "prefers-reduced-motion": "Smooth scroll becomes auto; all animation and transition durations become 0.01ms with one iteration; root view transition is disabled.",
+      "prefers-reduced-transparency": "Scanlines and the vertical UV film are removed; sticky surfaces become opaque room color."
     },
     "print": {
-      "tokens": {
-        "--ground": "#fff",
-        "--ground-2": "#fff",
-        "--paper": "#fff",
-        "--ink": "#111",
-        "--muted": "#333",
-        "--rule": "#aaa",
-        "--strong-rule": "#222",
-        "--thread": "#6f1f3d",
-        "--thread-soft": "#aaa"
-      },
-      "hiddenSelectors": [
-        ".atelier-header",
-        ".mode-switch",
-        ".stitch-index",
-        ".transfer-links",
-        ".selvedge-footer",
-        ".skip-link",
-        ".cover-thread",
-        ".cover-title"
-      ],
-      "behavior": "Force white/black output; cover breaks after; portrait is 34rem; sections avoid breaks with 2rem block padding; print-mode and full history show; dark pseudo-elements hide; dark headings become #111."
-    },
-    "accessibility": [
-      "html lang is ko.",
-      "Skip link targets #profile-panel and .sr-status announces mode changes politely.",
-      "ModeSwitch is a tablist with public-tab and secret-tab, aria-selected, aria-controls, roving tabIndex, and ArrowLeft/ArrowRight/Home/End keyboard selection.",
-      "Header .mode-status exposes a changing aria-label and aria-pressed.",
-      "#profile-panel is a focusable tabpanel labelled by the selected tab.",
-      "Contradictions expose table/row/columnheader/cell roles and retain del claims beside facts.",
-      "Headings label sections; identity and measures are labelled dl structures; history is native details/summary.",
-      "Portrait has descriptive alt text and adjacent usage/source caption; decorative SVG and marks are aria-hidden.",
-      "Links, buttons, summaries, and tabindex targets receive a 3px var(--thread) focus outline offset 4px.",
-      "Primary controls retain 44px or larger touch targets; mode tabs are 64px desktop and 58px mobile."
-    ],
-    "urlContract": {
-      "defaultMode": "public",
-      "secretQuery": "?record=sealed",
-      "initialization": "app/page.tsx maps record=sealed to initialMode=secret; all other values are public.",
-      "mutation": "history.replaceState preserves pathname, other search parameters, and hash; public removes only record.",
-      "stateAttributes": ["html[data-record=public|secret]", ".site-shell[data-mode=public|secret]"],
-      "deepScroll": "After a mode change beyond .85 viewport height, #profile-panel scrolls into view.",
-      "canonical": "/"
-    },
-    "browserChrome": {
-      "themeColors": { "public": "#f3f0ec", "secret": "#100c12" },
-      "synchronization": "Each mode effect updates html[data-record] and every existing meta[name=theme-color].",
-      "secretSelectors": ["html[data-record=secret]", "html:has(.site-shell[data-mode=secret])"],
-      "secretColorScheme": "dark",
-      "secretBackground": "#100c12",
-      "secretScrollbar": "#e07999 #100c12"
-    },
-    "selectorInventory": [
-      ".site-shell[data-mode]",
-      ".atelier-header",
-      ".wordmark",
-      ".mode-status",
-      ".couture-cover",
-      ".cover-title",
-      ".cover-copy",
-      ".cover-edition",
-      ".catchphrase",
-      ".cover-measures",
-      ".cover-thread",
-      ".portrait-cutout",
-      ".portrait-shape",
-      ".cover-switch",
-      ".mode-switch",
-      ".switch-code",
-      ".transfer-links",
-      ".stitch-index",
-      ".profile-panel",
-      ".profile-section",
-      ".section-heading",
-      ".identity-pattern",
-      ".appearance-spread",
-      ".appearance-copy",
-      ".reference-limit",
-      ".truth-seam",
-      ".pleated-traits",
-      ".preference-weave",
-      ".preference-strand",
-      ".strand-l",
-      ".strand-h",
-      ".strand-s",
-      ".maker-notes",
-      ".loose-end",
-      ".case-opening",
-      ".contradiction-braid",
-      ".knot-keywords",
-      ".analysis-copy",
-      ".choice-seam",
-      ".case-summary",
-      ".summary-thesis",
-      ".summary-copy",
-      ".history-disclosure",
-      ".history-copy",
-      ".maker-label",
-      ".belief-manifesto",
-      ".belief-question",
-      ".selvedge-footer",
-      ".skip-link",
-      ".sr-status",
-      ".print-mode"
-    ],
-    "hardRules": [
-      "Public is the finished couture outside; secret is the exposed wrong-side lining of the same garment.",
-      "One carmine thread is the only accent family.",
-      "The interrogation, dossier, transit, route, rail, dashboard, and card-grid system is abolished.",
-      "Information and controls stay square; only literal thread knots and loops use rounded forms.",
-      "Keep exactly 3 contradiction rows and 7 choice items with their anchors and semantics.",
-      "Keep the Picrew usage and source caption adjacent to the portrait.",
-      "Preserve all fluid type endpoints and the exact 1100px, 760px, and 380px breakpoints.",
-      "Preserve focus, keyboard tabs, reduced motion/transparency, URL state, and print output."
-    ]
+      "behavior": "Remaps the file to white/black, hides navigation and state controls, removes decorative overlays and shadows, forces the complete deposition visible, and avoids internal breaks in major record sections."
+    }
   },
   "components": [
     {
-      "name": "Header Mode Status",
+      "name": "File Status Control",
       "kind": "button",
-      "refersTo": "mode-status",
-      "selector": ".mode-status",
-      "description": "Square 44px-minimum outside/lining toggle with a seam-shaped status mark.",
-      "html": "<button class=\"ds-mode-status\" type=\"button\" aria-pressed=\"false\"><span>OPEN LINE</span><i aria-hidden=\"true\"></i></button>",
-      "css": ".ds-mode-status { min-width: 9rem; min-height: 44px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .55rem .75rem; border: 0; border-left: 1px solid var(--strong-rule); border-radius: 0; background: transparent; color: var(--ink); font: 700 .75rem/1 var(--data-font); letter-spacing: .12em; cursor: pointer; } .ds-mode-status i { width: 2rem; height: 7px; border-top: 1px dashed currentColor; } .ds-mode-status:hover { color: var(--thread); } .ds-mode-status:focus-visible { outline: 3px solid var(--thread); outline-offset: 4px; }"
+      "refersTo": "file-status",
+      "description": "Header control that exposes the current public or sealed file state and the next action.",
+      "html": "<button class=\"ds-file-status\" type=\"button\" aria-pressed=\"false\"><span>OPEN FILE</span><small>비밀 프로필로 전환</small><i aria-hidden=\"true\"></i></button>",
+      "css": ".ds-file-status { min-width: 13.5rem; min-height: 44px; display: grid; grid-template-columns: auto 1fr .7rem; align-items: center; gap: .65rem; padding: .5rem .7rem; border: 0; border-left: 1px solid var(--rule-strong); border-radius: 0; background: transparent; color: var(--paper); cursor: pointer; text-align: left; } .ds-file-status span { font: 700 .75rem/1 var(--data); letter-spacing: .13em; } .ds-file-status small { color: var(--muted); font-size: .75rem; } .ds-file-status i { width: .55rem; height: .55rem; border: 1px solid var(--accent); background: color-mix(in srgb, var(--accent) 45%, transparent); transform: rotate(45deg); } .ds-file-status:hover small { color: var(--paper); } .ds-file-status:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }"
     },
     {
-      "name": "Outside / Lining Tabs",
+      "name": "Public / Sealed Tabs",
       "kind": "nav",
       "refersTo": "mode-tab",
-      "selector": ".mode-switch",
-      "description": "Two accessible tabs joined by hard rules and selected with one carmine seam.",
-      "html": "<div class=\"ds-mode-switch\" role=\"tablist\" aria-label=\"프로필 공개 범위\"><button role=\"tab\" aria-selected=\"true\"><b>공개 프로필</b><small>정상 운행 기록</small></button><button role=\"tab\" aria-selected=\"false\"><b>비밀 프로필</b><small>봉인 해제 기록</small></button></div>",
-      "css": ".ds-mode-switch { display: grid; grid-template-columns: 1fr 1fr; border-block: 1px solid var(--strong-rule); } .ds-mode-switch button { position: relative; min-height: 64px; padding: .7rem 1rem; border: 0; border-right: 1px solid var(--rule); border-radius: 0; background: transparent; color: var(--muted); text-align: left; } .ds-mode-switch button:last-child { border-right: 0; } .ds-mode-switch button[aria-selected=\"true\"] { color: var(--ink); box-shadow: inset 0 -4px var(--thread); } .ds-mode-switch small { display: block; margin-top: .15rem; font-size: .75rem; } .ds-mode-switch button:focus-visible { outline: 3px solid var(--thread); outline-offset: 4px; }"
+      "description": "Two keyboard-operable tabs inside one restrained dossier control.",
+      "html": "<div class=\"ds-mode-switch\" role=\"tablist\" aria-label=\"프로필 공개 범위\"><button role=\"tab\" aria-selected=\"true\"><span class=\"ds-switch-code\">OP</span><span><b>공개 프로필</b><small>본인 진술 기록</small></span></button><button role=\"tab\" aria-selected=\"false\"><span class=\"ds-switch-code\">SR</span><span><b>비밀 프로필</b><small>봉인 해제 기록</small></span></button></div>",
+      "css": ".ds-mode-switch { display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; border: 1px solid var(--rule-strong); border-radius: 10px; background: rgba(9, 7, 13, .72); } .ds-mode-switch button { min-height: 62px; display: grid; grid-template-columns: 2rem 1fr; align-items: center; gap: .6rem; padding: .6rem .8rem; border: 0; border-right: 1px solid var(--rule); background: transparent; color: var(--muted); text-align: left; cursor: pointer; } .ds-mode-switch button:last-child { border-right: 0; } .ds-mode-switch button[aria-selected=\"true\"] { background: var(--accent); color: var(--room); } .ds-mode-switch button:hover:not([aria-selected=\"true\"]) { background: var(--accent-soft); color: var(--paper); } .ds-switch-code { font: 700 1.05rem/1 var(--data); } .ds-mode-switch b { display: block; font-size: .86rem; } .ds-mode-switch small { display: block; margin-top: .22rem; font-size: .75rem; } .ds-mode-switch button:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }"
     },
     {
-      "name": "Stitch Index",
+      "name": "Record Index",
       "kind": "nav",
       "refersTo": "index-link",
-      "selector": ".stitch-index",
-      "description": "Flat horizontal anchored index strip; explicitly not a transit rail.",
-      "html": "<nav class=\"ds-stitch-index\" aria-label=\"공개 기록 목차\"><p>INDEX / OUTSIDE</p><a href=\"#identity\"><span>01</span>신원</a><a href=\"#appearance\"><span>02</span>외관</a></nav>",
-      "css": ".ds-stitch-index { display: flex; border-block: 1px solid var(--strong-rule); background: var(--ground); } .ds-stitch-index p { margin: 0; min-width: 10rem; padding: .9rem 1.2rem; border-right: 1px solid var(--strong-rule); color: var(--muted); font: 650 .75rem/1 var(--data-font); letter-spacing: .12em; } .ds-stitch-index a { min-width: 6rem; min-height: 48px; display: flex; align-items: center; justify-content: center; gap: .45rem; padding: .55rem .8rem; border-right: 1px dashed var(--rule); color: var(--ink); text-decoration: none; } .ds-stitch-index a:hover, .ds-stitch-index a span { color: var(--thread); } .ds-stitch-index a:focus-visible { outline: 3px solid var(--thread); outline-offset: 4px; }"
+      "description": "Sticky, horizontally scrollable index beneath the intake hero.",
+      "html": "<nav class=\"ds-record-index\" aria-label=\"공개 기록 목차\"><p>RECORD INDEX / OPEN</p><div><a href=\"#identity\"><span>01</span>신원</a><a href=\"#appearance\"><span>02</span>외관</a></div></nav>",
+      "css": ".ds-record-index { min-height: 54px; display: grid; grid-template-columns: minmax(12rem, .68fr) minmax(0, 1.32fr); border-bottom: 1px solid var(--rule-strong); background: rgba(13, 11, 18, .96); color: var(--paper); } .ds-record-index p { display: flex; align-items: center; margin: 0; padding: 0 1.25rem; color: var(--accent); font: 700 .72rem/1 var(--data); letter-spacing: .14em; } .ds-record-index div { display: flex; overflow-x: auto; } .ds-record-index a { min-width: 5.7rem; min-height: 54px; display: flex; align-items: center; justify-content: center; gap: .45rem; padding: .55rem .75rem; border-left: 1px solid var(--rule); text-decoration: none; } .ds-record-index a span { color: var(--accent); font: 700 .75rem/1 var(--data); } .ds-record-index a:hover { background: var(--accent-soft); } .ds-record-index a:focus-visible { outline: 3px solid var(--focus); outline-offset: -4px; }"
     },
     {
-      "name": "Identity Pattern",
-      "kind": "custom",
-      "selector": ".identity-pattern",
-      "description": "Five hard-edged measurements staggered across a diagonal cutting guide.",
-      "html": "<dl class=\"ds-identity-pattern\" aria-label=\"신원 기록\"><div><dt>이름</dt><dd>御影 雫</dd></div><div><dt>나이</dt><dd>21세</dd></div><div><dt>성별</dt><dd>여성 (XX)</dd></div></dl>",
-      "css": ".ds-identity-pattern { display: grid; grid-template-columns: 1.55fr repeat(2, 1fr); gap: 1px; padding: 2.5rem 0 3rem; background: linear-gradient(174deg, transparent calc(50% - 1px), var(--strong-rule) 50%, transparent calc(50% + 1px)); } .ds-identity-pattern div { padding: clamp(1rem, 2.5vw, 2rem); background: color-mix(in srgb, var(--paper) 82%, transparent); } .ds-identity-pattern dt { color: var(--muted); font-size: .75rem; } .ds-identity-pattern dd { margin: 1.2rem 0 0; font-size: clamp(1rem, 1.7vw, 1.4rem); font-weight: 760; }"
+      "name": "Identity Ledger",
+      "kind": "card",
+      "description": "Five ruled identity fields with one emphasized leading cell.",
+      "html": "<dl class=\"ds-identity-ledger\" aria-label=\"신원 기록\"><div><span>01</span><dt>이름</dt><dd>御影 雫</dd></div><div><span>02</span><dt>나이</dt><dd>21세</dd></div><div><span>03</span><dt>성별</dt><dd>여성 (XX)</dd></div></dl>",
+      "css": ".ds-identity-ledger { display: grid; grid-template-columns: 1.45fr .8fr .8fr; margin: 0; border-top: 1px solid var(--rule-strong); border-left: 1px solid var(--rule); color: var(--paper); } .ds-identity-ledger div { position: relative; min-height: 8rem; padding: 1.3rem; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); background: color-mix(in srgb, var(--file-2) 78%, transparent); } .ds-identity-ledger div:first-child { background: linear-gradient(135deg, var(--accent-soft), var(--file) 62%); } .ds-identity-ledger div > span { position: absolute; top: .8rem; right: .8rem; color: var(--rule-strong); font: 700 1.4rem/1 var(--data); } .ds-identity-ledger dt { color: var(--muted); font-size: .75rem; } .ds-identity-ledger dd { margin: 1.35rem 0 0; font-size: clamp(1rem, 1.6vw, 1.35rem); font-weight: 720; }"
     },
     {
-      "name": "False Seam Comparison",
+      "name": "Cross-Examination Row",
       "kind": "custom",
-      "selector": ".contradiction-braid",
-      "description": "One of exactly three public claims unpicked beside its verified fact.",
-      "html": "<article class=\"ds-false-seam\" role=\"row\"><b aria-hidden=\"true\">01</b><div role=\"cell\"><small>공개 진술</small><del>날붙이를 싫어한다</del></div><div role=\"cell\"><small>확인된 기록</small><p>살해 도구와 자해를 직접 선택했다.</p></div></article>",
-      "css": ".ds-false-seam { display: grid; grid-template-columns: 5rem 1.05fr .95fr; align-items: center; gap: 2rem; min-height: 18rem; border-top: 1px solid var(--strong-rule); color: var(--ink); } .ds-false-seam > b { color: var(--thread-soft); font: 700 clamp(4rem, 8vw, 8rem)/1 var(--data-font); } .ds-false-seam small { display: block; margin-bottom: 1rem; color: var(--thread); font-size: .75rem; font-weight: 750; } .ds-false-seam del { display: block; color: var(--muted); font-size: clamp(2rem, 4.8vw, 5.2rem); font-weight: 850; line-height: 1.08; text-decoration-color: var(--thread); text-decoration-thickness: 5px; } .ds-false-seam p { max-width: 33ch; margin: 0; line-height: 1.8; }"
+      "description": "One of exactly three rows retaining a disputed public claim, UV connector, and verified fact.",
+      "html": "<article class=\"ds-cross-row\" role=\"row\"><b aria-hidden=\"true\">02</b><div role=\"cell\"><small>공개 진술</small><del>날붙이를 싫어한다</del></div><i aria-hidden=\"true\"></i><div role=\"cell\"><small>확인된 기록</small><p>살해 도구와 자해를 직접 선택했다.</p></div></article>",
+      "css": ".ds-cross-row { min-height: 13rem; display: grid; grid-template-columns: 3.5rem minmax(0, 1fr) 4rem minmax(0, 1fr); align-items: center; gap: 1rem; padding: 2rem 0; border-top: 1px solid var(--rule); color: var(--paper); } .ds-cross-row > b { color: var(--evidence); font: 700 2.1rem/1 var(--data); } .ds-cross-row small { display: block; margin-bottom: .5rem; color: var(--evidence); font-size: .75rem; } .ds-cross-row del { display: block; color: var(--muted); font-size: clamp(1.3rem, 2.5vw, 2.4rem); font-weight: 760; line-height: 1.25; text-decoration-color: var(--evidence); text-decoration-thickness: 3px; } .ds-cross-row > i { height: 1px; background: var(--evidence); box-shadow: 0 0 12px rgba(194, 125, 145, .45); } .ds-cross-row p { max-width: 30ch; margin: 0; font-size: 1rem; font-weight: 650; line-height: 1.75; }"
     },
     {
-      "name": "Deliberate Choice",
+      "name": "Seven-Choice Ledger Row",
       "kind": "custom",
-      "selector": ".choice-seam li",
-      "description": "One of exactly seven alternating cuts, with an oversized faded number and double-thread edge.",
-      "html": "<article class=\"ds-choice\"><b aria-hidden=\"true\">05</b><div><small>CHOICE 05</small><h3>선입실</h3><p>복제한 열쇠로 먼저 들어가 기다렸다.</p></div></article>",
-      "css": ".ds-choice { position: relative; min-height: 24rem; display: grid; grid-template-columns: 1fr minmax(18rem, 34rem); align-items: center; overflow: hidden; border-top: 1px dashed var(--rule); color: var(--ink); } .ds-choice > b { position: absolute; color: color-mix(in srgb, var(--thread) 18%, transparent); font: 800 clamp(10rem, 29vw, 29rem)/.8 var(--data-font); } .ds-choice > div { position: relative; grid-column: 2; padding: 2rem; background: color-mix(in srgb, var(--ground) 88%, transparent); border-left: 5px double var(--thread); } .ds-choice small { color: var(--thread); font: 650 .75rem/1 var(--data-font); letter-spacing: .12em; } .ds-choice h3 { margin: .8rem 0 1.2rem; font-size: clamp(1.7rem, 3vw, 2.8rem); } .ds-choice p { margin: 0; color: var(--muted); line-height: 1.9; }"
+      "description": "One of exactly seven ordered decisions leading from first promise to scene manipulation.",
+      "html": "<li class=\"ds-choice-row\"><b>05</b><div><h3>선입실</h3><p>복제한 열쇠로 먼저 들어가 기다렸다.</p></div></li>",
+      "css": ".ds-choice-row { display: grid; grid-template-columns: 5rem minmax(11rem, .45fr) minmax(0, 1fr); gap: 1rem; padding: 2rem 0; border-bottom: 1px solid var(--rule); color: var(--paper); } .ds-choice-row > b { color: var(--evidence); font: 700 2rem/1 var(--data); } .ds-choice-row > div { display: contents; } .ds-choice-row h3 { margin: 0; font-size: clamp(1.15rem, 1.8vw, 1.5rem); } .ds-choice-row p { max-width: 58rem; margin: 0; color: var(--body); line-height: 1.85; }"
     },
     {
-      "name": "Truth Seam",
-      "kind": "custom",
-      "selector": ".truth-seam",
-      "description": "Secret-only correction set against a doubled carmine seam allowance.",
-      "html": "<aside class=\"ds-truth-seam\"><strong>FALSE SEAM</strong><p>공개 프로필의 설명은 피해자처럼 보이기 위한 연기다.</p></aside>",
-      "css": ".ds-truth-seam { display: grid; grid-template-columns: minmax(8rem, 1fr) minmax(0, 3fr); gap: 2rem; padding: 2rem 0 2rem 2rem; border-left: 6px double var(--thread); color: var(--ink); } .ds-truth-seam strong { color: var(--thread); font: 700 .8rem/1 var(--data-font); letter-spacing: .12em; } .ds-truth-seam p { max-width: 58ch; margin: 0; font-weight: 670; }"
+      "name": "Pale Verdict Sheet",
+      "kind": "card",
+      "refersTo": "verdict-sheet",
+      "description": "The sole pale full-width plane containing the case conclusion.",
+      "html": "<section class=\"ds-verdict\"><header><h2>사건 요약</h2><span>CASE CONCLUSION</span></header><p class=\"ds-verdict-thesis\">떠나는 대신,<br>누구에게도 갈 수 없게.</p><div class=\"ds-verdict-copy\"><p>확인된 사건 결론이 이어진다.</p><p>위장과 판단에 대한 기록이 이어진다.</p></div></section>",
+      "css": ".ds-verdict { display: grid; grid-template-columns: minmax(13rem, .6fr) minmax(0, 1.4fr); gap: 3rem; padding: 6rem 5rem; background: var(--paper); color: var(--paper-ink); } .ds-verdict header { padding-top: 1rem; border-top: 1px solid rgba(25, 19, 29, .45); } .ds-verdict header h2 { margin: 0; font-size: 1rem; } .ds-verdict header span { display: block; margin-top: .8rem; color: #7b4960; font: 700 .75rem/1 var(--data); letter-spacing: .15em; } .ds-verdict-thesis { grid-column: 2; max-width: 10ch; margin: 0; font-size: clamp(3.5rem, 7.6vw, 6rem); font-weight: 850; line-height: .94; letter-spacing: -.04em; } .ds-verdict-copy { grid-column: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; color: var(--paper-muted); } .ds-verdict-copy p { margin: 0; line-height: 1.9; }"
     },
     {
-      "name": "History Disclosure",
+      "name": "Complete Deposition",
       "kind": "custom",
-      "selector": ".history-disclosure",
-      "description": "Native closed details whose plus becomes a line; the full content is forced visible in print.",
-      "html": "<details class=\"ds-history\"><summary><span>과거사 전문 펼치기</span><i aria-hidden=\"true\"></i></summary><p>과거사 전문이 이어진다.</p></details>",
-      "css": ".ds-history { border-top: 1px solid var(--strong-rule); color: var(--ink); } .ds-history summary { min-height: 6rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--strong-rule); cursor: pointer; font-weight: 760; } .ds-history summary i { position: relative; width: 2rem; height: 2rem; } .ds-history summary i::before, .ds-history summary i::after { position: absolute; top: 50%; left: 0; width: 100%; height: 2px; background: var(--thread); content: \"\"; transition: transform 220ms ease; } .ds-history summary i::after { transform: rotate(90deg); } .ds-history[open] summary i::after { transform: rotate(0); } .ds-history summary:focus-visible { outline: 3px solid var(--thread); outline-offset: 4px; } .ds-history p { color: var(--muted); line-height: 2; }"
+      "description": "Native closed disclosure for the full numbered history; print forces the content visible.",
+      "html": "<details class=\"ds-deposition\"><summary><span>과거사 전문 펼치기</span><i aria-hidden=\"true\"></i></summary><div><p>01. 과거사 전문이 이어진다.</p></div></details>",
+      "css": ".ds-deposition { border-top: 1px solid var(--rule-strong); color: var(--paper); } .ds-deposition summary { min-height: 5.5rem; display: flex; align-items: center; justify-content: space-between; padding: 0 .5rem; border-bottom: 1px solid var(--rule); cursor: pointer; font-weight: 750; } .ds-deposition summary i { position: relative; width: 1.6rem; height: 1.6rem; } .ds-deposition summary i::before, .ds-deposition summary i::after { position: absolute; top: 50%; left: 0; width: 100%; height: 2px; background: var(--accent); content: \"\"; transition: transform 180ms ease; } .ds-deposition summary i::after { transform: rotate(90deg); } .ds-deposition[open] summary i::after { transform: rotate(0); } .ds-deposition summary:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; } .ds-deposition p { max-width: 72ch; color: var(--body); line-height: 2; }"
     }
   ],
   "narrative": {
-    "northStar": "PROMISE, WRONG SIDE OUT / 약속의 안감",
-    "overview": "The public view is the finished outside of a couture garment: cold paper, controlled measurements, an irregular portrait cutout, and edition-scale type. The secret view turns the same promise wrong-side-out: near-black lining, exposed seam allowance, three unpicked false seams, seven deliberate cuts, and one carmine thread that tightens into a knot. The prior interrogation, dossier, transit-map, card-grid, rail, and dashboard system is abolished.",
+    "northStar": "UV CROSS-EXAMINATION",
+    "overview": "This is the restored first-version interrogation dossier, grounded in historical seed 6b3f0fe. A near-black plum room holds one muted-violet file whose public and sealed states reveal different readings of the same canonical record. The world is procedural, intimate, and quietly threatening rather than theatrical. The first viewport is a full-height intake record: testimony, identity facts, and the state control occupy the left column; the framed EVIDENCE 01 portrait occupies the right. A single vertical UV film runs through the document and becomes more visible when the file is sealed. The reading sequence is fixed: identify the subject, compare states, break three contradictions, follow seven deliberate choices, read the pale verdict sheet, open the complete deposition, and face the final question.",
     "keyCharacteristics": [
-      "Finished paper outside; exposed dark lining inside.",
-      "One carmine thread carries selection, focus, seams, warnings, and narrative continuity.",
-      "High asymmetry, irregular pattern-cut polygons, oversized edition type, and generous reading space.",
-      "Exactly three false seams and seven deliberate cuts remain factual counts.",
-      "The Picrew portrait is cut like fabric and keeps its usage caption adjacent."
+      "Near-black plum room with layered violet dossier planes.",
+      "One vertical UV evidence film, restrained scanlines, and fine rules.",
+      "Public and sealed file states share structure while changing active evidence color and portrait treatment.",
+      "Exactly three contradiction rows and seven numbered choices.",
+      "One pale verdict sheet interrupts the dark file before the complete deposition.",
+      "The supplied portrait remains an intake artifact with its three-part limitation/source caption adjacent."
     ],
     "rules": [
-      { "name": "Wrong-Side-Out", "body": "Every state change must feel like the same garment turning over; a palette swap alone is insufficient.", "section": "overview" },
-      { "name": "One Thread", "body": "Carmine is the sole accent family; never introduce a second accent or revive the former violet evidence palette.", "section": "colors" },
-      { "name": "Two Hands", "body": "Noto tells the story; Barlow marks the pattern. Never set Korean prose in Barlow Condensed.", "section": "typography" },
-      { "name": "Flat Fabric", "body": "A surface may overlap, cut, or expose its lining; it never floats like a card.", "section": "elevation" }
+      { "name": "The Same File Rule", "body": "Public and sealed states are two readings of one dossier; keep the structure stable and let evidence, copy, and active color disclose the difference.", "section": "overview" },
+      { "name": "The Evidence Hierarchy Rule", "body": "Violet establishes UV atmosphere; rose identifies confirmed evidence; pale paper appears as a decisive verdict, not as a general card surface.", "section": "colors" },
+      { "name": "The Two-Type Rule", "body": "Noto speaks and explains; Barlow counts and indexes. Never set Korean prose in the condensed data face.", "section": "typography" },
+      { "name": "The One Beam Rule", "body": "Preserve one continuous vertical UV film across the dossier; do not multiply it into decorative stripes.", "section": "layout" },
+      { "name": "The Evidence-Only Lift Rule", "body": "Shadow belongs to physical intake artifacts and the UV verification line, never to every section or ledger cell.", "section": "elevation" }
     ],
     "dos": [
-      "Do treat public and secret as the finished outside and exposed lining of one couture object.",
-      "Do preserve the single carmine thread, square information surfaces, irregular cut shapes, and double-seam grammar.",
-      "Do keep exactly three contradiction rows and seven choice items, with their anchors and accessible labels.",
-      "Do keep the Picrew usage/source caption adjacent and preserve focus, tab keyboard behavior, reduced preferences, URL state, and print output.",
-      "Do preserve every fluid type endpoint and the exact 1100/760/380 responsive contract."
+      "Do preserve the near-black plum room, muted-violet dossier planes, single UV film, Evidence Rose verification, and pale verdict interruption.",
+      "Do keep public and sealed states keyboard-operable, URL-addressable through ?record=sealed, politely announced, and synchronized with browser theme color.",
+      "Do keep exactly three contradiction rows, seven choice rows, the full six-paragraph deposition, and every confirmed profile field.",
+      "Do keep the portrait caption adjacent and honest about use, costume mismatch, source, and unresolved rights.",
+      "Do preserve the 1100/840/540/360 responsive contract, print reveal, and reduced-preference behavior."
     ],
     "donts": [
-      "Don't restore interrogation rooms, dossiers, evidence boards, transit maps, routes, rails, dashboards, card grids, or ornamental stamps.",
-      "Don't add rounded cards, pills, chips, glass, blur, shadows, or a competing accent; thread loops are the only rounded forms.",
-      "Don't convert .stitch-index into a navigation rail or .choice-seam into a route diagram.",
-      "Don't use Barlow Condensed for Korean prose or flatten the public/secret transition into a color-only theme toggle.",
-      "Don't remove contradiction facts, source limitations, content warning, accessible state, reduced-preference fallbacks, or print reveal."
-    ],
-    "metadata": {
-      "conceptSeed": "f1671878",
-      "groundedDirection": 5,
-      "groundedDirectionTotal": 7
-    }
+      "Don't convert the dossier into a generic card collection or distribute the pale verdict color across ordinary sections.",
+      "Don't add extra beams, accent families, glass, blur, or shadows beyond the physical evidence artifacts and UV connector.",
+      "Don't separate a false claim from its verified fact or summarize away the seven choices and complete deposition.",
+      "Don't turn compact metadata into decorative heading copy or use Barlow Condensed for Korean prose.",
+      "Don't remove focus visibility, tab keyboard behavior, status announcements, URL state, source limitations, or print content."
+    ]
   }
 }
