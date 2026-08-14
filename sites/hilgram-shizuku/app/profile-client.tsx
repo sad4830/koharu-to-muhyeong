@@ -1,9 +1,3 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
-
-type View = "public" | "owner";
-
 const publicBasics = [
   ["이름", "御影 雫 / 미카게 시즈쿠"],
   ["나이", "22세"],
@@ -156,65 +150,16 @@ function PublicProfile() {
   );
 }
 
-function OwnerProfile() {
-  return (
-    <div className="profile-copy owner-copy view-enter" id="profile-content" tabIndex={-1}>
-      <header className="profile-intro">
-        <h1 data-view-heading="owner" tabIndex={-1}>오너란</h1>
-        <div className="voice-record">
-          <blockquote>프로필 및 선관 협의는 오너를 통해 진행합니다.</blockquote>
-          <p className="catchphrase">[ OWNER INFORMATION ]</p>
-        </div>
-      </header>
-      <section className="content-section" aria-labelledby="owner-record">
-        <h2 id="owner-record">오너 정보</h2>
-        <RecordList rows={[
-          ["오너닉", "새드아씨"],
-          ["나이", "성인"],
-          ["외관 출처", "Picrew"],
-          ["원본 링크", "https://picrew.me/en/image_maker/1649970"],
-        ]} />
-      </section>
-      <section className="content-section reading-section" aria-labelledby="owner-note">
-        <h2 id="owner-note">확인 사항</h2>
-        <p>
-          첨부 이미지는 입소 전 외관 참고용입니다. 힐그램 내부 의상은 프로필에 적힌
-          흰색 주조의 지정 구속복과 검은 구속줄을 기준으로 합니다. 선관은 합의 이후에만
-          확정하며 상대 캐릭터의 감정과 행동을 미리 정하지 않습니다.
-        </p>
-      </section>
-    </div>
-  );
-}
-
 export default function ProfileClient() {
-  const [view, setView] = useState<View>("public");
-  const shouldFocusView = useRef(false);
-
-  useEffect(() => {
-    if (!shouldFocusView.current) return;
-    document.querySelector<HTMLElement>(`[data-view-heading="${view}"]`)?.focus({ preventScroll: true });
-    shouldFocusView.current = false;
-  }, [view]);
-
-  const selectView = (nextView: View) => {
-    window.scrollTo({ top: 0, behavior: "auto" });
-    shouldFocusView.current = true;
-    setView(nextView);
-  };
-
   return (
-    <div className="site-shell" data-theme="public" data-view={view}>
+    <div className="site-shell" data-theme="public">
       <a className="skip-link" href="#profile-content">본문으로 건너뛰기</a>
       <header className="topbar">
         <a className="wordmark" href="#top" aria-label="미카게 시즈쿠 프로필 처음으로">
           <span lang="ja">御影 雫</span>
           <small>HILGRAM</small>
         </a>
-        <nav className="view-switcher" aria-label="프로필 구분">
-          <button type="button" aria-current={view === "public" ? "page" : undefined} aria-controls="profile-content" onClick={() => selectView("public")}>공개</button>
-          <button type="button" aria-current={view === "owner" ? "page" : undefined} aria-controls="profile-content" onClick={() => selectView("owner")}>오너</button>
-        </nav>
+        <p className="public-badge">공개 프로필</p>
       </header>
 
       <main className="profile-layout" id="top">
@@ -229,7 +174,7 @@ export default function ProfileClient() {
         </aside>
 
         <section className="content-column">
-          {view === "public" ? <PublicProfile /> : <OwnerProfile />}
+          <PublicProfile />
         </section>
       </main>
 
@@ -237,8 +182,6 @@ export default function ProfileClient() {
         <p>御影 雫 / 22 / 女性</p>
         <div>
           <a href="https://posty.pe/pkv5n8fc" target="_blank" rel="noreferrer">HILGRAM 총공지</a>
-          <span>오너 새드아씨</span>
-          <a href="https://picrew.me/en/image_maker/1649970" target="_blank" rel="noreferrer">외관 출처 Picrew</a>
         </div>
       </footer>
     </div>

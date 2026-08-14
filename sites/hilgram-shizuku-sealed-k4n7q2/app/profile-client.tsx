@@ -128,6 +128,7 @@ function SecretProfile() {
         <a href="#story-summary">과거사</a>
         <a href="#ideology-title">사상</a>
         <a href="#secret-relationship">선관</a>
+        <a href="#owner-record">오너</a>
       </nav>
 
       <section className="content-section" aria-labelledby="secret-record">
@@ -331,6 +332,25 @@ function SecretProfile() {
         </p>
         <RelationshipHooks />
       </section>
+
+      <section className="content-section" aria-labelledby="owner-record">
+        <h2 id="owner-record">오너란</h2>
+        <RecordList rows={[
+          ["오너닉", "새드아씨"],
+          ["나이", "성인"],
+          ["외관 출처", "Picrew"],
+          ["원본 링크", "https://picrew.me/en/image_maker/1649970"],
+        ]} />
+      </section>
+
+      <section className="content-section reading-section" aria-labelledby="owner-note">
+        <h2 id="owner-note">확인 사항</h2>
+        <p>
+          첨부 이미지는 입소 전 외관 참고용입니다. 힐그램 내부 의상은 프로필에 적힌
+          흰색 주조의 지정 구속복과 검은 구속줄을 기준으로 합니다. 선관은 합의 이후에만
+          확정하며 상대 캐릭터의 감정과 행동을 미리 정하지 않습니다.
+        </p>
+      </section>
     </div>
   );
 }
@@ -381,7 +401,6 @@ export default function ProfileClient() {
       <footer className="site-footer">
         <p>御影 雫 / 22 / 女性</p>
         <div>
-          <span>오너 새드아씨 / 성인</span>
           <a href="https://picrew.me/en/image_maker/1649970" target="_blank" rel="noreferrer">
             외관 출처 Picrew
           </a>

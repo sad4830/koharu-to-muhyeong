@@ -148,40 +148,18 @@ a {
   letter-spacing: 0.16em;
 }
 
-.view-switcher {
-  display: inline-grid;
-  grid-template-columns: repeat(2, minmax(68px, 1fr));
-  gap: 4px;
-  padding: 4px;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background: var(--surface);
-}
-
-.view-switcher button {
+.public-badge {
+  display: inline-flex;
+  align-items: center;
   min-height: 44px;
-  padding: 8px 16px;
-  border: 0;
+  margin: 0;
+  padding: 8px 14px;
+  border: 1px solid var(--line-strong);
   border-radius: 10px;
-  background: transparent;
-  color: var(--muted);
-  font-size: 1rem;
-  font-weight: 750;
-  cursor: pointer;
-  transition: color 180ms ease, background-color 180ms ease, transform 180ms ease;
-}
-
-.view-switcher button:hover {
-  color: var(--text);
-}
-
-.view-switcher button:active {
-  transform: translateY(1px);
-}
-
-.view-switcher button[aria-current="page"] {
-  background: var(--text);
-  color: var(--bg);
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
 }
 
 .profile-layout {
@@ -553,10 +531,6 @@ a {
   line-height: 1.65;
 }
 
-.owner-copy {
-  min-height: calc(100dvh - 128px);
-}
-
 .site-footer {
   display: flex;
   align-items: flex-start;
@@ -635,8 +609,7 @@ a {
 
   .site-shell,
   .portrait-frame img,
-  .portrait-frame::after,
-  .view-switcher button {
+  .portrait-frame::after {
     transition: none;
   }
 }
@@ -694,12 +667,9 @@ a {
     display: none;
   }
 
-  .view-switcher {
-    grid-template-columns: repeat(2, 58px);
-  }
-
-  .view-switcher button {
-    padding: 8px 10px;
+  .public-badge {
+    min-height: 40px;
+    padding: 7px 11px;
   }
 
   .profile-layout {
