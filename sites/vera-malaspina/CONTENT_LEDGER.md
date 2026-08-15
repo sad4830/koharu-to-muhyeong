@@ -26,7 +26,7 @@
 | Combat manual versus Vera's actual behavior | Combat behavior | Preserve |
 | Research habits, not ethical rules | Research behavior | Preserve |
 | Likes and dislikes | Personality / Preferences | Preserve |
-| Representative dialogue and rare silent line | Voice | Preserve |
+| Representative dialogue and rare silent line | Voice | Preserve; every in-character line is casual Korean speech |
 
 ## Deep narrative facts
 
@@ -71,4 +71,4 @@ The other character's feelings, actions, consent, injury, defeat, and ending rem
 - No altered numerical values.
 - No invented WACA approval.
 - No private outcome assigned to another owner's character.
-
+- No honorific or polite ending in Vera's in-character dialogue.

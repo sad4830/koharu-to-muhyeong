@@ -47,7 +47,7 @@ This is not a generic character-card gallery. It is a readable experimental doss
 
 - Character name: Vera Malaspina / 베라 말라스피나.
 - Activity and sin name: Errata / 에라타.
-- Core voice: fast, contradictory, profane when excited, delighted by failed experiments, dangerous rather than merely comedic.
+- Core voice: fast, contradictory, profane when excited, delighted by failed experiments, dangerous rather than merely comedic. Every in-character line uses casual Korean speech regardless of age, rank, affiliation, or situation.
 - Recurring narrative materials: fluorescent green reagent, mislabelled experiments, the closed isolation door, and knocking that returns in silence.
 - The site must feel volatile and asymmetrical while the information hierarchy remains dependable.
 
