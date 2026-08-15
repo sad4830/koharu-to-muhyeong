@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-16T00:00:00+09:00",
+  "title": "Design System: Vera Malaspina / ERRATA",
+  "extensions": {
+    "colorMeta": {
+      "background": { "role": "neutral", "displayName": "Graphite Field", "canonical": "#0b0f0c", "tonalRamp": ["oklch(15% 0.012 145)", "oklch(25% 0.012 145)", "oklch(35% 0.012 145)", "oklch(45% 0.012 145)", "oklch(55% 0.012 145)", "oklch(65% 0.012 145)", "oklch(78% 0.012 145)", "oklch(95% 0.012 145)"] },
+      "surface": { "role": "neutral", "displayName": "Assay Surface", "canonical": "#151b16", "tonalRamp": ["oklch(16% 0.014 145)", "oklch(27% 0.014 145)", "oklch(37% 0.014 145)", "oklch(47% 0.014 145)", "oklch(57% 0.014 145)", "oklch(67% 0.014 145)", "oklch(80% 0.014 145)", "oklch(96% 0.014 145)"] },
+      "ink": { "role": "neutral", "displayName": "Specimen Ink", "canonical": "#edf2ec", "tonalRamp": ["oklch(15% 0.01 145)", "oklch(27% 0.01 145)", "oklch(38% 0.01 145)", "oklch(49% 0.01 145)", "oklch(60% 0.01 145)", "oklch(71% 0.01 145)", "oklch(84% 0.01 145)", "oklch(96% 0.01 145)"] },
+      "reagent-green": { "role": "primary", "displayName": "Fluorescent Reagent Green", "canonical": "#b7ff37", "tonalRamp": ["oklch(20% 0.13 125)", "oklch(30% 0.16 125)", "oklch(40% 0.19 125)", "oklch(50% 0.21 125)", "oklch(60% 0.22 125)", "oklch(70% 0.22 125)", "oklch(80% 0.21 125)", "oklch(93% 0.14 125)"] },
+      "warning": { "role": "secondary", "displayName": "Review Yellow", "canonical": "#e6d86c", "tonalRamp": ["oklch(20% 0.06 100)", "oklch(30% 0.08 100)", "oklch(40% 0.10 100)", "oklch(50% 0.12 100)", "oklch(60% 0.13 100)", "oklch(70% 0.13 100)", "oklch(80% 0.11 100)", "oklch(94% 0.05 100)"] },
+      "danger": { "role": "tertiary", "displayName": "Procedure Coral", "canonical": "#ea7f72", "tonalRamp": ["oklch(20% 0.07 30)", "oklch(30% 0.10 30)", "oklch(40% 0.13 30)", "oklch(50% 0.15 30)", "oklch(60% 0.16 30)", "oklch(70% 0.15 30)", "oklch(80% 0.12 30)", "oklch(94% 0.05 30)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Specimen Display", "purpose": "Hero name only; compressed Archivo establishes the opening identity read." },
+      "headline": { "displayName": "Dossier Headline", "purpose": "Major section statements and project title." },
+      "title": { "displayName": "Assay Title", "purpose": "Module and ability headings." },
+      "body": { "displayName": "Case Record", "purpose": "Long Korean factual prose and rules." },
+      "label": { "displayName": "Instrument Label", "purpose": "Metadata, units, status, and small navigation labels." }
+    },
+    "shadows": [
+      { "name": "specimen-lift", "value": "0 28px 80px var(--shadow)", "purpose": "Hero subject cartridge only." },
+      { "name": "assay-lift", "value": "0 32px 100px var(--shadow)", "purpose": "Primary ability assay cards." },
+      { "name": "reagent-halo", "value": "0 0 18px var(--acid)", "purpose": "Live reagent signals, nodes, and vessel details." }
+    ],
+    "motion": [
+      { "name": "state-standard", "value": "160ms ease", "purpose": "Tabs, buttons, and small control state changes." },
+      { "name": "cartridge-enter", "value": "650ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Hero copy entrance." },
+      { "name": "content-swap", "value": "220ms", "purpose": "Dose and transcript transitions." },
+      { "name": "ambient-rotate", "value": "8s–16s linear infinite", "purpose": "Abstract specimen rings only; suppressed for reduced motion." }
+    ],
+    "breakpoints": [
+      { "name": "tablet", "value": "1050px" },
+      { "name": "mobile", "value": "780px" },
+      { "name": "compact", "value": "520px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Assay Tab — Active",
+      "kind": "button",
+      "refersTo": "assay-tab-active",
+      "description": "Integrated dosage selector for an active assay condition.",
+      "html": "<button class=\"ds-assay-tab ds-active\"><span>1</span>1회분</button>",
+      "css": ".ds-assay-tab{display:flex;align-items:center;gap:12px;min-height:58px;border:0;border-right:1px solid var(--line);padding:12px clamp(18px,3vw,42px);color:var(--muted);background:transparent;font:650 .8rem 'Noto Sans KR Variable',sans-serif;text-align:left;transition:color 160ms ease,background-color 160ms ease}.ds-assay-tab span{display:grid;place-items:center;width:24px;height:24px;border:1px solid var(--line-strong);border-radius:50%;font: .65rem 'Archivo Variable',sans-serif}.ds-assay-tab:hover,.ds-assay-tab.ds-active{color:var(--ink);background:var(--acid-wash)}.ds-assay-tab.ds-active span{border-color:var(--acid);color:#101510;background:var(--acid)}.ds-assay-tab:focus-visible{outline:2px solid var(--focus);outline-offset:4px}"
+    },
+    {
+      "name": "Keyword Chip",
+      "kind": "chip",
+      "refersTo": "keyword-chip",
+      "description": "A compact trait annotation, not an action control.",
+      "html": "<span class=\"ds-keyword-chip\">결과 집착</span>",
+      "css": ".ds-keyword-chip{display:inline-block;padding:8px 12px;border:1px solid var(--acid-line);color:var(--acid-text);background:var(--acid-wash);font:650 .72rem 'Noto Sans KR Variable',sans-serif}"
+    },
+    {
+      "name": "Assay Card",
+      "kind": "card",
+      "refersTo": "assay-card",
+      "description": "Primary ability container with a clinical ruled surface and instrumentation corners.",
+      "html": "<article class=\"ds-assay-card\"><h3>증명실 제1조건</h3><p>녹색 약을 맞힌 횟수만큼 큰 동작이 어려워집니다.</p></article>",
+      "css": ".ds-assay-card{position:relative;padding:48px clamp(28px,5vw,68px) 36px;border:1px solid var(--line-strong);background:var(--surface);box-shadow:0 32px 100px var(--shadow);color:var(--ink);font-family:'Noto Sans KR Variable',sans-serif}.ds-assay-card:before,.ds-assay-card:after{content:'';position:absolute;width:14px;height:14px;border:1px solid var(--line-strong);border-radius:50%;background:var(--bg)}.ds-assay-card:before{top:14px;left:14px}.ds-assay-card:after{right:14px;bottom:14px}.ds-assay-card h3{margin:0 0 12px;font-size:clamp(1.7rem,3.6vw,3rem);font-weight:620;line-height:1.18;letter-spacing:-.035em}.ds-assay-card p{margin:0;color:var(--ink-soft);font-size:.9rem;line-height:1.9}"
+    },
+    {
+      "name": "Relationship Disclosure",
+      "kind": "custom",
+      "description": "Border-led relationship hook disclosure with a circular plus/minus state marker.",
+      "html": "<details class=\"ds-disclosure\"><summary><span>두 번째 기준 신체</span><b></b></summary><p>마지막 단계에 필요한 협력자입니다.</p></details>",
+      "css": ".ds-disclosure{border-bottom:1px solid var(--line-strong);color:var(--ink);font-family:'Noto Sans KR Variable',sans-serif}.ds-disclosure summary{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:76px;padding:18px 6px;list-style:none;cursor:pointer}.ds-disclosure summary::-webkit-details-marker{display:none}.ds-disclosure summary span{font-size:clamp(.98rem,1.5vw,1.2rem);font-weight:650}.ds-disclosure summary b{position:relative;width:30px;height:30px;border:1px solid var(--line-strong);border-radius:50%}.ds-disclosure summary b:before,.ds-disclosure summary b:after{content:'';position:absolute;top:14px;left:8px;width:12px;height:1px;background:var(--acid)}.ds-disclosure summary b:after{transform:rotate(90deg);transition:transform 180ms ease}.ds-disclosure[open] summary b:after{transform:rotate(0)}.ds-disclosure p{max-width:780px;margin:0;padding:0 70px 28px 6px;color:var(--muted);font-size:.84rem;line-height:1.85}.ds-disclosure summary:focus-visible{outline:2px solid var(--focus);outline-offset:4px}"
+    },
+    {
+      "name": "Voice Selector — Active",
+      "kind": "button",
+      "refersTo": "voice-control-active",
+      "description": "Circular transcript selector for the active voice sample.",
+      "html": "<button class=\"ds-voice-control ds-active\" aria-pressed=\"true\">01</button>",
+      "css": ".ds-voice-control{width:44px;height:44px;border:1px solid var(--line-strong);border-radius:50%;color:var(--muted);background:transparent;font:.6rem 'Archivo Variable',sans-serif;transition:160ms ease}.ds-voice-control:hover,.ds-voice-control.ds-active{border-color:var(--acid);color:#0e140e;background:var(--acid)}.ds-voice-control:focus-visible{outline:2px solid var(--focus);outline-offset:4px}"
+    },
+    {
+      "name": "Section Label",
+      "kind": "custom",
+      "description": "A reagent-marked miniature label that introduces an assay section.",
+      "html": "<p class=\"ds-section-label\"><span></span>II등급 이능</p>",
+      "css": ".ds-section-label{display:flex;align-items:center;gap:12px;margin:0;padding-top:8px;color:var(--acid-text);font:720 .72rem 'Noto Sans KR Variable',sans-serif}.ds-section-label span{width:28px;height:1px;background:currentColor}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Microfluidic Assay Cartridge",
+    "overview": "This is a text-only clinical dossier, not a character card or a portrait page. Information travels through graph-paper fields, ruled laboratory panels, channels, nodes, metric racks, and transparent-vessel diagrams. The page is intentionally structured enough to make ability rules auditable at a glance, while its asymmetry, off-axis lines, and unstable green signals suggest an experiment only barely held in its cartridge.\n\nGraphite and surgical gray establish the reading field. One fluorescent reagent-green behaves like an active trace: it marks conditions, dosage, state, path nodes, and interactive confirmation. The only other chromatic interventions are the narrow warning-yellow and danger-coral states used to distinguish administrative caution and concealed risk. There is no character image, seal, or decorative likeness; the person is constructed through language, data, and assay-like abstract diagrams.",
+    "keyCharacteristics": ["Dense but legible long-form dossier rhythm.", "Flat, bordered laboratory surfaces with restrained depth.", "Archivo provides instrument labels and Latin/number data; Noto Sans KR carries Korean reading text.", "Fluorescent green is a sparse, meaningful reagent signal—not a general fill color.", "Motion explains state or ambience and switches off for reduced-motion preferences."],
+    "rules": [
+      { "name": "The One Reagent Rule", "body": "Green is evidence of an active condition, choice, measurement, or confirmed location. Do not use it as broad decoration, a large background, or a second text color for ordinary body copy.", "section": "colors" },
+      { "name": "The Dark-First Rule", "body": "Dark graphite is the normative view. The light theme inverts the same semantic roles into pale surgical-gray paper while preserving green, warning, and danger meaning.", "section": "colors" },
+      { "name": "The Instrument/Record Rule", "body": "Use Archivo for what is measured, indexed, or named in the system; use Noto Sans KR for what must be read, interpreted, or remembered.", "section": "typography" },
+      { "name": "The Contained Depth Rule", "body": "Elevation belongs to specimen and assay modules; ordinary profile panels, rails, and disclosures remain ruled and flat.", "section": "elevation" },
+      { "name": "The Instrument Geometry Rule", "body": "Use rounded forms only when they read as a measurement point, control, liquid vessel, or signal. Keep content containers square.", "section": "shapes" }
+    ],
+    "dos": ["Do treat long-form information as a test record: use ruled panels, visible units, measured labels, and stable reading order.", "Do use `4vw` gutters, the 1320px main container, and the observed 150px section rhythm when extending the page.", "Do preserve text-only representation; use abstract assay diagrams, routes, vessels, doors, and signal nodes instead of a character portrait.", "Do reserve circular forms for active controls, nodes, status signals, and vessel/instrument metaphors.", "Do pair an interaction state with text, border, or visible state change in addition to green color, and retain the 2px green `:focus-visible` outline.", "Do honor reduced motion by allowing every animated state to remain fully understandable without animation."],
+    "donts": ["Don't introduce a second saturated brand color or use green as a broad surface fill.", "Don't round ordinary cards, cells, or content panels; the cartridge is mostly square and line-bound.", "Don't add portrait art, character seals, photo cutouts, or decorative mascot imagery.", "Don't hide ability quantities, limits, or rule conditions inside animation, hover-only states, or imagery.", "Don't replace the compact mobile rail with a hamburger that conceals the dossier’s core sections."]
+  }
+}
