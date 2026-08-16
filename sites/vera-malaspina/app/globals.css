@@ -976,7 +976,7 @@ main > section {
 
 .metric-rack {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   background: var(--bg-raised);
@@ -1822,6 +1822,14 @@ footer {
   .affiliation-rail div:nth-child(2) { border-right: 0; }
   .affiliation-rail div:nth-child(-n + 2) { border-bottom: 1px solid var(--line); }
 
+  .metric-rack div {
+    min-width: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+    padding-inline: 14px;
+  }
+
   .project-section {
     grid-template-columns: 28px minmax(0, 1fr) minmax(200px, 0.42fr);
     gap: 30px;
@@ -1982,10 +1990,12 @@ footer {
   }
 
   .metric-rack div:nth-child(2n) { border-right: 0; }
-  .metric-rack div:last-child {
-    grid-column: 1 / -1;
-    border-right: 0;
+  .metric-rack div:nth-last-child(-n + 2) {
     border-bottom: 0;
+  }
+
+  .metric-rack div:last-child {
+    border-right: 0;
   }
 
   .metric-rack dt {

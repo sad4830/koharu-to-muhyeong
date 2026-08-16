@@ -219,6 +219,7 @@ function AbilityOne() {
       <dl className="metric-rack">
         <div><dt>사거리</dt><dd>18m</dd></div>
         <div><dt>비산</dt><dd>1.5m</dd></div>
+        <div><dt>투사체 속도</dt><dd>25m/s</dd></div>
         <div><dt>지속</dt><dd>6지문</dd></div>
         <div><dt>재사용</dt><dd>1지문</dd></div>
         <div><dt>총량</dt><dd>6회분</dd></div>
@@ -227,7 +228,7 @@ function AbilityOne() {
       <div className="protocol-grid">
         <div>
           <h4>발동</h4>
-          <p>혈액 한 방울과 타락한 영력을 섞어 만듭니다. 주사침으로 관통하거나 앰풀을 던집니다. 투척분은 눈, 입, 열린 상처에 닿아야 흡수됩니다.</p>
+          <p>혈액 한 방울과 타락한 영력을 섞어 만듭니다. 주사침으로 관통하거나 앰풀을 던집니다. 유리 앰풀 본체는 투척 직후 기준 최대 25m/s이며, 손을 떠난 뒤 능력으로 가속하거나 유도되지 않습니다. 투척분은 눈, 입, 열린 상처에 닿아야 흡수되며, 앰풀 충돌 자체에는 별도의 이능 피해가 없습니다.</p>
         </div>
         <div>
           <h4>대가</h4>
@@ -267,11 +268,12 @@ function AbilityTwo() {
         </div>
       </div>
 
-      <p className="ability-body">플라스크를 최대 20m까지 던지면 이어진 바닥 반경 7m가 3지문 동안 배양액으로 덮입니다. 질주, 도약 착지, 전력 휘두르기 같은 충격이 닿으면 0.2초 안에 접촉점 주변 최대 60cm가 굳습니다. 먼저 일어난 세 접촉만 반응하며 피아 식별은 없습니다.</p>
+      <p className="ability-body">플라스크를 최대 20m까지 던지면 이어진 바닥 반경 7m가 3지문 동안 배양액으로 덮입니다. 유리 플라스크 본체는 투척 직후 기준 최대 20m/s이며, 손을 떠난 뒤 능력으로 가속하거나 유도되지 않습니다. 플라스크 충돌 자체에는 별도의 이능 피해가 없습니다. 질주, 도약 착지, 전력 휘두르기 같은 충격이 닿으면 0.2초 안에 접촉점 주변 최대 60cm가 굳습니다. 먼저 일어난 세 접촉만 반응하며 피아 식별은 없습니다.</p>
 
       <dl className="metric-rack">
         <div><dt>투척</dt><dd>20m</dd></div>
         <div><dt>반경</dt><dd>7m</dd></div>
+        <div><dt>투사체 속도</dt><dd>20m/s</dd></div>
         <div><dt>지속</dt><dd>3지문</dd></div>
         <div><dt>재사용</dt><dd>5지문</dd></div>
         <div><dt>반응</dt><dd>3회</dd></div>

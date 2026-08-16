@@ -39,6 +39,7 @@ This is not a generic character-card gallery. It is a readable experimental doss
 - Preserve the complete confirmed Notion profile, including identity, text-only appearance, personality, traits, affiliation, Grade II abilities, costs, counters, backstory, three-layer truth, current project, Lust interpretation, relic and authority status, preferences, relationship hooks, timeline, and dialogue.
 - Preserve WACA form terminology: XX, II grade, Septem Peccata, Lust sinner, two abilities, no relic, unawakened authority.
 - Keep all ability quantities, ranges, durations, cooldowns, total limits, and counters unchanged.
+- Keep projectile speed explicit: 25 m/s for the glass ampoule and 20 m/s for the glass flask, both measured immediately after release with no supernatural acceleration or homing.
 - Do not add firearms, extra powers, relic effects, non-human species traits, or approved outcomes for other owners' characters.
 - Do not place the AI reference image or any generated character likeness in the site.
 - No factual commercial claims, testimonials, analytics claims, or invented WACA approvals.

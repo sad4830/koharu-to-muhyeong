@@ -22,6 +22,7 @@
 | Ability system `Proof Room` contains exactly two abilities | Abilities | Preserve |
 | Ability 1 full effects, doses, ranges, totals, costs, counters | Ability detail | Preserve verbatim in meaning and numbers |
 | Ability 2 full effects, ranges, reactions, costs, counters | Ability detail | Preserve verbatim in meaning and numbers |
+| Projectile speeds: glass ampoule 25 m/s, glass flask 20 m/s, no acceleration or homing after release | Ability detail | Preserve verbatim in meaning and numbers |
 | Grade II compliance explanation | Ability detail | Preserve |
 | Combat manual versus Vera's actual behavior | Combat behavior | Preserve |
 | Research habits, not ethical rules | Research behavior | Preserve |
